@@ -1,0 +1,123 @@
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rosybrown;
+  font-family: "Kumbh Sans", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00a4b0;
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+img[alt="top"] {
+  position: absolute;
+  transform: translate(-460px, -430px) rotate(14deg);
+}
+
+img[alt="bottom"] {
+  position: absolute;
+  transform: translate(540px, 441px) rotate(-4deg);
+}
+
+h1 {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #2e3349;
+}
+
+h2 {
+  width: 48px;
+  margin: 12px auto;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0px;
+  color: #6b7082;
+}
+
+h3 {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #6b7082;
+  margin-left: 8px;
+}
+
+#container {
+  position: relative;
+  height: 374px;
+  width: 350px;
+  border-radius: 15px;
+  /* border: red 2px dashed; */
+  background-color: white;
+}
+
+#blanck {
+  position: absolute;
+  top: 90px;
+  left: 125px;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#blanck img {
+  display: block;
+  width: 94px;
+  height: 94px;
+  border-radius: 50%;
+}
+
+#ccc {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+#kkk {
+  display: flex;
+  border-top: #e8e9ec solid 1px;
+  margin-top: 44px;
+  padding-top: 19px;
+}
+
+#kkk div {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 0px;
+  color: #2e3349;
+}
+#kkk div span {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: 1.5px;
+}

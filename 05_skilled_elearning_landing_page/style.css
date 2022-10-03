@@ -1,0 +1,357 @@
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(180deg, #ffffff 0%, #f0f1ff 100%);
+  background-color: #ff6f48;
+}
+#wrapper {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  position: relative;
+  width: 375px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+h1 {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 25px;
+  color: #13183f;
+}
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  color: #f74780;
+}
+
+header,
+footer {
+  height: 80px;
+  width: 100%;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+
+header button,
+footer button {
+  width: 140px;
+  height: 48px;
+  border: none;
+  outline: none;
+  border-radius: 28px;
+  color: white;
+  padding: 6px;
+  font-size: 16px;
+}
+
+footer {
+  background-color: #13183f;
+  margin-top: 20px;
+}
+
+footer span {
+  color: white;
+}
+
+header button {
+  background: #13183f;
+}
+
+header button:hover {
+  background-color: #666ca3;
+}
+
+footer button {
+  background: linear-gradient(180deg, #4851ff -54.32%, #f02aa6 100%);
+}
+
+footer button:hover {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), linear-gradient(180deg, #4851ff -54.32%, #f02aa6 100%);
+}
+
+#grid {
+  display: flex;
+  flex-direction: column;
+  width: 375px;
+  justify-content: center;
+  align-items: center;
+}
+
+#firstbox {
+  width: 343px;
+  height: 120px;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 32px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
+  padding: 8px 45px;
+  color: white;
+  margin-bottom: 20px;
+}
+.box {
+  position: relative;
+  width: 343px;
+  height: 259px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: 800;
+  padding: 61px 45px;
+  background-color: white;
+  margin: 30px 0;
+}
+
+.box p {
+  display: block;
+  height: 118px;
+  color: #83869a;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.circle {
+  position: absolute;
+  top: -24px;
+  left: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
+}
+
+.border {
+  border: red 2px dashed;
+}
+
+#intro {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+#mission {
+  margin: 16px;
+  width: 343px;
+}
+#mission div:nth-of-type(1) {
+  text-align: left;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 50px;
+  color: #13183f;
+}
+
+#mission div:nth-of-type(2) {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  color: #83869a;
+  margin-top: 20px;
+}
+
+#mission button {
+  background: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
+  border-radius: 31.5px;
+  width: 167px;
+  height: 56px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 26px;
+  text-align: center;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+#mission button:hover {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
+}
+
+#teacup {
+  margin: 16px;
+  background-image: url("assets/image-hero-mobile.png");
+  background-repeat: no-repeat;
+  background-position: -39px -17px;
+  background-size: 126%;
+  height: 301px;
+  width: 327px;
+}
+@media only screen and (min-width: 768px) {
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    padding: 0 44px;
+  }
+
+  footer {
+    padding: 0 44px;
+  }
+  #wrapper {
+    width: 768px;
+  }
+  #intro {
+    position: relative;
+    width: 100%;
+    top: 30px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    height: 500px;
+    margin-bottom: 65px;
+  }
+
+  #mission {
+    flex-basis: 432px;
+    height: 255px;
+    align-self: center;
+    margin: 0 0 0 39px;
+  }
+
+  #teacup {
+    height: 532px;
+    flex-basis: 346px;
+    margin: 0;
+    background-image: url("assets/image-hero-tablet.png");
+    background-size: 200%;
+    background-position: -30px -141px;
+  }
+
+  #grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 689px;
+    height: 950px;
+  }
+
+  #firstbox {
+    position: relative;
+    width: 339px;
+    height: 259px;
+    border-radius: 15px;
+    font-weight: 800;
+    padding: 70px 46px;
+    color: white;
+    justify-self: start;
+    margin: 0;
+  }
+
+  .box {
+    width: 339px;
+    height: 259px;
+    padding: 61px 45px;
+    justify-self: start;
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  #wrapper {
+    width: 1440px;
+  }
+
+  header {
+    padding: 0 165px;
+  }
+  footer {
+    padding: 0 165px;
+  }
+
+  header button {
+    width: 167px;
+    height: 56px;
+    font-size: 18px;
+  }
+
+  #intro {
+    position: relative;
+    width: 100%;
+    top: -46px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    height: 779px;
+  }
+  #mission {
+    flex-basis: 620px;
+    flex-shrink: 0;
+    height: 255px;
+    align-self: center;
+    margin: 0 0 0 165px;
+  }
+
+  #mission div:nth-of-type(1) {
+    font-size: 56px;
+  }
+
+  #mission div:nth-of-type(2) {
+    width: 452px;
+    font-size: 18px;
+    margin: 50px 0;
+  }
+
+  #mission button {
+    width: 167px;
+    height: 63px;
+    font-size: 18px;
+  }
+  #teacup {
+    height: 803px;
+    flex-basis: 656px;
+    margin: 0;
+    background-image: url("assets/image-hero-desktop.png");
+    background-size: 160%;
+    background-position: -49px -100px;
+  }
+
+  #grid {
+    width: 1110px;
+    height: 748px;
+  }
+
+  #firstbox {
+    position: relative;
+    width: 350px;
+    height: 322px;
+    border-radius: 15px;
+    font-weight: 800;
+    padding: 70px 46px;
+    color: white;
+  }
+
+  .box {
+    width: 350px;
+    height: 322px;
+    padding: 61px 45px;
+  }
+
+  .box p {
+    font-size: 18px;
+  }
+}
