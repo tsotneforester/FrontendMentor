@@ -121,6 +121,7 @@ p:nth-of-type(1) {
   font-weight: 600;
   font-size: 22px;
   color: white;
+  width: 184px;
 }
 p:nth-of-type(1):hover {
   color: #00fff8;
