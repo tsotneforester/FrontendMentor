@@ -2,6 +2,7 @@
 
 | Project                                                                           |     Are      |
 | --------------------------------------------------------------------------------- | :----------: |
+| [13_faq_accordiong](https://gpx.ge/bitcamp/13_faq_accordiong/)                    | faq position |
 | [11_tip_calculator_app](https://gpx.ge/bitcamp/11_tip_calculator_app/)            | custom input |
 | [05_skilled_elearning](https://gpx.ge/bitcamp/05_skilled_elearning_landing_page/) |              |
 | [04_profile_card](https://gpx.ge/bitcamp/04_profile_card_component/)              |              |
