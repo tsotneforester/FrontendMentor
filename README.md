@@ -7,5 +7,5 @@
 | [05_skilled_elearning](https://gpx.ge/bitcamp/05_skilled_elearning_landing_page/) |              |
 | [04_profile_card](https://gpx.ge/bitcamp/04_profile_card_component/)              |              |
 | [03_order-summary](https://gpx.ge/bitcamp/03_order-summary/)                      |              |
-| [02_nft_preview_card](https://gpx.ge/bitcamp/02_nft_preview_card/)                |              |
+| [02_nft_preview_card](https://gpx.ge/bitcamp/02_nft_preview_card/)                | add clases and simpolify css|
 | [01_qr_code](https://gpx.ge/bitcamp/01_qr_code/)                                  |              |
