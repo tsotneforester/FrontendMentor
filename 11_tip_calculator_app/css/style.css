@@ -1,0 +1,246 @@
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  padding-top: 40px;
+  background-color: #bbe5e8;
+  display: flex;
+  flex-direction: column;
+  column-gap: 40px;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-between;
+}
+
+input {
+  width: 100%;
+  background-color: #f3f9fa;
+  font-family: Space Mono;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: 0px;
+  text-align: right;
+  color: #00474b;
+  padding: 6px 17px;
+  border: none;
+  border-radius: 5px;
+}
+
+input:focus {
+  outline: 2px #26c2ae solid;
+}
+
+p {
+  margin: 10px 0;
+}
+.title {
+  font-family: Space Mono;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #5e7a7d;
+  display: inline-block;
+}
+
+.errorTitle {
+  font-family: Space Mono;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: right;
+  color: #e17457;
+  display: inline-block;
+  float: right;
+}
+
+#container {
+  width: 375px;
+  margin: 30px auto 0 auto;
+  border-radius: 25px 25px 0px 0px;
+  background-color: #ffffff;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+#cell1 {
+  position: relative;
+  width: 100%;
+  /* border: dashed 1px red; */
+}
+
+#cell1 img {
+  position: absolute;
+  top: 60px;
+  left: 18px;
+}
+
+/* -- ------------------------------------*/
+
+#cell2 {
+  width: 100%;
+  /* border: dashed 1px red; */
+}
+
+#cell3 {
+  position: relative;
+  width: 100%;
+  /* border: dashed 1px red; */
+}
+
+#cell3 img {
+  position: absolute;
+  top: 60px;
+  left: 18px;
+}
+
+/* ------------------------Cell 4----------------------- */
+#cell4 {
+  /* border: dashed 1px red; */
+  height: 257px;
+  width: 100%;
+  left: 24px;
+  top: 644px;
+  border-radius: 15px;
+  padding: 39px 22px 24px 24px;
+  background-color: #00474b;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#cell4 button {
+  font-family: "Space Mono", monospace;
+  width: 100%;
+  height: 48px;
+  border-radius: 5px;
+  background-color: #0d686d;
+  font-family: Space Mono;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: center;
+  color: #00474b;
+  border: none;
+}
+
+#cell4 button:hover {
+  background-color: #26c2ae;
+  cursor: pointer;
+}
+
+.amount_line {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text1 {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+}
+
+.text2 {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 19px;
+  color: #7f9d9f;
+}
+
+.text3 {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 47px;
+  text-align: right;
+  color: #26c2ae;
+}
+
+/* ------------------------------------------------------------ */
+
+#group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 16px;
+  row-gap: 16px;
+}
+
+.tipbutton {
+  height: 48px;
+  width: 146px;
+  border-radius: 5px;
+  background: #00474b;
+  font-family: Space Mono;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  text-align: center;
+  color: #ffffff;
+  padding: 5px;
+  border: none;
+}
+.tipbutton:hover {
+  cursor: pointer;
+}
+
+.clicked {
+  background-color: #26c2ae;
+  color: #00474b;
+}
+
+.errorborder {
+  outline: 2px #e17052 solid;
+}
+
+@media only screen and (min-width: 980px) {
+  body {
+    justify-content: center;
+  }
+  #container {
+    height: 481px;
+    width: 920px;
+    display: grid;
+    column-gap: 20px;
+    border-radius: 25px;
+  }
+
+  #cell1 {
+    grid-area: 1 / 1 / span 1 / span 1;
+    /* border: dashed 2px red; */
+  }
+  #cell2 {
+    grid-area: 2 / 1 / span 1 / span 1;
+    /* border: dashed 2px red; */
+  }
+  #cell3 {
+    grid-area: 3 / 1 / span 1 / span 1;
+    /* border: dashed 2px red; */
+  }
+  #cell4 {
+    grid-area: 1 / 2 / span 3 / span 1;
+    height: 417px;
+    width: 413px;
+  }
+
+  .tipbutton {
+    width: 117px;
+  }
+}
