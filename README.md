@@ -1,11 +1,11 @@
 <!-- prettier-ignore -->
 | Project | Issues |
 | --------| :-----: |
-| [14_interactive_pricing](https://gpx.ge/bitcamp/14_interactive_pricing/) | simplify slider |
-| [13_faq_accordiong](https://gpx.ge/bitcamp/13_faq_accordiong/)           | faq position    |
-| [11_tip_calculator_app](https://gpx.ge/bitcamp/11_tip_calculator_app/)   |   custom input  |
-| [05_skilled_elearning](https://gpx.ge/bitcamp/05_skilled_elearning/)     |        |
-| [04_profile_card](https://gpx.ge/bitcamp/04_profile_card_component/)     |         |
-| [03_order-summary](https://gpx.ge/bitcamp/03_order-summary/)             |          |
-| [02_nft_preview_card](https://gpx.ge/bitcamp/02_nft_preview_card/)       |  add classes   |
-| [01_qr_code](https://gpx.ge/bitcamp/01_qr_code/)                         |       |
+| [14](https://tsotneforester.github.io/Bitcamp/14_interactive_pricing/) | simplify slider      |
+| [13](https://tsotneforester.github.io/Bitcamp/13_faq_accordiong/)      | faq position         |
+| [11](https://tsotneforester.github.io/Bitcamp/11_tip_calculator/)      |   custom input       |
+| [05](https://tsotneforester.github.io/Bitcamp/05_skilled_elearning/)   |                      |
+| [04](https://tsotneforester.github.io/Bitcamp/04_profile_card/)        |                      |
+| [03](https://tsotneforester.github.io/Bitcamp/03_order-summary/)       |                      |
+| [02](https://tsotneforester.github.io/Bitcamp/02_nft_preview/)         |  add classes         |
+| [01](https://tsotneforester.github.io/Bitcamp/01_qr_code/)             |  color container     |
