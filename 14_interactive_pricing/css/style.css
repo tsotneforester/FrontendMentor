@@ -8,7 +8,7 @@
 
 body {
   background: url("../images/bg-pattern.svg") white left top no-repeat;
-  background-size: 100% auto;
+  background-size: 100% 320px;
   font-family: "Manrope", sans-serif;
   display: flex;
   flex-direction: column;
@@ -28,27 +28,31 @@ p {
 #container {
   position: relative;
   width: 327px;
-  height: 478px;
   border-radius: 8px;
   background-color: white;
-  padding: 30px 0;
+  padding: 30px;
   text-align: center;
   box-shadow: 0px 20px 30px -5px rgba(127, 137, 185, 0.152073);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  row-gap: 24px;
 }
 
 img {
   display: block;
 }
 
+#view-box {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #848ead;
+  height: 30px;
+}
+
 #slider-box {
   width: 276px;
   height: 40px;
   position: relative;
-  margin: 40px auto;
   display: inline-block;
 }
 
@@ -92,7 +96,7 @@ img {
   background-color: #a4f3eb;
 }
 
-#price {
+#price-box {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -100,7 +104,7 @@ img {
   -moz-column-gap: 10px;
        column-gap: 10px;
 }
-#price #price-amount {
+#price-box #price-amount {
   font-family: Manrope;
   font-size: 32px;
   font-weight: 800;
@@ -108,7 +112,7 @@ img {
   text-align: right;
   color: #293356;
 }
-#price #price-period {
+#price-box #price-period {
   font-weight: 600;
   font-size: 14px;
   line-height: 19px;
@@ -116,9 +120,8 @@ img {
   color: #848ead;
 }
 
-#trail {
+#trail-box {
   width: 100%;
-  border-top: 2px solid #ecf0fb;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -126,14 +129,14 @@ img {
   row-gap: 10px;
   padding: 20px 0 0 0;
 }
-#trail #trail-text {
+#trail-box #trail-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   row-gap: 10px;
 }
-#trail button {
+#trail-box button {
   width: 170px;
   height: 41px;
   border-radius: 20.5px;
@@ -145,14 +148,15 @@ img {
   font-family: Manrope;
   margin-top: 10px;
 }
-#trail button:hover {
+#trail-box button:hover {
   color: #ffffff;
 }
-#trail .trail-line {
+#trail-box .trail-line {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  width: 100%;
   -moz-column-gap: 20px;
        column-gap: 20px;
   font-family: Manrope;
@@ -181,7 +185,7 @@ header p {
   width: 326px;
 }
 
-#config {
+#config-box {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -189,28 +193,28 @@ header p {
   -moz-column-gap: 10px;
        column-gap: 10px;
 }
-#config span {
+#config-box span {
   font-size: 12px;
   color: #848ead;
 }
-#config #discount {
+#config-box #discount {
   font-size: 10px;
   color: #ff8d68;
   background: #feede8;
   border-radius: 9.5px;
   padding: 3px 8px;
 }
-#config #switcher {
+#config-box #switcher {
   height: 22px;
   width: 43px;
   border-radius: 15px;
   background: #cfd8ef;
 }
-#config #switcher:hover {
+#config-box #switcher:hover {
   background: #7aeadf;
   cursor: pointer;
 }
-#config #switcher-ball {
+#config-box #switcher-ball {
   height: 14px;
   width: 14px;
   border-radius: 50%;
@@ -256,4 +260,51 @@ input:hover #circle {
 
 input::-webkit-slider-thumb:hover #circle {
   background-color: #293356;
+}
+
+@media only screen and (min-width: 678px) {
+  body {
+    background-size: 100% 420px;
+  }
+  #container {
+    width: 540px;
+    display: grid;
+    row-gap: 67px;
+  }
+  #view-box {
+    grid-area: 1/1/span 1/span 1;
+    height: auto;
+    align-self: center;
+    font-size: 14px;
+    text-align: left;
+  }
+  #price-box {
+    grid-area: 1/2/span 1/span 1;
+    justify-content: end;
+  }
+  #price-box #price-amount {
+    font-size: 40px;
+  }
+  #price-box #price-period {
+    font-size: 16px;
+  }
+  #input-box {
+    grid-area: 2/1/span 1/span 2;
+  }
+  #config-box {
+    grid-area: 3/1/span 1/span 2;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
+  }
+  #trail-box {
+    grid-area: 4/1/span 1/span 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+  }
+  #trail-box .trail-line {
+    justify-content: start;
+  }
 }/*# sourceMappingURL=style.css.map */
