@@ -22,7 +22,7 @@ const loan = {
 
 function numberChange() {
   if (yearlyStatus) {
-    priceAmount.innerHTML = "$" + (loan[slider.value][1] * 0.75).toFixed(2);
+    priceAmount.innerHTML = "$" + (loan[slider.value][1] * 12 * 0.75).toFixed(2);
     viewAmount.innerHTML = loan[slider.value][0];
   } else {
     priceAmount.innerHTML = "$" + loan[slider.value][1].toFixed(2);
@@ -34,8 +34,10 @@ switcher.addEventListener("click", () => {
   console.log("gg");
   if (!yearlyStatus) {
     switcherBall.style.transform = "translate(24px, 4px)";
+    switcher.style.backgroundColor = "#7aeadf";
   } else {
     switcherBall.style.transform = "translate(5px, 4px)";
+    switcher.style.backgroundColor = "#cfd8ef";
   }
   yearlyStatus = !yearlyStatus;
   numberChange();

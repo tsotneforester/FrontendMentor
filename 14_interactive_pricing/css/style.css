@@ -21,7 +21,6 @@ p {
   font-size: 12px;
   font-weight: 800;
   line-height: 16px;
-  letter-spacing: 1.7142857313px;
   text-align: center;
   color: #848ead;
 }
@@ -126,6 +125,13 @@ img {
   align-items: center;
   row-gap: 10px;
   padding: 20px 0 0 0;
+}
+#trail #trail-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
 }
 #trail button {
   width: 170px;
