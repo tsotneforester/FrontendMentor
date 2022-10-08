@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>Simple, traffic-based pricing</h1>
+      <p>Sign-up for our 30-day trial. No credit card required.</p>
+    </header>
+    <div id="container">
+      <p><span id="view-amount">100K</span> PAGEVIEWS</p>
+      <div id="slider-box">
+        <input type="range" min="0" max="100" step="25" name="" id="slider" value="50" />
+        <div id="circle">
+          <img src="images/icon-slider.svg" alt="" />
+        </div>
+        <div id="gray-line"></div>
+        <div id="color-line"></div>
+      </div>
+      <section id="price">
+        <span id="price-amount">$16.00</span>
+        <span id="price-period">/ month</span>
+      </section>
+      <section id="config">
+        <span>Monthly Billing</span>
+        <div id="switcher"><div id="switcher-ball"></div></div>
+        <span>Yearly Billing</span> <span id="discount">25%</span>
+      </section>
+      <section id="trail">
+        <div class="trail-line">
+          <img src="images/icon-check.svg" alt="" />
+          <span>Unlimited websites</span>
+        </div>
+        <div class="trail-line">
+          <img src="images/icon-check.svg" alt="" />
+          <span>100% data ownership </span>
+        </div>
+        <div class="trail-line">
+          <img src="images/icon-check.svg" alt="" />
+          <span>Email reports</span>
+        </div>
+        <button>Start My trail</button>
+      </section>
+    </div>
+  </body>
+  <script src="js/js.js"></script>
+</html>

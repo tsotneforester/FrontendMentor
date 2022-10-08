@@ -1,2 +1,4 @@
-# /*.css
-# /*.html
+*.scss
+*.txt
+*.map
+*/root/

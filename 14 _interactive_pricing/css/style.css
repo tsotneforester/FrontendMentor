@@ -1,0 +1,253 @@
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("../images/bg-pattern.svg") white left top no-repeat;
+  background-size: 100% auto;
+  font-family: "Manrope", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  font-family: Manrope;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 16px;
+  letter-spacing: 1.7142857313px;
+  text-align: center;
+  color: #848ead;
+}
+
+#container {
+  position: relative;
+  width: 327px;
+  height: 478px;
+  border-radius: 8px;
+  background-color: white;
+  padding: 30px 0;
+  text-align: center;
+  box-shadow: 0px 20px 30px -5px rgba(127, 137, 185, 0.152073);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+img {
+  display: block;
+}
+
+#slider-box {
+  width: 276px;
+  height: 40px;
+  position: relative;
+  margin: 40px auto;
+  display: inline-block;
+}
+
+#circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #10d8c4;
+  transform-origin: left 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 15px 30px rgba(0, 255, 231, 0.6);
+  transform: translate(118px);
+}
+
+#gray-line {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  z-index: 1;
+  height: 10px;
+  width: 276px;
+  border-radius: 8px;
+  background-color: #ecf0fb;
+}
+
+#color-line {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  z-index: 1;
+  height: 10px;
+  width: 138px;
+  border-radius: 8px;
+  background-color: #a4f3eb;
+}
+
+#price {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+#price #price-amount {
+  font-family: Manrope;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 44px;
+  text-align: right;
+  color: #293356;
+}
+#price #price-period {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  color: #848ead;
+}
+
+#trail {
+  width: 100%;
+  border-top: 2px solid #ecf0fb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+  padding: 20px 0 0 0;
+}
+#trail button {
+  width: 170px;
+  height: 41px;
+  border-radius: 20.5px;
+  background: #293356;
+  text-align: center;
+  border: none;
+  font-size: 12px;
+  color: #becdff;
+  font-family: Manrope;
+  margin-top: 10px;
+}
+#trail button:hover {
+  color: #ffffff;
+}
+#trail .trail-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  font-family: Manrope;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  color: #848ead;
+}
+
+header {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+  background: url("../images/pattern-circles.svg") no-repeat center center;
+}
+header h1 {
+  font-size: 20px;
+  color: #293356;
+}
+header p {
+  font-size: 13px;
+  color: #848ead;
+  width: 326px;
+}
+
+#config {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+#config span {
+  font-size: 12px;
+  color: #848ead;
+}
+#config #discount {
+  font-size: 10px;
+  color: #ff8d68;
+  background: #feede8;
+  border-radius: 9.5px;
+  padding: 3px 8px;
+}
+#config #switcher {
+  height: 22px;
+  width: 43px;
+  border-radius: 15px;
+  background: #cfd8ef;
+}
+#config #switcher:hover {
+  background: #7aeadf;
+  cursor: pointer;
+}
+#config #switcher-ball {
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background: white;
+  transform: translate(5px, 4px);
+  transition: transform 0.2s linear;
+}
+
+/* --------------------------------------------- */
+input {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 276px; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 13;
+}
+
+input:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+/* ----------------------------------------------------- */
+input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  opacity: 0;
+}
+
+input:hover {
+  cursor: help;
+  cursor: pointer;
+}
+
+input:hover #circle {
+  background-color: #ff8d68;
+}
+
+input::-webkit-slider-thumb:hover #circle {
+  background-color: #293356;
+}/*# sourceMappingURL=style.css.map */
