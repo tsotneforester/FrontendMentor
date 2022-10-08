@@ -2,3 +2,4 @@
 *.txt
 *.map
 */root/
+.prettierignore
