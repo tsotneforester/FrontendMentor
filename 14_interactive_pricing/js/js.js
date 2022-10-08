@@ -22,7 +22,7 @@ const loan = {
 
 function numberChange() {
   if (yearlyStatus) {
-    priceAmount.innerHTML = "$" + (loan[slider.value][1] * 12 * 0.75).toFixed(2);
+    priceAmount.innerHTML = "$" + (loan[slider.value][1] * 0.75).toFixed(2);
     viewAmount.innerHTML = loan[slider.value][0];
   } else {
     priceAmount.innerHTML = "$" + loan[slider.value][1].toFixed(2);
