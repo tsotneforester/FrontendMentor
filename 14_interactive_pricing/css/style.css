@@ -197,12 +197,16 @@ header p {
   font-size: 12px;
   color: #848ead;
 }
-#config-box #discount {
+#config-box #discount-text,
+#config-box #discount-text span {
   font-size: 10px;
   color: #ff8d68;
   background: #feede8;
   border-radius: 9.5px;
   padding: 3px 8px;
+}
+#config-box #discount-text span {
+  display: none;
 }
 #config-box #switcher {
   height: 22px;
@@ -295,6 +299,9 @@ input::-webkit-slider-thumb:hover #circle {
     grid-area: 3/1/span 1/span 2;
     -moz-column-gap: 30px;
          column-gap: 30px;
+  }
+  #config-box #discount-text span {
+    display: inline;
   }
   #trail-box {
     grid-area: 4/1/span 1/span 2;
