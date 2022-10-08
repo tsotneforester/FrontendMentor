@@ -31,7 +31,6 @@ function numberChange() {
 }
 
 switcher.addEventListener("click", () => {
-  console.log("gg");
   if (!yearlyStatus) {
     switcherBall.style.transform = "translate(24px, 4px)";
     switcher.style.backgroundColor = "#7aeadf";
@@ -45,8 +44,25 @@ switcher.addEventListener("click", () => {
 
 slider.addEventListener("input", () => {
   let sliderValue = slider.value / 100;
-  circle.style.transform = "translate(" + 236 * sliderValue + "px)"; //600-40/9
-  color.style.width = 276 * sliderValue + "px"; //600-40/9
+  if (window.innerWidth > 678) {
+    circle.style.transform = "translate(" + 404 * sliderValue + "px)";
+    color.style.width = 444 * sliderValue + "px";
+  } else {
+    circle.style.transform = "translate(" + 236 * sliderValue + "px)";
+    color.style.width = 276 * sliderValue + "px";
+  }
+  numberChange();
+});
+
+window.addEventListener("resize", () => {
+  let sliderValue = slider.value / 100;
+  if (window.innerWidth > 678) {
+    circle.style.transform = "translate(" + 404 * sliderValue + "px)";
+    color.style.width = 444 * sliderValue + "px";
+  } else {
+    circle.style.transform = "translate(" + 236 * sliderValue + "px)";
+    color.style.width = 276 * sliderValue + "px";
+  }
   numberChange();
 });
 
