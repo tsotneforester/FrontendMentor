@@ -1,0 +1,62 @@
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+/*lets start coding*/
+body {
+  background-color: hsl(212deg, 45%, 89%);
+  font-family: "Outfit", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div {
+  width: 320px;
+  padding: 16px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+img {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+}
+
+h1 {
+  padding: 15px 0;
+  font-size: 22px;
+  color: #1f314f;
+  font-weight: 700;
+  text-align: center;
+}
+
+p {
+  padding: 8px;
+  font-size: 15px;
+  color: #7d889e;
+  font-weight: 400;
+  text-align: center;
+}
