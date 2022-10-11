@@ -132,6 +132,14 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
+#card footer span:nth-of-type(1) {
+  font-family: Outfit;
+  font-size: 15px;
+  color: #8bacd9;
+  font-weight: 400;
+  text-align: left;
+  line-height: 19px;
+}
 #card footer span:nth-of-type(2) {
   font-family: Outfit;
   font-size: 15px;
@@ -140,13 +148,9 @@ body {
   text-align: left;
   line-height: 19px;
 }
-#card footer span:nth-of-type(1) {
-  font-family: Outfit;
-  font-size: 15px;
-  color: #8bacd9;
-  font-weight: 400;
-  text-align: left;
-  line-height: 19px;
+#card footer span:nth-of-type(2):hover {
+  color: #00fff8;
+  cursor: pointer;
 }
 #card footer img {
   width: 33px;
