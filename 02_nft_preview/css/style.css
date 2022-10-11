@@ -37,12 +37,74 @@ body {
   border-radius: 15px;
   padding: 24px;
   background-color: #0e2b41;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: flex-star;
+      -ms-flex-align: flex-star;
+          align-items: flex-star;
+  row-gap: 32px;
+}
+#card header {
+  position: relative;
+}
+#card header div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  width: 279px;
+  height: 279px;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#card header div:hover {
+  background-color: rgba(0, 255, 247, 0.5254901961);
+}
+#card header div:hover img[alt=view] {
+  display: inline;
 }
 #card header img[alt=equilibrium] {
   width: 100%;
+  border-radius: 8px;
 }
-#card header img[alt=equilibrium] {
-  width: 100%;
+#card header img[alt=view] {
+  display: none;
+}
+#card main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: flex-star;
+      -ms-flex-align: flex-star;
+          align-items: flex-star;
+  row-gap: 16px;
 }
 #card main p:nth-of-type(1) {
   font-family: "Outfit";
@@ -63,6 +125,7 @@ body {
   font-weight: 300;
   text-align: left;
   line-height: 26px;
+  letter-spacing: -0.6px;
 }
 #card main div {
   display: -webkit-box;
@@ -131,6 +194,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
 }
 #card footer span:nth-of-type(1) {
   font-family: Outfit;
@@ -156,4 +222,15 @@ body {
   width: 33px;
   border-radius: 50%;
   border: white 1px solid;
+}
+
+@media only screen and (min-width: 400px) {
+  #card {
+    width: 350px;
+    row-gap: 26px;
+  }
+  #card header div {
+    width: 302px;
+    height: 302px;
+  }
 }
