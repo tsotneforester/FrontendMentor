@@ -274,9 +274,7 @@ main #main__1 div:nth-of-type(2) div {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-column-gap: 8px;
-     -moz-column-gap: 8px;
-          column-gap: 8px;
+  row-gap: 16px;
 }
 main #main__1 div:nth-of-type(2) div input:nth-of-type(1) {
   font-size: 12px;
