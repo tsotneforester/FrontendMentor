@@ -56,13 +56,6 @@ body {
   position: relative;
 }
 #card header div {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 11;
-  width: 279px;
-  height: 279px;
-  border-radius: 8px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -76,19 +69,30 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 279px;
+  height: 279px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0);
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }
 #card header div:hover {
   background-color: rgba(0, 255, 247, 0.5254901961);
 }
 #card header div:hover img[alt=view] {
-  display: inline;
+  opacity: 1;
 }
 #card header img[alt=equilibrium] {
   width: 100%;
   border-radius: 8px;
 }
 #card header img[alt=view] {
-  display: none;
+  opacity: 0;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }
 #card main {
   display: -webkit-box;
@@ -113,6 +117,8 @@ body {
   font-weight: 600;
   text-align: left;
   line-height: 28px;
+  -webkit-transition: color 0.5s linear;
+  transition: color 0.5s linear;
 }
 #card main p:nth-of-type(1):hover {
   color: #00fff8;
@@ -212,6 +218,8 @@ body {
   color: white;
   font-weight: 400;
   text-align: left;
+  -webkit-transition: color 0.5s linear;
+  transition: color 0.5s linear;
   line-height: 19px;
 }
 #card footer span:nth-of-type(2):hover {
