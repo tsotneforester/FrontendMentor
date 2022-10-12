@@ -102,6 +102,45 @@ body {
   font-family: "Barlow", sans-serif;
 }
 
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  margin: 4vw;
+}
+header img {
+  width: 50px;
+  height: auto;
+}
+header button {
+  width: 150px;
+  height: 48px;
+  border-radius: 8px;
+  background: #e8eff2;
+  text-align: center;
+  border: none;
+  font-size: 16px;
+  color: #162542;
+  font-weight: 700;
+  text-align: center;
+  line-height: 26px;
+  text-transform: uppercase;
+}
+header button:hover {
+  background-color: #162542;
+  color: white;
+}
+
 article {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -116,9 +155,7 @@ article {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  -webkit-column-gap: 4vw;
-     -moz-column-gap: 4vw;
-          column-gap: 4vw;
+  row-gap: 4vw;
   width: 100%;
   height: 100vw;
   padding-left: 4vw;
@@ -135,7 +172,8 @@ article section:nth-of-type(2) {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
-  border-radius: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
   background: url("../images/image-keyboard.jpg") no-repeat;
   background-size: cover;
 }
@@ -198,6 +236,8 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  row-gap: 10px;
+  margin: 20px 0;
 }
 main section:nth-of-type(1) {
   font-size: 32px;
@@ -232,6 +272,7 @@ summary {
           align-items: center;
   row-gap: 20px;
   padding: 20px;
+  margin: 20px 0;
 }
 summary .box {
   display: -webkit-box;
