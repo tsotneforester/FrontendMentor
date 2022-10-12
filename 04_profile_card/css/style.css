@@ -105,7 +105,6 @@ body {
       -ms-flex-align: center;
           align-items: center;
   background-color: #00a4b0;
-  overflow: hidden;
 }
 
 img {
@@ -167,6 +166,8 @@ h3 {
   height: 374px;
   border-radius: 15px;
   background-color: white;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 #blanck {
