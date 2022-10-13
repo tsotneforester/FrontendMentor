@@ -327,6 +327,8 @@ summary .box {
           align-items: center;
   row-gap: 20px;
   max-width: 280px;
+  height: 300px;
+  border: dashed 1px red;
 }
 summary .box .icon {
   display: -webkit-box;
@@ -457,5 +459,53 @@ footer span:nth-of-type(2) {
             flex: 0 0 50%;
     height: 425px;
     background-size: cover;
+  }
+  summary {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    /**/
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; /**/
+    row-gap: 20px;
+    padding: 0; /**/
+    margin: 50px 4vw; /**/
+  }
+  summary .box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    /**/
+    -webkit-column-gap: 20px;
+       -moz-column-gap: 20px;
+            column-gap: 20px; /**/
+    max-width: none; /**/
+    width: 43%; /**/
+  }
+  summary .box .header {
+    text-align: left;
+  }
+  summary .box .desc {
+    text-align: left;
   }
 }
