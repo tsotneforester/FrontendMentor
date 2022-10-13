@@ -6,7 +6,7 @@
 | [11](https://tsotneforester.github.io/Bitcamp/11_tip_calculator/)      |   custom input       |
 | [10](https://tsotneforester.github.io/Bitcamp/11_fylo/)                |                      |
 | [09](https://tsotneforester.github.io/Bitcamp/09_four_cards/)          |   ------------       |
-| [08](https://tsotneforester.github.io/Bitcamp/08_typemaster/)          |                      |
+| [08](https://tsotneforester.github.io/Bitcamp/08_typemaster/)          |    d                 |
 | [05](https://tsotneforester.github.io/Bitcamp/05_skilled_elearning/)   |                      |
 | [04](https://tsotneforester.github.io/Bitcamp/04_profile_card/)        |                      |
 | [03](https://tsotneforester.github.io/Bitcamp/03_order-summary/)       |                      |
