@@ -90,7 +90,7 @@ body {
   min-height: 100vh;
 }
 
-box, summary .box .icon {
+summary .box .icon {
   height: 65px;
   width: 65px;
   border-radius: 16px;
