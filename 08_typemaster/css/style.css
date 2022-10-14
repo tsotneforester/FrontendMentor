@@ -97,23 +97,6 @@ summary .box .icon {
   background-color: #f16718;
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-mark,
-nav,
-section,
-summary,
-time,
-div {
-  border: 1px red dotted;
-}
-
 /*lets start coding*/
 body {
   font-family: "Barlow", sans-serif;
