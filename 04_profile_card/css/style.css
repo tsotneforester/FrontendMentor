@@ -148,11 +148,11 @@ h3 {
 
 #container {
   position: relative;
-  width: 326px;
+  width: 95%;
+  max-width: 326px;
+  min-width: 175px;
   height: 374px;
   border-radius: 15px;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
   background: url("../images/bg-pattern-card.svg") no-repeat;
   background-position: 0 0;
   background-color: white;
@@ -226,7 +226,7 @@ h3 {
   }
   #container {
     height: 374px;
-    width: 350px;
+    max-width: 350px;
   }
   #blanck {
     top: 90px;
