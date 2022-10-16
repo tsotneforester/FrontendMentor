@@ -92,7 +92,6 @@ body {
 
 /*lets start coding*/
 body {
-  background-color: rosybrown;
   font-family: "Kumbh Sans", sans-serif;
   height: 100vh;
   display: -webkit-box;
@@ -105,28 +104,15 @@ body {
       -ms-flex-align: center;
           align-items: center;
   background-color: #00a4b0;
+  background-image: url("../images/bg-pattern-top.svg"), url("../images/bg-pattern-bottom.svg");
+  background-repeat: no-repeat no-repeat;
+  background-position: calc(-46vw + 100%) calc(-34vh + 100%), 45vw 45vh;
 }
 
 img {
   display: block;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-}
-
-img[alt=top] {
-  position: absolute;
-  -webkit-transform: translate(-464px, -430px) rotate(-16deg);
-          transform: translate(-464px, -430px) rotate(-16deg);
-}
-
-img[alt=bottom] {
-  position: absolute;
-  -webkit-transform: translate(453px, 441px) rotate(-4deg);
-          transform: translate(453px, 441px) rotate(-4deg);
-}
-
-img[alt=card] {
-  width: 326px;
 }
 
 h1 {
@@ -165,17 +151,17 @@ h3 {
   width: 326px;
   height: 374px;
   border-radius: 15px;
-  background-color: white;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  background: url("../images/bg-pattern-card.svg") no-repeat;
+  background-position: 0 0;
+  background-color: white;
 }
 
 #blanck {
-  position: absolute;
-  top: 80px;
-  left: 113px;
   width: 100px;
   height: 100px;
+  margin: 94px auto 0 auto;
   background-color: white;
   border-radius: 50%;
   display: -webkit-box;
@@ -203,7 +189,7 @@ h3 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 60px;
+  margin-top: 20px;
 }
 
 #statistics {
@@ -211,7 +197,7 @@ h3 {
   display: -ms-flexbox;
   display: flex;
   border-top: #e8e9ec solid 1px;
-  margin-top: 44px;
+  margin-top: 30px;
   padding-top: 19px;
 }
 
@@ -235,18 +221,8 @@ h3 {
 }
 
 @media only screen and (min-width: 575px) {
-  img[alt=top] {
-    position: absolute;
-    -webkit-transform: translate(-460px, -430px) rotate(14deg);
-            transform: translate(-460px, -430px) rotate(14deg);
-  }
-  img[alt=bottom] {
-    position: absolute;
-    -webkit-transform: translate(540px, 441px) rotate(-4deg);
-            transform: translate(540px, 441px) rotate(-4deg);
-  }
-  img[alt=card] {
-    width: 350px;
+  body {
+    background-position: calc(-51vw + 100%) calc(-34vh + 100%), 49vw 48vh;
   }
   #container {
     height: 374px;
