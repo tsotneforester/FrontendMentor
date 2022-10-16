@@ -9,9 +9,10 @@
 body {
   background: linear-gradient(180deg, #ffffff 0%, #f0f1ff 100%);
   background-color: #ff6f48;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  position: relative;
 }
 #wrapper {
-  font-family: "Plus Jakarta Sans", sans-serif;
   position: relative;
   width: 375px;
   display: flex;
@@ -61,10 +62,20 @@ footer button {
 }
 
 footer {
-  background-color: #13183f;
+  height: 120px;
+
   margin-top: 20px;
 }
 
+#last {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  z-index: -3;
+  height: 120px;
+  width: 100%;
+  background-color: #13183f;
+}
 footer span {
   color: white;
 }
@@ -78,7 +89,8 @@ header button:hover {
 }
 
 footer button {
-  background: linear-gradient(180deg, #4851ff -54.32%, #f02aa6 100%);
+  /* background: linear-gradient(180deg, #4851ff -54.32%, #f02aa6 100%); */
+  background: linear-gradient(180deg, #4851ff 0%, #f02aa6 100%);
 }
 
 footer button:hover {
@@ -281,6 +293,9 @@ footer button:hover {
   }
   footer {
     padding: 0 165px;
+  }
+  footer button {
+    background: linear-gradient(180deg, #4851ff -54.32%, #f02aa6 100%);
   }
 
   header button {
