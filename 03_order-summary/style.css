@@ -14,14 +14,12 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-}
-
-img[alt="pattern"] {
-  width: 100%;
+  /* width: 100%;
   position: absolute;
   left: 0;
   top: 0;
   z-index: -99;
+  background-image: url("images/pattern-background-desktop.svg"); */
 }
 
 img[alt="hero"] {
@@ -30,6 +28,7 @@ img[alt="hero"] {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   margin-bottom: 14px;
+  background-image: url("images/illustration-hero.svg");
 }
 
 img[alt="music"] {
