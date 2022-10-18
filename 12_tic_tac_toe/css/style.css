@@ -1,0 +1,77 @@
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+span {
+  color: white;
+}
+
+.box {
+  font-family: "Courier New", Courier, monospace;
+  width: 250px;
+  height: 150px;
+  color: white;
+  flex-basis: 150px;
+  font-size: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  /* text-align: center; */
+}
+
+i {
+  color: white;
+}
+
+#container {
+  width: 456px;
+  height: 456px;
+  margin: 40px auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#score {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 30px;
+  text-align: center;
+  color: white;
+}
+
+.box:nth-of-type(1) {
+  border-right: 2px white solid;
+  border-bottom: 2px white solid;
+}
+.box:nth-of-type(2) {
+  border-right: 2px white solid;
+  border-bottom: 2px white solid;
+}
+.box:nth-of-type(3) {
+  border-bottom: 2px white solid;
+}
+.box:nth-of-type(4) {
+  border-right: 2px white solid;
+  border-bottom: 2px white solid;
+}
+.box:nth-of-type(5) {
+  border-right: 2px white solid;
+  border-bottom: 2px white solid;
+}
+.box:nth-of-type(6) {
+  border-bottom: 2px white solid;
+}
+.box:nth-of-type(7) {
+  border-right: 2px white solid;
+}
+.box:nth-of-type(8) {
+  border-right: 2px white solid;
+}
