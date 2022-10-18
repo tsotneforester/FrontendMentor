@@ -1,5 +1,5 @@
 <!-- prettier-ignore -->
-| <span style="color:blue">Projects</span>. | Issues |
+| ! Project | Issues |
 | --------| :-----: |
 | [14](https://tsotneforester.github.io/Bitcamp/14_interactive_pricing/) | simplify slider      |
 | [13](https://tsotneforester.github.io/Bitcamp/13_faq_accordiong/)      | faq position         |
