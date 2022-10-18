@@ -9,7 +9,7 @@ for (let i = 0; i < 2; i++) {
   submit[i].addEventListener("click", function () {
     let text = input[i].value;
     if (!reg.test(text)) {
-      input[i].style.outline = "#EF4877 solid 0.7px";
+      input[i].style.border = "#EF4877 solid 1px";
     } else {
       input[i].removeAttribute("style");
     }
