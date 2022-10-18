@@ -36,7 +36,7 @@ function x_scores() {
     for (var i = 0, il = tableEntry.length; i < il; i++) {
       tableEntry[i].innerHTML = "";
     }
-    click_sound_for("z");
+    // click_sound_for("z");
   }, 1000);
 }
 function y_scores() {
@@ -46,7 +46,7 @@ function y_scores() {
     for (var i = 0, il = tableEntry.length; i < il; i++) {
       tableEntry[i].innerHTML = "";
     }
-    click_sound_for("z");
+    // click_sound_for("z");
   }, 1000);
 }
 function draw() {
@@ -56,7 +56,7 @@ function draw() {
     for (var i = 0, il = tableEntry.length; i < il; i++) {
       tableEntry[i].innerHTML = "";
     }
-    click_sound_for("z");
+    // click_sound_for("z");
   }, 1000);
 }
 
@@ -133,7 +133,7 @@ function computerMove() {
     }
     let zorg = myarray[Math.floor(Math.random() * myarray.length)];
     tableEntry[zorg].innerHTML = "O";
-    click_sound_for("o");
+    // click_sound_for("o");
 
     let progress_array = [];
     for (var i = 0, il = tableEntry.length; i < il; i++) {
@@ -195,7 +195,7 @@ function computerMove() {
 function toggle(e) {
   if (e.target.innerHTML == "") {
     e.target.innerHTML = "X";
-    click_sound_for("x");
+    // click_sound_for("x");
     checkstatus();
   }
 }
