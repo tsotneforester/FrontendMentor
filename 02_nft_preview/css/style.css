@@ -5,10 +5,87 @@
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  border: none;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+  -webkit-appearance: none;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
 }
 
 body {
-  max-width: 1440px;
+  max-width: 1920px;
   margin: 0 auto;
   min-height: 100vh;
 }
@@ -52,6 +129,12 @@ body {
           align-items: flex-star;
   row-gap: 32px;
 }
+@media only screen and (min-width: 400px) {
+  #card {
+    width: 350px;
+    row-gap: 26px;
+  }
+}
 #card header {
   position: relative;
 }
@@ -78,6 +161,12 @@ body {
   background-color: rgba(255, 255, 255, 0);
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear;
+}
+@media only screen and (min-width: 400px) {
+  #card header div {
+    width: 302px;
+    height: 302px;
+  }
 }
 #card header div:hover {
   background-color: rgba(0, 255, 247, 0.5254901961);
@@ -230,15 +319,4 @@ body {
   width: 33px;
   border-radius: 50%;
   border: white 1px solid;
-}
-
-@media only screen and (min-width: 400px) {
-  #card {
-    width: 350px;
-    row-gap: 26px;
-  }
-  #card header div {
-    width: 302px;
-    height: 302px;
-  }
 }
