@@ -90,12 +90,12 @@ h6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header {
@@ -671,6 +671,7 @@ footer {
 @media only screen and (min-width: 1440px) {
   footer {
     height: 244px;
+    width: 1440px;
     margin-top: 18 0px;
     padding: 80px 165px;
     margin-top: 180px;
