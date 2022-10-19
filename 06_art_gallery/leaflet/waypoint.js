@@ -1,6 +1,6 @@
 //---------------------------Bitcamp----------
 
-var marker1 = L.marker([41.69575, 44.79658], { icon: icon1 }).bindPopup("<a href='https://gpx.ge/javascript/bitcamp/' target='_blank'>Bitcamp</a> / <a href='https://github.com/tsotneforester/Bitcamp' target='_blank'>Github</a>");
+var marker1 = L.marker([41.69575, 44.79658], { icon: icon1 }).bindPopup("<a href='https://www.bitcamp.ge/' target='_blank'>Bitcamp</a>");
 
 //-------------------------------------
 var monishvnebi_layer = L.layerGroup([/* marker1, */ marker1]);
