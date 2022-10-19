@@ -99,16 +99,250 @@ h6 {
 }
 
 header {
-  margin: 30px auto;
-  font-family: "Big Shoulders Display", cursive;
-  width: 343px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 32px;
 }
-header h1 {
-  font-size: 96px;
+@media only screen and (min-width: 768px) {
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    row-gap: 0;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+header main {
+  height: 240px;
+  width: 375px;
+  background-image: url("../assets/mobile/image-hero.jpg");
+  background-repeat: no-repeat;
+}
+@media only screen and (min-width: 768px) {
+  header main {
+    height: 700px;
+    width: 437px;
+    background-image: url("../assets/tablet/image-hero.jpg");
+    background-repeat: no-repeat;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  header main {
+    font-family: "Big Shoulders Display", cursive;
+    display: inline-block;
+    width: 990px;
+    height: 800px;
+    background-image: url("../assets/desktop/image-hero.jpg");
+    background-repeat: no-repeat;
+    background-position: center right;
+  }
+  header main:before {
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 990px;
+    content: attr(data-content);
+    font-size: 96px;
+    color: #151515;
+    font-weight: 900;
+    text-align: left;
+    line-height: 88px;
+    height: 800px;
+    padding-top: 189px;
+    padding-left: 165px;
+  }
+  header main:after {
+    position: absolute;
+    width: 450px;
+    height: 800px;
+    white-space: nowrap;
+    overflow: hidden;
+    content: attr(data-content);
+    background-color: rgb(0, 0, 0);
+    font-size: 96px;
+    color: white;
+    font-weight: 900;
+    text-align: left;
+    line-height: 88px;
+    padding-top: 189px;
+    padding-left: 165px;
+  }
+}
+header div {
+  width: 343px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  row-gap: 32px;
+}
+@media only screen and (min-width: 768px) {
+  header div {
+    row-gap: 48px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  header div {
+    row-gap: 64px;
+  }
+}
+header div h1 {
+  font-family: "Big Shoulders Display", cursive;
+  font-size: 60px;
   color: #151515;
   font-weight: 900;
   text-align: left;
-  line-height: 88px;
+  line-height: 55px;
+}
+@media only screen and (min-width: 768px) {
+  header div h1 {
+    position: relative;
+    left: -50px;
+    font-size: 70px;
+    color: #151515;
+    font-weight: 900;
+    text-align: left;
+    line-height: 65px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  header div h1 {
+    display: none;
+  }
+}
+header div p {
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+  color: #151515;
+  font-weight: 300;
+  text-align: left;
+  line-height: 28px;
+  text-align: left;
+}
+@media only screen and (min-width: 768px) {
+  header div p {
+    position: relative;
+    left: -50px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  header div p {
+    font-size: 22px;
+    color: #151515;
+    font-weight: 300;
+    text-align: left;
+    line-height: 32px;
+    left: -60px;
+  }
+}
+header div #button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media only screen and (min-width: 768px) {
+  header div #button {
+    position: relative;
+    left: -50px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  header div #button {
+    left: -60px;
+  }
+}
+header div #button button:nth-of-type(1) {
+  width: 204px;
+  height: 72px;
+  border-radius: 0;
+  background: #151515;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  font-family: "Big Shoulders Display", cursive;
+  font-size: 20px;
+  color: white;
+  font-weight: 800;
+  text-align: center;
+  line-height: 24px;
+  letter-spacing: 3.6px;
+  -webkit-transition: 1.3s;
+  transition: 1.3s;
+}
+header div #button button:nth-of-type(2) {
+  width: 56px;
+  height: 72px;
+  border-radius: 0;
+  background: #151515;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  background-color: #d5966c;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+}
+header div #button:hover button:nth-of-type(1) {
+  background-color: #d5966c;
+  color: white;
+}
+header div #button:hover button:nth-of-type(2) {
+  background-color: #151515;
 }
 
 #middle {
@@ -126,6 +360,7 @@ header h1 {
       -ms-flex-align: center;
           align-items: center;
   row-gap: 25px;
+  margin-top: 120px;
   margin-bottom: 24px;
 }
 @media only screen and (min-width: 768px) {
