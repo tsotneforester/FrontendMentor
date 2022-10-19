@@ -1,0 +1,295 @@
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: none;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+  -webkit-appearance: none;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+#wrapper {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+#wrapper {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main {
+  height: 493px;
+  width: 375px;
+  padding: 48px 16px;
+  background-color: #151515;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  row-gap: 48px;
+}
+@media only screen and (min-width: 768px) {
+  main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    height: 436px;
+    width: 768px;
+    padding: 88px 39px;
+  }
+}
+main h1 {
+  font-family: "Big Shoulders Display", cursive;
+  font-size: 55px;
+  color: white;
+  font-weight: 900;
+  text-align: left;
+  line-height: 50px;
+}
+@media only screen and (min-width: 768px) {
+  main h1 {
+    width: 200px;
+  }
+}
+main div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  row-gap: 20px;
+}
+main div h2 {
+  font-family: "Big Shoulders Display", cursive;
+  font-size: 32px;
+  color: #d5966c;
+  font-weight: 900;
+  text-align: left;
+  line-height: 32px;
+}
+main div p {
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+  color: white;
+  font-weight: 300;
+  text-align: left;
+}
+main div span {
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+  color: white;
+  font-weight: 300;
+  text-align: left;
+}
+@media only screen and (min-width: 768px) {
+  main div span {
+    max-width: 398px;
+  }
+}
+
+footer {
+  height: 336px;
+  width: 768px;
+  background-color: #d5966c;
+  padding: 48px 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+@media only screen and (min-width: 768px) {
+  footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    height: 216px;
+    padding: 56px 39px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  footer {
+    height: 244px;
+    margin-top: 18 0px;
+    padding: 80px 165px;
+    margin-top: 180px;
+  }
+}
+footer p {
+  font-size: 16px;
+  color: #151515;
+  font-weight: 300;
+  text-align: left;
+  font-family: "Outfit", sans-serif;
+  line-height: 26px;
+  max-width: 315px;
+}
+@media only screen and (min-width: 768px) {
+  footer p {
+    max-width: 285px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  footer p {
+    max-width: 430px;
+  }
+}
+footer img {
+  -webkit-filter: brightness(0) saturate(100%) invert(0%) sepia(5%) saturate(20%) hue-rotate(187deg) brightness(94%) contrast(105%);
+          filter: brightness(0) saturate(100%) invert(0%) sepia(5%) saturate(20%) hue-rotate(187deg) brightness(94%) contrast(105%);
+}
+footer section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 22px;
+     -moz-column-gap: 22px;
+          column-gap: 22px;
+}
+footer section img:hover {
+  -webkit-filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(186deg) brightness(100%) contrast(103%);
+          filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(186deg) brightness(100%) contrast(103%);
+  cursor: pointer;
+}
