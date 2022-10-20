@@ -229,7 +229,7 @@ main {
     margin: 20px 165px 145px 165px;
   }
 }
-main img {
+main #phone {
   display: block;
   margin: 0 auto;
   position: relative;
@@ -237,7 +237,7 @@ main img {
   width: 210px;
 }
 @media only screen and (min-width: 768px) {
-  main img {
+  main #phone {
     display: inline-block;
     width: 270px;
     top: -100px;
@@ -245,7 +245,7 @@ main img {
   }
 }
 @media only screen and (min-width: 1440px) {
-  main img {
+  main #phone {
     top: -215px;
     width: 312px;
   }
@@ -362,22 +362,69 @@ main section #download #ios {
   color: #fcfaf9;
   width: 296px;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
 }
 @media only screen and (min-width: 1440px) {
   main section #download #ios {
     width: 333px;
   }
 }
+main section #download #ios:hover {
+  background-color: #66e2dc;
+  color: #fcfaf9;
+}
+main section #download #ios img {
+  top: 0px;
+  width: 20px;
+}
 main section #download #android {
   background-color: #fcfaf9;
   color: #191826;
   width: 296px;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
 }
 @media only screen and (min-width: 1440px) {
   main section #download #android {
     width: 333px;
   }
+}
+main section #download #android:hover {
+  background-color: #ffb964;
+}
+main section #download #android img {
+  top: 0px;
+  width: 20px;
 }
 
 footer {
