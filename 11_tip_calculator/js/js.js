@@ -25,7 +25,7 @@ function removeClick() {
 function calculateTip() {
   if (billAmount != 0 && tipPercent != 0 && peopleAmount != 0) {
     tipAmount = (billAmount * tipPercent) / 100;
-    totalAmount = tipAmount * peopleAmount;
+    totalAmount = tipAmount / peopleAmount;
     document.querySelector("#tipAmount").innerHTML = tipAmount.toFixed(2);
     document.querySelector("#totalAmount").innerHTML = totalAmount.toFixed(2);
   }

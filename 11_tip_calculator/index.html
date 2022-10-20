@@ -19,7 +19,7 @@
         <p class="title">Bill</p>
         <p class="errorTitle"></p>
         <img src="img/dollar.svg" alt="" />
-        <input id="bill_input" type="text" placeholder="0" />
+        <input id="bill_input" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '')" placeholder="0" />
       </div>
       <div id="cell2">
         <p class="title">Select Tip %</p>
@@ -37,7 +37,7 @@
         <p class="title">Num. of People</p>
         <p class="errorTitle"></p>
         <img src="img/person.svg" alt="" />
-        <input id="person_input" type="text" placeholder="0" />
+        <input id="person_input" type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="0" />
       </div>
       <div id="cell4">
         <div class="amount_line">
