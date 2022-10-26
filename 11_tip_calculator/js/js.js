@@ -1,11 +1,11 @@
 "use strict";
-let tipButton = document.querySelectorAll(".tipbutton");
-let resetButton = document.querySelector("#resetbutton");
-let person = document.querySelector("#person_input");
-let tip = document.querySelector("#tipAmount");
-let total = document.querySelector("#totalAmount");
-let bill = document.querySelector("#bill_input");
-let error = document.querySelectorAll(".errorTitle");
+let tip_buttons = document.querySelectorAll(".tip-button");
+let reset_button = document.querySelector("#reset-button");
+let person_input = document.querySelector("#person-input");
+let bill_input = document.querySelector("#bill-input");
+let tip_span = document.querySelector("#tip-amount");
+let total_span = document.querySelector("#total-amount");
+let error_text = document.querySelectorAll(".error-title");
 
 const Cal = {
   numVars: {
@@ -16,43 +16,43 @@ const Cal = {
     totalAmount: 0,
   },
   removeZero(e) {
-    error[e].innerHTML = "";
+    error_text[e].innerHTML = "";
   },
   activateReset() {
-    resetButton.style.backgroundColor = "#26c2ae";
+    reset_button.style.backgroundColor = "#26c2ae";
   },
   removeClick() {
-    for (let i = 0; i < tipButton.length; i++) {
-      tipButton[i].classList.remove("clicked");
+    for (let i = 0; i < tip_buttons.length; i++) {
+      tip_buttons[i].classList.remove("clicked");
     }
   },
   checkZero() {
     if (this.numVars.billAmount == 0) {
-      error[0].innerHTML = "Can’t be zero";
-      bill.classList.add("errorborder");
+      error_text[0].innerHTML = "Can’t be zero";
+      bill_input.classList.add("errorborder");
     }
     if (this.numVars.tipPercent == 0) {
-      error[1].innerHTML = "Can’t be zero";
+      error_text[1].innerHTML = "Can’t be zero";
     }
     if (this.numVars.peopleAmount == 0) {
-      error[2].innerHTML = "Can’t be zero";
-      person.classList.add("errorborder");
+      error_text[2].innerHTML = "Can’t be zero";
+      person_input.classList.add("errorborder");
     }
     this.activateReset();
   },
   disableReset() {
-    resetButton.removeAttribute("style");
+    reset_button.removeAttribute("style");
   },
   calculateTip() {
     if (this.numVars.billAmount != 0 && this.numVars.tipPercent != 0 && this.numVars.peopleAmount != 0) {
       this.numVars.tipAmount = (this.numVars.billAmount * this.numVars.tipPercent) / 100;
       this.numVars.totalAmount = this.numVars.tipAmount / this.numVars.peopleAmount;
-      tip.innerHTML = this.numVars.tipAmount.toFixed(2);
-      total.innerHTML = this.numVars.totalAmount.toFixed(2);
+      tip_span.innerHTML = this.numVars.tipAmount.toFixed(2);
+      total_span.innerHTML = this.numVars.totalAmount.toFixed(2);
     }
     if (this.numVars.billAmount == 0 || this.numVars.tipPercent == 0 || this.numVars.peopleAmount == 0) {
-      tip.innerHTML = "0.00";
-      total.innerHTML = "0.00";
+      tip_span.innerHTML = "0.00";
+      total_span.innerHTML = "0.00";
     }
   },
   resetAmounts() {
@@ -60,14 +60,14 @@ const Cal = {
     this.removeZero(0);
     this.removeZero(1);
     this.removeZero(2);
-    bill.value = "";
-    person.value = "";
-    tip.innerHTML = "0.00";
-    total.innerHTML = "0.00";
+    bill_input.value = "";
+    person_input.value = "";
+    tip_span.innerHTML = "0.00";
+    total_span.innerHTML = "0.00";
     this.removeClick();
     this.disableReset();
-    bill.classList.remove("errorborder");
-    person.classList.remove("errorborder");
+    bill_input.classList.remove("errorborder");
+    person_input.classList.remove("errorborder");
   },
   patternControl(e) {
     e.value = e.value.replace(/[^0-9]/g, "");
@@ -89,8 +89,8 @@ const Cal = {
   },
   tipButtonAction(e) {
     this.removeClick();
-    tipButton[e].classList.add("clicked");
-    this.numVars.tipPercent = Number(tipButton[e].getAttribute("value"));
+    tip_buttons[e].classList.add("clicked");
+    this.numVars.tipPercent = Number(tip_buttons[e].getAttribute("value"));
     this.checkZero();
     this.activateReset();
     this.calculateTip();

@@ -51,7 +51,7 @@ p {
   display: inline-block;
 }
 
-.errorTitle {
+.error-title {
   font-family: Space Mono;
   font-size: 16px;
   font-weight: 700;
@@ -183,7 +183,7 @@ p {
   row-gap: 16px;
 }
 
-.tipbutton {
+.tip-button {
   height: 48px;
   width: 146px;
   border-radius: 5px;
@@ -197,7 +197,7 @@ p {
   padding: 5px;
   border: none;
 }
-.tipbutton:hover {
+.tip-button:hover {
   cursor: pointer;
 }
 
@@ -240,7 +240,7 @@ p {
     width: 413px;
   }
 
-  .tipbutton {
+  .tip-button {
     width: 117px;
   }
 }

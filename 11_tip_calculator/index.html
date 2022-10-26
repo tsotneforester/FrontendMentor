@@ -17,27 +17,27 @@
     <div id="container">
       <div id="cell1">
         <p class="title">Bill</p>
-        <p class="errorTitle"></p>
+        <p class="error-title"></p>
         <img src="img/dollar.svg" alt="" />
-        <input id="bill_input" type="text" onclick="Cal.checkZero()" oninput="Cal.displayTip('billAmount', bill)" placeholder="0" />
+        <input id="bill-input" type="text" onclick="Cal.checkZero()" oninput="Cal.displayTip('billAmount', bill_input)" placeholder="0" />
       </div>
       <div id="cell2">
         <p class="title">Select Tip %</p>
-        <p class="errorTitle"></p>
+        <p class="error-title"></p>
         <div id="group">
-          <button onclick="Cal.tipButtonAction(0)" value="5" class="tipbutton">5%</button>
-          <button onclick="Cal.tipButtonAction(1)" value="10" class="tipbutton">10%</button>
-          <button onclick="Cal.tipButtonAction(2)" value="15" class="tipbutton">15%</button>
-          <button onclick="Cal.tipButtonAction(3)" value="20" class="tipbutton">20%</button>
-          <button onclick="Cal.tipButtonAction(4)" value="30" class="tipbutton">30%</button>
-          <button onclick="Cal.tipButtonAction(5)" value="35" class="tipbutton">35%</button>
+          <button onclick="Cal.tipButtonAction(0)" value="5" class="tip-button">5%</button>
+          <button onclick="Cal.tipButtonAction(1)" value="10" class="tip-button">10%</button>
+          <button onclick="Cal.tipButtonAction(2)" value="15" class="tip-button">15%</button>
+          <button onclick="Cal.tipButtonAction(3)" value="20" class="tip-button">20%</button>
+          <button onclick="Cal.tipButtonAction(4)" value="30" class="tip-button">30%</button>
+          <button onclick="Cal.tipButtonAction(5)" value="35" class="tip-button">35%</button>
         </div>
       </div>
       <div id="cell3">
         <p class="title">Num. of People</p>
-        <p class="errorTitle"></p>
+        <p class="error-title"></p>
         <img src="img/person.svg" alt="" />
-        <input id="person_input" type="text" onclick="Cal.checkZero()" oninput="Cal.displayTip('peopleAmount', person)" placeholder="0" />
+        <input id="person-input" type="text" onclick="Cal.checkZero()" oninput="Cal.displayTip('peopleAmount', person_input)" placeholder="0" />
       </div>
       <div id="cell4">
         <div class="amount_line">
@@ -45,16 +45,16 @@
             <p class="text1">Tip Amount</p>
             <p class="text2">/ person</p>
           </span>
-          <span class="text3">$<span id="tipAmount" class="text3">0.00</span></span>
+          <span class="text3">$<span id="tip-amount" class="text3">0.00</span></span>
         </div>
         <div class="amount_line">
           <span>
             <p class="text1">Total</p>
             <p class="text2">/ person</p>
           </span>
-          <span class="text3">$<span id="totalAmount" class="text3">0.00</span></span>
+          <span class="text3">$<span id="total-amount" class="text3">0.00</span></span>
         </div>
-        <button id="resetbutton" onclick="Cal.resetAmounts()">RESET</button>
+        <button id="reset-button" onclick="Cal.resetAmounts()">RESET</button>
       </div>
     </div>
   </body>
