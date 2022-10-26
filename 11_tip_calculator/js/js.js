@@ -3,7 +3,7 @@ let tipButton = document.querySelectorAll(".tipbutton");
 let resetButton = document.querySelector("#resetbutton");
 let person = document.querySelector("#person_input");
 let tip = document.querySelector("#tipAmount");
-let total = document.querySelector("#tipAmount");
+let total = document.querySelector("#totalAmount");
 let bill = document.querySelector("#bill_input");
 let error = document.querySelectorAll(".errorTitle");
 
@@ -27,109 +27,76 @@ const Cal = {
     }
   },
   checkZero() {
-    if (Cal.numVars.billAmount == 0) {
+    if (this.numVars.billAmount == 0) {
       error[0].innerHTML = "Can’t be zero";
       bill.classList.add("errorborder");
     }
-    if (Cal.numVars.tipPercent == 0) {
+    if (this.numVars.tipPercent == 0) {
       error[1].innerHTML = "Can’t be zero";
     }
-    if (Cal.numVars.peopleAmount == 0) {
+    if (this.numVars.peopleAmount == 0) {
       error[2].innerHTML = "Can’t be zero";
       person.classList.add("errorborder");
     }
-  },
-  billClick() {
-    if (this.numVars.billAmount == 0) {
-      this.checkZero();
-    }
     this.activateReset();
   },
-};
-
-function disableReset() {
-  resetButton.removeAttribute("style");
-}
-
-function calculateTip() {
-  if (Cal.numVars.billAmount != 0 && Cal.numVars.tipPercent != 0 && Cal.numVars.peopleAmount != 0) {
-    Cal.numVars.tipAmount = (Cal.numVars.billAmount * Cal.numVars.tipPercent) / 100;
-    Cal.numVars.totalAmount = Cal.numVars.tipAmount / Cal.numVars.peopleAmount;
-    tip.innerHTML = Cal.numVars.tipAmount.toFixed(2);
-    total.innerHTML = Cal.numVars.totalAmount.toFixed(2);
-  }
-  if (Cal.numVars.billAmount == 0 || Cal.numVars.tipPercent == 0 || Cal.numVars.peopleAmount == 0) {
+  disableReset() {
+    resetButton.removeAttribute("style");
+  },
+  calculateTip() {
+    if (this.numVars.billAmount != 0 && this.numVars.tipPercent != 0 && this.numVars.peopleAmount != 0) {
+      this.numVars.tipAmount = (this.numVars.billAmount * this.numVars.tipPercent) / 100;
+      this.numVars.totalAmount = this.numVars.tipAmount / this.numVars.peopleAmount;
+      tip.innerHTML = this.numVars.tipAmount.toFixed(2);
+      total.innerHTML = this.numVars.totalAmount.toFixed(2);
+    }
+    if (this.numVars.billAmount == 0 || this.numVars.tipPercent == 0 || this.numVars.peopleAmount == 0) {
+      tip.innerHTML = "0.00";
+      total.innerHTML = "0.00";
+    }
+  },
+  resetAmounts() {
+    this.numVars.billAmount = this.numVars.tipPercent = this.numVars.peopleAmount = this.numVars.tipAmount = this.numVars.totalAmount = 0;
+    this.removeZero(0);
+    this.removeZero(1);
+    this.removeZero(2);
+    bill.value = "";
+    person.value = "";
     tip.innerHTML = "0.00";
     total.innerHTML = "0.00";
-  }
-}
-
-function resetAmounts() {
-  Cal.numVars.billAmount = 0;
-  Cal.numVars.tipPercent = Cal.numVars.peopleAmount = Cal.numVars.tipAmount = Cal.numVars.totalAmount = 0;
-
-  Cal.removeZero(0);
-  Cal.removeZero(1);
-  Cal.removeZero(2);
-  bill.value = "";
-  person.value = "";
-  tip.innerHTML = "0.00";
-  total.innerHTML = "0.00";
-  Cal.removeClick();
-  disableReset();
-  bill.classList.remove("errorborder");
-  person.classList.remove("errorborder");
-}
-
-for (let i = 0; i < tipButton.length; i++) {
-  tipButton[i].addEventListener("click", (e) => {
-    Cal.removeClick();
-    e.target.classList.add("clicked");
-    Cal.numVars.tipPercent = Number(tipButton[i].getAttribute("value"));
-    Cal.checkZero();
-    Cal.activateReset();
-    calculateTip();
-    Cal.activateReset();
-    if (Cal.numVars.tipPercent != 0) {
-      Cal.removeZero(1);
-    }
-  });
-}
-
-bill.addEventListener("input", () => {
-  Cal.numVars.billAmount = Number(bill.value);
-  calculateTip();
-  if (Cal.numVars.billAmount != 0) {
-    Cal.removeZero(0);
+    this.removeClick();
+    this.disableReset();
     bill.classList.remove("errorborder");
-  }
-
-  if (Cal.numVars.billAmount == 0) {
-    Cal.checkZero();
-    bill.classList.add("errorborder");
-  }
-});
-
-person.addEventListener("click", () => {
-  if (Cal.numVars.peopleAmount == 0) {
-    Cal.checkZero();
-  }
-  Cal.activateReset();
-});
-
-person.addEventListener("input", () => {
-  Cal.numVars.peopleAmount = Number(person.value);
-
-  calculateTip();
-  if (Cal.numVars.peopleAmount != 0) {
-    Cal.removeZero(2);
     person.classList.remove("errorborder");
-  }
+  },
+  patternControl(e) {
+    e.value = e.value.replace(/[^0-9]/g, "");
+  },
+  displayTip(numVarsKey, input) {
+    this.patternControl(input);
+    let frozen = numVarsKey;
+    this.numVars[frozen] = Number(input.value);
+    this.calculateTip();
+    if (this.numVars[frozen] != 0) {
+      this.removeZero(0);
+      input.classList.remove("errorborder");
+    }
 
-  if (Cal.numVars.peopleAmount == 0) {
-    Cal.checkZero();
-    person.classList.add("errorborder");
-  }
-});
-
-resetButton.addEventListener("click", resetAmounts);
+    if (this.numVars[frozen] == 0) {
+      this.checkZero();
+      input.classList.add("errorborder");
+    }
+  },
+  tipButtonAction(e) {
+    this.removeClick();
+    tipButton[e].classList.add("clicked");
+    this.numVars.tipPercent = Number(tipButton[e].getAttribute("value"));
+    this.checkZero();
+    this.activateReset();
+    this.calculateTip();
+    this.activateReset();
+    if (this.numVars.tipPercent != 0) {
+      this.removeZero(1);
+    }
+  },
+};

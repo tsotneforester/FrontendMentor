@@ -19,25 +19,25 @@
         <p class="title">Bill</p>
         <p class="errorTitle"></p>
         <img src="img/dollar.svg" alt="" />
-        <input id="bill_input" type="text" onclick="Cal.billClick()" oninput="this.value = this.value.replace(/[^0-9.]/g, '')" placeholder="0" />
+        <input id="bill_input" type="text" onclick="Cal.checkZero()" oninput="Cal.displayTip('billAmount', bill)" placeholder="0" />
       </div>
       <div id="cell2">
         <p class="title">Select Tip %</p>
         <p class="errorTitle"></p>
         <div id="group">
-          <button value="5" class="tipbutton">5%</button>
-          <button value="10" class="tipbutton">10%</button>
-          <button value="15" class="tipbutton">15%</button>
-          <button value="20" class="tipbutton">20%</button>
-          <button value="30" class="tipbutton">30%</button>
-          <button value="35" class="tipbutton">35%</button>
+          <button onclick="Cal.tipButtonAction(0)" value="5" class="tipbutton">5%</button>
+          <button onclick="Cal.tipButtonAction(1)" value="10" class="tipbutton">10%</button>
+          <button onclick="Cal.tipButtonAction(2)" value="15" class="tipbutton">15%</button>
+          <button onclick="Cal.tipButtonAction(3)" value="20" class="tipbutton">20%</button>
+          <button onclick="Cal.tipButtonAction(4)" value="30" class="tipbutton">30%</button>
+          <button onclick="Cal.tipButtonAction(5)" value="35" class="tipbutton">35%</button>
         </div>
       </div>
       <div id="cell3">
         <p class="title">Num. of People</p>
         <p class="errorTitle"></p>
         <img src="img/person.svg" alt="" />
-        <input id="person_input" type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="0" />
+        <input id="person_input" type="text" onclick="Cal.checkZero()" oninput="Cal.displayTip('peopleAmount', person)" placeholder="0" />
       </div>
       <div id="cell4">
         <div class="amount_line">
@@ -54,7 +54,7 @@
           </span>
           <span class="text3">$<span id="totalAmount" class="text3">0.00</span></span>
         </div>
-        <button id="resetbutton">RESET</button>
+        <button id="resetbutton" onclick="Cal.resetAmounts()">RESET</button>
       </div>
     </div>
   </body>
