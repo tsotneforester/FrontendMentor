@@ -138,45 +138,40 @@ body {
 #card header {
   position: relative;
 }
-#card header div {
+#card header img[alt=equilibrium] {
+  width: 100%;
+  border-radius: 8px;
+  position: relative;
+  display: block;
+}
+#card header::after {
+  background-color: rgba(0, 255, 247, 0.3921568627);
+  content: url(../images/icon-view.svg);
+  border-radius: 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 279px;
-  height: 279px;
-  border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0);
-  -webkit-transition: all 0.5s linear;
-  transition: all 0.5s linear;
 }
-@media only screen and (min-width: 400px) {
-  #card header div {
-    width: 302px;
-    height: 302px;
-  }
-}
-#card header div:hover {
-  background-color: rgba(0, 255, 247, 0.5254901961);
-}
-#card header div:hover img[alt=view] {
+#card header:hover::after {
   opacity: 1;
-}
-#card header img[alt=equilibrium] {
-  width: 100%;
-  border-radius: 8px;
 }
 #card header img[alt=view] {
   opacity: 0;
