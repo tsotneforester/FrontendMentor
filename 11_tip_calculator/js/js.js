@@ -1,8 +1,8 @@
 "use strict";
 let tip_buttons = document.querySelectorAll(".tip-button");
 let reset_button = document.querySelector("#reset-button");
-let person_input = document.querySelector("#person-input");
 let bill_input = document.querySelector("#bill-input");
+let person_input = document.querySelector("#person-input");
 let tip_span = document.querySelector("#tip-amount");
 let total_span = document.querySelector("#total-amount");
 let error_text = document.querySelectorAll(".error-title");
@@ -45,8 +45,8 @@ const Cal = {
   },
   calculateTip() {
     if (this.numVars.billAmount != 0 && this.numVars.tipPercent != 0 && this.numVars.peopleAmount != 0) {
-      this.numVars.tipAmount = (this.numVars.billAmount * this.numVars.tipPercent) / 100;
-      this.numVars.totalAmount = this.numVars.tipAmount / this.numVars.peopleAmount;
+      this.numVars.tipAmount = (this.numVars.billAmount * this.numVars.tipPercent) / 100 / this.numVars.peopleAmount;
+      this.numVars.totalAmount = this.numVars.billAmount / this.numVars.peopleAmount + this.numVars.tipAmount;
       tip_span.innerHTML = this.numVars.tipAmount.toFixed(2);
       total_span.innerHTML = this.numVars.totalAmount.toFixed(2);
     }
@@ -72,13 +72,14 @@ const Cal = {
   patternControl(e) {
     e.value = e.value.replace(/[^0-9]/g, "");
   },
-  displayTip(numVarsKey, input) {
+  displayTip(numVarsKey, input, error) {
     this.patternControl(input);
     let frozen = numVarsKey;
+    let errorCode = error;
     this.numVars[frozen] = Number(input.value);
     this.calculateTip();
     if (this.numVars[frozen] != 0) {
-      this.removeZero(0);
+      this.removeZero(errorCode);
       input.classList.remove("errorborder");
     }
 

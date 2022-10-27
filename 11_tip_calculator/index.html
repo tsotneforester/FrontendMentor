@@ -19,7 +19,7 @@
         <p class="title">Bill</p>
         <p class="error-title"></p>
         <img src="img/dollar.svg" alt="" />
-        <input id="bill-input" type="text" onclick="Cal.checkZero()" oninput="Cal.displayTip('billAmount', bill_input)" placeholder="0" />
+        <input id="bill-input" type="text" onclick="Cal.checkZero()" oninput="Cal.displayTip('billAmount', bill_input, 0)" placeholder="0" />
       </div>
       <div id="cell2">
         <p class="title">Select Tip %</p>
@@ -37,7 +37,7 @@
         <p class="title">Num. of People</p>
         <p class="error-title"></p>
         <img src="img/person.svg" alt="" />
-        <input id="person-input" type="text" onclick="Cal.checkZero()" oninput="Cal.displayTip('peopleAmount', person_input)" placeholder="0" />
+        <input id="person-input" type="text" onclick="Cal.checkZero()" oninput="Cal.displayTip('peopleAmount', person_input, 2)" placeholder="0" />
       </div>
       <div id="cell4">
         <div class="amount_line">
