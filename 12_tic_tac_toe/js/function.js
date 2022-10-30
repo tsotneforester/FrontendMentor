@@ -73,6 +73,7 @@ function humanScores() {
   for (var i = 0, il = 9; i < il; i++) {
     box[i].innerHTML = "";
     box[i].removeAttribute("style");
+    box[i].setAttribute("value", "E");
   }
 }
 function cpuScores() {
@@ -81,6 +82,7 @@ function cpuScores() {
   for (var i = 0, il = 9; i < il; i++) {
     box[i].innerHTML = "";
     box[i].removeAttribute("style");
+    box[i].setAttribute("value", "E");
   }
 }
 function draw() {
@@ -89,6 +91,7 @@ function draw() {
   for (var i = 0, il = 9; i < il; i++) {
     box[i].innerHTML = "";
     box[i].removeAttribute("style");
+    box[i].setAttribute("value", "E");
   }
 }
 
