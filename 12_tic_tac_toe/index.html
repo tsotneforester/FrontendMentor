@@ -4,10 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
   </head>
   <body>
+    <div id="modal" style="display: none"></div>
+    <nav>
+      <button id="quit" onclick="quit()">quit</button>
+      <button id="next" onclick="nextRound()">next round</button>
+    </nav>
+    <header>
+      <section>
+        <img src="assets/icon-o.svg" alt="" />
+        <img src="assets/icon-x.svg" alt="" />
+      </section>
+      <button id="toggle"></button>
+      <section>
+        <button id="restart" onclick="restart();"><img src="assets/icon-restart.svg" alt="" /></button>
+      </section>
+    </header>
     <main>
       <div class="outer-box">
         <div class="inner-box" value="E">
@@ -88,18 +106,18 @@
           <h1>O</h1>
           <p></p>
         </div>
-        <span></span>
+        <span>0</span>
       </section>
       <section id="draw-side">
         <h1>TIE</h1>
-        <span></span>
+        <span>0</span>
       </section>
       <section id="x-side">
         <div class="side-name">
           <h1>X</h1>
           <p></p>
         </div>
-        <span></span>
+        <span>0</span>
       </section>
     </footer>
   </body>

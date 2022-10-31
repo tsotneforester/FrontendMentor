@@ -1,10 +1,13 @@
 const side_name = document.querySelectorAll(".side-name p");
 const o_side = document.querySelector("#o-side span");
+const nav = document.querySelector("nav");
+const toggle = document.querySelector("#toggle");
 const draw_side = document.querySelector("#draw-side span");
 const x_side = document.querySelector("#x-side span");
 const box = document.querySelectorAll(".inner-box");
 const x = document.querySelectorAll(".x");
 const o = document.querySelectorAll(".o");
+const modal = document.querySelector("#modal");
 let humanScore = 0;
 let drawScore = 0;
 let cpuScore = 0;
@@ -25,74 +28,62 @@ let CPU = {
   selector: document.querySelector("#o-side span"),
 };
 
-side_name[0].innerHTML = "(" + CPU.name + ")";
-side_name[1].innerHTML = "(" + HUMAN.name + ")";
-HUMAN.selector.innerHTML = humanScore;
-CPU.selector.innerHTML = cpuScore;
+// side_name[0].innerHTML = "(" + CPU.name + ")";
+// side_name[1].innerHTML = "(" + HUMAN.name + ")";
+// HUMAN.selector.innerHTML = humanScore;
+// CPU.selector.innerHTML = cpuScore;
 
-// function setSide() {
-//   let whyAmI = prompt("'x' or 'o'?");
-//   if (whyAmI === "x") {
-//     HUMAN.side = "x";
-//     HUMAN.logo = "assets/icon-x.svg";
-//     HUMAN.selector = document.querySelector("#x-side span");
+function setSide() {
+  let whyAmI = prompt("კრესტიკი (x) თუ ნოლიკი (0)?");
+  if (whyAmI === "x") {
+    HUMAN.side = "x";
+    HUMAN.logo = "assets/icon-x.svg";
+    HUMAN.selector = document.querySelector("#x-side span");
 
-//     CPU.side = "o";
-//     CPU.logo = "assets/icon-o.svg";
-//     CPU.selector = document.querySelector("#o-side span");
+    CPU.side = "o";
+    CPU.logo = "assets/icon-o.svg";
+    CPU.selector = document.querySelector("#o-side span");
 
-//     side_name[0].innerHTML = "(" + CPU.name + ")";
-//     side_name[1].innerHTML = "(" + HUMAN.name + ")";
-//   } else {
-//     CPU.side = "x";
-//     CPU.logo = "assets/icon-x.svg";
-//     CPU.selector = document.querySelector("#x-side span");
+    side_name[0].innerHTML = "(" + CPU.name + ")";
+    side_name[1].innerHTML = "(" + HUMAN.name + ")";
+  } else {
+    CPU.side = "x";
+    CPU.logo = "assets/icon-x.svg";
+    CPU.selector = document.querySelector("#x-side span");
 
-//     HUMAN.side = "o";
-//     HUMAN.logo = "assets/icon-o.svg";
-//     HUMAN.selector = document.querySelector("#o-side span");
-//     side_name[0].innerHTML = "(" + HUMAN.name + ")";
-//     side_name[1].innerHTML = "(" + CPU.name + ")";
-//   }
-// }
-
-// setSide();
-
-function setTurn() {
-  const rivals = [HUMAN.name, CPU.name];
-  let random = Math.floor(Math.random() * 2);
-  whosTurn = rivals[random];
-  console.log(whosTurn + " - starts the game");
+    HUMAN.side = "o";
+    HUMAN.logo = "assets/icon-o.svg";
+    HUMAN.selector = document.querySelector("#o-side span");
+    side_name[0].innerHTML = "(" + HUMAN.name + ")";
+    side_name[1].innerHTML = "(" + CPU.name + ")";
+  }
+  draw_side.innerHTML = drawScore;
+  HUMAN.selector.innerHTML = humanScore;
+  CPU.selector.innerHTML = cpuScore;
 }
 
-setTurn();
+setSide();
 
 function humanScores() {
   humanScore++;
   HUMAN.selector.innerHTML = humanScore;
-  for (var i = 0, il = 9; i < il; i++) {
-    box[i].innerHTML = "";
-    box[i].removeAttribute("style");
-    box[i].setAttribute("value", "E");
-  }
+  nav.removeAttribute("style");
+  nav.style.top = "50%";
+  modal.removeAttribute("style");
 }
 function cpuScores() {
   cpuScore++;
   CPU.selector.innerHTML = cpuScore;
-  for (var i = 0, il = 9; i < il; i++) {
-    box[i].innerHTML = "";
-    box[i].removeAttribute("style");
-    box[i].setAttribute("value", "E");
-  }
+  nav.removeAttribute("style");
+  nav.style.top = "50%";
+  modal.removeAttribute("style");
 }
 function draw() {
   drawScore++;
-  draw_side.innerHTML = localStorage.drawScore;
-  for (var i = 0, il = 9; i < il; i++) {
-    box[i].innerHTML = "";
-    box[i].removeAttribute("style");
-    box[i].setAttribute("value", "E");
-  }
+  draw_side.innerHTML = drawScore;
+  nav.removeAttribute("style");
+  nav.style.top = "50%";
+  modal.removeAttribute("style");
 }
 
 function stringify(array, ...n) {
@@ -103,17 +94,52 @@ function stringify(array, ...n) {
   return text;
 }
 
-function hover() {
-  for (let i = 0; i < box.length; i++) {
-    box[i].addEventListener("mouseenter", function () {
-      if (HUMAN.side == "o") {
-        x[i].style.display = "none";
-        o[i].style.display = "block";
-      } else {
-        o[i].style.display = "none";
-        x[i].style.display = "block";
-      }
-    });
+for (let i = 0; i < 9; i++) {
+  box[i].addEventListener("mouseenter", function () {
+    if (HUMAN.side == "o") {
+      x[i].style.display = "none";
+      o[i].style.display = "block";
+    } else {
+      o[i].style.display = "none";
+      x[i].style.display = "block";
+    }
+  });
+}
+
+function nextRound() {
+  for (var i = 0, il = 9; i < il; i++) {
+    if (HUMAN.side == "o") {
+      box[i].innerHTML = `<div id="hover">
+            <img class="o" src="assets/icon-o-outline.svg" alt="choose" />
+          </div>`;
+    } else {
+      box[i].innerHTML = `<div id="hover">
+            <img class="x" src="assets/icon-x-outline.svg" alt="choose" />
+          </div>`;
+    }
+
+    box[i].removeAttribute("style");
+    box[i].setAttribute("value", "E");
+  }
+  nav.removeAttribute("style");
+  modal.setAttribute("style", "display:none");
+  setTurn();
+}
+
+function restart() {
+  for (var i = 0, il = 9; i < il; i++) {
+    box[i].innerHTML = "";
+    box[i].removeAttribute("style");
+    box[i].setAttribute("value", "E");
   }
 }
-hover();
+
+function quit() {
+  location.reload();
+}
+
+function iconToggle(e) {
+  toggle.innerHTML = `<img src="${e}" alt="" /><span>TURN</span>`;
+}
+
+//-------------------------------------------------------
