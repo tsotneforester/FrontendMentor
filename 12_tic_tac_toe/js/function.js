@@ -1,6 +1,6 @@
 const side_name = document.querySelectorAll(".side-name p");
 const o_side = document.querySelector("#o-side span");
-const nav = document.querySelector("nav");
+const screen3 = document.querySelector("#screen3");
 const toggle = document.querySelector("#toggle");
 const draw_side = document.querySelector("#draw-side span");
 const x_side = document.querySelector("#x-side span");
@@ -34,8 +34,7 @@ let CPU = {
 // CPU.selector.innerHTML = cpuScore;
 
 function setSide() {
-  let whyAmI = prompt("კრესტიკი (x) თუ ნოლიკი (0)?");
-  if (whyAmI === "x") {
+  if (!slider.hasAttribute("style")) {
     HUMAN.side = "x";
     HUMAN.logo = "assets/icon-x.svg";
     HUMAN.selector = document.querySelector("#x-side span");
@@ -57,32 +56,31 @@ function setSide() {
     side_name[0].innerHTML = "(" + HUMAN.name + ")";
     side_name[1].innerHTML = "(" + CPU.name + ")";
   }
+
   draw_side.innerHTML = drawScore;
   HUMAN.selector.innerHTML = humanScore;
   CPU.selector.innerHTML = cpuScore;
 }
 
-setSide();
-
 function humanScores() {
   humanScore++;
   HUMAN.selector.innerHTML = humanScore;
-  nav.removeAttribute("style");
-  nav.style.top = "50%";
+  screen3.removeAttribute("style");
+  screen3.style.top = "50%";
   modal.removeAttribute("style");
 }
 function cpuScores() {
   cpuScore++;
   CPU.selector.innerHTML = cpuScore;
-  nav.removeAttribute("style");
-  nav.style.top = "50%";
+  screen3.removeAttribute("style");
+  screen3.style.top = "50%";
   modal.removeAttribute("style");
 }
 function draw() {
   drawScore++;
   draw_side.innerHTML = drawScore;
-  nav.removeAttribute("style");
-  nav.style.top = "50%";
+  screen3.removeAttribute("style");
+  screen3.style.top = "50%";
   modal.removeAttribute("style");
 }
 
@@ -121,7 +119,7 @@ function nextRound() {
     box[i].removeAttribute("style");
     box[i].setAttribute("value", "E");
   }
-  nav.removeAttribute("style");
+  screen3.removeAttribute("style");
   modal.setAttribute("style", "display:none");
   setTurn();
 }

@@ -22,7 +22,7 @@ function computerMove() {
       whosTurn = "you";
       checkstatusCpu();
     }
-  }, 1000);
+  }, 5000);
 }
 
 for (var i = 0; i < 9; i++) {
@@ -140,14 +140,13 @@ function setTurn() {
   const rivals = [HUMAN.name, CPU.name];
   let random = Math.floor(Math.random() * 2);
   whosTurn = rivals[random];
-  //console.log(whosTurn + "/starts the game");
+  console.log(whosTurn + "/starts the game");
   if (whosTurn == "you") {
     iconToggle(HUMAN.logo);
     //humanMove();
-  } else {
+  }
+  if (whosTurn == "cpu") {
     iconToggle(CPU.logo);
     computerMove();
   }
 }
-
-setTurn();
