@@ -293,6 +293,12 @@ body {
   row-gap: 20px;
 }
 #screen1 footer #vs-cpu {
+  font-size: 16px;
+  color: #1a2a33;
+  font-weight: 700;
+  text-align: center;
+  line-height: 20px;
+  letter-spacing: 1px;
   height: 67px;
   width: 100%;
   border-radius: 15px;
@@ -301,6 +307,10 @@ body {
           box-shadow: inset 0px -8px 0px #cc8b13;
 }
 #screen1 footer #vs-human {
+  font-size: 16px;
+  color: #1a2a33;
+  font-weight: 700;
+  text-align: center;
   height: 67px;
   width: 100%;
   border-radius: 15px;
