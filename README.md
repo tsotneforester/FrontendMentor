@@ -1,6 +1,6 @@
 prettier-ignore
-| Project | Naming Convensions | Pixel-Perfect | Responsive |SCSS
-| --| :-----: | :-----: |:-----: |
+| Project | Naming Convensions | Pixel-Perfect | Responsive |SCSS|
+| --| :-----: | :-----: |:-----: |:-----: |
 | 01|✅|✅|✅|✅|
 | 02|✅|✅|✅|✅|
 | 03|❌|❌|❌|❌|
