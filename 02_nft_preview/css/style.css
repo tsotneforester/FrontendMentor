@@ -28,10 +28,7 @@ aside {
 html,
 body {
   height: 100%;
-  width: 100%;
-  font-size: 100%;
-  line-height: 1;
-  font-size: 14px;
+  margin: 0;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -79,21 +76,38 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   font-size: inherit;
   font-weight: 400;
+  margin: 0;
+  padding: 0;
 }
 
-body {
-  max-width: 1920px;
-  margin: 0 auto;
+#wrapper {
   min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 /*lets start coding*/
+* {
+  font-family: "Outfit", sans-serif;
+}
+
 body {
   background-color: #08222f;
-  font-family: "Outfit", sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -111,9 +125,12 @@ body {
 
 #card {
   width: 327px;
+  height: 543px;
   border-radius: 15px;
-  padding: 24px;
-  background-color: #0e2b41;
+  background: #0e2b41;
+  text-align: center;
+  border: none;
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -121,30 +138,35 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: flex-star;
-      -ms-flex-align: flex-star;
-          align-items: flex-star;
-  row-gap: 32px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 24px;
 }
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 375px) {
   #card {
     width: 350px;
-    row-gap: 26px;
+    height: 596px;
+    border-radius: 15px;
+    background: #0e2b41;
+    text-align: center;
+    border: none;
+    cursor: pointer;
   }
 }
-#card header {
+#card #image {
   position: relative;
 }
-#card header img[alt=equilibrium] {
+#card #image img[alt=equilibrium] {
   width: 100%;
   border-radius: 8px;
   position: relative;
   display: block;
 }
-#card header::after {
+#card #image::after {
   background-color: rgba(0, 255, 247, 0.3921568627);
   content: url(../images/icon-view.svg);
   border-radius: 8px;
@@ -170,15 +192,18 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
-#card header:hover::after {
+#card #image:hover::after {
   opacity: 1;
 }
-#card header img[alt=view] {
+#card #image img[alt=view] {
   opacity: 0;
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear;
 }
-#card main {
+#card #info {
+  margin-top: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px #2a4354 solid;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -189,13 +214,16 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: flex-star;
-      -ms-flex-align: flex-star;
-          align-items: flex-star;
-  row-gap: 16px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
-#card main p:nth-of-type(1) {
-  font-family: "Outfit";
+@media only screen and (min-width: 375px) {
+  #card #info {
+    padding-bottom: 24px;
+  }
+}
+#card #info h1 {
   font-size: 22px;
   color: white;
   font-weight: 600;
@@ -204,20 +232,26 @@ body {
   -webkit-transition: color 0.5s linear;
   transition: color 0.5s linear;
 }
-#card main p:nth-of-type(1):hover {
+#card #info h1:hover {
   color: #00fff8;
   cursor: pointer;
 }
-#card main p:nth-of-type(2) {
-  font-family: "Outfit";
+#card #info p {
+  margin-top: 12px;
   font-size: 18px;
   color: #8bacd9;
   font-weight: 300;
   text-align: left;
   line-height: 26px;
-  letter-spacing: -0.6px;
 }
-#card main div {
+@media only screen and (min-width: 375px) {
+  #card #info p {
+    margin-top: 16px;
+  }
+}
+#card #info #numbers {
+  width: 100%;
+  margin-top: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -232,7 +266,12 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
-#card main div section {
+@media only screen and (min-width: 375px) {
+  #card #info #numbers {
+    margin-top: 24px;
+  }
+}
+#card #info #numbers div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -250,27 +289,20 @@ body {
      -moz-column-gap: 10px;
           column-gap: 10px;
 }
-#card main div img[alt=ethereum] + span {
+#card #info #numbers img[alt=ethereum] + span {
   font-size: 15px;
   color: #00fff8;
   font-weight: 600;
   text-align: left;
-  line-height: 19px;
 }
-#card main div img[alt=clock] + span {
+#card #info #numbers img[alt=clock] + span {
   font-size: 15px;
   color: #8bacd9;
   font-weight: 600;
   text-align: left;
-  line-height: 19px;
-}
-#card hr {
-  height: 1px;
-  border-width: 0;
-  color: #2a4354;
-  background-color: #2a4354;
 }
 #card footer {
+  margin-top: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -284,34 +316,48 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-column-gap: 10px;
-     -moz-column-gap: 10px;
-          column-gap: 10px;
+  -webkit-column-gap: 16px;
+     -moz-column-gap: 16px;
+          column-gap: 16px;
 }
-#card footer span:nth-of-type(1) {
-  font-family: Outfit;
+#card footer img {
+  width: 33px;
+  border-radius: 50%;
+  border: white 1px solid;
+}
+#card footer div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 5px;
+     -moz-column-gap: 5px;
+          column-gap: 5px;
+}
+#card footer div p {
   font-size: 15px;
   color: #8bacd9;
   font-weight: 400;
   text-align: left;
-  line-height: 19px;
 }
-#card footer span:nth-of-type(2) {
-  font-family: Outfit;
+#card footer div span {
   font-size: 15px;
   color: white;
   font-weight: 400;
   text-align: left;
   -webkit-transition: color 0.5s linear;
   transition: color 0.5s linear;
-  line-height: 19px;
 }
-#card footer span:nth-of-type(2):hover {
+#card footer div span:hover {
   color: #00fff8;
   cursor: pointer;
-}
-#card footer img {
-  width: 33px;
-  border-radius: 50%;
-  border: white 1px solid;
 }
