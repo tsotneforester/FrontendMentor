@@ -1,14 +1,14 @@
-<!-- prettier-ignore -->
-<!-- | Project | SCSS |
-| --------| :-----: |
-| [14](https://tsotneforester.github.io/Bitcamp/14_interactive_pricing/) |     |
-| [13](https://tsotneforester.github.io/Bitcamp/13_faq_accordiong/)      |     |
-| [11](https://tsotneforester.github.io/Bitcamp/11_tip_calculator/)      |     |
-| [10](https://tsotneforester.github.io/Bitcamp/11_fylo/)                |     |
-| [09](https://tsotneforester.github.io/Bitcamp/09_four_cards/)          |     |
-| [08](https://tsotneforester.github.io/Bitcamp/08_typemaster/)          |     |
-| [05](https://tsotneforester.github.io/Bitcamp/05_skilled_elearning/)   |     |
-| [04](https://tsotneforester.github.io/Bitcamp/04_profile_card/)        |     |
-| [03](https://tsotneforester.github.io/Bitcamp/03_order-summary/)       |     |
-| [02](https://tsotneforester.github.io/Bitcamp/02_nft_preview/)         |     |
-| [01](https://tsotneforester.github.io/Bitcamp/01_qr_code/)             |     | -->
+prettier-ignore
+| Project | Naming | Pixel-Perfect
+| --| :-----: | :-----: |
+| 14|     |
+| 13   |     |
+| 11  |     |
+| 10           |     |
+| 09      |     |
+| 08       |     |
+| 05 |     |
+| 04     |     |
+| 03    |     |
+| 02|✅|✅
+| 01|✅|✅

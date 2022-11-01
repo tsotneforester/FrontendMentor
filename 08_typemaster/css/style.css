@@ -28,10 +28,7 @@ aside {
 html,
 body {
   height: 100%;
-  width: 100%;
-  font-size: 100%;
-  line-height: 1;
-  font-size: 14px;
+  margin: 0;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -79,15 +76,29 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   font-size: inherit;
   font-weight: 400;
+  margin: 0;
+  padding: 0;
 }
 
-body {
-  max-width: 1920px;
-  margin: 0 auto;
+#wrapper {
   min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 summary .box .icon {
@@ -106,16 +117,16 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+      -ms-flex-direction: center;
+          flex-direction: center;
+  -webkit-box-pack: row;
+      -ms-flex-pack: row;
+          justify-content: row;
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
   padding: 5vw 4vw 65px 4vw;
 }
 @media only screen and (min-width: 1356px) {
@@ -130,8 +141,8 @@ header img {
 header button {
   font-size: 16px;
   color: #162542;
-  font-weight: 700;
-  text-align: center;
+  font-weight: center;
+  text-align: 700;
   line-height: 26px;
   text-transform: uppercase;
   width: 150px;
@@ -140,6 +151,7 @@ header button {
   background: #e8eff2;
   text-align: center;
   border: none;
+  cursor: pointer;
 }
 @media only screen and (min-width: 700px) {
   header button {
@@ -149,6 +161,7 @@ header button {
     background: #e8eff2;
     text-align: center;
     border: none;
+    cursor: pointer;
   }
 }
 header button:hover {
@@ -162,14 +175,14 @@ article {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+      -ms-flex-direction: stretch;
+          flex-direction: stretch;
+  -webkit-box-pack: column;
+      -ms-flex-pack: column;
+          justify-content: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   row-gap: 4vw;
   padding-left: 4vw;
   margin-bottom: 4vw;
@@ -179,16 +192,16 @@ article {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+        -ms-flex-direction: center;
+            flex-direction: center;
+    -webkit-box-pack: row;
+        -ms-flex-pack: row;
+            justify-content: row;
+    -webkit-box-align: space-between;
+        -ms-flex-align: space-between;
+            align-items: space-between;
     row-gap: 0;
     -webkit-column-gap: 60px;
        -moz-column-gap: 60px;
@@ -208,14 +221,14 @@ article section:nth-of-type(1) {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+      -ms-flex-direction: stretch;
+          flex-direction: stretch;
+  -webkit-box-pack: column;
+      -ms-flex-pack: column;
+          justify-content: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   row-gap: 24px;
 }
 @media only screen and (min-width: 700px) {
@@ -235,8 +248,8 @@ article section:nth-of-type(1) {
 article section:nth-of-type(1) h1 {
   font-size: 48px;
   color: #162542;
-  font-weight: 900;
-  text-align: left;
+  font-weight: left;
+  text-align: 900;
   line-height: 48px;
   text-transform: uppercase;
 }
@@ -248,8 +261,8 @@ article section:nth-of-type(1) h1 {
 article section:nth-of-type(1) p {
   font-size: 16px;
   color: #7b8bad;
-  font-weight: 500;
-  text-align: left;
+  font-weight: left;
+  text-align: 500;
   line-height: 26px;
 }
 @media only screen and (min-width: 700px) {
@@ -261,20 +274,20 @@ article section:nth-of-type(1) section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+      -ms-flex-direction: stretch;
+          flex-direction: stretch;
+  -webkit-box-pack: row;
+      -ms-flex-pack: row;
+          justify-content: row;
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
   font-size: 16px;
   color: #7b8bad;
-  font-weight: 500;
-  text-align: center;
+  font-weight: center;
+  text-align: 500;
   line-height: 26px;
   -webkit-column-gap: 10px;
      -moz-column-gap: 10px;
@@ -285,20 +298,20 @@ article section:nth-of-type(1) section {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
+        -ms-flex-direction: stretch;
+            flex-direction: stretch;
+    -webkit-box-pack: row;
+        -ms-flex-pack: row;
+            justify-content: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     font-size: 16px;
     color: #7b8bad;
-    font-weight: 500;
-    text-align: center;
+    font-weight: center;
+    text-align: 500;
     line-height: 26px;
     -webkit-column-gap: 30px;
        -moz-column-gap: 30px;
@@ -312,10 +325,11 @@ article section:nth-of-type(1) section button {
   background: #f16718;
   text-align: center;
   border: none;
+  cursor: pointer;
   font-size: 16px;
   color: white;
-  font-weight: 700;
-  text-align: center;
+  font-weight: center;
+  text-align: 700;
   text-transform: uppercase;
   line-height: 26px;
 }
@@ -327,13 +341,14 @@ article section:nth-of-type(1) section button {
     background: #f16718;
     text-align: center;
     border: none;
+    cursor: pointer;
   }
 }
 article section:nth-of-type(1) section p {
   font-size: 16px;
   color: #7b8bad;
-  font-weight: 700;
-  text-align: center;
+  font-weight: center;
+  text-align: 700;
   line-height: 26px;
   text-transform: uppercase;
   -ms-flex-item-align: center;
@@ -452,11 +467,11 @@ aside section:nth-of-type(3) {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+      -ms-flex-direction: center;
+          flex-direction: center;
+  -webkit-box-pack: column;
+      -ms-flex-pack: column;
+          justify-content: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -467,16 +482,16 @@ aside section:nth-of-type(3) {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+        -ms-flex-direction: center;
+            flex-direction: center;
+    -webkit-box-pack: row;
+        -ms-flex-pack: row;
+            justify-content: row;
+    -webkit-box-align: space-between;
+        -ms-flex-align: space-between;
+            align-items: space-between;
   }
 }
 @media only screen and (min-width: 1356px) {
@@ -487,14 +502,14 @@ aside section:nth-of-type(3) {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+        -ms-flex-direction: flex-start;
+            flex-direction: flex-start;
+    -webkit-box-pack: column;
+        -ms-flex-pack: column;
+            justify-content: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     row-gap: 20px;
     padding: 0;
     margin-left: 60px;
@@ -503,8 +518,8 @@ aside section:nth-of-type(3) {
 aside section:nth-of-type(3) div:nth-of-type(1) {
   font-size: 32px;
   color: #162542;
-  font-weight: 900;
-  text-align: center;
+  font-weight: center;
+  text-align: 900;
   line-height: 36px;
   text-transform: uppercase;
   max-width: 260px;
@@ -524,8 +539,8 @@ aside section:nth-of-type(3) div:nth-of-type(1) {
 aside section:nth-of-type(3) div:nth-of-type(2) {
   font-size: 16px;
   color: #7b8bad;
-  font-weight: 500;
-  text-align: center;
+  font-weight: center;
+  text-align: 500;
   line-height: 26px;
   max-width: 330px;
 }
@@ -564,11 +579,11 @@ summary {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+      -ms-flex-direction: center;
+          flex-direction: center;
+  -webkit-box-pack: column;
+      -ms-flex-pack: column;
+          justify-content: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -581,16 +596,16 @@ summary {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+        -ms-flex-direction: center;
+            flex-direction: center;
+    -webkit-box-pack: row;
+        -ms-flex-pack: row;
+            justify-content: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     /**/
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; /**/
@@ -607,16 +622,16 @@ summary {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+        -ms-flex-direction: center;
+            flex-direction: center;
+    -webkit-box-pack: row;
+        -ms-flex-pack: row;
+            justify-content: row;
+    -webkit-box-align: space-between;
+        -ms-flex-align: space-between;
+            align-items: space-between;
     /**/
     -webkit-column-gap: 10px;
        -moz-column-gap: 10px;
@@ -630,11 +645,11 @@ summary .box {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+      -ms-flex-direction: center;
+          flex-direction: center;
+  -webkit-box-pack: column;
+      -ms-flex-pack: column;
+          justify-content: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -649,14 +664,14 @@ summary .box {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+        -ms-flex-direction: flex-start;
+            flex-direction: flex-start;
+    -webkit-box-pack: column;
+        -ms-flex-pack: column;
+            justify-content: column;
+    -webkit-box-align: space-between;
+        -ms-flex-align: space-between;
+            align-items: space-between;
     /**/
     -webkit-column-gap: 20px;
        -moz-column-gap: 20px;
@@ -676,13 +691,13 @@ summary .box .icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+      -ms-flex-direction: center;
+          flex-direction: center;
+  -webkit-box-pack: row;
+      -ms-flex-pack: row;
+          justify-content: row;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -690,8 +705,8 @@ summary .box .icon {
 summary .box .header {
   font-size: 24px;
   color: #162542;
-  font-weight: 900;
-  text-align: center;
+  font-weight: center;
+  text-align: 900;
   line-height: 28px;
   max-width: 180px;
 }
@@ -703,8 +718,8 @@ summary .box .header {
 summary .box .desc {
   font-size: 16px;
   color: #7b8bad;
-  font-weight: 500;
-  text-align: center;
+  font-weight: center;
+  text-align: 500;
   line-height: 26px;
 }
 @media only screen and (min-width: 700px) {
@@ -725,14 +740,14 @@ footer {
 footer span:nth-of-type(1) {
   font-size: 16px;
   color: #7b8bad;
-  font-weight: 700;
-  text-align: center;
+  font-weight: center;
+  text-align: 700;
   line-height: 26px;
 }
 footer span:nth-of-type(2) {
   font-size: 16px;
   color: #7b8bad;
-  font-weight: 500;
-  text-align: center;
+  font-weight: center;
+  text-align: 500;
   line-height: 26px;
 }
