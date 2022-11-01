@@ -1,0 +1,265 @@
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: none;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+  -webkit-appearance: none;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: inherit;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+#wrapper {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+body {
+  font-family: "Red Hat Display", sans-serif;
+  background-color: #e0e8ff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+img[alt=hero] {
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin-bottom: 14px;
+  background-image: url("images/illustration-hero.svg");
+}
+
+img[alt=music] {
+  margin: 20px;
+}
+
+h1 {
+  width: 354px;
+  font-size: 28px;
+  color: #1f2e55;
+  font-weight: 900;
+  text-align: center;
+  margin: 20px 0;
+}
+
+h2 {
+  font-size: 15px;
+  color: #717fa6;
+  font-weight: 900;
+  text-align: center;
+  display: inline-block;
+  margin: 2px 0 40px 0;
+}
+
+#desc {
+  width: 354px;
+  font-size: 16px;
+  color: #717fa6;
+  font-weight: 400;
+  text-align: center;
+  margin: 8px 0;
+}
+
+button {
+  width: 354px;
+  height: auto;
+  border-radius: 11px;
+  background: #382ae1;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  border: none;
+  padding: 20px;
+  font-size: 15px;
+  color: white;
+  font-weight: 900;
+  text-align: center;
+  -webkit-box-shadow: 0 20px 20px rgba(57, 42, 225, 0.2274509804);
+          box-shadow: 0 20px 20px rgba(57, 42, 225, 0.2274509804);
+  margin: 30px 0;
+}
+
+button:hover {
+  background-color: #766cf1;
+  cursor: pointer;
+}
+
+#container {
+  width: 450px;
+  height: auto;
+  background-color: white;
+  border-radius: 20px;
+  margin: 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#box {
+  width: 354px;
+  height: 98px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 11px;
+  background-color: #f7f9ff;
+  margin: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#plan {
+  line-height: 30px;
+  text-align: left;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+}
+
+#plan span:nth-of-type(1) {
+  color: #1f2e55;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+#plan span:nth-of-type(2) {
+  color: #717fa6;
+  font-size: 16px;
+}
+
+#link {
+  display: inline;
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+  text-align: right;
+  padding: 0 20px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+h2:hover {
+  color: #1f2e55;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #766cf1;
+  text-decoration: none;
+}
