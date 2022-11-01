@@ -21,7 +21,6 @@ slider_x.addEventListener("click", function () {
   }
 });
 
-//--------------------------------------
 let vs_cpu = document.querySelector("#vs-cpu");
 
 vs_cpu.addEventListener("click", function () {

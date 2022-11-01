@@ -27,7 +27,7 @@ function computerMove() {
 
 for (var i = 0; i < 9; i++) {
   box[i].addEventListener("click", function () {
-    if (whosTurn == "you") {
+    if (whosTurn == "you" && this.getAttribute("value") == "E") {
       this.style.height = "92px";
       this.style.boxShadow = "inset 0px -4px 0px #10212a";
       this.innerHTML = "";
