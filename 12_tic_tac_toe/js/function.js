@@ -107,11 +107,11 @@ for (let i = 0; i < 9; i++) {
 function nextRound() {
   for (var i = 0, il = 9; i < il; i++) {
     if (HUMAN.side == "o") {
-      box[i].innerHTML = `<div id="hover">
+      box[i].innerHTML = `<div class="hover">
             <img class="o" src="assets/icon-o-outline.svg" alt="choose" />
           </div>`;
     } else {
-      box[i].innerHTML = `<div id="hover">
+      box[i].innerHTML = `<div class="hover">
             <img class="x" src="assets/icon-x-outline.svg" alt="choose" />
           </div>`;
     }

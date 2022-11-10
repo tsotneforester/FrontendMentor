@@ -119,7 +119,7 @@ input {
   }
 }
 
-.input-email, main #main__email div:nth-of-type(2) input:nth-of-type(1), main #main__1 div:nth-of-type(2) div div #email1 {
+.input-email, main #main-email div:nth-of-type(2) input:nth-of-type(1), main #main-1 div:nth-of-type(2) div div #email1 {
   width: 100%;
   max-width: 290px;
   background: #ffffff;
@@ -130,7 +130,7 @@ input {
   letter-spacing: 0.5px;
 }
 
-.input-submit, main #main__email div:nth-of-type(2) input:nth-of-type(2), main #main__1 div:nth-of-type(2) div #submit1 {
+.input-submit, main #main-email div:nth-of-type(2) input:nth-of-type(2), main #main-1 div:nth-of-type(2) div #submit1 {
   background: #2f65f8;
   -webkit-box-shadow: 1px 1px 3px rgba(7, 4, 59, 0.157043);
           box-shadow: 1px 1px 3px rgba(7, 4, 59, 0.157043);
@@ -249,7 +249,7 @@ header #logo {
     color: white;
   }
 }
-main #main__1 {
+main #main-1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -267,7 +267,7 @@ main #main__1 {
   padding: 20px 20px;
 }
 @media only screen and (min-width: 800px) {
-  main #main__1 {
+  main #main-1 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -287,15 +287,15 @@ main #main__1 {
     padding: 20px 80px;
   }
 }
-main #main__1 div:nth-of-type(1) {
+main #main-1 div:nth-of-type(1) {
   width: 300px;
 }
 @media only screen and (min-width: 800px) {
-  main #main__1 div:nth-of-type(1) {
+  main #main-1 div:nth-of-type(1) {
     width: 50%;
   }
 }
-main #main__1 div:nth-of-type(2) {
+main #main-1 div:nth-of-type(2) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -312,11 +312,11 @@ main #main__1 div:nth-of-type(2) {
   row-gap: 20px;
 }
 @media only screen and (min-width: 800px) {
-  main #main__1 div:nth-of-type(2) {
+  main #main-1 div:nth-of-type(2) {
     width: 50%;
   }
 }
-main #main__1 div:nth-of-type(2) h1 {
+main #main-1 div:nth-of-type(2) h1 {
   font-family: Open Sans;
   font-size: 24px;
   color: #07043b;
@@ -325,7 +325,7 @@ main #main__1 div:nth-of-type(2) h1 {
   text-align: center;
 }
 @media only screen and (min-width: 800px) {
-  main #main__1 div:nth-of-type(2) h1 {
+  main #main-1 div:nth-of-type(2) h1 {
     font-family: Raleway;
     font-size: 40px;
     color: #07043b;
@@ -334,7 +334,7 @@ main #main__1 div:nth-of-type(2) h1 {
     text-align: left;
   }
 }
-main #main__1 div:nth-of-type(2) p {
+main #main-1 div:nth-of-type(2) p {
   font-family: "Open Sans";
   font-size: 14px;
   color: #07043b;
@@ -344,7 +344,7 @@ main #main__1 div:nth-of-type(2) p {
   text-align: center;
 }
 @media only screen and (min-width: 800px) {
-  main #main__1 div:nth-of-type(2) p {
+  main #main-1 div:nth-of-type(2) p {
     font-size: 17px;
     color: #07043b;
     font-weight: 400;
@@ -352,7 +352,7 @@ main #main__1 div:nth-of-type(2) p {
     text-align: left;
   }
 }
-main #main__1 div:nth-of-type(2) div {
+main #main-1 div:nth-of-type(2) div {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -370,7 +370,7 @@ main #main__1 div:nth-of-type(2) div {
   row-gap: 6px;
 }
 @media only screen and (min-width: 800px) {
-  main #main__1 div:nth-of-type(2) div {
+  main #main-1 div:nth-of-type(2) div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -392,7 +392,7 @@ main #main__1 div:nth-of-type(2) div {
         align-self: flex-start;
   }
 }
-main #main__1 div:nth-of-type(2) div div {
+main #main-1 div:nth-of-type(2) div div {
   width: 290px;
   height: 58px;
   display: -webkit-box;
@@ -410,25 +410,25 @@ main #main__1 div:nth-of-type(2) div div {
           align-items: flex-start;
 }
 @media only screen and (min-width: 800px) {
-  main #main__1 div:nth-of-type(2) div div {
+  main #main-1 div:nth-of-type(2) div div {
     height: 78px;
   }
 }
-main #main__1 div:nth-of-type(2) div div #email1 {
+main #main-1 div:nth-of-type(2) div div #email1 {
   font-size: 12px;
   color: #07043b;
   font-weight: 400;
   height: 40px;
 }
 @media only screen and (min-width: 800px) {
-  main #main__1 div:nth-of-type(2) div div #email1 {
+  main #main-1 div:nth-of-type(2) div div #email1 {
     font-size: 14px;
     color: #07043b;
     font-weight: 400;
     height: 45px;
   }
 }
-main #main__1 div:nth-of-type(2) div div h6 {
+main #main-1 div:nth-of-type(2) div div h6 {
   font-family: "Open Sans", sans-serif;
   font-size: 12px;
   color: #ef4877;
@@ -437,7 +437,7 @@ main #main__1 div:nth-of-type(2) div div h6 {
   letter-spacing: 0.4px;
   text-align: left;
 }
-main #main__1 div:nth-of-type(2) div #submit1 {
+main #main-1 div:nth-of-type(2) div #submit1 {
   font-size: 14px;
   color: white;
   font-weight: 700;
@@ -446,7 +446,7 @@ main #main__1 div:nth-of-type(2) div #submit1 {
   height: 40px;
 }
 @media only screen and (min-width: 800px) {
-  main #main__1 div:nth-of-type(2) div #submit1 {
+  main #main-1 div:nth-of-type(2) div #submit1 {
     -ms-flex-item-align: start;
         align-self: flex-start;
     height: 45px;
@@ -455,7 +455,7 @@ main #main__1 div:nth-of-type(2) div #submit1 {
     width: 40%;
   }
 }
-main #main_gray {
+main #main-gray {
   background-color: white;
   background-image: url("../images/bg-curve-mobile.svg");
   background-repeat: no-repeat;
@@ -463,7 +463,7 @@ main #main_gray {
   height: 60px;
 }
 @media only screen and (min-width: 800px) {
-  main #main_gray {
+  main #main-gray {
     background-color: white;
     background-image: url("../images/bg-curve-desktop.svg");
     background-repeat: no-repeat;
@@ -471,7 +471,7 @@ main #main_gray {
     height: 60px;
   }
 }
-main #main__2 {
+main #main-2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -490,7 +490,7 @@ main #main__2 {
   padding: 30px 20px 90px 20px;
 }
 @media only screen and (min-width: 800px) {
-  main #main__2 {
+  main #main-2 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -513,15 +513,15 @@ main #main__2 {
             column-gap: 10px;
   }
 }
-main #main__2 div:nth-of-type(1) {
+main #main-2 div:nth-of-type(1) {
   width: 300px;
 }
 @media only screen and (min-width: 800px) {
-  main #main__2 div:nth-of-type(1) {
+  main #main-2 div:nth-of-type(1) {
     width: 50%;
   }
 }
-main #main__2 div:nth-of-type(2) {
+main #main-2 div:nth-of-type(2) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -538,14 +538,14 @@ main #main__2 div:nth-of-type(2) {
   row-gap: 20px;
 }
 @media only screen and (min-width: 800px) {
-  main #main__2 div:nth-of-type(2) {
+  main #main-2 div:nth-of-type(2) {
     width: 50%;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
   }
 }
-main #main__2 div:nth-of-type(2) h1 {
+main #main-2 div:nth-of-type(2) h1 {
   font-family: Raleway;
   font-size: 16px;
   color: #07043b;
@@ -554,7 +554,7 @@ main #main__2 div:nth-of-type(2) h1 {
   text-align: center;
 }
 @media only screen and (min-width: 800px) {
-  main #main__2 div:nth-of-type(2) h1 {
+  main #main-2 div:nth-of-type(2) h1 {
     font-family: Raleway;
     font-size: 40px;
     color: #07043b;
@@ -563,7 +563,7 @@ main #main__2 div:nth-of-type(2) h1 {
     text-align: left;
   }
 }
-main #main__2 div:nth-of-type(2) p {
+main #main-2 div:nth-of-type(2) p {
   font-family: Open Sans;
   font-size: 14px;
   color: #615f7e;
@@ -572,7 +572,7 @@ main #main__2 div:nth-of-type(2) p {
   text-align: center;
 }
 @media only screen and (min-width: 800px) {
-  main #main__2 div:nth-of-type(2) p {
+  main #main-2 div:nth-of-type(2) p {
     font-family: Open Sans;
     font-size: 16px;
     color: #615f7e;
@@ -581,7 +581,7 @@ main #main__2 div:nth-of-type(2) p {
     text-align: left;
   }
 }
-main #main__2 div:nth-of-type(2) p:nth-of-type(3) {
+main #main-2 div:nth-of-type(2) p:nth-of-type(3) {
   font-family: Open Sans;
   font-size: 12px;
   color: #3da08f;
@@ -590,7 +590,7 @@ main #main__2 div:nth-of-type(2) p:nth-of-type(3) {
   text-align: center;
 }
 @media only screen and (min-width: 800px) {
-  main #main__2 div:nth-of-type(2) p:nth-of-type(3) {
+  main #main-2 div:nth-of-type(2) p:nth-of-type(3) {
     font-family: Open Sans;
     font-size: 12px;
     color: #3da08f;
@@ -599,7 +599,7 @@ main #main__2 div:nth-of-type(2) p:nth-of-type(3) {
     text-align: center;
   }
 }
-main #main__2 div:nth-of-type(2) #fylo {
+main #main-2 div:nth-of-type(2) #fylo {
   border-bottom: #3da08f 2px solid;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -621,7 +621,7 @@ main #main__2 div:nth-of-type(2) #fylo {
   padding-bottom: 5px;
 }
 @media only screen and (min-width: 800px) {
-  main #main__2 div:nth-of-type(2) #fylo {
+  main #main-2 div:nth-of-type(2) #fylo {
     border-bottom: #3da08f 2px solid;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -643,7 +643,7 @@ main #main__2 div:nth-of-type(2) #fylo {
     padding-bottom: 5px;
   }
 }
-main #main__2 div:nth-of-type(2) #fylo span {
+main #main-2 div:nth-of-type(2) #fylo span {
   font-family: "Open Sans";
   font-size: 12px;
   color: #3da08f;
@@ -651,7 +651,7 @@ main #main__2 div:nth-of-type(2) #fylo span {
   line-height: 16px;
 }
 @media only screen and (min-width: 800px) {
-  main #main__2 div:nth-of-type(2) #fylo span {
+  main #main-2 div:nth-of-type(2) #fylo span {
     font-family: "Open Sans";
     font-size: 12px;
     color: #3da08f;
@@ -659,7 +659,7 @@ main #main__2 div:nth-of-type(2) #fylo span {
     line-height: 16px;
   }
 }
-main #main__2 div:nth-of-type(2) #card {
+main #main-2 div:nth-of-type(2) #card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -683,7 +683,7 @@ main #main__2 div:nth-of-type(2) #card {
           box-shadow: 0px 0px 8px 4px rgba(56, 56, 56, 0.0458843);
 }
 @media only screen and (min-width: 800px) {
-  main #main__2 div:nth-of-type(2) #card {
+  main #main-2 div:nth-of-type(2) #card {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -707,7 +707,7 @@ main #main__2 div:nth-of-type(2) #card {
             box-shadow: 0px 0px 8px 4px rgba(56, 56, 56, 0.0458843);
   }
 }
-main #main__2 div:nth-of-type(2) #card p {
+main #main-2 div:nth-of-type(2) #card p {
   font-family: "Open Sans";
   font-size: 10px;
   color: #07043b;
@@ -717,7 +717,7 @@ main #main__2 div:nth-of-type(2) #card p {
   margin: 0;
 }
 @media only screen and (min-width: 800px) {
-  main #main__2 div:nth-of-type(2) #card p {
+  main #main-2 div:nth-of-type(2) #card p {
     font-family: "Open Sans";
     font-size: 10px;
     color: #07043b;
@@ -727,16 +727,16 @@ main #main__2 div:nth-of-type(2) #card p {
     margin: 0;
   }
 }
-main #main__2 div:nth-of-type(2) #card img {
+main #main-2 div:nth-of-type(2) #card img {
   width: 12px;
   height: auto;
 }
-main #main__2 div:nth-of-type(2) #card img:nth-of-type(2) {
+main #main-2 div:nth-of-type(2) #card img:nth-of-type(2) {
   width: 24px;
   height: auto;
   border-radius: 50px;
 }
-main #main__2 div:nth-of-type(2) #card div {
+main #main-2 div:nth-of-type(2) #card div {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -755,12 +755,12 @@ main #main__2 div:nth-of-type(2) #card div {
      -moz-column-gap: 8px;
           column-gap: 8px;
 }
-main #main__2 div:nth-of-type(2) #card img[alt=avatar] {
+main #main-2 div:nth-of-type(2) #card img[alt=avatar] {
   width: 24px;
   height: auto;
   border-radius: 50px;
 }
-main #main__2 div:nth-of-type(2) #card #fname {
+main #main-2 div:nth-of-type(2) #card #fname {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -775,12 +775,12 @@ main #main__2 div:nth-of-type(2) #card #fname {
       -ms-flex-align: start;
           align-items: flex-start;
 }
-main #main__2 div:nth-of-type(2) #card #fname img {
+main #main-2 div:nth-of-type(2) #card #fname img {
   width: 24px;
   height: auto;
   border-radius: 50px;
 }
-main #main__2 div:nth-of-type(2) #card #fname h1 {
+main #main-2 div:nth-of-type(2) #card #fname h1 {
   font-family: "Open Sans";
   font-size: 9px;
   color: #07043b;
@@ -788,7 +788,7 @@ main #main__2 div:nth-of-type(2) #card #fname h1 {
   line-height: 12px;
   text-align: left;
 }
-main #main__2 div:nth-of-type(2) #card #fname p {
+main #main-2 div:nth-of-type(2) #card #fname p {
   font-family: "Open Sans";
   font-size: 6px;
   color: #07043b;
@@ -796,7 +796,7 @@ main #main__2 div:nth-of-type(2) #card #fname p {
   letter-spacing: 0.3px;
   margin: 0;
 }
-main #main__email {
+main #main-email {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -816,7 +816,7 @@ main #main__email {
   text-align: center;
 }
 @media only screen and (min-width: 800px) {
-  main #main__email {
+  main #main-email {
     padding: 100px 40px 80px 80px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -840,14 +840,14 @@ main #main__email {
     text-align: center;
   }
 }
-main #main__email h1 {
+main #main-email h1 {
   font-family: Raleway;
   font-size: 18px;
   color: white;
   font-weight: 700;
 }
 @media only screen and (min-width: 800px) {
-  main #main__email h1 {
+  main #main-email h1 {
     font-family: Raleway;
     font-size: 32px;
     color: white;
@@ -855,7 +855,7 @@ main #main__email h1 {
     text-align: left;
   }
 }
-main #main__email p {
+main #main-email p {
   width: 278px;
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
@@ -865,7 +865,7 @@ main #main__email p {
   line-height: 21px;
 }
 @media only screen and (min-width: 800px) {
-  main #main__email p {
+  main #main-email p {
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
     color: white;
@@ -875,7 +875,7 @@ main #main__email p {
     line-height: 24px;
   }
 }
-main #main__email div:nth-of-type(2) {
+main #main-email div:nth-of-type(2) {
   width: 240px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -895,7 +895,7 @@ main #main__email div:nth-of-type(2) {
           column-gap: 8px;
 }
 @media only screen and (min-width: 800px) {
-  main #main__email div:nth-of-type(2) {
+  main #main-email div:nth-of-type(2) {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -913,7 +913,7 @@ main #main__email div:nth-of-type(2) {
     text-align: left;
   }
 }
-main #main__email div:nth-of-type(2) input:nth-of-type(1) {
+main #main-email div:nth-of-type(2) input:nth-of-type(1) {
   font-size: 10px;
   color: #c0c0c0;
   font-weight: 400;
@@ -922,7 +922,7 @@ main #main__email div:nth-of-type(2) input:nth-of-type(1) {
   outline: none;
 }
 @media only screen and (min-width: 800px) {
-  main #main__email div:nth-of-type(2) input:nth-of-type(1) {
+  main #main-email div:nth-of-type(2) input:nth-of-type(1) {
     font-size: 12px;
     color: #07043b;
     font-weight: 400;
@@ -931,14 +931,14 @@ main #main__email div:nth-of-type(2) input:nth-of-type(1) {
     max-width: none;
   }
 }
-main #main__email div:nth-of-type(2) input:nth-of-type(2) {
+main #main-email div:nth-of-type(2) input:nth-of-type(2) {
   font-size: 10px;
   color: white;
   font-weight: 700;
   height: 32px;
 }
 @media only screen and (min-width: 800px) {
-  main #main__email div:nth-of-type(2) input:nth-of-type(2) {
+  main #main-email div:nth-of-type(2) input:nth-of-type(2) {
     height: 48px;
     min-width: 100px;
     max-width: 200px;
@@ -972,11 +972,11 @@ footer {
     padding: 65px 80px;
   }
 }
-footer #footer__logo {
+footer #footer-logo {
   -ms-flex-item-align: start;
       align-self: flex-start;
 }
-footer #footer__contact {
+footer #footer-contact {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -993,7 +993,7 @@ footer #footer__contact {
           align-items: center;
 }
 @media only screen and (min-width: 800px) {
-  footer #footer__contact {
+  footer #footer-contact {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1010,28 +1010,28 @@ footer #footer__contact {
     padding-right: 20px;
   }
 }
-footer #footer__contact .item {
+footer #footer-contact .item {
   -ms-flex-item-align: start;
       align-self: flex-start;
 }
-footer #footer__contact .item:nth-of-type(4) {
+footer #footer-contact .item:nth-of-type(4) {
   margin-top: 10px;
   -ms-flex-item-align: center;
       align-self: center;
 }
 @media only screen and (min-width: 800px) {
-  footer #footer__contact .item:nth-of-type(4) {
+  footer #footer-contact .item:nth-of-type(4) {
     -ms-flex-item-align: start;
         align-self: start;
   }
 }
-footer #footer__contact .item:nth-of-type(4) img {
+footer #footer-contact .item:nth-of-type(4) img {
   margin: 10px;
   padding: 4px;
   border-radius: 50%;
   border: white 1px solid;
 }
-footer #footer__contact section {
+footer #footer-contact section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1052,7 +1052,7 @@ footer #footer__contact section {
   font-weight: 400;
   margin: 16px 0;
 }
-footer #footer__contact section div {
+footer #footer-contact section div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1070,23 +1070,23 @@ footer #footer__contact section div {
      -moz-column-gap: 12px;
           column-gap: 12px;
 }
-footer #footer__contact section div:hover {
+footer #footer-contact section div:hover {
   -webkit-filter: invert(53%) sepia(74%) saturate(1662%) hue-rotate(199deg) brightness(103%) contrast(101%);
           filter: invert(53%) sepia(74%) saturate(1662%) hue-rotate(199deg) brightness(103%) contrast(101%);
   cursor: pointer;
 }
-footer #footer__contact .item p:not(#odd p) {
+footer #footer-contact .item p:not(#odd p) {
   font-family: "Open Sans";
   font-size: 16px;
   color: white;
   font-weight: 400;
   margin: 16px 0;
 }
-footer #footer__contact p:not(#odd p):hover {
+footer #footer-contact p:not(#odd p):hover {
   color: #6c9bff;
   cursor: pointer;
 }
-footer #footer__contact img:not(#odd img):hover {
+footer #footer-contact img:not(#odd img):hover {
   -webkit-filter: invert(53%) sepia(74%) saturate(1662%) hue-rotate(199deg) brightness(103%) contrast(101%);
           filter: invert(53%) sepia(74%) saturate(1662%) hue-rotate(199deg) brightness(103%) contrast(101%);
   cursor: pointer;

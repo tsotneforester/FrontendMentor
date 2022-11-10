@@ -184,7 +184,6 @@ p {
   text-align: right;
   color: #e17457;
   display: inline-block;
-  float: right;
 }
 
 #container {
@@ -302,7 +301,7 @@ p {
   cursor: pointer;
 }
 
-.amount_line {
+.amount-line {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
