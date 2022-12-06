@@ -2,5 +2,6 @@
 *.txt
 *.ini
 *.map
+*.code-workspace
 */root/
 /.prettierignore
