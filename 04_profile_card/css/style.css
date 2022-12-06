@@ -129,7 +129,6 @@ body {
   background: white;
   text-align: center;
   border: none;
-  cursor: pointer;
   background-image: url("../images/bg-pattern-card.svg");
   background-repeat: no-repeat;
 }
@@ -141,7 +140,6 @@ body {
     background: white;
     text-align: center;
     border: none;
-    cursor: pointer;
     background-image: url("../images/bg-pattern-card.svg");
     background-repeat: no-repeat;
   }
@@ -153,7 +151,6 @@ body {
   background: transparent;
   text-align: center;
   border: none;
-  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -175,7 +172,6 @@ body {
   background: white;
   text-align: center;
   border: none;
-  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -197,7 +193,6 @@ body {
   background: transparent;
   text-align: center;
   border: none;
-  cursor: pointer;
 }
 .container .person {
   display: -webkit-box;

@@ -127,7 +127,6 @@ body {
   background: white;
   text-align: center;
   border: none;
-  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -150,7 +149,6 @@ body {
     background: white;
     text-align: center;
     border: none;
-    cursor: pointer;
   }
 }
 #container #image {
@@ -160,7 +158,6 @@ body {
   background: white;
   text-align: center;
   border: none;
-  cursor: pointer;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
@@ -172,7 +169,6 @@ body {
     background: white;
     text-align: center;
     border: none;
-    cursor: pointer;
   }
 }
 #container #image img {
@@ -223,7 +219,6 @@ body {
   background: #f7f9ff;
   text-align: center;
   border: none;
-  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -248,7 +243,6 @@ body {
     background: #f7f9ff;
     text-align: center;
     border: none;
-    cursor: pointer;
     margin: 20px 0 32px 0;
     padding: 25px 24px;
   }
@@ -355,7 +349,6 @@ body {
   background: #382ae1;
   text-align: center;
   border: none;
-  cursor: pointer;
   font-size: 15px;
   color: white;
   font-weight: 900;
@@ -371,7 +364,6 @@ body {
     background: #382ae1;
     text-align: center;
     border: none;
-    cursor: pointer;
   }
 }
 #container button:hover {

@@ -130,7 +130,6 @@ body {
   background: #0e2b41;
   text-align: center;
   border: none;
-  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -154,7 +153,6 @@ body {
     background: #0e2b41;
     text-align: center;
     border: none;
-    cursor: pointer;
   }
 }
 #card #image {

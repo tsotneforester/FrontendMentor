@@ -129,7 +129,6 @@ main {
   background: white;
   text-align: center;
   border: none;
-  cursor: pointer;
   padding: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -160,7 +159,6 @@ h1 {
   background: white;
   text-align: center;
   border: none;
-  cursor: pointer;
   font-size: 22px;
   color: #1f314f;
   font-weight: 700;
@@ -175,7 +173,6 @@ p {
   background: white;
   text-align: center;
   border: none;
-  cursor: pointer;
   font-size: 15px;
   color: #7d889e;
   font-weight: 400;
