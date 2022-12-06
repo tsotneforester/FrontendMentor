@@ -1,5 +1,6 @@
 *.scss
 *.txt
+*.ini
 *.map
 */root/
 /.prettierignore
