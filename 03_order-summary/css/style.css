@@ -118,6 +118,14 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-image: url("../images/pattern-background-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+@media only screen and (min-width: 375px) {
+  body {
+    background-image: url("../images/pattern-background-desktop.svg");
+  }
 }
 
 #container {
