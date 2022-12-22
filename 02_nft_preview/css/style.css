@@ -123,7 +123,7 @@ body {
           align-items: center;
 }
 
-#card {
+.card {
   width: 327px;
   height: 543px;
   border-radius: 15px;
@@ -146,7 +146,7 @@ body {
   padding: 24px;
 }
 @media only screen and (min-width: 375px) {
-  #card {
+  .card {
     width: 350px;
     height: 596px;
     border-radius: 15px;
@@ -155,16 +155,16 @@ body {
     border: none;
   }
 }
-#card #image {
+.card .image {
   position: relative;
 }
-#card #image img[alt=equilibrium] {
+.card .image img[alt=equilibrium] {
   width: 100%;
   border-radius: 8px;
   position: relative;
   display: block;
 }
-#card #image::after {
+.card .image::after {
   background-color: rgba(0, 255, 247, 0.3921568627);
   content: url(../images/icon-view.svg);
   border-radius: 8px;
@@ -190,15 +190,15 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
-#card #image:hover::after {
+.card .image:hover::after {
   opacity: 1;
 }
-#card #image img[alt=view] {
+.card .image img[alt=view] {
   opacity: 0;
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear;
 }
-#card #info {
+.card .info {
   margin-top: 24px;
   padding-bottom: 16px;
   border-bottom: 1px #2a4354 solid;
@@ -217,11 +217,11 @@ body {
           align-items: flex-start;
 }
 @media only screen and (min-width: 375px) {
-  #card #info {
+  .card .info {
     padding-bottom: 24px;
   }
 }
-#card #info h1 {
+.card .info h1 {
   font-size: 22px;
   color: white;
   font-weight: 600;
@@ -230,11 +230,11 @@ body {
   -webkit-transition: color 0.5s linear;
   transition: color 0.5s linear;
 }
-#card #info h1:hover {
+.card .info h1:hover {
   color: #00fff8;
   cursor: pointer;
 }
-#card #info p {
+.card .info p {
   margin-top: 12px;
   font-size: 18px;
   color: #8bacd9;
@@ -243,11 +243,11 @@ body {
   line-height: 26px;
 }
 @media only screen and (min-width: 375px) {
-  #card #info p {
+  .card .info p {
     margin-top: 16px;
   }
 }
-#card #info #numbers {
+.card .info .numbers {
   width: 100%;
   margin-top: 16px;
   display: -webkit-box;
@@ -265,11 +265,11 @@ body {
           align-items: center;
 }
 @media only screen and (min-width: 375px) {
-  #card #info #numbers {
+  .card .info .numbers {
     margin-top: 24px;
   }
 }
-#card #info #numbers div {
+.card .info .numbers div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -287,19 +287,19 @@ body {
      -moz-column-gap: 10px;
           column-gap: 10px;
 }
-#card #info #numbers img[alt=ethereum] + span {
+.card .info .numbers img[alt=ethereum] + span {
   font-size: 15px;
   color: #00fff8;
   font-weight: 600;
   text-align: left;
 }
-#card #info #numbers img[alt=clock] + span {
+.card .info .numbers img[alt=clock] + span {
   font-size: 15px;
   color: #8bacd9;
   font-weight: 600;
   text-align: left;
 }
-#card footer {
+.card footer {
   margin-top: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -318,12 +318,12 @@ body {
      -moz-column-gap: 16px;
           column-gap: 16px;
 }
-#card footer img {
+.card footer img {
   width: 33px;
   border-radius: 50%;
   border: white 1px solid;
 }
-#card footer div {
+.card footer div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -341,13 +341,13 @@ body {
      -moz-column-gap: 5px;
           column-gap: 5px;
 }
-#card footer div p {
+.card footer div p {
   font-size: 15px;
   color: #8bacd9;
   font-weight: 400;
   text-align: left;
 }
-#card footer div span {
+.card footer div span {
   font-size: 15px;
   color: white;
   font-weight: 400;
@@ -355,7 +355,7 @@ body {
   -webkit-transition: color 0.5s linear;
   transition: color 0.5s linear;
 }
-#card footer div span:hover {
+.card footer div span:hover {
   color: #00fff8;
   cursor: pointer;
 }
