@@ -120,6 +120,11 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 main {

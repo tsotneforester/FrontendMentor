@@ -5,7 +5,6 @@
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: none;
 }
 
 :focus,
@@ -13,32 +12,20 @@
   outline: none;
 }
 
+a:link,
+a:visited,
 a:focus,
+a:hover,
 a:active {
+  color: inherit;
+  text-decoration: none;
   outline: none;
-}
-
-nav,
-footer,
-header,
-aside {
-  display: block;
-}
-
-html,
-body {
-  height: 100%;
-  margin: 0;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
 }
 
 input,
 button,
 textarea {
   font-family: inherit;
-  -webkit-appearance: none;
 }
 
 input::-ms-clear {
@@ -56,15 +43,7 @@ button::-moz-focus-inner {
 
 img {
   max-width: 100%;
-}
-
-a,
-a:visited {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
+  display: block;
 }
 
 ul li {
@@ -76,9 +55,38 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   font-size: inherit;
   font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+pre {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+}
+
+#wrapper {
+  min-height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
 }
 
 #wrapper {
@@ -150,28 +158,31 @@ header {
   }
 }
 header main {
-  height: 240px;
   width: 375px;
+  height: 240px;
+  border-radius: 0;
   background-color: #151515;
   background-image: url("../assets/mobile/image-hero.jpg");
   background-repeat: no-repeat;
 }
 @media only screen and (min-width: 768px) {
   header main {
-    height: 700px;
     width: 437px;
+    height: 700px;
+    border-radius: 0;
+    background-color: #151515;
     background-image: url("../assets/tablet/image-hero.jpg");
-    background-repeat: no-repeat;
   }
 }
 @media only screen and (min-width: 1440px) {
   header main {
-    font-family: "Big Shoulders Display", cursive;
-    display: inline-block;
     width: 990px;
     height: 800px;
+    border-radius: 0;
+    background-color: #151515;
+    font-family: "Big Shoulders Display", cursive;
+    display: inline-block;
     background-image: url("../assets/desktop/image-hero.jpg");
-    background-repeat: no-repeat;
     background-position: center right;
   }
 }
@@ -354,10 +365,7 @@ header div #button a button:nth-of-type(1) {
   width: 204px;
   height: 72px;
   border-radius: 0;
-  background: #151515;
-  text-align: center;
-  border: none;
-  cursor: pointer;
+  background-color: #151515;
   font-family: "Big Shoulders Display", cursive;
   font-size: 20px;
   color: white;
@@ -372,10 +380,7 @@ header div #button a button:nth-of-type(2) {
   width: 56px;
   height: 72px;
   border-radius: 0;
-  background: #151515;
-  text-align: center;
-  border: none;
-  cursor: pointer;
+  background-color: #151515;
   background-color: #d5966c;
   -webkit-transition: 0.7s;
   transition: 0.7s;
@@ -388,7 +393,7 @@ header div #button:hover button:nth-of-type(2) {
   background-color: #151515;
 }
 
-#middle {
+.flex-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -407,7 +412,7 @@ header div #button:hover button:nth-of-type(2) {
   margin-bottom: 24px;
 }
 @media only screen and (min-width: 768px) {
-  #middle {
+  .flex-box {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -425,20 +430,24 @@ header div #button:hover button:nth-of-type(2) {
   }
 }
 @media only screen and (min-width: 1440px) {
-  #middle {
+  .flex-box {
     margin-bottom: 26px;
   }
 }
-#middle div:nth-of-type(1) {
+.flex-box #aztec-hall {
   width: 343px;
   height: 255px;
+  border-radius: 0;
+  background-color: transparent;
   background-image: url("../assets/mobile/image-grid-1.jpg");
   background-repeat: no-repeat;
 }
 @media only screen and (min-width: 768px) {
-  #middle div:nth-of-type(1) {
-    height: 400px;
+  .flex-box #aztec-hall {
     width: 398px;
+    height: 400px;
+    border-radius: 0;
+    background-color: transparent;
     background-image: url("../assets/tablet/image-grid-1.jpg");
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
@@ -446,13 +455,15 @@ header div #button:hover button:nth-of-type(2) {
   }
 }
 @media only screen and (min-width: 1440px) {
-  #middle div:nth-of-type(1) {
-    height: 400px;
+  .flex-box #aztec-hall {
     width: 635px;
+    height: 400px;
+    border-radius: 0;
+    background-color: transparent;
     background-image: url("../assets/desktop/image-grid-1.jpg");
   }
 }
-#middle div:nth-of-type(2) {
+.flex-box div {
   width: 343px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -470,7 +481,7 @@ header div #button:hover button:nth-of-type(2) {
   row-gap: 21px;
 }
 @media only screen and (min-width: 768px) {
-  #middle div:nth-of-type(2) {
+  .flex-box div {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
@@ -479,7 +490,7 @@ header div #button:hover button:nth-of-type(2) {
   }
 }
 @media only screen and (min-width: 1440px) {
-  #middle div:nth-of-type(2) {
+  .flex-box div {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
@@ -487,7 +498,7 @@ header div #button:hover button:nth-of-type(2) {
     row-gap: 32px;
   }
 }
-#middle div:nth-of-type(2) h1 {
+.flex-box div h1 {
   font-family: "Big Shoulders Display", cursive;
   font-size: 50px;
   color: #444444;
@@ -498,16 +509,16 @@ header div #button:hover button:nth-of-type(2) {
   text-transform: uppercase;
 }
 @media only screen and (min-width: 768px) {
-  #middle div:nth-of-type(2) h1 {
+  .flex-box div h1 {
     max-width: 180px;
   }
 }
 @media only screen and (min-width: 1440px) {
-  #middle div:nth-of-type(2) h1 {
+  .flex-box div h1 {
     max-width: 295px;
   }
 }
-#middle div:nth-of-type(2) p {
+.flex-box div p {
   font-family: "Outfit", sans-serif;
   font-size: 18px;
   color: #444444;
@@ -517,17 +528,17 @@ header div #button:hover button:nth-of-type(2) {
   max-width: 335px;
 }
 @media only screen and (min-width: 768px) {
-  #middle div:nth-of-type(2) p {
+  .flex-box div p {
     max-width: 223px;
   }
 }
 @media only screen and (min-width: 768px) {
-  #middle div:nth-of-type(2) p {
+  .flex-box div p {
     max-width: 290px;
   }
 }
 
-#last {
+.grid-box {
   display: grid;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -537,7 +548,7 @@ header div #button:hover button:nth-of-type(2) {
   grid-template-rows: 480px 200px 293px;
 }
 @media only screen and (min-width: 768px) {
-  #last {
+  .grid-box {
     grid-template-columns: 398px 280px;
     grid-template-rows: 280px 396px;
     row-gap: 11px;
@@ -547,7 +558,7 @@ header div #button:hover button:nth-of-type(2) {
   }
 }
 @media only screen and (min-width: 1440px) {
-  #last {
+  .grid-box {
     grid-template-columns: 635px 445px;
     grid-template-rows: 313px 377px;
     row-gap: 30px;
@@ -556,37 +567,37 @@ header div #button:hover button:nth-of-type(2) {
             column-gap: 30px;
   }
 }
-#last div:nth-of-type(1) {
+.grid-box #wood-chair {
   background-image: url("../assets/mobile/image-grid-2.jpg");
   background-repeat: no-repeat;
 }
 @media only screen and (min-width: 768px) {
-  #last div:nth-of-type(1) {
+  .grid-box #wood-chair {
     background-image: url("../assets/tablet/image-grid-2.jpg");
     grid-area: 1/1/span 2/span 1;
   }
 }
 @media only screen and (min-width: 1440px) {
-  #last div:nth-of-type(1) {
+  .grid-box #wood-chair {
     background-image: url("../assets/desktop/image-grid-2.jpg");
   }
 }
-#last div:nth-of-type(2) {
+.grid-box #main-hall {
   background-image: url("../assets/mobile/image-grid-3.jpg");
   background-repeat: no-repeat;
 }
 @media only screen and (min-width: 768px) {
-  #last div:nth-of-type(2) {
+  .grid-box #main-hall {
     grid-area: 1/2/span 1/span 1;
     background-image: url("../assets/tablet/image-grid-3.jpg");
   }
 }
 @media only screen and (min-width: 1440px) {
-  #last div:nth-of-type(2) {
+  .grid-box #main-hall {
     background-image: url("../assets/desktop/image-grid-3.jpg");
   }
 }
-#last div:nth-of-type(3) {
+.grid-box div:nth-of-type(3) {
   background-color: #151515;
   padding: 48px 24px;
   display: -webkit-box;
@@ -604,12 +615,12 @@ header div #button:hover button:nth-of-type(2) {
           align-items: flex-start;
 }
 @media only screen and (min-width: 768px) {
-  #last div:nth-of-type(3) {
+  .grid-box div:nth-of-type(3) {
     padding: 85px 29px;
     grid-area: 2/2/span 1/span 1;
   }
 }
-#last div:nth-of-type(3) h1 {
+.grid-box div:nth-of-type(3) h1 {
   font-family: "Big Shoulders Display", cursive;
   font-size: 50px;
   color: white;
@@ -618,7 +629,7 @@ header div #button:hover button:nth-of-type(2) {
   line-height: 45px;
   max-width: 205px;
 }
-#last div:nth-of-type(3) p {
+.grid-box div:nth-of-type(3) p {
   font-family: "Outfit", sans-serif;
   font-size: 18px;
   color: white;
@@ -629,12 +640,10 @@ header div #button:hover button:nth-of-type(2) {
 }
 
 footer {
-  height: 336px;
   width: 100%;
+  height: 336px;
+  border-radius: 0;
   background-color: #151515;
-  color: white;
-  padding: 48px 32px;
-  margin-top: 120px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -648,6 +657,8 @@ footer {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  padding: 48px 32px;
+  margin-top: 120px;
 }
 @media only screen and (min-width: 768px) {
   footer {
@@ -664,14 +675,19 @@ footer {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    width: 100%;
     height: 216px;
+    border-radius: 0;
+    background-color: #151515;
     padding: 56px 39px;
   }
 }
 @media only screen and (min-width: 1440px) {
   footer {
+    width: 100%;
     height: 244px;
-    width: 1440px;
+    border-radius: 0;
+    background-color: #151515;
     margin-top: 18 0px;
     padding: 80px 165px;
     margin-top: 180px;
