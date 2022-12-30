@@ -4,4 +4,6 @@
 *.map
 *.code-workspace
 /.prettierignore
+root/*scss
+root/*css
 !**/root/*.zip
