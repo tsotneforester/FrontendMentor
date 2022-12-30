@@ -3,5 +3,6 @@
 *.ini
 *.map
 *.code-workspace
-/root/!.zip
+/root/
+!/root/*.zip
 /.prettierignore
