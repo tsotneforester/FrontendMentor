@@ -5,5 +5,5 @@
 *.map
 *.code-workspace
 root/
-# !/root/*.zip
+!/root/*.zip
 /.prettierignore
