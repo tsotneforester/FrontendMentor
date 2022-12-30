@@ -4,5 +4,4 @@
 *.map
 *.code-workspace
 /.prettierignore
-
-# Allow
+!**/root/*.zip
