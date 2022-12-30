@@ -1,4 +1,4 @@
-*.scss
+
 *.txt
 *.ini
 *.map
@@ -6,4 +6,3 @@
 /.prettierignore
 root/*.scss
 root/*.css
-!**/root/*.zip
