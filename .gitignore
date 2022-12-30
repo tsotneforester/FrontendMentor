@@ -3,7 +3,7 @@
 *.ini
 *.map
 *.code-workspace
-/root/*.scss
-/root/*.css
+*/root/*.scss
+*/root/*.css
 /root/*.txt
 /.prettierignore
