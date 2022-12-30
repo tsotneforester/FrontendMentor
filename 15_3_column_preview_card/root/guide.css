@@ -1,0 +1,26 @@
+selector {
+  color: red;
+}
+
+.button-basic, .button-report {
+  border: none;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button-report {
+  background-color: red;
+}
+
+.myArticle {
+  border: 1px solid blue;
+}
+
+.icon {
+  height: 65px;
+  width: 65px;
+  border-radius: 16px;
+  background-color: #f16718;
+}
