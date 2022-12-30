@@ -1,8 +1,7 @@
-
 *.txt
 *.ini
 *.map
 *.code-workspace
 /.prettierignore
-root/*.scss
-root/*.css
+**/root/*.scss
+**/root/*.css
