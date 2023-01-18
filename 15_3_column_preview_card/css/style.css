@@ -158,8 +158,8 @@ body {
 }
 
 #box1 {
-  background: url("../images/sedan.png"), -webkit-gradient(linear, left top, left bottom, from(#dc30b1), to(#a13cce));
-  background: url("../images/sedan.png"), linear-gradient(180deg, #dc30b1 0%, #a13cce 100%);
+  background: url("../images/sedan.jpg"), -webkit-gradient(linear, left top, left bottom, from(#dc30b1), to(#a13cce));
+  background: url("../images/sedan.jpg"), linear-gradient(180deg, #dc30b1 0%, #a13cce 100%);
   background-position: -20% 0%;
   background-repeat: no-repeat;
   border-radius: 8px 8px 0 0;
@@ -171,15 +171,15 @@ body {
 }
 
 #box2 {
-  background: url("../images/suv.png"), -webkit-gradient(linear, left top, left bottom, from(#252b52), to(#1a2356));
-  background: url("../images/suv.png"), linear-gradient(180deg, #252b52 0%, #1a2356 100%);
+  background: url("../images/suv.jpg"), -webkit-gradient(linear, left top, left bottom, from(#252b52), to(#1a2356));
+  background: url("../images/suv.jpg"), linear-gradient(180deg, #252b52 0%, #1a2356 100%);
   background-position: -20% 0%;
   background-repeat: no-repeat;
 }
 
 #box3 {
-  background: url("../images/luxury.png"), -webkit-gradient(linear, left top, left bottom, from(#f53794), to(#fe6a51));
-  background: url("../images/luxury.png"), linear-gradient(180deg, #f53794 0%, #fe6a51 100%);
+  background: url("../images/luxury.jpg"), -webkit-gradient(linear, left top, left bottom, from(#f53794), to(#fe6a51));
+  background: url("../images/luxury.jpg"), linear-gradient(180deg, #f53794 0%, #fe6a51 100%);
   background-position: -20% 0%;
   background-repeat: no-repeat;
   border-radius: 0 0 8px 8px;
