@@ -5,7 +5,6 @@
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: none;
 }
 
 :focus,
@@ -13,30 +12,19 @@
   outline: none;
 }
 
+a:link,
+a:visited,
 a:focus,
+a:hover,
 a:active {
+  text-decoration: none;
   outline: none;
-}
-
-nav,
-footer,
-header,
-aside {
-  display: block;
-}
-
-html,
-body {
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
 }
 
 input,
 button,
 textarea {
   font-family: inherit;
-  -webkit-appearance: none;
 }
 
 input::-ms-clear {
@@ -54,15 +42,7 @@ button::-moz-focus-inner {
 
 img {
   max-width: 100%;
-}
-
-a,
-a:visited {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
+  display: block;
 }
 
 ul li {
@@ -74,23 +54,38 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   font-size: inherit;
   font-weight: 400;
+  margin: 0;
+  padding: 0;
 }
 
-body {
+pre {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+}
+
+#wrapper {
+  min-height: 100%;
   max-width: 1440px;
   margin: 0 auto;
-}
-
-main section #download #android, main section #download #ios {
-  height: 61px;
-  border-radius: 12px;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 32px;
-  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
 }
 
 * {
@@ -160,8 +155,8 @@ article {
   }
 }
 article h1 {
-  font-size: 40px;
-  color: #191826;
+  font-size: 16px;
+  color: black;
   font-weight: 700;
   text-align: left;
   line-height: 48px;
@@ -183,7 +178,7 @@ article h1 {
 }
 article p {
   font-size: 16px;
-  color: #191826;
+  color: black;
   font-weight: 400;
   text-align: left;
   line-height: 26px;
@@ -206,7 +201,7 @@ article p {
 
 main {
   height: 600px;
-  background-color: #191826;
+  background-color: black;
   margin-bottom: 450px;
   margin-top: 190px;
   background-image: url("../assets/bg-pattern-2.svg");
@@ -251,7 +246,7 @@ main #phone {
   }
 }
 main section {
-  background-color: #fa7453;
+  background-color: orange;
   width: 375px;
   height: 546px;
   margin: 0 auto;
@@ -280,7 +275,7 @@ main section {
 }
 main section h1 {
   font-size: 32px;
-  color: #fcfaf9;
+  color: white;
   font-weight: 700;
   text-align: left;
   line-height: 40px;
@@ -293,7 +288,7 @@ main section h1 {
 }
 main section p {
   font-size: 18px;
-  color: #fcfaf9;
+  color: white;
   font-weight: 400;
   text-align: left;
   line-height: 28px;
@@ -327,14 +322,14 @@ main section #price {
 }
 main section #price span:nth-of-type(1) {
   font-size: 65px;
-  color: #fcfaf9;
+  color: white;
   font-weight: 700;
   text-align: left;
   line-height: 52px;
 }
 main section #price span:nth-of-type(2) {
   font-size: 20px;
-  color: #fcfaf9;
+  color: white;
   font-weight: 400;
   text-align: left;
   line-height: 32px;
@@ -358,8 +353,8 @@ main section #download {
   margin-top: 30px;
 }
 main section #download #ios {
-  background-color: #191826;
-  color: #fcfaf9;
+  background-color: black;
+  color: white;
   width: 296px;
   width: 100%;
   display: -webkit-box;
@@ -385,16 +380,16 @@ main section #download #ios {
   }
 }
 main section #download #ios:hover {
-  background-color: #66e2dc;
-  color: #fcfaf9;
+  background-color: sky;
+  color: white;
 }
 main section #download #ios img {
   top: 0px;
   width: 20px;
 }
 main section #download #android {
-  background-color: #fcfaf9;
-  color: #191826;
+  background-color: white;
+  color: black;
   width: 296px;
   width: 100%;
   display: -webkit-box;
@@ -420,7 +415,7 @@ main section #download #android {
   }
 }
 main section #download #android:hover {
-  background-color: #ffb964;
+  background-color: yellow;
 }
 main section #download #android img {
   top: 0px;
@@ -508,7 +503,7 @@ footer section {
 }
 footer section p {
   font-size: 16px;
-  color: #191826;
+  color: black;
   font-weight: 400;
   text-align: left;
   line-height: 26px;
@@ -522,7 +517,7 @@ footer section p {
 }
 footer section span {
   font-size: 16px;
-  color: #191826;
+  color: black;
   font-weight: 700;
   text-align: left;
 }

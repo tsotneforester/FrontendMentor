@@ -5,7 +5,6 @@
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: none;
 }
 
 :focus,
@@ -13,31 +12,19 @@
   outline: none;
 }
 
+a:link,
+a:visited,
 a:focus,
+a:hover,
 a:active {
+  text-decoration: none;
   outline: none;
-}
-
-nav,
-footer,
-header,
-aside {
-  display: block;
-}
-
-html,
-body {
-  margin: 0;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
 }
 
 input,
 button,
 textarea {
   font-family: inherit;
-  -webkit-appearance: none;
 }
 
 input::-ms-clear {
@@ -55,15 +42,7 @@ button::-moz-focus-inner {
 
 img {
   max-width: 100%;
-}
-
-a,
-a:visited {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
+  display: block;
 }
 
 ul li {
@@ -83,9 +62,15 @@ p {
   padding: 0;
 }
 
+pre {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+}
+
 #wrapper {
-  min-height: 100vh;
-  max-width: 1920px;
+  min-height: 100%;
+  max-width: 1440px;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -100,6 +85,7 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border: none;
 }
 
 #wrapper {
@@ -128,9 +114,7 @@ header {
   width: 343px;
   height: auto;
   border-radius: 0;
-  background: transparent;
-  text-align: center;
-  border: none;
+  background-color: transparent;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -151,9 +135,7 @@ header {
     width: 688px;
     height: auto;
     border-radius: 0;
-    background: transparent;
-    text-align: center;
-    border: none;
+    background-color: transparent;
     margin: 24px 0 102px 0;
   }
 }
@@ -162,9 +144,7 @@ header {
     width: 1110px;
     height: auto;
     border-radius: 0;
-    background: transparent;
-    text-align: center;
-    border: none;
+    background-color: transparent;
     margin: 24px 0 164px 0;
   }
 }
@@ -188,9 +168,7 @@ header button {
   width: 140px;
   height: 48px;
   border-radius: 28px;
-  background: #13183f;
-  text-align: center;
-  border: none;
+  background-color: #13183f;
   font-size: 16px;
   color: white;
   font-weight: 400;
@@ -202,9 +180,7 @@ header button {
     width: 167px;
     height: 56px;
     border-radius: 28px;
-    background: #13183f;
-    text-align: center;
-    border: none;
+    background-color: #13183f;
     font-size: 18px;
   }
 }
@@ -275,9 +251,7 @@ main article {
     width: 398px;
     height: 284px;
     border-radius: 0;
-    background: transparent;
-    text-align: center;
-    border: none;
+    background-color: transparent;
   }
 }
 @media only screen and (min-width: 1440px) {
@@ -285,9 +259,7 @@ main article {
     width: 457px;
     height: 359px;
     border-radius: 0;
-    background: transparent;
-    text-align: center;
-    border: none;
+    background-color: transparent;
   }
 }
 main article h1 {
@@ -337,10 +309,7 @@ main article button {
   width: 167px;
   height: 56px;
   border-radius: 31.5px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff6f48), to(#f02aa6));
-  background: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
-  text-align: center;
-  border: none;
+  background-color: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
   font-size: 16px;
   color: white;
   font-weight: 700;
@@ -352,10 +321,7 @@ main article button {
     width: 167px;
     height: 63px;
     border-radius: 31.5px;
-    background: -webkit-gradient(linear, left top, left bottom, from(#ff6f48), to(#f02aa6));
-    background: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
-    text-align: center;
-    border: none;
+    background-color: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
     font-size: 18px;
     color: white;
     font-weight: 700;
@@ -370,9 +336,7 @@ main section {
   width: 327px;
   height: 301px;
   border-radius: 0;
-  background: transparent;
-  text-align: center;
-  border: none;
+  background-color: transparent;
   border: solid white 1px;
   background-image: url("../assets/image-hero-mobile.png");
   background-repeat: no-repeat;
@@ -388,9 +352,7 @@ summary {
   width: 100%;
   height: auto;
   border-radius: 0;
-  background: transparent;
-  text-align: center;
-  border: none;
+  background-color: transparent;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -475,10 +437,7 @@ summary #firstbox {
   width: 343px;
   height: 120px;
   border-radius: 10px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff6f48), to(#f02aa6));
-  background: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
-  text-align: center;
-  border: none;
+  background-color: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
   padding: 24px 28px;
 }
 @media only screen and (min-width: 768px) {
@@ -486,10 +445,7 @@ summary #firstbox {
     width: 339px;
     height: 259px;
     border-radius: 10px;
-    background: -webkit-gradient(linear, left top, left bottom, from(#ff6f48), to(#f02aa6));
-    background: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
-    text-align: center;
-    border: none;
+    background-color: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
     padding: 56px 32px;
   }
 }
@@ -498,10 +454,7 @@ summary #firstbox {
     width: 350px;
     height: 322px;
     border-radius: 15px;
-    background: -webkit-gradient(linear, left top, left bottom, from(#ff6f48), to(#f02aa6));
-    background: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
-    text-align: center;
-    border: none;
+    background-color: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
     padding: 64px 32px;
   }
 }
@@ -535,9 +488,7 @@ summary .box {
   width: 343px;
   height: 259px;
   border-radius: 10px;
-  background: white;
-  text-align: center;
-  border: none;
+  background-color: white;
   padding: 56px 28px 30px 28px;
 }
 @media only screen and (min-width: 768px) {
@@ -545,9 +496,7 @@ summary .box {
     width: 339px;
     height: 259px;
     border-radius: 10px;
-    background: white;
-    text-align: center;
-    border: none;
+    background-color: white;
     padding: 56px 22px 32px 32px;
   }
 }
@@ -556,9 +505,7 @@ summary .box {
     width: 350px;
     height: 322px;
     border-radius: 15px;
-    background: white;
-    text-align: center;
-    border: none;
+    background-color: white;
     padding: 64px 32px 40px 32px;
   }
 }
@@ -624,9 +571,7 @@ footer {
   width: 100%;
   height: 120px;
   border-radius: 0;
-  background: transparent;
-  text-align: center;
-  border: none;
+  background-color: transparent;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -687,9 +632,7 @@ footer div button {
   width: 140px;
   height: 48px;
   border-radius: 28px;
-  background: white;
-  text-align: center;
-  border: none;
+  background-color: white;
   background: -webkit-gradient(linear, left top, left bottom, from(#4851ff), to(#f02aa6));
   background: linear-gradient(180deg, #4851ff 0%, #f02aa6 100%);
   font-size: 16px;
@@ -703,9 +646,7 @@ footer div button {
     width: 167px;
     height: 56px;
     border-radius: 28px;
-    background: white;
-    text-align: center;
-    border: none;
+    background-color: white;
     background: -webkit-gradient(linear, left top, left bottom, from(#4851ff), to(#f02aa6));
     background: linear-gradient(180deg, #4851ff 0%, #f02aa6 100%);
     font-size: 16px;
