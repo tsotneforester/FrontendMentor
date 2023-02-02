@@ -34,6 +34,7 @@ input::-ms-clear {
 
 button {
   cursor: pointer;
+  border: none;
 }
 
 button::-moz-focus-inner {
@@ -524,7 +525,7 @@ button {
 .booking {
   width: 343px;
   height: 352px;
-  border-radius: 0;
+  border-radius: 10px;
   background-color: #030303;
   padding: 0 24px;
   display: grid;
