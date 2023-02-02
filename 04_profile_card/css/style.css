@@ -89,6 +89,7 @@ pre {
 }
 
 body {
+  min-height: 100vh;
   font-family: "Kumbh Sans", sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;

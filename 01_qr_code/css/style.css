@@ -33,6 +33,7 @@ input::-ms-clear {
 
 button {
   cursor: pointer;
+  border: none;
 }
 
 button::-moz-focus-inner {
@@ -93,6 +94,7 @@ pre {
 }
 
 body {
+  min-height: 100vh;
   background-color: hsl(212deg, 45%, 89%);
   display: -webkit-box;
   display: -ms-flexbox;

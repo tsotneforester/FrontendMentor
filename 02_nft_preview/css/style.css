@@ -33,6 +33,7 @@ input::-ms-clear {
 
 button {
   cursor: pointer;
+  border: none;
 }
 
 button::-moz-focus-inner {
@@ -88,12 +89,8 @@ pre {
   border: none;
 }
 
-/*lets start coding*/
-* {
-  font-family: "Outfit", sans-serif;
-}
-
 body {
+  min-height: 100vh;
   background-color: #08222f;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -108,6 +105,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-family: "Outfit", sans-serif;
 }
 
 .card {

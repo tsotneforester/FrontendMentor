@@ -33,6 +33,7 @@ input::-ms-clear {
 
 button {
   cursor: pointer;
+  border: none;
 }
 
 button::-moz-focus-inner {
@@ -89,6 +90,7 @@ pre {
 }
 
 body {
+  min-height: 100vh;
   font-family: "Red Hat Display", sans-serif;
   background-color: #e0e8ff;
   display: -webkit-box;
