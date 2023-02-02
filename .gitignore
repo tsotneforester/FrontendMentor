@@ -3,6 +3,7 @@
 *.ini
 *.map
 *.zip
+*.fig
 *.code-workspace
 /.prettierignore
 **/root/*.scss
