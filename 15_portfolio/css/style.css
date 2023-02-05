@@ -693,7 +693,7 @@ button {
      -moz-column-gap: 16px;
           column-gap: 16px;
 }
-.carousel .controls .circle {
+.carousel .controls button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -711,6 +711,27 @@ button {
   height: 64px;
   border-radius: 50%;
   background-color: #030303;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+.carousel .controls button:hover {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #755cde;
 }
 
 .booking {

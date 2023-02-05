@@ -5,7 +5,6 @@
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: none;
 }
 
 :focus,
@@ -13,30 +12,19 @@
   outline: none;
 }
 
+a:link,
+a:visited,
 a:focus,
+a:hover,
 a:active {
+  text-decoration: none;
   outline: none;
-}
-
-nav,
-footer,
-header,
-aside {
-  display: block;
-}
-
-html,
-body {
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
 }
 
 input,
 button,
 textarea {
   font-family: inherit;
-  -webkit-appearance: none;
 }
 
 input::-ms-clear {
@@ -45,6 +33,7 @@ input::-ms-clear {
 
 button {
   cursor: pointer;
+  border: none;
 }
 
 button::-moz-focus-inner {
@@ -54,15 +43,7 @@ button::-moz-focus-inner {
 
 img {
   max-width: 100%;
-}
-
-a,
-a:visited {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
+  display: block;
 }
 
 ul li {
@@ -74,18 +55,24 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   font-size: inherit;
   font-weight: 400;
+  margin: 0;
+  padding: 0;
 }
 
-body {
-  max-width: 1440px;
-  margin: 0 auto;
+pre {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
 }
 
 #wrapper {
-  min-height: 100vh;
+  min-height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -96,12 +83,12 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
 }
 
-/*lets start coding*/
 body {
   background: -webkit-gradient(linear, left top, left bottom, from(#b068e9), to(#6463e7));
   background: linear-gradient(180deg, #b068e9 0%, #6463e7 100%);
