@@ -1,13 +1,10 @@
 # **16 - Interactive Rating**
 
+![Main](https://gpx.ge/challenge/frontend/images/fr-mentor/16_interactive_rating.png "image")
+
+Another React project to skill ``useState``, conditional rendering and passing props
+---
 ```sh
 npm i
 npm start
 ```
-
-
-
-
-![Main](https://gpx.ge/challenge/frontend/images/fr-mentor/16_interactive_rating.png "image")
-
-
