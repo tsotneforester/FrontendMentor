@@ -128,9 +128,18 @@ main {
       -ms-flex-align: center;
           align-items: center;
 }
+@media only screen and (min-width: 768px) {
+  main {
+    width: 412px;
+    height: 416px;
+    border-radius: 30px;
+    background-color: transparent;
+    padding: 32px;
+  }
+}
 main .star {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: #262e38;
   display: -webkit-box;
@@ -150,37 +159,89 @@ main .star {
   -ms-flex-item-align: start;
       align-self: flex-start;
 }
+@media only screen and (min-width: 768px) {
+  main .star {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #262e38;
+  }
+}
 main .mobile {
   display: block;
-  margin-top: 8px;
+  margin-top: 10px;
+}
+@media only screen and (min-width: 768px) {
+  main .mobile {
+    margin-top: 13px;
+  }
 }
 main h1 {
   font-size: 24px;
   color: white;
   font-weight: 700;
   text-align: left;
-  margin: 16px 0 24px 0;
+  margin: 16px 0 10px 0;
   -ms-flex-item-align: start;
       align-self: flex-start;
+}
+@media only screen and (min-width: 768px) {
+  main h1 {
+    font-size: 28px;
+    color: white;
+    font-weight: 700;
+    text-align: left;
+    margin: 30px 0 7px 0;
+  }
 }
 main h2 {
   font-size: 24px;
   color: white;
   font-weight: 700;
   text-align: left;
-  margin: 0 0 10px 0;
+  margin-bottom: 10px;
+}
+@media only screen and (min-width: 768px) {
+  main h2 {
+    font-size: 28px;
+    color: white;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 7px;
+  }
 }
 main p {
   font-size: 14px;
   color: #969fad;
   font-weight: 400;
   text-align: left;
+  line-height: 22px;
+}
+@media only screen and (min-width: 768px) {
+  main p {
+    font-size: 15px;
+    color: #969fad;
+    font-weight: 400;
+    text-align: left;
+    line-height: 24px;
+  }
 }
 main span {
   font-size: 14px;
   color: #969fad;
   font-weight: 400;
   text-align: center;
+  line-height: 22px;
+}
+@media only screen and (min-width: 768px) {
+  main span {
+    width: 338px;
+    font-size: 15px;
+    color: #969fad;
+    font-weight: 400;
+    text-align: center;
+    line-height: 24px;
+  }
 }
 main .bubble-box {
   width: 100%;
@@ -201,7 +262,13 @@ main .bubble-box {
       -ms-flex-align: center;
           align-items: center;
   gap: 18px;
-  margin: 24px;
+  margin: 24px 0;
+}
+@media only screen and (min-width: 768px) {
+  main .bubble-box {
+    margin: 24px 0 32px 0;
+    gap: 22px;
+  }
 }
 main .bubble-box .rating-bubble {
   width: 42px;
@@ -229,6 +296,14 @@ main .bubble-box .rating-bubble {
   -webkit-transition: all 0.8s;
   transition: all 0.8s;
 }
+@media only screen and (min-width: 768px) {
+  main .bubble-box .rating-bubble {
+    width: 51px;
+    height: 51px;
+    border-radius: 50%;
+    background-color: #262e38;
+  }
+}
 main .bubble-box .rating-bubble:hover {
   width: 42px;
   height: 42px;
@@ -238,6 +313,14 @@ main .bubble-box .rating-bubble:hover {
   color: white;
   font-weight: 700;
   text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  main .bubble-box .rating-bubble:hover {
+    width: 51px;
+    height: 51px;
+    border-radius: 50%;
+    background-color: #262e38;
+  }
 }
 main .bubble-box .active {
   width: 42px;
@@ -263,6 +346,14 @@ main .bubble-box .active {
           align-items: center;
   cursor: pointer;
 }
+@media only screen and (min-width: 768px) {
+  main .bubble-box .active {
+    width: 51px;
+    height: 51px;
+    border-radius: 50%;
+    background-color: #fc7614;
+  }
+}
 main .result {
   width: 168px;
   height: 32px;
@@ -287,6 +378,15 @@ main .result {
           align-items: center;
   margin: 24px 0;
 }
+@media only screen and (min-width: 768px) {
+  main .result {
+    margin: 32px 0;
+    font-size: 15px;
+    color: #fc7614;
+    font-weight: 400;
+    text-align: center;
+  }
+}
 main button {
   width: 100%;
   height: 45px;
@@ -301,6 +401,15 @@ main button {
   cursor: pointer;
   -webkit-transition: all 0.8s;
   transition: all 0.8s;
+}
+@media only screen and (min-width: 768px) {
+  main button {
+    font-size: 15px;
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 2px;
+  }
 }
 main button:hover {
   width: 100%;

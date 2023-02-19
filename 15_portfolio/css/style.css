@@ -889,7 +889,7 @@ footer {
 }
 @media only screen and (min-width: 768px) {
   header,
-footer {
+  footer {
     width: 689px;
     height: auto;
     border-radius: 0;
@@ -898,7 +898,7 @@ footer {
 }
 @media only screen and (min-width: 1440px) {
   header,
-footer {
+  footer {
     width: 1111px;
     height: auto;
     border-radius: 0;
@@ -914,7 +914,7 @@ footer img {
 }
 @media only screen and (min-width: 768px) {
   header img,
-footer img {
+  footer img {
     width: 64px;
     height: 64px;
     border-radius: 0;
@@ -935,7 +935,7 @@ footer button {
 }
 @media only screen and (min-width: 768px) {
   header button,
-footer button {
+  footer button {
     width: 228px;
     height: 56px;
     border-radius: 28px;
@@ -955,7 +955,7 @@ footer button:hover {
 }
 @media only screen and (min-width: 768px) {
   header button:hover,
-footer button:hover {
+  footer button:hover {
     width: 228px;
     height: 56px;
     border-radius: 28px;
