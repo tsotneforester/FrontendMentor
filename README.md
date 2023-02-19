@@ -1,5 +1,5 @@
 prettier-ignore
-|Project|Naming|Pixel-Perfect|Responsive |SCSS|4K|
+|Project #|Naming|Pixel-Perfect|Responsive |SCSS|4K|
 |:--:| :-----: | :-----: |:-----: |:-----: |:-----: |
 |01|✅|✅|✅|✅|✅|
 |02|✅|✅|✅|✅|✅|
@@ -17,3 +17,4 @@ prettier-ignore
 |14|❌|❌|❌|✅|❌|
 |15|✅|✅|✅|✅|✅|
 |16|✅|✅|✅|✅|✅|
+|99|✅|✅|❌|✅|✅|
