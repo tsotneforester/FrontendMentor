@@ -4,9 +4,9 @@
 
 Another React project to skill:
 
-- [x] ``useState``
-- [x] Conditional Rendering
-- [x] ``props``
+- ``useState``
+- Conditional Rendering
+- ``props``
 
 ---
 ```sh
