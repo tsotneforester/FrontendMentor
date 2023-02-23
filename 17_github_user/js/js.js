@@ -7,7 +7,7 @@
 "use strict";
 const submit = document.getElementById("submit");
 const input = document.querySelector("input");
-//fetchApi("tsotneforester");
+fetchApi("tsotneforester");
 submit.addEventListener("click", function () {
   fetchApi(input.value);
 });
