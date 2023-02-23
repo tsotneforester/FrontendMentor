@@ -7,7 +7,7 @@
 "use strict";
 const submit = document.getElementById("submit");
 const input = document.querySelector("input");
-fetchApi("tsotneforester");
+//fetchApi("tsotneforester");
 submit.addEventListener("click", function () {
   fetchApi(input.value);
 });
@@ -20,9 +20,9 @@ async function fetchApi(name) {
       throw "No profile with this username";
     } else {
       let step2 = await step1.json();
-      let result = { ...step2, created_at: datefy(step2.created_at), bio: step2.bio ? step2.bio : "This profile has no bio", twitter_username: step2.twitter_username ? step2.twitter_username : "Not Available", company: step2.company ? step2.company : "@Personal", location: step2.location ? step2.location : "Unavalable", blog: step2.blog ? step2.blog : step2.html_url };
+      let result = { ...step2, name: step2.name ? step2.name : step2.login, created_at: datefy(step2.created_at), bio: step2.bio ? step2.bio : "This profile has no bio", twitter_username: step2.twitter_username ? [step2.twitter_username, ""] : ["Not Available", "gray"], company: step2.company ? step2.company : "@Personal", location: step2.location ? [step2.location, ""] : ["Unavalable", "gray"], blog: step2.blog ? step2.blog : step2.html_url };
       createCard(result);
-      console.log(step2);
+      console.log(result);
     } //twitter_username
   } catch (e) {
     console.log(e);
@@ -42,12 +42,25 @@ function createCard(data) {
         <div class="bio">
             ${data.bio}
         </div>
-        <div class="rff"></div>
+        <div class="rff">
+          <div class="repo">
+            <span class="heading">Repos</span>
+            <span class="count">${data.public_repos}</span>
+          </div>
+          <div class="ers">
+            <span class="heading">Followers</span>
+            <span class="count">${data.followers}</span>
+          </div>
+          <div class="ing">
+            <span class="heading">Following</span>
+            <span class="count">${data.following}</span>
+          </div>
+        </div>
         <div class="social">
           <section>
-            <div class="line" id="town">
+            <div class="line ${data.location[1]}" id="town">
               <div class="img"><img src="assets/pin.png" alt="pin" /></div>
-              <span>${data.location}</span>
+              <span>${data.location[0]}</span>
             </div>
             <div class="line" id="url">
               <div class="img"><img src="assets/url.png" alt="url" /></div>
@@ -55,9 +68,9 @@ function createCard(data) {
             </div>
           </section>
           <section>
-            <div class="line" id="twitter">
+            <div class="line ${data.twitter_username[1]}" id="twitter">
               <div class="img"><img src="assets/twitter.png" alt="twitter" /></div>
-              <span>${data.twitter_username}</span>
+              <span>${data.twitter_username[0]}</span>
             </div>
             <div class="line" id="work">
               <div class="img"><img src="assets/work.png" alt="work" /></div>
