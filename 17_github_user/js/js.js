@@ -23,6 +23,7 @@ async function fetchApi(name) {
       let result = { ...step2, name: step2.name ? step2.name : step2.login, created_at: datefy(step2.created_at), bio: step2.bio ? step2.bio : "This profile has no bio", twitter_username: step2.twitter_username ? [step2.twitter_username, ""] : ["Not Available", "gray"], company: step2.company ? step2.company : "@Personal", location: step2.location ? [step2.location, ""] : ["Unavalable", "gray"], blog: step2.blog ? step2.blog : step2.html_url };
       createCard(result);
       console.log(result);
+      input.value = "";
     } //twitter_username
   } catch (e) {
     console.log(e);
