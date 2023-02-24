@@ -90,7 +90,7 @@ pre {
   border: none;
 }
 
-:root {
+html[data-theme=light] {
   --bg: #f6f8ff;
   --box-bg: #fefefe;
   --text-dark-1: #222731;
@@ -102,19 +102,18 @@ pre {
   --fillter: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #141d2f;
-    --box-bg: #1e2a47;
-    --text-dark-1: #ffffff;
-    --text-dark-2: #ffffff;
-    --text-dark-3: #ffffff;
-    --text-gray: #ffffff;
-    --text-blue: #0079ff;
-    --error: #f74646;
-    --filter: brightness(0) invert(1);
-  }
+html[data-theme=dark] {
+  --bg: #141d2f;
+  --box-bg: #1e2a47;
+  --text-dark-1: #ffffff;
+  --text-dark-2: #ffffff;
+  --text-dark-3: #ffffff;
+  --text-gray: #ffffff;
+  --text-blue: #0079ff;
+  --error: #f74646;
+  --filter: brightness(0) invert(1);
 }
+
 body {
   min-height: 100vh;
   display: -webkit-box;
@@ -175,7 +174,7 @@ header h1 {
   font-weight: 700;
   text-align: center;
 }
-header .toggle {
+header .theme {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -191,12 +190,13 @@ header .toggle {
           align-items: center;
   gap: 16px;
 }
-header .toggle span {
+header .theme span {
   font-size: 13px;
   color: var(--text-gray);
   font-weight: 700;
   text-align: center;
   letter-spacing: 2.5px;
+  text-transform: uppercase;
 }
 
 .search {
@@ -283,6 +283,14 @@ header .toggle span {
     color: var(--text-gray);
     font-weight: 400;
     text-align: left;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .search section:nth-of-type(1) input {
+    width: 430px;
+    height: auto;
+    border-radius: 0;
+    background-color: transparent;
   }
 }
 .search section:nth-of-type(1) input::-webkit-input-placeholder {
@@ -379,7 +387,7 @@ header .toggle span {
     text-align: center;
   }
 }
-.search section:nth-of-type(2) #submit {
+.search section:nth-of-type(2) button {
   width: 84px;
   height: 46px;
   border-radius: 10px;
@@ -390,7 +398,7 @@ header .toggle span {
   text-align: center;
 }
 @media only screen and (min-width: 768px) {
-  .search section:nth-of-type(2) #submit {
+  .search section:nth-of-type(2) button {
     width: 106px;
     height: 50px;
     border-radius: 10px;

@@ -5,10 +5,11 @@
 //  ╙╢▒╢╖ ║╜,╢▒▒╝    ███▄▄███ ▐██▌--`  ▐██▌ ▐███ ▓███ ▐███▄███▌ ███▄▄▄▄
 //    `╢▒╜  ╣▒╜       ▀▀▀▀▀▀▀ '▀▀`     '▀▀`  ▀▀▀ ╙▀▀▀   ▀▀▀▀▀▀  ▀▀▀▀▀▀▀
 "use strict";
-const submit = document.getElementById("submit");
 const input = document.querySelector("input");
+const form = document.getElementById("myform");
 fetchApi("tsotneforester");
-submit.addEventListener("click", function () {
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
   fetchApi(input.value);
 });
 
@@ -98,5 +99,42 @@ function http(link) {
   let array = link.split("//");
   return array[1];
 }
-http("http://otarza.space");
-console.log(http("http://otarza.space"));
+
+if (window.matchMedia("(prefers-color-scheme)").media !== "not all") {
+  console.log("🎉 Dark mode is supported");
+}
+
+console.log(window.matchMedia("(prefers-color-scheme: dark)"));
+//
+/* const onj = {
+  media: "(min-width: 340px)",
+  matches: true,
+  onchange: null,
+};
+ */
+
+let theme = document.querySelector(".theme");
+let themeToggle = document.querySelector(".theme-toggle");
+let themeName = document.querySelector(".theme-name");
+
+let storedTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+if (storedTheme) document.documentElement.setAttribute("data-theme", storedTheme);
+
+function themefy(theme) {
+  themeName.innerHTML = theme;
+  themeToggle.setAttribute("src", `assets/${theme}.png`);
+}
+
+themefy("light");
+
+themeToggle.onclick = function () {
+  let currentTheme = document.documentElement.getAttribute("data-theme");
+  let targetTheme = "light";
+  themefy("dark");
+
+  if (currentTheme === "light") {
+    targetTheme = "dark";
+    themefy("light");
+  }
+  document.documentElement.setAttribute("data-theme", targetTheme);
+};

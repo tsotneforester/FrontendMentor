@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -30,19 +30,21 @@
   <body>
     <header>
       <h1>devfinder</h1>
-      <div class="toggle">
-        <span>LIGHT</span>
-        <img src="assets/sun.png" alt="sun" />
+      <div class="theme">
+        <span class="theme-name">LIGHT</span>
+        <img class="theme-toggle" src="assets/sun.png" alt="sun" />
       </div>
     </header>
     <div class="search">
       <section>
         <img src="assets/search.png" alt="" />
-        <input type="text" placeholder="Search GitHub username…" />
+        <form id="myform">
+          <input type="text" placeholder="Search GitHub username…" />
+        </form>
       </section>
       <section>
         <span class="error"></span>
-        <button id="submit">Search</button>
+        <button form="myform" type="submit">Search</button>
       </section>
     </div>
     <main>
