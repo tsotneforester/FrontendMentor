@@ -1,3 +1,3 @@
-# **QR Code**
+# **Portfolio**
 
 ![Main](https://gpx.ge/challenge/frontend/img/15_portfolio.png "image")
