@@ -99,7 +99,7 @@ html[data-theme=light] {
   --text-gray: #4b6a9b;
   --text-blue: #0079ff;
   --error: #f74646;
-  --fillter: none;
+  --filter: none;
 }
 
 html[data-theme=dark] {
@@ -469,7 +469,7 @@ main .avatar {
 main .avatar img {
   border-radius: 50%;
 }
-main .user {
+main .user-info {
   grid-area: user;
   width: 100%;
   height: auto;
@@ -490,7 +490,7 @@ main .user {
           align-items: flex-start;
 }
 @media only screen and (min-width: 1440px) {
-  main .user {
+  main .user-info {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -510,14 +510,14 @@ main .user {
         align-content: space-between;
   }
 }
-main .user h2 {
+main .user-info h2 {
   font-size: 16px;
   color: var(--text-dark-2);
   font-weight: 700;
   text-align: left;
 }
 @media only screen and (min-width: 768px) {
-  main .user h2 {
+  main .user-info h2 {
     font-size: 26px;
     color: var(--text-dark-2);
     font-weight: 700;
@@ -525,28 +525,28 @@ main .user h2 {
     line-height: 39px;
   }
 }
-main .user h6 {
+main .user-info h6 {
   font-size: 13px;
   color: var(--text-blue);
   font-weight: 400;
   text-align: left;
 }
 @media only screen and (min-width: 768px) {
-  main .user h6 {
+  main .user-info h6 {
     font-size: 16px;
     color: var(--text-blue);
     font-weight: 400;
     text-align: left;
   }
 }
-main .user h3 {
+main .user-info h3 {
   font-size: 13px;
   color: var(--text-dark-3);
   font-weight: 400;
   text-align: left;
 }
 @media only screen and (min-width: 768px) {
-  main .user h3 {
+  main .user-info h3 {
     font-size: 15px;
     color: var(--text-dark-3);
     font-weight: 400;

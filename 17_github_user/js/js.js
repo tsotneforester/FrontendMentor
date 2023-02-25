@@ -35,7 +35,7 @@ function createCard(data) {
   let node = `<div class="avatar">
         <img src="${data.avatar_url}" alt="${data.login}" />
       </div>
-      <div class="user">
+      <div class="user-info">
         <h2>${data.name}</h2>
         <h6>@${data.login}</h6>
         <h3>Joined ${data.created_at}</h3>
