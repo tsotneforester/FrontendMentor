@@ -133,6 +133,17 @@ body {
   font-family: "Space Mono", monospace;
   padding-top: 31px;
 }
+@media only screen and (min-width: 768px) {
+  body {
+    padding-top: 140px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  body {
+    padding-top: 144px;
+  }
+}
+
 header {
   width: 327px;
   height: 39px;
