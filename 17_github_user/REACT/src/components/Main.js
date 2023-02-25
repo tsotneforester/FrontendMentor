@@ -16,7 +16,7 @@ function Search({ input, submitHandler, error, inputHandler }) {
   return (
     <div className="search">
       <section>
-        <img src={process.env.PUBLIC_URL + "assets/search.png"} alt="" />
+        <img src={"assets/search.png"} alt="" />
         <form id="myform">
           <input type="text" placeholder="Search GitHub username…" value={input} onChange={inputHandler} />
         </form>
