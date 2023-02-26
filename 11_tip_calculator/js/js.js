@@ -1,103 +1,96 @@
+//      ,    ,
+//   ,@▒▒╜  ╣▒║╖     ▄▓█████  ▐██████▄ ▐██▌  ██▓       ▄█████▌  ███████`
+// ╓╣▒▒╜ @╝╣╖`╢▒▒╗   ███"---  ▐██▌-███` █▓█▄███▀      ▐██▌---   ███▌,,
+// ╢▒▒╖  ╢╗@╝  ╢▒▒╝  ███  ███ ▐███████  ▄▓█▓▓█▄       ▐██▌ ▐██▌ ██████
+//  ╙╢▒╢╖ ║╜,╢▒▒╝    ███▄▄███ ▐██▌--`  ▐██▌ ▐███ ▓███ ▐███▄███▌ ███▄▄▄▄
+//    `╢▒╜  ╣▒╜       ▀▀▀▀▀▀▀ '▀▀`     '▀▀`  ▀▀▀ ╙▀▀▀   ▀▀▀▀▀▀  ▀▀▀▀▀▀▀
 "use strict";
-let tip_buttons = document.querySelectorAll(".tip-button");
-let reset_button = document.querySelector("#reset-button");
-let bill_input = document.querySelector("#bill-input");
-let person_input = document.querySelector("#person-input");
-let tip_span = document.querySelector("#tip-amount");
-let total_span = document.querySelector("#total-amount");
-let error_text = document.querySelectorAll(".error-title");
+let billInput = document.querySelector("#bill-input");
+let tipInput = document.querySelector("#tip-input");
+let personInput = document.querySelector("#person-input");
+/////
+let tipPP = document.getElementById("tip-pp");
+let totalPP = document.getElementById("total-pp");
+////
+let reset = document.getElementById("reset-btn");
+let tipButtons = document.querySelectorAll("#group button");
+let input = document.querySelectorAll("input");
+////
+let error_text = document.querySelector(".error-title");
+///
+let billMultiplier = 0;
+let tipMultiplier = 0;
+let personMultiplier = null;
+//|||||||||||||||| I N P U T s  &   R E G E X ||||||||||||||||
 
-const Cal = {
-  numVars: {
-    billAmount: 0,
-    tipPercent: 0,
-    peopleAmount: 0,
-    tipAmount: 0,
-    totalAmount: 0,
-  },
-  removeZero(e) {
-    error_text[e].innerHTML = "";
-  },
-  activateReset() {
-    reset_button.style.backgroundColor = "#26c2ae";
-  },
-  removeClick() {
-    for (let i = 0; i < tip_buttons.length; i++) {
-      tip_buttons[i].classList.remove("clicked");
-    }
-  },
-  checkZero() {
-    if (this.numVars.billAmount == 0) {
-      error_text[0].innerHTML = "Can’t be zero";
-      bill_input.classList.add("errorborder");
-    }
-    if (this.numVars.tipPercent == 0) {
-      error_text[1].innerHTML = "Can’t be zero";
-    }
-    if (this.numVars.peopleAmount == 0) {
-      error_text[2].innerHTML = "Can’t be zero";
-      person_input.classList.add("errorborder");
-    }
-    this.activateReset();
-  },
-  disableReset() {
-    reset_button.removeAttribute("style");
-  },
-  calculateTip() {
-    if (this.numVars.billAmount != 0 && this.numVars.tipPercent != 0 && this.numVars.peopleAmount != 0) {
-      this.numVars.tipAmount = (this.numVars.billAmount * this.numVars.tipPercent) / 100 / this.numVars.peopleAmount;
-      this.numVars.totalAmount = this.numVars.billAmount / this.numVars.peopleAmount + this.numVars.tipAmount;
-      tip_span.innerHTML = this.numVars.tipAmount.toFixed(2);
-      total_span.innerHTML = this.numVars.totalAmount.toFixed(2);
-    }
-    if (this.numVars.billAmount == 0 || this.numVars.tipPercent == 0 || this.numVars.peopleAmount == 0) {
-      tip_span.innerHTML = "0.00";
-      total_span.innerHTML = "0.00";
-    }
-  },
-  resetAmounts() {
-    this.numVars.billAmount = this.numVars.tipPercent = this.numVars.peopleAmount = this.numVars.tipAmount = this.numVars.totalAmount = 0;
-    this.removeZero(0);
-    this.removeZero(1);
-    this.removeZero(2);
-    bill_input.value = "";
-    person_input.value = "";
-    tip_span.innerHTML = "0.00";
-    total_span.innerHTML = "0.00";
-    this.removeClick();
-    this.disableReset();
-    bill_input.classList.remove("errorborder");
-    person_input.classList.remove("errorborder");
-  },
-  patternControl(e) {
-    e.value = e.value.replace(/[^0-9]/g, "");
-  },
-  displayTip(numVarsKey, input, error) {
-    this.patternControl(input);
-    let frozen = numVarsKey;
-    let errorCode = error;
-    this.numVars[frozen] = Number(input.value);
-    this.calculateTip();
-    if (this.numVars[frozen] != 0) {
-      this.removeZero(errorCode);
-      input.classList.remove("errorborder");
-    }
+billInput.addEventListener("input", function () {
+  billInput.value = billInput.value.replace(/[^0-9]/g, "");
+  billMultiplier = billInput.value * 1;
+  totalAmount();
+});
 
-    if (this.numVars[frozen] == 0) {
-      this.checkZero();
-      input.classList.add("errorborder");
-    }
-  },
-  tipButtonAction(e) {
-    this.removeClick();
-    tip_buttons[e].classList.add("clicked");
-    this.numVars.tipPercent = Number(tip_buttons[e].getAttribute("value"));
-    this.checkZero();
-    this.activateReset();
-    this.calculateTip();
-    this.activateReset();
-    if (this.numVars.tipPercent != 0) {
-      this.removeZero(1);
-    }
-  },
-};
+tipInput.addEventListener("input", function () {
+  tipInput.value = tipInput.value.replace(/[^0-9]/g, "").slice(0, 2);
+  unclick();
+  tipMultiplier = tipInput.value / 100;
+  totalAmount();
+});
+
+personInput.addEventListener("input", function () {
+  personInput.value = personInput.value.replace(/[^0-9]/g, "");
+  personMultiplier = personInput.value * 1;
+  totalAmount();
+});
+
+personInput.addEventListener("blur", function () {
+  if (personInput.value == 0) {
+    error_text.innerHTML = "Can’t be zero";
+    personInput.classList.add("errorborder");
+  }
+});
+//|||||||||||||||||||| C L I C K  style toggle ||||||||||||||
+
+tipButtons.forEach((e) => {
+  e.addEventListener("click", function () {
+    tipInput.value = "";
+    unclick();
+    e.classList.add("clicked");
+    tipMultiplier = e.value / 100;
+    totalAmount();
+  });
+});
+
+function unclick() {
+  for (let i = 0; i < tipButtons.length; i++) {
+    tipButtons[i].classList.remove("clicked");
+  }
+}
+//////////////////////Calculate//////////////////
+
+function totalAmount() {
+  let total = billMultiplier + billMultiplier * tipMultiplier;
+  let tip = billMultiplier * tipMultiplier;
+
+  let tip_pp = (tip / personMultiplier) * 1;
+  console.log(tip_pp);
+  let total_pp = (total / personMultiplier) * 1;
+  console.log(total_pp);
+  let zoroHero = 0;
+
+  if (tip_pp && total_pp && personMultiplier) {
+    tipPP.innerHTML = tip_pp.toFixed(2);
+    totalPP.innerHTML = total_pp.toFixed(2);
+    reset.classList.remove("disabled");
+    error_text.innerHTML = "";
+    personInput.classList.remove("errorborder");
+  } else {
+    totalPP.innerHTML = zoroHero.toFixed(2);
+    tipPP.innerHTML = zoroHero.toFixed(2);
+    reset.classList.add("disabled");
+  }
+}
+//|||||||||||||||||| Reset |||||||||||||||||
+
+reset.addEventListener("click", function () {
+  location.reload();
+});
