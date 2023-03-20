@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:link,
+a:visited,
+a:focus,
+a:hover,
+a:active {
+  text-decoration: none;
+  outline: none;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: inherit;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+pre {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+}
+
+#wrapper {
+  min-height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
+}
+
+::-webkit-outer-spin-button,
+::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: rgb(255, 255, 255);
+  background-image: url(../images/bg-main-mobile.png);
+  background-repeat: no-repeat;
+  background-size: 100% 310px;
+  font-family: "Space Grotesk", sans-serif;
+  padding-top: 30px;
+}
+
+.credit-card {
+  width: 90%;
+  height: 420px;
+  border-radius: 0;
+  background-color: transparent;
+  max-width: 534px;
+  position: relative;
+  margin: 0 auto; /*fix*/
+}
+.credit-card .card-side {
+  position: absolute;
+  max-width: 452px;
+  height: 248px;
+  padding: 32px;
+  width: 100%;
+}
+.credit-card #front {
+  background-image: url(../images/bg-card-front.png);
+  background-size: cover;
+  z-index: 11;
+  top: 140px;
+}
+.credit-card #front #engraved-number {
+  position: absolute;
+  top: 140px;
+  letter-spacing: 4px;
+  width: 90%;
+  font-size: 22px;
+  color: white;
+  font-weight: 400;
+  text-align: left;
+}
+.credit-card #back {
+  background-image: url(../images/bg-card-back.png);
+  background-size: 100% 100%;
+  top: 0px;
+  right: 0;
+  z-index: 9;
+}
+.credit-card #back #engraved-cvc {
+  position: absolute;
+  top: 100px;
+  right: 52px;
+  font-size: 28px;
+  color: white;
+  font-weight: 400;
+  text-align: right;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: flex-star;
+      -ms-flex-pack: flex-star;
+          justify-content: flex-star;
+  -webkit-box-align: flex-star;
+      -ms-flex-align: flex-star;
+          align-items: flex-star;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 534px;
+  gap: 14px;
+}
+main input {
+  padding: 13px;
+  border: 1px solid rgb(33, 9, 47);
+  border-radius: 7px;
+  width: 100%;
+}
+main .full-name,
+main .card-number,
+main .expiry-date,
+main .cvc-code {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 8px;
+}
+main .expiry-cvc {
+  display: grid;
+  grid-template-areas: "lyear lyear lcvc lcvc" "year month cvc cvc";
+  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+}
+main .expiry-cvc #lable-year {
+  grid-area: lyear;
+}
+main .expiry-cvc #lable-cvc {
+  grid-area: lcvc;
+}
+main .expiry-cvc #year {
+  grid-area: year;
+}
+main .expiry-cvc #month {
+  grid-area: month;
+}
+main .expiry-cvc #cvc {
+  grid-area: cvc;
+}
+
+.error {
+  -webkit-transition: height 0.3s ease-in-out;
+  transition: height 0.3s ease-in-out;
+  font-size: 13px;
+  overflow: hidden;
+  height: 20px;
+  color: hsl(0, 100%, 66%);
+}

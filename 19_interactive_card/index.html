@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GPXcript</title>
+    <meta name="description" content="Devote and Code anything, anywhere, anytime" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://gpx.ge/root/img/infinite.png" />
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://gpx.ge/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="GPXcript" />
+    <meta property="og:description" content="Devote and Code anything, anywhere, anytime" />
+    <meta property="og:image" content="https://gpx.ge/root/img/main.png" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="gpx.ge" />
+    <meta property="twitter:url" content="https://gpx.ge/" />
+    <meta name="twitter:title" content="GPXcript" />
+    <meta name="twitter:description" content="Devote and Code anything, anywhere, anytime" />
+    <meta name="twitter:image" content="https://gpx.ge/root/img/main.png" />
+
+    <!-- StyleSheet -->
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="credit-card">
+      <div id="front" class="card-side">
+        <section id="engraved-number">0000 0000 0000 0000</section>
+      </div>
+      <div id="back" class="card-side">
+        <section id="engraved-cvc">0000</section>
+      </div>
+
+      <!-- <img id="front" src="images/bg-card-front.png" alt="front" />
+      <img id="back" src="images/bg-card-back.png" alt="back" /> -->
+    </div>
+
+    <main>
+      <section class="full-name">
+        <label for="full-name">CARDHOLDER NAME</label>
+        <input type="text" placeholder="e.g. Jane Appleseed" />
+        <span class="error"> Wrong format, numbers only </span>
+      </section>
+
+      <section class="card-number">
+        <label for="card-number">CARD NUMBER</label>
+        <input type="text" pattern="\d*" placeholder="e.g. 1234 5678 9123 0000" id="number" maxlength="19" />
+        <span class="error"
+          >Can`t be blank
+          <!-- Wrong format, numbers only --></span
+        >
+      </section>
+
+      <section class="expiry-cvc">
+        <label for="year" id="lable-year">EXP. DATE (MM/YY)</label>
+        <label for="cvc" id="lable-cvc">CVC</label>
+
+        <input type="number" placeholder="MM" id="month" />
+        <input type="number" placeholder="YY" id="year" />
+        <input type="text" placeholder="e.g. 123" id="cvc" maxlength="4" />
+      </section>
+    </main>
+    <script src="js/js.js"></script>
+  </body>
+</html>
