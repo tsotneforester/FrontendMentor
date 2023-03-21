@@ -9,3 +9,4 @@
 **/root/*.scss
 **/root/*.css
 design/
+.htmlhintrc
