@@ -173,6 +173,27 @@ body {
   font-weight: 400;
   text-align: left;
 }
+.credit-card #front #engraved-name {
+  position: absolute;
+  bottom: 30px;
+  width: auto;
+  font-size: 14px;
+  color: white;
+  font-weight: 400;
+  text-align: left;
+  text-transform: uppercase;
+}
+.credit-card #front #engraved-date {
+  position: absolute;
+  bottom: 30px;
+  right: 34px;
+  width: auto;
+  font-size: 14px;
+  color: white;
+  font-weight: 400;
+  text-align: left;
+  text-transform: uppercase;
+}
 .credit-card #back {
   background-image: url(../images/bg-card-back.png);
   background-size: 100% 100%;
@@ -236,7 +257,7 @@ main .cvc-code {
 }
 main .expiry-cvc {
   display: grid;
-  grid-template-areas: "lyear lyear lcvc lcvc" "year month cvc cvc";
+  grid-template-areas: "lyear lyear lcvc lcvc" "month year cvc cvc" "mr yr cr cr";
   gap: 10px;
   grid-template-columns: repeat(4, 1fr);
 }
@@ -255,12 +276,33 @@ main .expiry-cvc #month {
 main .expiry-cvc #cvc {
   grid-area: cvc;
 }
+main .expiry-cvc #month-error {
+  grid-area: mr;
+}
+main .expiry-cvc #year-error {
+  grid-area: yr;
+}
+main .expiry-cvc #cvc-error {
+  grid-area: cr;
+  text-align: right;
+}
+main button {
+  background: rgb(33, 9, 47);
+  border: none;
+  padding: 15px 20px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 18px;
+}
 
 .error {
   -webkit-transition: height 0.3s ease-in-out;
   transition: height 0.3s ease-in-out;
   font-size: 13px;
   overflow: hidden;
-  height: 20px;
   color: hsl(0, 100%, 66%);
+  height: 0;
+  -webkit-transition: all 1.1s;
+  transition: all 1.1s;
 }

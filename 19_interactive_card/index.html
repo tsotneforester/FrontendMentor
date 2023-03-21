@@ -31,6 +31,12 @@
     <div class="credit-card">
       <div id="front" class="card-side">
         <section id="engraved-number">0000 0000 0000 0000</section>
+        <section id="engraved-name">Jane Appleseed</section>
+        <section id="engraved-date">
+          <span id="engraved-month">01</span>
+          <span>/</span>
+          <span id="engraved-year">27</span>
+        </section>
       </div>
       <div id="back" class="card-side">
         <section id="engraved-cvc">0000</section>
@@ -43,27 +49,29 @@
     <main>
       <section class="full-name">
         <label for="full-name">CARDHOLDER NAME</label>
-        <input type="text" placeholder="e.g. Jane Appleseed" />
-        <span class="error"> Wrong format, numbers only </span>
+        <input type="text" placeholder="e.g. Jane Appleseed" id="name" />
+        <span class="error"></span>
       </section>
 
       <section class="card-number">
         <label for="card-number">CARD NUMBER</label>
         <input type="text" pattern="\d*" placeholder="e.g. 1234 5678 9123 0000" id="number" maxlength="19" />
-        <span class="error"
-          >Can`t be blank
-          <!-- Wrong format, numbers only --></span
-        >
+        <span class="error"></span>
       </section>
 
       <section class="expiry-cvc">
         <label for="year" id="lable-year">EXP. DATE (MM/YY)</label>
         <label for="cvc" id="lable-cvc">CVC</label>
 
-        <input type="number" placeholder="MM" id="month" />
-        <input type="number" placeholder="YY" id="year" />
+        <input type="text" pattern="\d*" placeholder="MM" id="month" maxlength="2" />
+        <input type="text" pattern="\d*" placeholder="YY" id="year" maxlength="2" />
         <input type="text" placeholder="e.g. 123" id="cvc" maxlength="4" />
+        <span class="error" id="month-error"></span>
+        <span class="error" id="year-error"></span>
+        <span class="error" id="cvc-error"></span>
       </section>
+
+      <button id="submit">CONFIRM</button>
     </main>
     <script src="js/js.js"></script>
   </body>
