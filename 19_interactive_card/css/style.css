@@ -386,6 +386,10 @@ main button {
   color: white;
 }
 
+.errored {
+  border-color: hsl(0, 100%, 66%);
+}
+
 @-webkit-keyframes shake {
   0% {
     -webkit-transform: translateX(5px);

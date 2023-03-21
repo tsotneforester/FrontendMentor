@@ -70,15 +70,18 @@ submit.addEventListener("click", function () {
     if (allInput[i].value == "") {
       allError[i].innerHTML = "Can`t be blank";
       allError[i].style.height = "20px";
+      allInput[i].classList.add("errored");
       shakeMe();
     } else {
       allError[i].style.height = "0";
+      allInput[i].classList.remove("errored");
     }
   }
 
   if (numberInput.value.replaceAll(" ", "").length > 1 && numberInput.value.replaceAll(" ", "").length < 16) {
     allError[1].innerHTML = "Number is too short";
     allError[1].style.height = "20px";
+    allInput[1].classList.add("errored");
     shakeMe();
   }
 
@@ -89,9 +92,11 @@ submit.addEventListener("click", function () {
       console.log(numberInput.value.replaceAll(" ", ""));
       allError[1].innerHTML = "Wrong format, numbers only";
       allError[1].style.height = "20px";
+      allInput[1].classList.add("errored");
       shakeMe();
     } else {
       allError[1].style.height = "0";
+      allInput[1].classList.remove("errored");
     }
 
     // if (!pattern.test(numberInput.value.replaceAll(" ", ""))) {
@@ -101,11 +106,13 @@ submit.addEventListener("click", function () {
   if (cvcInput.value.length < 3) {
     allError[4].innerHTML = "Number is too short";
     allError[4].style.height = "20px";
+    allInput[4].classList.add("errored");
     shakeMe();
   }
 
   if (cvcInput.value.length > 2) {
     allError[4].style.height = "0";
+    allInput[4].classList.remove("errored");
   }
 });
 
