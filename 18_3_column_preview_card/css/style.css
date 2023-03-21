@@ -234,6 +234,6 @@ button {
 
 button:hover {
   color: white;
-  background-color: hsla(0deg, 0%, 100%, 0.02);
+  background-color: hsla(0, 0%, 100%, 0.02);
   border: solid 1px white;
 }

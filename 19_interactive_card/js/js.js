@@ -22,10 +22,10 @@ cvcInput.addEventListener("input", function () {
 
 numberInput.addEventListener("input", function (e) {
   let raw = e.target.value.replaceAll(" ", "");
-  console.log(raw);
+
   if (raw) {
     let rawReg = raw.match(/\w{4}/g);
-    let result = rawReg ? zorg(raw) : e.target.value;
+    let result = rawReg ? spaceify(raw) : e.target.value;
 
     numberEngraved.innerHTML = result;
     numberInput.value = result.trim();
@@ -35,7 +35,7 @@ numberInput.addEventListener("input", function (e) {
 });
 
 nameInput.addEventListener("input", function () {
-  nameEngraved.innerHTML = nameInput.value;
+  nameEngraved.innerHTML = nameInput.value.toUpperCase();
 });
 
 monthInput.addEventListener("input", function () {
@@ -52,15 +52,13 @@ yearInput.addEventListener("input", function () {
   yearInput.value = yearInput.value.replace(/[^0-9]/g, "");
 });
 
-function zorg(string) {
-  let zzz = [...string];
-  console.log(string);
-  let n = Math.floor(zzz.length / 4);
-  console.log(n);
+function spaceify(string) {
+  let arr = [...string];
+  let n = Math.floor(arr.length / 4);
   for (let i = 0; i < n; i++) {
-    zzz.splice(4 + 4 * i + i, 0, " ");
+    arr.splice(4 + 4 * i + i, 0, " ");
   }
-  return zzz.join("");
+  return arr.join("");
 }
 
 let submit = document.getElementById("submit");
@@ -72,6 +70,7 @@ submit.addEventListener("click", function () {
     if (allInput[i].value == "") {
       allError[i].innerHTML = "Can`t be blank";
       allError[i].style.height = "20px";
+      shakeMe();
     } else {
       allError[i].style.height = "0";
     }
@@ -80,27 +79,39 @@ submit.addEventListener("click", function () {
   if (numberInput.value.replaceAll(" ", "").length > 1 && numberInput.value.replaceAll(" ", "").length < 16) {
     allError[1].innerHTML = "Number is too short";
     allError[1].style.height = "20px";
+    shakeMe();
   }
 
   if (numberInput.value.replaceAll(" ", "").length == 16) {
     let pattern = /\D+/g;
 
     if (pattern.test(numberInput.value.replaceAll(" ", ""))) {
+      console.log(numberInput.value.replaceAll(" ", ""));
       allError[1].innerHTML = "Wrong format, numbers only";
       allError[1].style.height = "20px";
+      shakeMe();
+    } else {
+      allError[1].style.height = "0";
     }
 
-    if (!pattern.test(numberInput.value.replaceAll(" ", ""))) {
-      allError[i].style.height = "0";
-    }
+    // if (!pattern.test(numberInput.value.replaceAll(" ", ""))) {
+    // }
   }
 
   if (cvcInput.value.length < 3) {
     allError[4].innerHTML = "Number is too short";
     allError[4].style.height = "20px";
+    shakeMe();
   }
 
   if (cvcInput.value.length > 2) {
     allError[4].style.height = "0";
   }
 });
+
+function shakeMe() {
+  submit.classList.add("active");
+  setTimeout(function () {
+    submit.classList.remove("active");
+  }, 350);
+}

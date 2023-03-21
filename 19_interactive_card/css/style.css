@@ -116,7 +116,7 @@ body {
   background-repeat: no-repeat;
   background-size: 100% 310px;
   font-family: "Space Grotesk", sans-serif;
-  padding-top: 30px;
+  padding: 30px 10px;
 }
 @media only screen and (min-width: 900px) {
   body {
@@ -133,20 +133,42 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    gap: 20px;
+    gap: 50px;
+    padding: 30px 30px 30px 14%;
     background-image: url(../images/bg-main-desktop.png);
-    background-size: auto 100%;
+    background-size: 30% 100%;
   }
 }
 
 .credit-card {
-  width: 90%;
+  width: 100%;
   height: 420px;
   border-radius: 0;
   background-color: transparent;
   max-width: 534px;
   position: relative;
-  margin: 0 auto; /*fix*/
+}
+@media only screen and (min-width: 900px) {
+  .credit-card {
+    width: 100%;
+    height: 448px;
+    border-radius: 0;
+    background-color: transparent;
+    max-width: 734px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
 }
 .credit-card .card-side {
   position: absolute;
@@ -157,11 +179,26 @@ body {
   max-width: 452px;
   padding: 32px;
 }
+@media only screen and (min-width: 900px) {
+  .credit-card .card-side {
+    position: relative;
+    width: 354px;
+    height: 208px;
+    border-radius: 12px;
+    background-color: transparent;
+    max-width: unset;
+  }
+}
 .credit-card #front {
   background-image: url(../images/bg-card-front.png);
   background-size: cover;
   z-index: 11;
   top: 140px;
+}
+@media only screen and (min-width: 900px) {
+  .credit-card #front {
+    top: 0;
+  }
 }
 .credit-card #front #engraved-number {
   position: absolute;
@@ -172,6 +209,15 @@ body {
   color: white;
   font-weight: 400;
   text-align: left;
+}
+@media only screen and (min-width: 900px) {
+  .credit-card #front #engraved-number {
+    top: 112px;
+    font-size: 18px;
+    color: white;
+    font-weight: 400;
+    text-align: left;
+  }
 }
 .credit-card #front #engraved-name {
   position: absolute;
@@ -197,18 +243,39 @@ body {
 .credit-card #back {
   background-image: url(../images/bg-card-back.png);
   background-size: 100% 100%;
+  background-repeat: no-repeat;
   top: 0px;
   right: 0;
   z-index: 9;
 }
+@media only screen and (min-width: 900px) {
+  .credit-card #back {
+    width: 100%;
+    height: 208px;
+    border-radius: 0;
+    background-color: transparent;
+    background-size: 354px 100%;
+    background-position: 100% 0%;
+  }
+}
 .credit-card #back #engraved-cvc {
   position: absolute;
-  top: 100px;
+  top: 104px;
   right: 52px;
   font-size: 28px;
   color: white;
   font-weight: 400;
   text-align: right;
+}
+@media only screen and (min-width: 900px) {
+  .credit-card #back #engraved-cvc {
+    top: 90px;
+    right: 48px;
+    font-size: 18px;
+    color: white;
+    font-weight: 400;
+    text-align: left;
+  }
 }
 
 main {
@@ -229,6 +296,11 @@ main {
   margin: 0 auto;
   max-width: 534px;
   gap: 14px;
+}
+@media only screen and (min-width: 900px) {
+  main {
+    max-width: 400px;
+  }
 }
 main input {
   padding: 13px;
@@ -303,6 +375,67 @@ main button {
   overflow: hidden;
   color: hsl(0, 100%, 66%);
   height: 0;
-  -webkit-transition: all 1.1s;
-  transition: all 1.1s;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.active {
+  -webkit-animation: shake 0.2s;
+          animation: shake 0.2s;
+  background-color: hsl(0, 100%, 66%);
+  color: white;
+}
+
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+  20% {
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
+  40% {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+  60% {
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
+  80% {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes shake {
+  0% {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+  20% {
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
+  40% {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+  60% {
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
+  80% {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
 }

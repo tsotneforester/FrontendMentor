@@ -95,7 +95,7 @@ pre {
 
 body {
   min-height: 100vh;
-  background-color: hsl(212deg, 45%, 89%);
+  background-color: hsl(212, 45%, 89%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
