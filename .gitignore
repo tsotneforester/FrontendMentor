@@ -8,3 +8,4 @@
 /.prettierignore
 **/root/*.scss
 **/root/*.css
+/design

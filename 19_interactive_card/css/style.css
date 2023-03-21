@@ -134,7 +134,7 @@ body {
         -ms-flex-align: center;
             align-items: center;
     gap: 50px;
-    padding: 30px 30px 30px 14%;
+    padding: 30px 30px 30px calc(30% - 240px);
     background-image: url(../images/bg-main-desktop.png);
     background-size: 30% 100%;
   }
@@ -154,7 +154,7 @@ body {
     height: 448px;
     border-radius: 0;
     background-color: transparent;
-    max-width: 734px;
+    max-width: 534px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
