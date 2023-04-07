@@ -1,6 +1,9 @@
+
+
+
 <a name="readme-top"></a>
 <div align="center">
- <img src="https://user-images.githubusercontent.com/79293287/230690583-935f9ece-4fc1-4f95-95e5-78fa5bf89b3e.png" alt="logo"><br/>
+ <img src="https://user-images.githubusercontent.com/79293287/230691890-17dd73a3-5dc6-4b12-9c63-e598e254f73d.png" alt="logo"><br/>
 <h3 align="center">Frontendmentor Projects</h3>
   <div align="center">
     <a href="https://gpx.ge/challenge/frontend/" target="_blank">🖥️ View Demo</a>
@@ -71,12 +74,6 @@ For React Projects
   npm start
   ```
 
-## About Me
-
-[![Top Langs](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=tsotneforester&theme=github_dark)](https://github.com/anuraghazra/github-readme-stats)
-
-
-<!-- https://home.aveek.io/GitHub-Profile-Badges/ -->
 
 
 prettier-ignore
@@ -101,3 +98,7 @@ prettier-ignore
 |17|✅|✅|✅|✅|✅|✅|✅
 |18|✅|❌|✅|✅|✅|❌|❌
 |19|✅|❌|✅|✅|✅|❌|❌
+
+## About Me
+
+[![Top Langs](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=tsotneforester&theme=github_dark)](https://github.com/anuraghazra/github-readme-stats)
