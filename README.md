@@ -5,12 +5,13 @@
 <div align="center">
  <img src="https://user-images.githubusercontent.com/79293287/230691890-17dd73a3-5dc6-4b12-9c63-e598e254f73d.png" alt="logo"><br/>
 <h3 align="center">Frontendmentor Projects</h3>
- [Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+
   <div align="center">
     <a href="https://gpx.ge/challenge/frontend/" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/Bitcamp/issues">🛠Submit Issue</a>
   </div>
+   [Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
 <br/>
 
 </div>
