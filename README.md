@@ -11,7 +11,8 @@
     ·
     <a href="https://github.com/tsotneforester/Bitcamp/issues">🛠Submit Issue</a>
     <br>
-    <a href="https://www.frontendmentor.io">👩🏻‍💻Frontend Mentor - challenges help you improve your coding skills by building realistic projects</a>
+    <a href="https://www.frontendmentor.io">👩🏻‍💻Frontend Mentor</a> 
+    - challenges help you improve your coding skills by building realistic projects
   </div>
 </div>
 
