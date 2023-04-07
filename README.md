@@ -11,12 +11,10 @@
     ·
     <a href="https://github.com/tsotneforester/Bitcamp/issues">🛠Submit Issue</a>
   </div>
-   [Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
-<br/>
-
 </div>
 
-![js](https://user-images.githubusercontent.com/79293287/230690681-18f9f658-7611-4280-aedf-088468960a12.gif)
+[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+
 
 # About The Project
 <h1 align="center"> About The Project </h1> 
@@ -104,3 +102,4 @@ prettier-ignore
 ## About Me
 
 [![Top Langs](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=tsotneforester&theme=github_dark)](https://github.com/anuraghazra/github-readme-stats)
+
