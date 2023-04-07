@@ -2,6 +2,7 @@
 *.txt
 *.ini
 *.map
+*.ts
 *.zip
 *.fig
 *.code-workspace

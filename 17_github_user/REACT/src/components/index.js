@@ -68,36 +68,6 @@ function Index() {
           <Bio {...user} />
           <Statistics {...user} />
           <Social {...user} />
-          {/* <div className="social">
-            <section>
-              <div className={user.location ? "line" : "line gray"} id="town">
-                <div className="img">
-                  <img src="assets/pin.png" alt="pin" />
-                </div>
-                <span>{user.location ? user.location : "Unavalable"}</span>
-              </div>
-              <div className="line" id="url">
-                <div className="img">
-                  <img src="assets/url.png" alt="url" />
-                </div>
-                <a href={user.blog ? user.blog : user.html_url}>{user.blog ? http(user.blog) : "Github"}</a>
-              </div>
-            </section>
-            <section>
-              <div className={user.twitter_username ? "line" : "line gray"} id="twitter">
-                <div className="img">
-                  <img src="assets/twitter.png" alt="twitter" />
-                </div>
-                <span>{user.twitter_username ? user.twitter_username : "Not Available"}</span>
-              </div>
-              <div className="line" id="work">
-                <div className="img">
-                  <img src="assets/work.png" alt="work" />
-                </div>
-                <span>{user.company ? user.company : "@personal"}</span>
-              </div>
-            </section>
-          </div> */}
         </div>
       </main>
     </>
