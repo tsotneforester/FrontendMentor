@@ -11,6 +11,8 @@
 </div>
 
   <div align="center">
+    Built With - <img src="https://img.shields.io/badge/-HTML-6abecd" alt="qr-code" />
+  <img src="https://img.shields.io/badge/-CSS-3e54a3" alt="qr-code" /> <br>
     <a href="https://gpx.ge/challenge/frontend/" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/Bitcamp/issues">🛠Submit Issue</a>
