@@ -20,7 +20,7 @@
 
 
 <h2 align="center">Notes</h2>
-Nothing worth noting. easiest HTML tags and most basic css in action.
+This is not "piece of cake" projact at all. solid FLEX knowlidge is required.
 
 
 

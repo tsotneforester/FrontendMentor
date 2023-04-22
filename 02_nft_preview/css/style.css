@@ -77,7 +77,7 @@ body {
   font-family: "Outfit", sans-serif;
 }
 
-.card {
+main {
   width: 327px;
   height: 543px;
   border-radius: 15px;
@@ -89,23 +89,23 @@ body {
   padding: 24px;
 }
 @media only screen and (min-width: 375px) {
-  .card {
+  main {
     width: 350px;
     height: 596px;
     border-radius: 15px;
     background-color: #0e2b41;
   }
 }
-.card .image {
+main .image {
   position: relative;
 }
-.card .image img[alt=equilibrium] {
+main .image img[alt=equilibrium] {
   width: 100%;
   border-radius: 8px;
   position: relative;
   display: block;
 }
-.card .image::after {
+main .image::after {
   background-color: rgba(0, 255, 247, 0.3921568627);
   content: url(../images/icon-view.svg);
   border-radius: 8px;
@@ -121,14 +121,14 @@ body {
   justify-content: center;
   align-items: center;
 }
-.card .image:hover::after {
+main .image:hover::after {
   opacity: 1;
 }
-.card .image img[alt=view] {
+main .image img[alt=view] {
   opacity: 0;
   transition: all 0.5s linear;
 }
-.card .info {
+main .info {
   margin-top: 24px;
   padding-bottom: 16px;
   border-bottom: 1px #2a4354 solid;
@@ -138,11 +138,11 @@ body {
   align-items: flex-start;
 }
 @media only screen and (min-width: 375px) {
-  .card .info {
+  main .info {
     padding-bottom: 24px;
   }
 }
-.card .info h1 {
+main .info h1 {
   font-size: 22px;
   color: white;
   font-weight: 600;
@@ -150,11 +150,11 @@ body {
   line-height: 28px;
   transition: color 0.5s linear;
 }
-.card .info h1:hover {
+main .info h1:hover {
   color: #00fff8;
   cursor: pointer;
 }
-.card .info p {
+main .info p {
   margin-top: 12px;
   font-size: 18px;
   color: #8bacd9;
@@ -163,11 +163,11 @@ body {
   line-height: 26px;
 }
 @media only screen and (min-width: 375px) {
-  .card .info p {
+  main .info p {
     margin-top: 16px;
   }
 }
-.card .info .numbers {
+main .info .numbers {
   width: 100%;
   margin-top: 16px;
   display: flex;
@@ -176,11 +176,11 @@ body {
   align-items: center;
 }
 @media only screen and (min-width: 375px) {
-  .card .info .numbers {
+  main .info .numbers {
     margin-top: 24px;
   }
 }
-.card .info .numbers div {
+main .info .numbers div {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -188,19 +188,19 @@ body {
   -moz-column-gap: 10px;
        column-gap: 10px;
 }
-.card .info .numbers img[alt=ethereum] + span {
+main .info .numbers img[alt=ethereum] + span {
   font-size: 15px;
   color: #00fff8;
   font-weight: 600;
   text-align: left;
 }
-.card .info .numbers img[alt=clock] + span {
+main .info .numbers img[alt=clock] + span {
   font-size: 15px;
   color: #8bacd9;
   font-weight: 600;
   text-align: left;
 }
-.card footer {
+main footer {
   margin-top: 16px;
   display: flex;
   flex-direction: row;
@@ -209,12 +209,12 @@ body {
   -moz-column-gap: 16px;
        column-gap: 16px;
 }
-.card footer img {
+main footer img {
   width: 33px;
   border-radius: 50%;
   border: white 1px solid;
 }
-.card footer div {
+main footer .author {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -222,20 +222,20 @@ body {
   -moz-column-gap: 5px;
        column-gap: 5px;
 }
-.card footer div p {
+main footer .author p {
   font-size: 15px;
   color: #8bacd9;
   font-weight: 400;
   text-align: left;
 }
-.card footer div span {
+main footer .author span {
   font-size: 15px;
   color: white;
   font-weight: 400;
   text-align: left;
   transition: color 0.5s linear;
 }
-.card footer div span:hover {
+main footer .author span:hover {
   color: #00fff8;
   cursor: pointer;
 }
