@@ -11,3 +11,4 @@
 **/root/*.css
 design/
 .htmlhintrc
+.vscode

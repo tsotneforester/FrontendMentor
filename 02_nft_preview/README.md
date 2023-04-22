@@ -20,7 +20,7 @@
 
 
 <h2 align="center">Notes</h2>
-This is not "piece of cake" projact at all. solid FLEX knowlidge is required.
+This is not "piece of cake" project at all. solid FLEX knowledge is required.
 
 
 
