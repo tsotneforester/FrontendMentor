@@ -67,17 +67,6 @@ pre {
   margin: 0;
 }
 
-#wrapper {
-  min-height: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  border: none;
-}
-
 body {
   min-height: 100vh;
   background-color: #08222f;
@@ -249,4 +238,16 @@ body {
 .card footer div span:hover {
   color: #00fff8;
   cursor: pointer;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+  color: white;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
