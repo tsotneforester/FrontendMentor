@@ -33,7 +33,7 @@ After first steps in Web Development (HTML+CSS), it was Javascript, which really
 - Main build language  
 ![html](https://img.shields.io/badge/-HTML-6abecd "image")
 ![css](https://img.shields.io/badge/-CSS-3e54a3 "image")
-![js](https://img.shields.io/badge/-Vanilla%20JS-cf6390 "image")
+![js](https://img.shields.io/badge/-JS-cf6390 "image")
 ![react](https://img.shields.io/badge/-React-f4cf0c "image")
 ![api](https://img.shields.io/badge/-API-aad742 "image")
 - Difficulty Level  
