@@ -1,6 +1,6 @@
 <h1 align="center">QR code component</h1>
 
-<div align="center" width="320px" height="240px">
+<div align="center">
   <img src="https://img.shields.io/badge/-HTML-6abecd" alt="qr-code" />
   <img src="https://img.shields.io/badge/-CSS-3e54a3" alt="qr-code" /> / 
   <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="qr-code" />
@@ -25,12 +25,7 @@
   </div>
 
 
-<h2 align="center">Quick Overview</h2>
-
-- Built with - ![html](https://img.shields.io/badge/-HTML-6abecd "image")
-![css](https://img.shields.io/badge/-CSS-3e54a3 "image")
-- Difficulty - ![newbie](https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd "image")
-- 
+<h2 align="center">Notes</h2>
 
 
 
