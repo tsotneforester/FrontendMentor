@@ -10,6 +10,7 @@
 **/root/*.scss
 **/root/*.css
 design/
-.htmlhintrc
-.vscode
-.ini
+*.htmlhintrc
+*.vscode
+*.ini
+*.code-workspace
