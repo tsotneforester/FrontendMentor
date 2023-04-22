@@ -2,7 +2,8 @@
 
 <div align="center" width="320px" height="240px">
   <img src="https://img.shields.io/badge/-HTML-6abecd" alt="qr-code" />
-  <img src="https://img.shields.io/badge/-CSS-3e54a3" alt="qr-code" />
+  <img src="https://img.shields.io/badge/-CSS-3e54a3" alt="qr-code" /> / 
+  <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="qr-code" />
 </div>
 
 <div align="center" width="320px" height="240px">
