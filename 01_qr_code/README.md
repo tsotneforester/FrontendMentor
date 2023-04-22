@@ -112,10 +112,8 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 **Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
-## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-![html](https://img.shields.io/badge/-HTML-6abecd "image")
+<!-- ![html](https://img.shields.io/badge/-HTML-6abecd "image")
 ![css](https://img.shields.io/badge/-CSS-3e54a3 "image")
 ![js](https://img.shields.io/badge/-JS-cf6390 "image")
 ![react](https://img.shields.io/badge/-React-f4cf0c "image")
@@ -125,6 +123,4 @@ This is where you can give a hat tip to anyone who helped you out on this projec
 ![junior](https://img.shields.io/badge/%202%20-junior-white?labelColor=aad742 "image")
 ![intermediate](https://img.shields.io/badge/%203%20-intermediate-white?labelColor=f1b604 "image")
 ![advanced](https://img.shields.io/badge/%204%20-advanced-white?labelColor=bf4605 "image")
-![guru](https://img.shields.io/badge/%205%20-guru-white?labelColor=ed2c49 "image")
-- Project Links
-- Summery
+![guru](https://img.shields.io/badge/%205%20-guru-white?labelColor=ed2c49 "image") -->
