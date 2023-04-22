@@ -1,5 +1,28 @@
 <h1 align="center">QR code component</h1>
 
+<div align="center">
+  <img src="https://gpx.ge/challenge/frontend/img/01_qr_code.png" alt="qr-code" />
+</div>
+
+  <div align="center">
+    <a href="https://gpx.ge/challenge/frontend/" target="_blank">🖥️ View Demo</a>
+    ·
+    <a href="https://github.com/tsotneforester/Bitcamp/issues">🛠Submit Issue</a>
+    <br>
+    <a href="https://www.frontendmentor.io">👩🏻‍💻Frontend Mentor</a> 
+    - challenges help you improve your coding skills by building realistic projects
+  </div>
+
+
+<h2 align="center">Quick Overview</h2>
+
+- Built with - ![html](https://img.shields.io/badge/-HTML-6abecd "image")
+![css](https://img.shields.io/badge/-CSS-3e54a3 "image")
+- Difficulty - ![newbie](https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd "image")
+- 
+
+
+
 
 
 
@@ -19,13 +42,10 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 ## Overview
 
 ### Screenshot
-<div align="center">
-  <img src="https://gpx.ge/challenge/frontend/img/01_qr_code.png" alt="qr-code" />
-</div>
 
-![html](https://img.shields.io/badge/-HTML-6abecd "image")
-![css](https://img.shields.io/badge/-CSS-3e54a3 "image")
-![newbie](https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd "image")
+
+
+
 
 ### Links
 
