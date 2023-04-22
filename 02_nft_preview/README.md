@@ -1,7 +1,7 @@
-<h1 align="center">QR code component</h1>
+<h1 align="center">NFT Preview</h1>
 
-<div align="center" width="320px" height="240px">
-  <img src="https://gpx.ge/challenge/frontend/img/02_nft_preview.png " alt="qr-code" />
+<div align="center">
+  <img src="https://gpx.ge/challenge/frontend/img/02_nft_preview.png" alt="qr-code" />
 </div>
 
   <div align="center">
@@ -10,7 +10,7 @@
   <br/>
     Difficulty - <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="qr-code" />
   <br/>
-    <a href="https://tsotneforester.github.io/Bitcamp/01_qr_code/" target="_blank">🖥️ View Demo</a>
+    <a href="https://tsotneforester.github.io/Bitcamp/02_nft_preview/" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/Bitcamp/issues">🛠Submit Issue</a>
     <br>
