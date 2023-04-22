@@ -23,7 +23,9 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
   <img src="https://gpx.ge/challenge/frontend/img/01_qr_code.png" alt="qr-code" />
 </div>
 
-
+![html](https://img.shields.io/badge/-HTML-6abecd "image")
+![css](https://img.shields.io/badge/-CSS-3e54a3 "image")
+![newbie](https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd "image")
 
 ### Links
 
@@ -93,74 +95,16 @@ Use this section to outline areas that you want to continue focusing on in futur
 ## Acknowledgments
 
 This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
-
-
-
-
-<!------------------------------------ Heading------------------------->
-<!-- # About The Project
-<h1 align="center"> About The Project </h1> -->
-
-<!----------------------------- Emphesize ------------------------------->
-<!-- **bold** / **bold** / <strong>bold</strong> -->
-<!-- _italic_ / _italic_ / <i>italic</i> -->
-<!-- **_italic + Bold_** -->
-
-<!----------------------------------- HR-------------------------------->
-
-<!-- *** / <hr> / --- -->
-
-<!----------------------------------- List-------------------------------->
-<!-- - item -->
-<!-- - item -->
-
-<!-- 1. item 1 -->
-<!-- 2. item 2 -->
-
-<!----------------------------------- Link -------------------------------->
-<!-- [hi](link) -->
-<!-- <https://www.markdownguide.org> -->
-<!-- <fake@example.com> -->
-
-<!----------------------- image and badge-------------------------------->
-<!-- ![txt](src "title") -->
-<!-- [![txt](src "title")](link) -->
-<!-- ![txt](https://img.shields.io/badge/Nvidia-RTX%204090-D212E1?style=for-the-badge&logo=nvidia&logoColor=white&labelColor=76B900 "image") -->
-<!-- ![html](https://img.shields.io/badge/-HTML-6abecd "image") -->
-
-<!----------------------- Blockquote -------------------------------->
-<!-- > blockquote -->
-
-<!----------------------- Terminal -------------------------------->
-<!-- ```sh
-const hello= "hello";
-``` -->
-
-<!----------------------- Table-------------------------------->
-<!-- | name | surname | age |
-| :--- | :-----: | --: |
-| 4    |    5    |   6 | -->
-<!----------------------- Back To Top -------------------------------->
-<!-- <a name="readme-top"></a>
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
-
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=tsotneforester&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
-
-[![Top Langs](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=tsotneforester&theme=github_dark)](https://github.com/anuraghazra/github-readme-stats)
-
-<!----------------------- Links -------------------------------->
-<!-- https://readme-typing-svg.demolab.com/demo/ -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-<!-- https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md -->
-<!-- https://github.com/tandpfun/skill-icons?ref=reactjsexample.com -->
-<!-- https://shields.io/ -->
-<!-- https://readme-typing-svg.demolab.com/demo/ -->
-<!-- https://reheader.glitch.me/home -->
-<!-- https://github-profile-summary-cards.vercel.app/demo.html -->
-<!-- https://www.terminalgif.com/ -->
-<!-- https://home.aveek.io/GitHub-Profile-Badges/ -->
-
-<!----------------------- Preview -------------------------------->
-<!-- https://markdownlivepreview.com/ -->
+![html](https://img.shields.io/badge/-HTML-6abecd "image")
+![css](https://img.shields.io/badge/-CSS-3e54a3 "image")
+![js](https://img.shields.io/badge/-JS-cf6390 "image")
+![react](https://img.shields.io/badge/-React-f4cf0c "image")
+![api](https://img.shields.io/badge/-API-aad742 "image")
+- Difficulty Level  
+![newbie](https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd "image")
+![junior](https://img.shields.io/badge/%202%20-junior-white?labelColor=aad742 "image")
+![intermediate](https://img.shields.io/badge/%203%20-intermediate-white?labelColor=f1b604 "image")
+![advanced](https://img.shields.io/badge/%204%20-advanced-white?labelColor=bf4605 "image")
+![guru](https://img.shields.io/badge/%205%20-guru-white?labelColor=ed2c49 "image")
+- Project Links
+- Summery
