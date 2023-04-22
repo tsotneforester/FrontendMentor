@@ -3,8 +3,7 @@
 ::after {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 :focus,
@@ -64,8 +63,7 @@ p {
 }
 
 pre {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
 }
 
@@ -73,24 +71,14 @@ pre {
   min-height: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   border: none;
 }
 
 #wrapper {
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f0f1ff));
   background: linear-gradient(180deg, #ffffff 0%, #f0f1ff 100%);
   font-family: "Plus Jakarta Sans", sans-serif;
 }
@@ -116,19 +104,10 @@ header {
   height: auto;
   border-radius: 0;
   background-color: transparent;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   margin: 16px 0 38px 0;
 }
 @media only screen and (min-width: 768px) {
@@ -191,38 +170,20 @@ header button:hover {
 
 main {
   width: 375px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   row-gap: 46px;
   padding: 0 16px 66px 16px;
 }
 @media only screen and (min-width: 768px) {
   main {
     width: 768px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
     padding: 0 40px 210px 40px;
   }
 }
@@ -233,19 +194,10 @@ main {
   }
 }
 main article {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 @media only screen and (min-width: 768px) {
   main article {
@@ -330,7 +282,6 @@ main article button {
   }
 }
 main article button:hover {
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.5))), -webkit-gradient(linear, left top, left bottom, from(#ff6f48), to(#f02aa6));
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
 }
 main section {
@@ -354,20 +305,10 @@ summary {
   height: auto;
   border-radius: 0;
   background-color: transparent;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f0f1ff));
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   background: linear-gradient(180deg, #ffffff 0%, #f0f1ff 100%);
   padding-bottom: 80px;
 }
@@ -382,56 +323,33 @@ summary {
   }
 }
 summary #full-width {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
   row-gap: 40px;
 }
 @media only screen and (min-width: 768px) {
   summary #full-width {
     width: 768px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-column-gap: 11px;
-       -moz-column-gap: 11px;
-            column-gap: 11px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    -moz-column-gap: 11px;
+         column-gap: 11px;
     row-gap: 56px;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 }
 @media only screen and (min-width: 1440px) {
   summary #full-width {
     width: 1130px;
-    -webkit-column-gap: 30px;
-       -moz-column-gap: 30px;
-            column-gap: 30px;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
     row-gap: 80px;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 }
 summary #firstbox {
@@ -564,7 +482,6 @@ summary .box .circle {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff6f48), to(#f02aa6));
   background: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
 }
 
@@ -573,36 +490,18 @@ footer {
   height: 120px;
   border-radius: 0;
   background-color: transparent;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   background-color: #13183f;
 }
 footer div {
   width: 343px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 @media only screen and (min-width: 768px) {
   footer div {
@@ -634,7 +533,6 @@ footer div button {
   height: 48px;
   border-radius: 28px;
   background-color: white;
-  background: -webkit-gradient(linear, left top, left bottom, from(#4851ff), to(#f02aa6));
   background: linear-gradient(180deg, #4851ff 0%, #f02aa6 100%);
   font-size: 16px;
   color: white;
@@ -648,7 +546,6 @@ footer div button {
     height: 56px;
     border-radius: 28px;
     background-color: white;
-    background: -webkit-gradient(linear, left top, left bottom, from(#4851ff), to(#f02aa6));
     background: linear-gradient(180deg, #4851ff 0%, #f02aa6 100%);
     font-size: 16px;
     color: white;
@@ -658,6 +555,5 @@ footer div button {
   }
 }
 footer div button:hover {
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.5))), -webkit-gradient(linear, left top, left bottom, color-stop(-54.32%, #4851ff), to(#f02aa6));
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), linear-gradient(180deg, #4851ff -54.32%, #f02aa6 100%);
 }

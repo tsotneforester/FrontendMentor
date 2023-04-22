@@ -3,8 +3,7 @@
 ::after {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 :focus,
@@ -64,8 +63,7 @@ p {
 }
 
 pre {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
 }
 
@@ -73,40 +71,21 @@ pre {
   min-height: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   border: none;
 }
 
 body {
-  background: -webkit-gradient(linear, left top, left bottom, from(#b068e9), to(#6463e7));
   background: linear-gradient(180deg, #b068e9 0%, #6463e7 100%);
   background-repeat: no-repeat;
   font-family: "Kumbh Sans", sans-serif;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
 }
 
@@ -139,13 +118,8 @@ h1 {
   #container {
     height: 509px;
     width: 920px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     padding: 0;
   }
 }
@@ -192,22 +166,15 @@ h1 {
 @media only screen and (min-width: 1000px) {
   #questionbox {
     margin-top: 65px;
-    -ms-flex-preferred-size: 450px;
-        flex-basis: 450px;
+    flex-basis: 450px;
   }
 }
 
 .questions {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   height: 45px;
   overflow: hidden;
-  -webkit-transition: height 200ms linear;
   transition: height 200ms linear;
   border-bottom: solid #e8e8ea 1px;
   /* border: dashed red 1px; */
@@ -219,13 +186,8 @@ h1 {
   font-style: normal;
   font-size: 13px;
   line-height: 16px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-transition: all 0.2s linear;
+  justify-content: space-between;
   transition: all 0.2s linear;
   margin: 10px 0;
 }
@@ -257,12 +219,8 @@ h1 {
 }
 
 .arrow {
-  -ms-flex-item-align: center;
-      align-self: center;
-  -webkit-transition: -webkit-transform 0.2s linear;
-  transition: -webkit-transform 0.2s linear;
+  align-self: center;
   transition: transform 0.2s linear;
-  transition: transform 0.2s linear, -webkit-transform 0.2s linear;
 }
 
 .fix {
@@ -270,8 +228,7 @@ h1 {
 }
 
 .fix1 {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .bold {
@@ -280,8 +237,7 @@ h1 {
 
 @media only screen and (min-width: 1000px) {
   #imagebox {
-    -ms-flex-preferred-size: 450px;
-        flex-basis: 450px;
+    flex-basis: 450px;
     background-image: url("../images/illustration-woman-online-desktop.svg");
     background-repeat: no-repeat;
     background-position: -86px 75px;

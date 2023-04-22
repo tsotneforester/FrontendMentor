@@ -4,8 +4,7 @@
 ::after {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 :focus,
@@ -65,8 +64,7 @@ p {
 }
 
 pre {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
 }
 
@@ -74,19 +72,10 @@ pre {
   min-height: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   border: none;
 }
 
@@ -98,19 +87,10 @@ pre {
 
 body {
   min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: rgb(255, 255, 255);
   background-image: url(../images/bg-main-mobile.png);
   background-repeat: no-repeat;
@@ -120,19 +100,10 @@ body {
 }
 @media only screen and (min-width: 900px) {
   body {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     gap: 50px;
     padding: 30px 30px 30px calc(30% - 240px);
     background-image: url(../images/bg-main-desktop.png);
@@ -155,19 +126,10 @@ body {
     border-radius: 0;
     background-color: transparent;
     max-width: 534px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 }
 .credit-card .card-side {
@@ -279,19 +241,10 @@ body {
 }
 
 main {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: flex-star;
-      -ms-flex-pack: flex-star;
-          justify-content: flex-star;
-  -webkit-box-align: flex-star;
-      -ms-flex-align: flex-star;
-          align-items: flex-star;
+  flex-direction: column;
+  justify-content: flex-star;
+  align-items: flex-star;
   width: 90%;
   margin: 0 auto;
   max-width: 534px;
@@ -312,19 +265,10 @@ main .full-name,
 main .card-number,
 main .expiry-date,
 main .cvc-code {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 8px;
 }
 main .expiry-cvc {
@@ -369,19 +313,16 @@ main button {
 }
 
 .error {
-  -webkit-transition: height 0.3s ease-in-out;
   transition: height 0.3s ease-in-out;
   font-size: 13px;
   overflow: hidden;
   color: hsl(0, 100%, 66%);
   height: 0;
-  -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
 
 .active {
-  -webkit-animation: shake 0.2s;
-          animation: shake 0.2s;
+  animation: shake 0.2s;
   background-color: hsl(0, 100%, 66%);
   color: white;
 }
@@ -390,56 +331,23 @@ main button {
   border-color: hsl(0, 100%, 66%);
 }
 
-@-webkit-keyframes shake {
-  0% {
-    -webkit-transform: translateX(5px);
-            transform: translateX(5px);
-  }
-  20% {
-    -webkit-transform: translateX(-5px);
-            transform: translateX(-5px);
-  }
-  40% {
-    -webkit-transform: translateX(5px);
-            transform: translateX(5px);
-  }
-  60% {
-    -webkit-transform: translateX(-5px);
-            transform: translateX(-5px);
-  }
-  80% {
-    -webkit-transform: translateX(5px);
-            transform: translateX(5px);
-  }
-  100% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
-  }
-}
-
 @keyframes shake {
   0% {
-    -webkit-transform: translateX(5px);
-            transform: translateX(5px);
+    transform: translateX(5px);
   }
   20% {
-    -webkit-transform: translateX(-5px);
-            transform: translateX(-5px);
+    transform: translateX(-5px);
   }
   40% {
-    -webkit-transform: translateX(5px);
-            transform: translateX(5px);
+    transform: translateX(5px);
   }
   60% {
-    -webkit-transform: translateX(-5px);
-            transform: translateX(-5px);
+    transform: translateX(-5px);
   }
   80% {
-    -webkit-transform: translateX(5px);
-            transform: translateX(5px);
+    transform: translateX(5px);
   }
   100% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
+    transform: translateX(0px);
   }
 }

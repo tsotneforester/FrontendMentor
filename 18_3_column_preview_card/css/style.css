@@ -3,8 +3,7 @@
 ::after {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 :focus,
@@ -64,8 +63,7 @@ p {
 }
 
 pre {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
 }
 
@@ -73,25 +71,15 @@ pre {
   min-height: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   border: none;
 }
 
 * {
   font-family: "Big Shoulders Display", cursive;
-  -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
 
@@ -99,35 +87,17 @@ body {
   min-height: 100vh;
   padding: 25px;
   background: radial-gradient(100% 100% at 50% 0%, #7a3491 0%, #56136c 100%);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 @media only screen and (min-width: 680px) {
   body {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     padding: 25px;
   }
 }
@@ -137,19 +107,10 @@ body {
   height: auto;
   border-radius: 0;
   background-color: transparent;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
   min-height: 460px;
   min-width: 233px;
   max-width: 318px;
@@ -166,7 +127,6 @@ body {
 }
 
 #box1 {
-  background: url("../images/sedan.jpg"), -webkit-gradient(linear, left top, left bottom, from(#dc30b1), to(#a13cce));
   background: url("../images/sedan.jpg"), linear-gradient(180deg, #dc30b1 0%, #a13cce 100%);
   background-position: -20% 0%;
   background-repeat: no-repeat;
@@ -179,14 +139,12 @@ body {
 }
 
 #box2 {
-  background: url("../images/suv.jpg"), -webkit-gradient(linear, left top, left bottom, from(#252b52), to(#1a2356));
   background: url("../images/suv.jpg"), linear-gradient(180deg, #252b52 0%, #1a2356 100%);
   background-position: -20% 0%;
   background-repeat: no-repeat;
 }
 
 #box3 {
-  background: url("../images/luxury.jpg"), -webkit-gradient(linear, left top, left bottom, from(#f53794), to(#fe6a51));
   background: url("../images/luxury.jpg"), linear-gradient(180deg, #f53794 0%, #fe6a51 100%);
   background-position: -20% 0%;
   background-repeat: no-repeat;
@@ -227,7 +185,6 @@ button {
   font-family: "Lexend Deca";
   display: inline-block;
   padding: 12px 36px;
-  -webkit-transition: ease-in-out 0.3s;
   transition: ease-in-out 0.3s;
   border: solid 1px transparent;
 }
