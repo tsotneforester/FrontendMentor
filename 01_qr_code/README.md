@@ -1,6 +1,6 @@
 <h1 align="center">QR code component</h1>
 
-<div align="center">
+<div align="center" width="320px" height="240px">
   <img src="https://gpx.ge/challenge/frontend/img/01_qr_code.png" alt="qr-code" />
 </div>
 
