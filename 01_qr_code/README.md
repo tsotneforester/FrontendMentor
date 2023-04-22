@@ -16,7 +16,7 @@
   <br/>
     Difficulty - <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="qr-code" />
   <br/>
-    <a href="https://gpx.ge/challenge/frontend/" target="_blank">🖥️ View Demo</a>
+    <a href="https://tsotneforester.github.io/Bitcamp/01_qr_code/" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/Bitcamp/issues">🛠Submit Issue</a>
     <br>
@@ -26,6 +26,7 @@
 
 
 <h2 align="center">Notes</h2>
+Nothing worth noting. easiest HTML tags and most basic css in action.
 
 
 
