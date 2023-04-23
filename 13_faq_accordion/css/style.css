@@ -67,17 +67,6 @@ pre {
   margin: 0;
 }
 
-#wrapper {
-  min-height: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  border: none;
-}
-
 body {
   background: linear-gradient(180deg, #b068e9 0%, #6463e7 100%);
   background-repeat: no-repeat;

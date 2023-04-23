@@ -67,17 +67,6 @@ pre {
   margin: 0;
 }
 
-#wrapper {
-  min-height: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  border: none;
-}
-
 body {
   background: url("../images/bg-pattern.svg") white left top no-repeat;
   background-size: 100% 320px;

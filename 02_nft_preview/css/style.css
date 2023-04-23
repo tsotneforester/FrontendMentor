@@ -200,7 +200,7 @@ main .info .numbers img[alt=clock] + span {
   font-weight: 600;
   text-align: left;
 }
-main footer {
+main .author {
   margin-top: 16px;
   display: flex;
   flex-direction: row;
@@ -209,12 +209,12 @@ main footer {
   -moz-column-gap: 16px;
        column-gap: 16px;
 }
-main footer img {
+main .author img {
   width: 33px;
   border-radius: 50%;
   border: white 1px solid;
 }
-main footer .author {
+main .author .person {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -222,32 +222,31 @@ main footer .author {
   -moz-column-gap: 5px;
        column-gap: 5px;
 }
-main footer .author p {
+main .author .person p {
   font-size: 15px;
   color: #8bacd9;
   font-weight: 400;
   text-align: left;
 }
-main footer .author span {
+main .author .person span {
   font-size: 15px;
   color: white;
   font-weight: 400;
   text-align: left;
   transition: color 0.5s linear;
 }
-main footer .author span:hover {
+main .author .person span:hover {
   color: #00fff8;
   cursor: pointer;
 }
 
-.attribution {
+footer {
   font-size: 11px;
   text-align: center;
   position: absolute;
   bottom: 10px;
   color: white;
 }
-
-.attribution a {
+footer a {
   color: hsl(228, 45%, 44%);
 }

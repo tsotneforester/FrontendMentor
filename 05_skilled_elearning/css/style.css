@@ -68,17 +68,6 @@ pre {
 }
 
 #wrapper {
-  min-height: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  border: none;
-}
-
-#wrapper {
   background: linear-gradient(180deg, #ffffff 0%, #f0f1ff 100%);
   font-family: "Plus Jakarta Sans", sans-serif;
 }
