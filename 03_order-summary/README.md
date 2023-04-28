@@ -1,4 +1,4 @@
-<h1 align="center">NFT Preview</h1>
+<h1 align="center">Order Summary</h1>
 
 <div align="center">
   <img src="https://gpx.ge/challenge/frontend/img/03_order-summary.png" alt="qr-code" />
