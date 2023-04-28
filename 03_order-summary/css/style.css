@@ -289,7 +289,7 @@ main h2 {
 }
 @media only screen and (min-width: 375px) {
   main h2 {
-    margin-top: 47px;
+    margin-top: 35px;
   }
 }
 main h2:hover {
