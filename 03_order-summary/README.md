@@ -20,6 +20,7 @@
 
 
 <h2 align="center">Notes</h2>
+Things here are quite understandible, same flex, same semantics
 
 
 
