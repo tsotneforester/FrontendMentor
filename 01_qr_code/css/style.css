@@ -121,13 +121,3 @@ p {
   font-weight: 400;
   text-align: center;
 }
-
-footer {
-  font-size: 11px;
-  text-align: center;
-  position: absolute;
-  bottom: 10px;
-}
-footer a {
-  color: hsl(228, 45%, 44%);
-}

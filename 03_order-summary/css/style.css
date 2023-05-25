@@ -295,14 +295,3 @@ main h2 {
 main h2:hover {
   color: #1f2e55;
 }
-
-footer {
-  font-size: 11px;
-  text-align: center;
-  position: absolute;
-  bottom: 10px;
-  color: black;
-}
-footer a {
-  color: hsl(228, 45%, 44%);
-}
