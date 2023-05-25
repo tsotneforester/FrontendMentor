@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GPXcript</title>
+    <meta name="description" content="Devote and Code anything, anywhere, anytime" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://gpx.ge/root/img/infinite.png" />
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://gpx.ge/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="GPXcript" />
+    <meta property="og:description" content="Devote and Code anything, anywhere, anytime" />
+    <meta property="og:image" content="https://gpx.ge/root/img/main.png" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="gpx.ge" />
+    <meta property="twitter:url" content="https://gpx.ge/" />
+    <meta name="twitter:title" content="GPXcript" />
+    <meta name="twitter:description" content="Devote and Code anything, anywhere, anytime" />
+    <meta name="twitter:image" content="https://gpx.ge/root/img/main.png" />
+
+    <!-- StyleSheet -->
+    <script src="js/moment.js"></script>
+    <script src="js/moment-precise-range.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="input">
+        <div class="day-input">
+          <label for="day">day</label>
+          <input type="number" id="day" placeholder="DD" />
+          <span class="error"></span>
+        </div>
+        <div class="month-input">
+          <label for="month">month</label>
+          <input type="number" id="month" placeholder="MM" />
+          <span class="error"></span>
+        </div>
+        <div class="year-input">
+          <label for="year">year</label>
+          <input type="number" id="year" placeholder="YYYY" />
+          <span class="error"></span>
+        </div>
+      </section>
+      <section class="submit">
+        <hr />
+        <div class="circle">
+          <img src="assets/icon-arrow.svg" alt="arrow" />
+        </div>
+      </section>
+      <section class="result">
+        <div class="year-result"><span>--</span> years</div>
+        <div class="month-result"><span>--</span> months</div>
+        <div class="day-result"><span>--</span> days</div>
+      </section>
+    </main>
+    <script src="js/js.js"></script>
+  </body>
+</html>

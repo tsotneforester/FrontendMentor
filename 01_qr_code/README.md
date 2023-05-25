@@ -18,19 +18,15 @@
     - challenges help you improve your coding skills by building realistic projects
   </div>
 
-
 <h2 align="center">Notes</h2>
 Nothing worth noting. easiest HTML tags and most basic css in action.
-
-
-
 
 <!-- ![html](https://img.shields.io/badge/-HTML-6abecd "image")
 ![css](https://img.shields.io/badge/-CSS-3e54a3 "image")
 ![js](https://img.shields.io/badge/-JS-cf6390 "image")
 ![react](https://img.shields.io/badge/-React-f4cf0c "image")
 ![api](https://img.shields.io/badge/-API-aad742 "image")
-- Difficulty Level  
+- Difficulty Level
 ![newbie](https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd "image")
 ![junior](https://img.shields.io/badge/%202%20-junior-white?labelColor=aad742 "image")
 ![intermediate](https://img.shields.io/badge/%203%20-intermediate-white?labelColor=f1b604 "image")
