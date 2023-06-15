@@ -65,18 +65,24 @@ npm install npm@latest -g
 ### Installation & Usage
 
 For React Projects
+  1. In REACT folder install NPM package
+  ```sh
+  npm install
+  ```
+  2. Run React App
+  ```sh
+  npm start
+  ```
 
-1. In REACT folder install NPM package
-
-```sh
-npm install
-```
-
-2. Run React App
-
-```sh
-npm start
-```
+For Vite Projects
+  1. In VITE folder install NPM package
+  ```sh
+  npm install
+  ```
+  2. Run Vite App
+  ```sh
+  npm run dev
+  ```
 
 dsfds
 | Project # | Naming | Pixel-Perfect | Responsive | SCSS | 4K | React | .fgm | deployed on Frontendmentor |
@@ -91,7 +97,7 @@ dsfds
 | 08 | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ✅ | ❌ |
 | 09 | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ✅ | ❌ |
 | 10 | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ✅ | ❌ |
-| 11 | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ |
+| 11 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 12 | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ✅ | ❌ |
 | 13 | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ✅ | ❌ |
 | 14 | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ✅ | ❌ |

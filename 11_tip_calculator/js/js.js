@@ -5,16 +5,16 @@
 //  ╙╢▒╢╖ ║╜,╢▒▒╝    ███▄▄███ ▐██▌--`  ▐██▌ ▐███ ▓███ ▐███▄███▌ ███▄▄▄▄
 //    `╢▒╜  ╣▒╜       ▀▀▀▀▀▀▀ '▀▀`     '▀▀`  ▀▀▀ ╙▀▀▀   ▀▀▀▀▀▀  ▀▀▀▀▀▀▀
 "use strict";
-let bill_input = document.getElementById("bill-input");
-let tip_input = document.getElementById("tip-input");
-let person_input = document.getElementById("person-input");
+//let bill_input = document.getElementById("bill-input");
+let bill_input = document.querySelector(".bill-box .input-line input");
+let tip_input = document.querySelector(".tip-box div input");
+let person_input = document.querySelector(".person-box .input-line input");
 
-let tip_pp = document.getElementById("tip-pp");
-let total_pp = document.getElementById("total-pp");
+let tip_pp = document.querySelectorAll("h4")[0];
+let total_pp = document.querySelectorAll("h4")[1];
 
-let reset = document.getElementById("reset-btn");
-let tip_buttons = document.querySelectorAll("#group button");
-let input = document.querySelectorAll("input");
+let reset_button = document.querySelector(".calculation-box > button");
+let tip_buttons = document.querySelectorAll(".tip-box > div button");
 
 let error_text = document.querySelector(".error-title");
 
@@ -32,7 +32,7 @@ bill_input.addEventListener("input", function () {
 bill_input.addEventListener("blur", function () {
   if (person_input.value == 0) {
     error_text.innerHTML = "Can’t be zero";
-    person_input.classList.add("errorborder");
+    person_input.classList.add("error-border");
   }
 });
 
@@ -52,7 +52,7 @@ person_input.addEventListener("input", function () {
 person_input.addEventListener("blur", function () {
   if (person_input.value == 0) {
     error_text.innerHTML = "Can’t be zero";
-    person_input.classList.add("errorborder");
+    person_input.classList.add("error-border");
   }
 });
 //|||||||||||||||||||| C L I C K  style toggle ||||||||||||||
@@ -85,17 +85,17 @@ function totalAmount() {
   if (tipPP && totalPP && personMultiplier) {
     tip_pp.innerHTML = tipPP.toFixed(2);
     total_pp.innerHTML = totalPP.toFixed(2);
-    reset.classList.remove("disabled");
+    reset_button.classList.remove("disabled");
     error_text.innerHTML = "";
-    person_input.classList.remove("errorborder");
+    person_input.classList.remove("error-border");
   } else {
     total_pp.innerHTML = zoroHero.toFixed(2);
     tip_pp.innerHTML = zoroHero.toFixed(2);
-    reset.classList.add("disabled");
+    reset_button.classList.add("disabled");
   }
 }
 //|||||||||||||||||| Reset |||||||||||||||||
 
-reset.addEventListener("click", function () {
+reset_button.addEventListener("click", function () {
   location.reload();
 });

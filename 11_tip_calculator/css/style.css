@@ -97,16 +97,6 @@ body {
   }
 }
 
-.input {
-  position: relative;
-}
-
-main img {
-  position: absolute;
-  top: 14px;
-  left: 10px;
-}
-
 input {
   width: 311px;
   height: 48px;
@@ -164,15 +154,43 @@ h1 {
   display: inline-block;
   margin-bottom: 6px;
 }
+@media only screen and (min-width: 980px) {
+  h1 {
+    margin-bottom: 16px;
+  }
+}
 
-.error-title {
+h2 {
   font-size: 16px;
+  color: #ffffff;
   font-weight: 700;
+  text-align: center;
   line-height: 24px;
-  letter-spacing: 0px;
+}
+
+h3 {
+  font-size: 13px;
+  color: #7f9d9f;
+  font-weight: 700;
+  text-align: center;
+  line-height: 19px;
+}
+
+h4 {
+  font-size: 32px;
+  color: var(--bright-green-2);
+  font-weight: 700;
   text-align: right;
-  color: #e17457;
-  display: inline-block;
+  line-height: 47px;
+}
+@media only screen and (min-width: 980px) {
+  h4 {
+    font-size: 48px;
+    color: var(--bright-green-2);
+    font-weight: 700;
+    text-align: right;
+    line-height: 71px;
+  }
 }
 
 main {
@@ -195,29 +213,26 @@ main {
     border-radius: 25px;
   }
 }
-main .bill-input {
+
+.bill-box {
   position: relative;
   width: 100%;
 }
 @media only screen and (min-width: 980px) {
-  main .bill-input {
+  .bill-box {
     grid-area: 1/1/span 1/span 1;
   }
 }
-main .tip-box {
+
+.tip-box {
   width: 100%;
 }
 @media only screen and (min-width: 980px) {
-  main .tip-box {
+  .tip-box {
     grid-area: 2/1/span 1/span 1;
   }
 }
-@media only screen and (min-width: 980px) {
-  main .tip-box h1 {
-    margin-bottom: 16px;
-  }
-}
-main .tip-box #group {
+.tip-box > div {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -226,31 +241,13 @@ main .tip-box #group {
   gap: 16px;
 }
 @media only screen and (min-width: 980px) {
-  main .tip-box #group {
+  .tip-box > div {
     -moz-column-gap: 14px;
          column-gap: 14px;
     row-gap: 16px;
   }
 }
-main .tip-box #tip-input {
-  width: 146px;
-  height: 48px;
-  border-radius: 5px;
-  background-color: #f3f9fa;
-  font-size: 24px;
-  color: var(--dark-green);
-  font-weight: 700;
-  text-align: right;
-  border: none;
-  line-height: 36px;
-  padding-right: 18px;
-}
-@media only screen and (min-width: 980px) {
-  main .tip-box #tip-input {
-    width: 117px;
-  }
-}
-main .tip-box .tip-btn {
+.tip-box > div button {
   width: 146px;
   height: 48px;
   border-radius: 5px;
@@ -264,37 +261,54 @@ main .tip-box .tip-btn {
   border: none;
 }
 @media only screen and (min-width: 980px) {
-  main .tip-box .tip-btn {
+  .tip-box > div button {
     width: 117px;
   }
 }
-main .tip-box .tip-btn:hover {
+.tip-box > div button:hover {
   background-color: var(--bright-green-1);
 }
-main .tip-box .tip-btn.clicked {
+.tip-box > div button.clicked {
   background-color: var(--bright-green-2);
   color: var(--dark-green);
 }
-main .people-box {
+.tip-box > div input {
+  width: 146px;
+  height: 48px;
+  border-radius: 5px;
+  background-color: #f3f9fa;
+  font-size: 24px;
+  color: var(--dark-green);
+  font-weight: 700;
+  text-align: right;
+  border: none;
+  line-height: 36px;
+  padding-right: 18px;
+}
+@media only screen and (min-width: 980px) {
+  .tip-box > div input {
+    width: 117px;
+  }
+}
+
+.person-box {
   position: relative;
   width: 100%;
 }
 @media only screen and (min-width: 980px) {
-  main .people-box {
+  .person-box {
     grid-area: 3/1/span 1/span 1;
   }
 }
-main .people-box section {
+.person-box div:nth-of-type(1) {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 6px;
 }
-main .people-box #person-input.errorborder {
-  border: 2px #e17052 solid;
-}
-main .calc {
+
+.calculation-box {
   width: 311px;
   height: 257px;
   border-radius: 15px;
@@ -306,14 +320,26 @@ main .calc {
   align-items: stretch;
 }
 @media only screen and (min-width: 980px) {
-  main .calc {
+  .calculation-box {
     grid-area: 1/2/span 3/span 1;
     padding: 40px;
     height: 417px;
     width: 413px;
   }
 }
-main .calc .reset-btn {
+.calculation-box > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.calculation-box > div div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.calculation-box > button {
   width: 100%;
   height: 48px;
   border-radius: 5px;
@@ -325,54 +351,31 @@ main .calc .reset-btn {
   color: var(--dark-green);
   border: none;
 }
-main .calc .reset-btn.disabled {
+.calculation-box > button.disabled {
   background-color: var(--dis-green);
   color: var(--dark-green);
   pointer-events: none;
 }
-main .calc .reset-btn.disabled:hover {
-  background-color: var(--dis-green);
-  color: var(--dark-green);
-}
-main .calc .amount-line {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-main .calc .amount-line section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
-main .calc .amount-line h2 {
-  font-style: normal;
-  font-weight: 700;
+
+.error-title {
   font-size: 16px;
+  font-weight: 700;
   line-height: 24px;
-  color: #ffffff;
-}
-main .calc .amount-line h3 {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 13px;
-  line-height: 19px;
-  color: #7f9d9f;
-}
-main .calc .amount-line .amount {
-  font-size: 32px;
-  color: var(--bright-green-2);
-  font-weight: 700;
+  letter-spacing: 0px;
   text-align: right;
-  line-height: 47px;
+  color: #e17457;
+  display: inline-block;
 }
-@media only screen and (min-width: 980px) {
-  main .calc .amount-line .amount {
-    font-size: 48px;
-    color: var(--bright-green-2);
-    font-weight: 700;
-    text-align: right;
-    line-height: 71px;
-  }
+
+.input-line {
+  position: relative;
+}
+.input-line img {
+  position: absolute;
+  top: 14px;
+  left: 10px;
+}
+
+.error-border {
+  border: 2px #e17052 solid;
 }

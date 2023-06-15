@@ -29,52 +29,52 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <img src="img/logo.svg" alt="" />
+    <img src="img/logo.svg" alt="logo" />
     <main>
       <div class="bill-box">
         <h1>Bill</h1>
-        <div class="input">
-          <img src="img/dollar.svg" alt="" />
-          <input id="bill-input" type="text" placeholder="0" />
+        <div class="input-line">
+          <img src="img/dollar.svg" alt="dollar" />
+          <input type="text" placeholder="0" />
         </div>
       </div>
       <div class="tip-box">
         <h1>Select Tip %</h1>
-        <div id="group">
-          <button value="5" class="tip-btn">5%</button>
-          <button value="10" class="tip-btn">10%</button>
-          <button value="15" class="tip-btn">15%</button>
-          <button value="20" class="tip-btn">20%</button>
-          <button value="30" class="tip-btn">30%</button>
-          <input class="tip-btn" id="tip-input" type="text" placeholder="Custom" />
+        <div>
+          <button value="5">5%</button>
+          <button value="10">10%</button>
+          <button value="15">15%</button>
+          <button value="20">20%</button>
+          <button value="30">30%</button>
+          <input type="text" placeholder="Custom" />
         </div>
       </div>
-      <div class="people-box">
-        <section>
+      <div class="person-box">
+        <div>
           <h1>Num. of People</h1>
           <span class="error-title"></span>
-        </section>
-        <div class="input">
-          <img src="img/person.svg" alt="" />
-          <input id="person-input" type="text" placeholder="0" />
+        </div>
+        <div class="input-line">
+          <img src="img/person.svg" alt="person" />
+          <input type="text" placeholder="0" />
         </div>
       </div>
-      <div class="calc">
-        <div class="amount-line">
-          <section>
+      <div class="calculation-box">
+        <div>
+          <div>
             <h2>Tip Amount</h2>
             <h3>/ person</h3>
-          </section>
-          <div id="tip-pp" class="amount">0.00</div>
+          </div>
+          <h4>0.00</h4>
         </div>
-        <div class="amount-line">
-          <section>
+        <div>
+          <div>
             <h2>Total</h2>
             <h3>/ person</h3>
-          </section>
-          <div id="total-pp" class="amount">0.00</div>
+          </div>
+          <h4>0.00</h4>
         </div>
-        <button id="reset-btn" class="reset-btn disabled">RESET</button>
+        <button class="disabled">RESET</button>
       </div>
     </main>
   </body>
