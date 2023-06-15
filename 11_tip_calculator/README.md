@@ -14,7 +14,7 @@
   <br/>
     <a href="https://tsotneforester.github.io/Bitcamp/11_tip_calculator/" target="_blank">🖥️ View Demo</a>
     ·
-    <a href="https://github.com/tsotneforester/Javascript/issues">🛠Submit Issue</a>
+    <a href="https://github.com/tsotneforester/Bitcamp/issues">🛠Submit Issue</a>
 
   </div>
 
