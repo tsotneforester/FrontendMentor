@@ -26,8 +26,8 @@ S.Header = styled.header`
   & h1 {
     font-size: 24px;
     color: #4d4f62;
-    font-weight: 400;
-    text-align: 275;
+    font-weight: 275;
+    text-align: center;
   }
   @media only screen and (min-width: 1200px) {
     & h1 {
@@ -37,8 +37,8 @@ S.Header = styled.header`
   & h2 {
     font-size: 24px;
     color: #4d4f62;
-    font-weight: 400;
-    text-align: 600;
+    font-weight: 600;
+    text-align: center;
   }
   @media only screen and (min-width: 1200px) {
     & h2 {
