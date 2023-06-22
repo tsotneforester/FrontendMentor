@@ -85,8 +85,8 @@ For Vite Projects
   ```
 
 dsfds
-| Project # | Naming | Pixel-Perfect | Responsive  | 4K | React | .fgm | deployed on Frontendmentor |
-| :-------: | :----: | :-----------: | :--------: | :-: | :---: | :--: | :------------------------: |
+| Project # | Naming | P | Responsive  | 4K | React | .fgm | deployed on Frontendmentor |
+| :-------: | :----: | :-----------: | :--------: | :-: | :---: | :--: | :---------: |
 | 01 | ✅ | ✅ | ✅ | ✅ | ❎ | ✅ | ✅ |
 | 02 | ✅ | ✅ | ✅ | ✅ | ❎ | ✅ | ✅ |
 | 03 | ✅ | ✅ | ✅ | ✅ | ❎ | ✅ | ✅ |
