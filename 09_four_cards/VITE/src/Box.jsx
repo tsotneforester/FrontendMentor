@@ -41,14 +41,14 @@ S.Box = styled.div`
   & h1 {
     font-size: 20px;
     color: #4d4f62;
-    font-weight: 400;
-    text-align: 600;
+    font-weight: 600;
+    text-align: center;
   }
   & p {
     font-size: 13px;
     color: #4d4f62;
     font-weight: 400;
-    text-align: 400;
+    text-align: center;
     opacity: 0.5;
   }
   & img {

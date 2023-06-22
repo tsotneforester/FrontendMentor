@@ -49,7 +49,7 @@ S.Header = styled.header`
     font-size: 15px;
     color: #4d4f62;
     font-weight: 400;
-    text-align: 400;
+    text-align: center;
     margin-top: 12px;
     opacity: 0.5;
   }
