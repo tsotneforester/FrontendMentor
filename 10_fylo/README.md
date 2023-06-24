@@ -1,3 +1,3 @@
 # **Fylo**
 
-![Main](https://gpx.ge/challenge/frontend/img/10_fylo.png "image")
+![Main](https://gpx.ge/challenge/frontend/img/10_fylo.gif "image")

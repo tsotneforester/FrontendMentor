@@ -1,7 +1,7 @@
 <h1 align="center">QR code component</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/challenge/frontend/img/01_qr_code.png" alt="qr-code" />
+  <img src="https://gpx.ge/challenge/frontend/img/01_qr_code.gif" alt="qr-code" />
 </div>
 
   <div align="center">

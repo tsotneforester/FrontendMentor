@@ -1,3 +1,3 @@
 # **Faq accordion**
 
-![Main](https://gpx.ge/challenge/frontend/img/13_faq_accordion.png "image")
+![Main](https://gpx.ge/challenge/frontend/img/13_faq_accordion.gif "image")
