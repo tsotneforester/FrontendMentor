@@ -1,7 +1,7 @@
 <h1 align="center">Order Summary</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/challenge/frontend/img/03_order-summary.gif" alt="qr-code" />
+  <img src="https://gpx.ge/challenge/frontend/img/03_order_summary.gif" alt="qr-code" />
 </div>
 
   <div align="center">
@@ -10,7 +10,7 @@
   <br/>
     Difficulty - <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="qr-code" />
   <br/>
-    <a href="https://tsotneforester.github.io/Bitcamp/03_order-summary/" target="_blank">🖥️ View Demo</a>
+    <a href="https://tsotneforester.github.io/Bitcamp/03_order_summary/" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/Bitcamp/issues">🛠Submit Issue</a>
     <br>
