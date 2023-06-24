@@ -67,18 +67,15 @@ pre {
   margin: 0;
 }
 
-/*lets start coding*/
-/*font-family: 'Open Sans', sans-serif;
-font-family: 'Raleway', sans-serif;*/
 img {
   max-width: 100%;
 }
 
 body {
   display: flex;
-  flex-direction: stretch;
-  justify-content: column;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
 }
 
 input {
@@ -130,9 +127,9 @@ input::placeholder {
 /*-----------Footer-------------*/
 header {
   display: flex;
-  flex-direction: center;
-  justify-content: row;
-  align-items: space-between;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   padding: 20px 30px;
   margin-bottom: 40px;
 }
@@ -143,8 +140,8 @@ header {
 }
 header nav {
   display: flex;
-  flex-direction: center;
-  justify-content: row;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   -moz-column-gap: 20px;
        column-gap: 20px;
@@ -152,9 +149,8 @@ header nav {
   font-size: 12px;
   color: #07043b;
   font-weight: 400;
-  text-align: 400;
-  line-height: 14px;
   text-align: left;
+  line-height: 14px;
 }
 @media only screen and (min-width: 800px) {
   header nav {
@@ -179,18 +175,18 @@ header #logo {
 }
 main #main-1 {
   display: flex;
-  flex-direction: center;
-  justify-content: column;
-  align-items: space-between;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   row-gap: 20px;
   padding: 20px 20px;
 }
 @media only screen and (min-width: 800px) {
   main #main-1 {
     display: flex;
-    flex-direction: center;
-    justify-content: row;
-    align-items: space-between;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     flex-direction: row-reverse;
     margin-bottom: 30px;
     padding: 20px 80px;
@@ -206,9 +202,9 @@ main #main-1 div:nth-of-type(1) {
 }
 main #main-1 div:nth-of-type(2) {
   display: flex;
-  flex-direction: center;
-  justify-content: column;
-  align-items: space-between;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   row-gap: 20px;
 }
 @media only screen and (min-width: 800px) {
@@ -220,20 +216,18 @@ main #main-1 div:nth-of-type(2) h1 {
   font-family: Open Sans;
   font-size: 24px;
   color: #07043b;
-  font-weight: 400;
-  text-align: 700;
-  line-height: 36px;
+  font-weight: 700;
   text-align: center;
+  line-height: 36px;
 }
 @media only screen and (min-width: 800px) {
   main #main-1 div:nth-of-type(2) h1 {
     font-family: Raleway;
     font-size: 40px;
     color: #07043b;
-    font-weight: 400;
-    text-align: 700;
-    line-height: 60px;
+    font-weight: 700;
     text-align: left;
+    line-height: 60px;
   }
 }
 main #main-1 div:nth-of-type(2) p {
@@ -241,35 +235,33 @@ main #main-1 div:nth-of-type(2) p {
   font-size: 14px;
   color: #07043b;
   font-weight: 400;
-  text-align: 400;
+  text-align: center;
   font-family: "Open Sans";
   line-height: 21px;
-  text-align: center;
 }
 @media only screen and (min-width: 800px) {
   main #main-1 div:nth-of-type(2) p {
     font-size: 17px;
     color: #07043b;
     font-weight: 400;
-    text-align: 400;
-    line-height: 24px;
     text-align: left;
+    line-height: 24px;
   }
 }
 main #main-1 div:nth-of-type(2) div {
   width: 100%;
   display: flex;
-  flex-direction: center;
-  justify-content: column;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   row-gap: 6px;
 }
 @media only screen and (min-width: 800px) {
   main #main-1 div:nth-of-type(2) div {
     display: flex;
-    flex-direction: center;
-    justify-content: row;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
     -moz-column-gap: 8px;
          column-gap: 8px;
     width: 420px;
@@ -280,8 +272,8 @@ main #main-1 div:nth-of-type(2) div div {
   width: 290px;
   height: 58px;
   display: flex;
-  flex-direction: flex-start;
-  justify-content: column;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: flex-start;
 }
 @media only screen and (min-width: 800px) {
@@ -293,7 +285,7 @@ main #main-1 div:nth-of-type(2) div div #email1 {
   font-size: 12px;
   color: #07043b;
   font-weight: 400;
-  text-align: 400;
+  text-align: center;
   height: 40px;
 }
 @media only screen and (min-width: 800px) {
@@ -301,7 +293,7 @@ main #main-1 div:nth-of-type(2) div div #email1 {
     font-size: 14px;
     color: #07043b;
     font-weight: 400;
-    text-align: 400;
+    text-align: center;
     height: 45px;
   }
 }
@@ -310,17 +302,15 @@ main #main-1 div:nth-of-type(2) div div h6 {
   font-size: 12px;
   color: #ef4877;
   font-weight: 400;
-  text-align: 400;
+  text-align: left;
   line-height: 16px;
   letter-spacing: 0.4px;
-  text-align: left;
 }
 main #main-1 div:nth-of-type(2) div #submit1 {
   font-size: 14px;
   color: white;
-  font-weight: 400;
-  text-align: 700;
-  align-self: center;
+  font-weight: 700;
+  text-align: center;
   height: 40px;
 }
 @media only screen and (min-width: 800px) {
@@ -350,8 +340,8 @@ main #main-gray {
 }
 main #main-2 {
   display: flex;
-  flex-direction: center;
-  justify-content: column;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   row-gap: 80px;
   background-color: #f8f8fe;
@@ -360,9 +350,9 @@ main #main-2 {
 @media only screen and (min-width: 800px) {
   main #main-2 {
     display: flex;
-    flex-direction: center;
-    justify-content: row;
-    align-items: space-between;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     flex-direction: row-reverse;
     background-color: #f8f8fe;
     padding: 20px 80px;
@@ -380,8 +370,8 @@ main #main-2 div:nth-of-type(1) {
 }
 main #main-2 div:nth-of-type(2) {
   display: flex;
-  flex-direction: center;
-  justify-content: column;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   row-gap: 20px;
 }
@@ -395,20 +385,18 @@ main #main-2 div:nth-of-type(2) h1 {
   font-family: Raleway;
   font-size: 16px;
   color: #07043b;
-  font-weight: 400;
-  text-align: 700;
-  line-height: 24px;
+  font-weight: 700;
   text-align: center;
+  line-height: 24px;
 }
 @media only screen and (min-width: 800px) {
   main #main-2 div:nth-of-type(2) h1 {
     font-family: Raleway;
     font-size: 40px;
     color: #07043b;
-    font-weight: 400;
-    text-align: 700;
-    line-height: 47px;
+    font-weight: 700;
     text-align: left;
+    line-height: 47px;
   }
 }
 main #main-2 div:nth-of-type(2) p {
@@ -416,9 +404,8 @@ main #main-2 div:nth-of-type(2) p {
   font-size: 14px;
   color: #615f7e;
   font-weight: 400;
-  text-align: 400;
-  line-height: 21px;
   text-align: center;
+  line-height: 21px;
 }
 @media only screen and (min-width: 800px) {
   main #main-2 div:nth-of-type(2) p {
@@ -426,9 +413,8 @@ main #main-2 div:nth-of-type(2) p {
     font-size: 16px;
     color: #615f7e;
     font-weight: 400;
-    text-align: 400;
-    line-height: 24px;
     text-align: left;
+    line-height: 24px;
   }
 }
 main #main-2 div:nth-of-type(2) p:nth-of-type(3) {
@@ -436,9 +422,8 @@ main #main-2 div:nth-of-type(2) p:nth-of-type(3) {
   font-size: 12px;
   color: #3da08f;
   font-weight: 400;
-  text-align: 400;
-  line-height: 16px;
   text-align: center;
+  line-height: 16px;
 }
 @media only screen and (min-width: 800px) {
   main #main-2 div:nth-of-type(2) p:nth-of-type(3) {
@@ -446,16 +431,15 @@ main #main-2 div:nth-of-type(2) p:nth-of-type(3) {
     font-size: 12px;
     color: #3da08f;
     font-weight: 400;
-    text-align: 400;
-    line-height: 16px;
     text-align: center;
+    line-height: 16px;
   }
 }
 main #main-2 div:nth-of-type(2) #fylo {
   border-bottom: #3da08f 2px solid;
   display: flex;
-  flex-direction: center;
-  justify-content: row;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   -moz-column-gap: 8px;
        column-gap: 8px;
@@ -466,8 +450,8 @@ main #main-2 div:nth-of-type(2) #fylo {
   main #main-2 div:nth-of-type(2) #fylo {
     border-bottom: #3da08f 2px solid;
     display: flex;
-    flex-direction: center;
-    justify-content: row;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
     -moz-column-gap: 8px;
          column-gap: 8px;
@@ -480,7 +464,7 @@ main #main-2 div:nth-of-type(2) #fylo span {
   font-size: 12px;
   color: #3da08f;
   font-weight: 400;
-  text-align: 400;
+  text-align: left;
   line-height: 16px;
 }
 @media only screen and (min-width: 800px) {
@@ -489,14 +473,14 @@ main #main-2 div:nth-of-type(2) #fylo span {
     font-size: 12px;
     color: #3da08f;
     font-weight: 400;
-    text-align: 400;
+    text-align: left;
     line-height: 16px;
   }
 }
 main #main-2 div:nth-of-type(2) #card {
   display: flex;
-  flex-direction: flex-start;
-  justify-content: column;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: flex-start;
   row-gap: 10px;
   width: 280px;
@@ -509,8 +493,8 @@ main #main-2 div:nth-of-type(2) #card {
 @media only screen and (min-width: 800px) {
   main #main-2 div:nth-of-type(2) #card {
     display: flex;
-    flex-direction: flex-start;
-    justify-content: column;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: flex-start;
     row-gap: 10px;
     width: 280px;
@@ -526,9 +510,8 @@ main #main-2 div:nth-of-type(2) #card p {
   font-size: 10px;
   color: #07043b;
   font-weight: 400;
-  text-align: 400;
-  line-height: 18px;
   text-align: left;
+  line-height: 18px;
   margin: 0;
 }
 @media only screen and (min-width: 800px) {
@@ -537,9 +520,8 @@ main #main-2 div:nth-of-type(2) #card p {
     font-size: 10px;
     color: #07043b;
     font-weight: 400;
-    text-align: 400;
-    line-height: 18px;
     text-align: left;
+    line-height: 18px;
     margin: 0;
   }
 }
@@ -555,8 +537,8 @@ main #main-2 div:nth-of-type(2) #card img:nth-of-type(2) {
 main #main-2 div:nth-of-type(2) #card div {
   width: 100%;
   display: flex;
-  flex-direction: center;
-  justify-content: row;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   -moz-column-gap: 8px;
        column-gap: 8px;
@@ -568,9 +550,9 @@ main #main-2 div:nth-of-type(2) #card img[alt=avatar] {
 }
 main #main-2 div:nth-of-type(2) #card #fname {
   display: flex;
-  flex-direction: flex-start;
-  justify-content: column;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 main #main-2 div:nth-of-type(2) #card #fname img {
   width: 24px;
@@ -581,24 +563,23 @@ main #main-2 div:nth-of-type(2) #card #fname h1 {
   font-family: "Open Sans";
   font-size: 9px;
   color: #07043b;
-  font-weight: 400;
-  text-align: 700;
-  line-height: 12px;
+  font-weight: 700;
   text-align: left;
+  line-height: 12px;
 }
 main #main-2 div:nth-of-type(2) #card #fname p {
   font-family: "Open Sans";
   font-size: 6px;
   color: #07043b;
   font-weight: 400;
-  text-align: 400;
+  text-align: left;
   letter-spacing: 0.3px;
   margin: 0;
 }
 main #main-email {
   display: flex;
-  flex-direction: center;
-  justify-content: column;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   row-gap: 20px;
   height: 345px;
@@ -609,9 +590,9 @@ main #main-email {
   main #main-email {
     padding: 100px 40px 80px 80px;
     display: flex;
-    flex-direction: flex-start;
-    justify-content: row;
-    align-items: space-between;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
     row-gap: 20px;
     -moz-column-gap: 20px;
          column-gap: 20px;
@@ -624,16 +605,15 @@ main #main-email h1 {
   font-family: Raleway;
   font-size: 18px;
   color: white;
-  font-weight: 400;
-  text-align: 700;
+  font-weight: 700;
+  text-align: left;
 }
 @media only screen and (min-width: 800px) {
   main #main-email h1 {
     font-family: Raleway;
     font-size: 32px;
     color: white;
-    font-weight: 400;
-    text-align: 700;
+    font-weight: 700;
     text-align: left;
   }
 }
@@ -643,7 +623,7 @@ main #main-email p {
   font-size: 14px;
   color: white;
   font-weight: 400;
-  text-align: 400;
+  text-align: left;
   margin-top: 16px;
   line-height: 21px;
 }
@@ -653,27 +633,26 @@ main #main-email p {
     font-size: 16px;
     color: white;
     font-weight: 400;
-    text-align: 400;
-    margin-top: 16px;
     text-align: left;
+    margin-top: 16px;
     line-height: 24px;
   }
 }
 main #main-email div:nth-of-type(2) {
   width: 240px;
   display: flex;
-  flex-direction: center;
-  justify-content: column;
-  align-items: space-between;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   -moz-column-gap: 8px;
        column-gap: 8px;
 }
 @media only screen and (min-width: 800px) {
   main #main-email div:nth-of-type(2) {
     display: flex;
-    flex-direction: flex-start;
-    justify-content: column;
-    align-items: space-between;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
     width: 50%;
     text-align: left;
   }
@@ -682,7 +661,7 @@ main #main-email div:nth-of-type(2) input:nth-of-type(1) {
   font-size: 10px;
   color: #c0c0c0;
   font-weight: 400;
-  text-align: 400;
+  text-align: left;
   border: 1px solid transparent;
   height: 32px;
   outline: none;
@@ -692,7 +671,7 @@ main #main-email div:nth-of-type(2) input:nth-of-type(1) {
     font-size: 12px;
     color: #07043b;
     font-weight: 400;
-    text-align: 400;
+    text-align: left;
     height: 48px;
     width: 100%;
     max-width: none;
@@ -701,8 +680,8 @@ main #main-email div:nth-of-type(2) input:nth-of-type(1) {
 main #main-email div:nth-of-type(2) input:nth-of-type(2) {
   font-size: 10px;
   color: white;
-  font-weight: 400;
-  text-align: 700;
+  font-weight: 700;
+  text-align: left;
   height: 32px;
 }
 @media only screen and (min-width: 800px) {
@@ -719,9 +698,9 @@ footer {
   color: white;
   padding: 65px 40px;
   display: flex;
-  flex-direction: flex-start;
-  justify-content: column;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   row-gap: 10px;
 }
 @media only screen and (min-width: 800px) {
@@ -737,16 +716,16 @@ footer #footer-logo {
 footer #footer-contact {
   width: 100%;
   display: flex;
-  flex-direction: center;
-  justify-content: column;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 @media only screen and (min-width: 800px) {
   footer #footer-contact {
     display: flex;
-    flex-direction: center;
-    justify-content: row;
-    align-items: space-between;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     padding-right: 20px;
   }
 }
@@ -770,21 +749,21 @@ footer #footer-contact .item:nth-of-type(4) img {
 }
 footer #footer-contact section {
   display: flex;
-  flex-direction: flex-start;
-  justify-content: column;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   row-gap: 12px;
   font-family: "Open Sans";
   font-size: 16px;
   color: white;
   font-weight: 400;
-  text-align: 400;
+  text-align: left;
   margin: 16px 0;
 }
 footer #footer-contact section div {
   display: flex;
-  flex-direction: center;
-  justify-content: raw;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   -moz-column-gap: 12px;
        column-gap: 12px;
@@ -798,7 +777,7 @@ footer #footer-contact .item p:not(#odd p) {
   font-size: 16px;
   color: white;
   font-weight: 400;
-  text-align: 400;
+  text-align: left;
   margin: 16px 0;
 }
 footer #footer-contact p:not(#odd p):hover {
