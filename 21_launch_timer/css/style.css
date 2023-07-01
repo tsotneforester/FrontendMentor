@@ -71,11 +71,12 @@ pre {
   --cube: 66px;
   --span: #8486a9;
   --cardBorderRadius: 8px;
-  --dotRadius: 8px;
+  --dotRadius: 4px;
   --dotColor: #2b172e;
 }
 @media only screen and (min-width: 896px) {
   :root {
+    --dotRadius: 8px;
     --cube: 160px;
     --cardBorderRadius: 10px;
   }
