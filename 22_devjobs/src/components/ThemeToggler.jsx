@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { root } from "../theme";
-import { IoMdMoon as Moon } from "react-icons/io";
-import { BsSunFill as Sun } from "react-icons/bs";
+import Moon from "../assets/moon.svg";
+import Sun from "../assets/sun.svg";
 
 function ThemeToggler({ theme, handler }) {
   return (
     <>
       <S.Toggler>
-        <Sun />
+        <img src={Sun} alt="" />
         <S.Slider onClick={handler}>
           <S.Spot possition={theme ? "26px" : "0"} />
         </S.Slider>
-        <Moon />
+        <img src={Moon} alt="" />
       </S.Toggler>
     </>
   );

@@ -1,11 +1,10 @@
 import React, { useState, useContext } from "react";
 import styled, { css } from "styled-components";
-import { BiSearch } from "react-icons/bi";
-import { FaFilter } from "react-icons/fa";
 import { ModalContext } from "../Context";
 import { device, root } from "../theme";
 import pinIcon from "../assets/pin.svg";
-import searchIcon from "../assets/search.svg";
+import { ReactComponent as SearchIcon } from "../assets/search.svg";
+import { ReactComponent as FaFilter } from "../assets/filter.svg";
 
 function Form({ handler, refContainer, modalHandler }) {
   const { showModal, setShowModal, filter, setFilter, fields, setFields } = useContext(ModalContext);
@@ -31,7 +30,7 @@ function Form({ handler, refContainer, modalHandler }) {
   return (
     <S.Main>
       <S.Form action="" ref={refContainer}>
-        <img src={searchIcon} alt="" />
+        <S.SearchIconViolet />
         <S.Input type="text" value={fields.position} onChange={han1} placeholder="Filter by title..." />
         <S.Modal show={showModal}>
           <S.Location>
@@ -48,7 +47,10 @@ function Form({ handler, refContainer, modalHandler }) {
         </S.Modal>
         <Filter onClick={modalHandler}> {<FaFilter />} </Filter>
         <OnScreenSubmit onClick={handler}>
-          <span>{<BiSearch />}</span>
+          <span>
+            {/* <img src={ggg} alt="" /> */}
+            <S.SearchIcon />
+          </span>
           <span>Search</span>
         </OnScreenSubmit>
       </S.Form>
@@ -59,6 +61,19 @@ function Form({ handler, refContainer, modalHandler }) {
 export default Form;
 
 const S = {};
+
+S.SearchIconViolet = styled(SearchIcon)`
+  display: none;
+  @media ${device.tablet} {
+    display: inline;
+  }
+`;
+
+S.SearchIcon = styled(SearchIcon)`
+  & path {
+    fill: white;
+  }
+`;
 
 S.Main = styled.main`
   border-radius: ${root.br};
@@ -289,5 +304,9 @@ const OnScreenSubmit = styled.button`
     @media ${device.tablet} {
       display: none;
     }
+
+    /* & img {
+      fill: white;
+    } */
   }
 `;

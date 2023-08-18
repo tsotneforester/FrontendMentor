@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { device } from "../theme";
 import logo from "../assets/logo.svg";
-import logo1 from "../assets/mobile/bg-pattern-header.svg";
+import headerMobile from "../assets/header-mobile.svg";
+import headerTablet from "../assets/header-tablet.svg";
 import { Outlet } from "react-router";
 import ThemeToggler from "../components/ThemeToggler";
 
@@ -28,13 +29,12 @@ S.Header = styled.header`
   top: 0;
   width: 100%;
   height: 145px;
-  background-color: blue;
   padding: 50px clamp(20px, 10%, 50px);
 
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  background-image: url(${logo1});
+  background-image: url(${headerMobile});
   background-repeat: no-repeat;
   background-position: 0% 0%;
   background-size: auto 100%;
@@ -44,6 +44,8 @@ S.Header = styled.header`
   @media ${device.tablet} {
     border-bottom-left-radius: 80px;
     padding: 50px clamp(20px, 10%, 270px);
+    background-image: url(${headerTablet});
+    background-size: 100% 100%;
   }
 `;
 
