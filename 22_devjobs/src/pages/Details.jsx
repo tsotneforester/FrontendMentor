@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Route, NavLink, useParams } from "react-router-dom";
-import data from "../assets/data.json";
-import styled, { css } from "styled-components";
-import { device, root } from "../theme";
+import { useParams } from "react-router-dom";
+import styled from "styled-components";
 import Footer from "../components/details/Footer";
 import Info from "../components/details/Info";
 import Header from "../components/details/Header";
@@ -28,14 +26,16 @@ export default Details;
 const S = {};
 
 S.Content = styled.div`
+  --length: 120px;
   position: absolute;
   width: 100%;
-  top: 120px;
+  top: var(--length);
   left: 0;
   z-index: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-end;
+  min-height: calc(100vh - var(--length));
   //border: 2px dotted red;
 `;

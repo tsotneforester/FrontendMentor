@@ -1,6 +1,4 @@
 import React, { useContext } from "react";
-import { BrowserRouter as Router, Route, NavLink, useParams } from "react-router-dom";
-
 import { ModalContext } from "../../Context";
 import styled, { css } from "styled-components";
 import { device, root } from "../../theme";
@@ -26,6 +24,8 @@ function Footer({ id }) {
 export default Footer;
 
 const Container = styled.footer`
+  /* position: absolute;
+  bottom: 0; */
   width: 100%;
   height: 120px;
   background-color: ${(prop) => prop.theme.card_bg};

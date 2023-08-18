@@ -4,9 +4,10 @@ import styled, { ThemeProvider, css } from "styled-components";
 
 import Card from "./components/Card";
 import Details from "./pages/Details";
-import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, NavLink } from "react-router-dom";
 import SharedLayout from "./pages/SharedLayout";
 
+//HashRouter
 import Form from "./components/Form";
 import { ModalContext } from "./Context";
 

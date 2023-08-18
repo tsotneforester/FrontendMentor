@@ -64,6 +64,7 @@ S.Main = styled.main`
   border-radius: ${root.br};
   width: 100%;
   background-color: ${(prop) => prop.theme.card_bg};
+  transition: all ${root.time};
   padding: 20px;
   @media ${device.tablet} {
     padding: 0;
@@ -161,8 +162,7 @@ S.Location = styled.div`
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 
-  background-color: ${(prop) => prop.theme.card_bg};
-
+  background-color: transparent;
   @media ${device.tablet} {
     /* border: 1px dotted red; */
     padding: 10px;

@@ -5,7 +5,7 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'Kumbh Sans', sans-serif;
     background: ${(prop) => prop.theme.body};
     color: ${(prop) => prop.theme.text};
-    transition: all 0.4s ease-in;
+    transition: all 0.4s;
   }
 `;
 export const lightTheme = {

@@ -1,8 +1,7 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { root } from "../theme";
 import { device } from "../theme";
-
 import styled from "styled-components";
 
 function Card({ data }) {
@@ -11,7 +10,7 @@ function Card({ data }) {
     return (
       <Article key={id}>
         <Icon bg={color}>
-          <img src={`./src/assets/logos/${company.toLowerCase()}.png`} alt="" />
+          <img src={`./logos/${company.toLowerCase()}.png`} alt="" />
         </Icon>
 
         <FlexLine1>
@@ -43,6 +42,7 @@ const Article = styled.article`
   align-items: flex-start;
   justify-content: space-between;
   position: relative;
+  transition: all ${root.time};
   @media ${device.tablet} {
     max-width: calc(50% - 10px);
   }
