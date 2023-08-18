@@ -19,6 +19,7 @@
   </div>
 
 <h2 align="center">Notes</h2>
+
 + header background
 + custom checkbox
 + load more state
