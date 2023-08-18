@@ -84,7 +84,6 @@ For Vite Projects
   npm run dev
   ```
 
-dsfds
 | Project # | Naming | Pixel Perfect | Responsive  | 4K | React | .fgm | deployed on Frontendmentor |
 | :-------: | :----: | :-----------: | :--------: | :-: | :---: | :--: | :---------: |
 | 01 | ✅ | ✅ | ✅ | ✅ | ❎ | ✅ | ✅ |
@@ -108,6 +107,9 @@ dsfds
 | 19 | ✅ | ❌ | ✅ | ✅ | ❌ | ❌ | ✅ |
 | 20 | ✅ | ❌ | ✅ | ✅ | ❌ | ❌ | ✅ |
 | 21 | ✅ | ❌ | ✅ | ✅ | ❌ | ❌ | ✅ |
+| 22 | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ❌ |
+<!-- | nam |pixp| res| 4k  |reac |.fgm|on frontend
+
 
 ## About Me
 
