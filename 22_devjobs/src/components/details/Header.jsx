@@ -14,7 +14,7 @@ function Header({ id }) {
     <S.Header>
       <div>
         <Icon bg={color}>
-          <img src={`./logos/${company.toLowerCase()}.png`} alt="" />
+          <img src={`./logos/${company.toLowerCase()}.svg`} alt="" />
         </Icon>
         <nav>
           <main>

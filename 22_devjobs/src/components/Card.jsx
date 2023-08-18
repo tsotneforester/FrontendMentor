@@ -10,7 +10,8 @@ function Card({ data }) {
     return (
       <Article key={id}>
         <Icon bg={color}>
-          <img src={`./logos/${company.toLowerCase()}.png`} alt="" />
+          {/* <img src={`./logos/${company.toLowerCase()}.svg`} alt="" /> */}
+          <img src={`./logos/${company.toLowerCase()}.svg`} alt="" />
         </Icon>
 
         <FlexLine1>
