@@ -84,7 +84,7 @@ For Vite Projects
   npm run dev
   ```
 
-| Project # | Naming | Pixel Perfect | Responsive  | 4K | React | .fgm | deployed on Frontendmentor |
+| Project # | Naming | Pixel Perfect | Responsive  | 4K | React | .fgm | deployed on Frontend |
 | :-------: | :----: | :-----------: | :--------: | :-: | :---: | :--: | :---------: |
 | 01 | ✅ | ✅ | ✅ | ✅ | ❎ | ✅ | ✅ |
 | 02 | ✅ | ✅ | ✅ | ✅ | ❎ | ✅ | ✅ |
