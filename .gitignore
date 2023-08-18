@@ -9,6 +9,8 @@
 /.prettierignore
 **/root/*.scss
 **/root/*.css
+**/dist
+**/node_modules
 design/
 *.htmlhintrc
 *.vscode
