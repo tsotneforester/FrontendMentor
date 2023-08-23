@@ -18,11 +18,9 @@
     - challenges help you improve your coding skills by building realistic projects
   </div>
 
-<!-- <h2 align="center">Notes</h2>
+<h2 align="center">Notes</h2>
 
-+ header background
-+ custom checkbox
-+ load more state -->
++ Add Framer Motion 
 
 <!-- ![html](https://img.shields.io/badge/-HTML-6abecd "image")
 ![css](https://img.shields.io/badge/-CSS-3e54a3 "image")
