@@ -33,22 +33,6 @@ const Sun = styled(SunIcon)`
   ${DefaultIcon}
 `;
 
-// const Moon = styled(MoonIcon)`
-//   width: ${root.modeIconSize};
-//   height: ${root.modeIconSize};
-//   & path {
-//     fill: ${root.white};
-//   }
-// `;
-
-// const Sun = styled(SunIcon)`
-//   width: ${root.modeIconSize};
-//   height: ${root.modeIconSize};
-//   path {
-//     fill: ${root.white};
-//   }
-// `;
-
 const Toggler = styled.div`
   display: flex;
   justify-content: center;

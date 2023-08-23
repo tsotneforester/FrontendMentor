@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { device } from "../theme";
 
 function Banner() {
-  return <S.Banner>{/* <img src={bg} alt="" /> */}</S.Banner>;
+  return <S.Banner></S.Banner>;
 }
 
 export default Banner;

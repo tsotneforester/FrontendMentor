@@ -5,21 +5,11 @@ import { ReactComponent as RemoveIcon } from "../assets/icon-cross.svg";
 import { ReactComponent as CheckIcon } from "../assets/icon-check.svg";
 import { ReactComponent as Emptyicon } from "../assets/empty.svg";
 
-import { motion, AnimatePresence } from "framer-motion";
-
-export const animations = {
-  initial: { scale: 0, opacity: 0, x: -100 },
-  animate: { scale: 1, opacity: 1, x: 0 },
-  exit: { scale: 0, opacity: 0 },
-  transition: { type: "spring", stiffness: 900, damping: 40 },
-};
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 function ListItem({ data, tempData, dataSetter }) {
   function removeHandler(id) {
-    console.log("remove - x");
-    console.log(id);
     let foo = [...data];
-
     dataSetter(foo.filter((itm) => itm.id != id));
   }
 
@@ -34,21 +24,42 @@ function ListItem({ data, tempData, dataSetter }) {
     dataSetter(foo);
   }
 
+  function handleOnDragEnd(result) {
+    if (!result.destination) return;
+
+    const items = Array.from(data);
+    const [reorderedItem] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reorderedItem);
+
+    dataSetter(items);
+  }
+
   if (tempData.length > 0) {
     return (
-      <AnimatePresence initial={false} mode="sync">
-        {tempData.map((task, ind) => {
-          return (
-            <S.ListItem initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 200 }} effect={task.status} key={task.id}>
-              <span className={task.status} onClick={() => completeHandler(ind)}>
-                {task.status == "completed" ? <CheckIcon /> : ""}
-              </span>
-              <h1>{task.task}</h1>
-              <Remove onClick={() => removeHandler(task.id)} />
-            </S.ListItem>
-          );
-        })}
-      </AnimatePresence>
+      <DragDropContext onDragEnd={handleOnDragEnd}>
+        <Droppable droppableId="characters">
+          {(provided) => (
+            <S.Nav {...provided.droppableProps} ref={provided.innerRef}>
+              {tempData.map((task, ind) => {
+                return (
+                  <Draggable key={task.id} draggableId={String(task.id)} index={ind}>
+                    {(provided) => (
+                      <S.ListItem key={task.id} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                        <span className={task.status} onClick={() => completeHandler(ind)}>
+                          {task.status == "completed" ? <CheckIcon /> : ""}
+                        </span>
+                        <h1>{task.task}</h1>
+                        <Remove onClick={() => removeHandler(task.id)} />
+                      </S.ListItem>
+                    )}
+                  </Draggable>
+                );
+              })}
+              {provided.placeholder}
+            </S.Nav>
+          )}
+        </Droppable>
+      </DragDropContext>
     );
   } else {
     return (
@@ -63,26 +74,28 @@ function ListItem({ data, tempData, dataSetter }) {
 export default ListItem;
 
 let S = {};
+
+S.Nav = styled.nav``;
+
 const Remove = styled(RemoveIcon)`
   cursor: pointer;
   width: 18px;
   height: 18px;
 `;
 
-S.ListItem = styled(motion.div)`
+S.ListItem = styled.div`
   width: 100%;
   max-width: ${root.maxWidth};
   overflow: hidden;
   background-color: ${(prop) => prop.theme.formBg};
   padding: 16px 12px;
   border-radius: ${root.br};
-  transition: all ${root.time};
+  transition: background-color ${root.time};
   display: flex;
   justify-content: stretch;
   align-items: center;
   gap: ${root.formGap};
   border-bottom: 1px solid ${(prop) => prop.theme.checkBoxBorder};
-  //display: ${(prop) => (prop.effect == "completed" ? "none" : "flex")};
 
   & span {
     width: 25px;
@@ -118,7 +131,7 @@ const Empty = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  transition: all ${root.time};
+  transition: background-colo ${root.time};
 
   & svg {
     width: clamp(100px, 90%, 350px);
