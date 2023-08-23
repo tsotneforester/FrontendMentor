@@ -1,17 +1,16 @@
-<h1 align="center">Launch Timer</h1>
+<h1 align="center">Todo App</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/challenge/frontend/img/21_launch_timer.gif" alt="qr-code" />
+  <img src="https://gpx.ge/challenge/frontend/img/23_todo_app.gif" alt="qr-code" />
 </div>
 
   <div align="center">
-    Built With - <img src="https://img.shields.io/badge/-HTML-6abecd" alt="qr-code" />
-  <img src="https://img.shields.io/badge/-CSS-3e54a3" alt="qr-code" />
-  <img src="https://img.shields.io/badge/-JS-cf6390" alt="qr-code" />
+    Built With - <img src="https://img.shields.io/badge/-React-f4cf0c" alt="qr-code" />
+
   <br/>
     Difficulty - <img src="https://img.shields.io/badge/%203%20-intermediate-white?labelColor=f1b604" alt="qr-code" />
   <br/>
-    <a href="https://tsotneforester.github.io/Bitcamp/21_launch_timer/" target="_blank">🖥️ View Demo</a>
+    <a href="https://gpx.ge/challenge/frontend/pages/23_todo_app" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/FrontendMentor/issues">🛠Submit Issue</a>
     <br>
@@ -20,7 +19,10 @@
   </div>
 
 <!-- <h2 align="center">Notes</h2>
-Moment.js in action to handle dates with a lot of <kbd>DOM</kbd> -->
+
++ header background
++ custom checkbox
++ load more state -->
 
 <!-- ![html](https://img.shields.io/badge/-HTML-6abecd "image")
 ![css](https://img.shields.io/badge/-CSS-3e54a3 "image")

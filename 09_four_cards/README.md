@@ -13,7 +13,7 @@
   <br/>
     <a href="https://tsotneforester.github.io/Bitcamp/09_four_cards/" target="_blank">🖥️ View Demo</a>
     ·
-    <a href="https://github.com/tsotneforester/Bitcamp/issues">🛠Submit Issue</a>
+    <a href="https://github.com/tsotneforester/FrontendMentor/issues">🛠Submit Issue</a>
 
   </div>
 
