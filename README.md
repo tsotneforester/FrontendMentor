@@ -41,8 +41,8 @@ After first steps in Web Development (HTML+CSS), it was Javascript, which really
 - Summery
 
 <div align="center">
- <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/79293287/270187770-ed184f0d-8b8e-45db-a60c-0f6b30735c24.png" />
- <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/79293287/270188100-8994a996-0e46-4c9c-9032-18b90de95ab7.png" />
+ <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/79293287/270189088-af0d9f08-c748-4f14-914e-abf8f8829a5c.png" />
+ <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/79293287/270189138-8bf9d8ff-689e-455e-adac-f7a4eda3bd68.png" />
 </div>
 
 ### Built With
