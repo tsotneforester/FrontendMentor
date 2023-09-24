@@ -42,7 +42,7 @@ After first steps in Web Development (HTML+CSS), it was Javascript, which really
 
 <div align="center">
  <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/79293287/270187770-ed184f0d-8b8e-45db-a60c-0f6b30735c24.png" />
- <img src="https://user-images.githubusercontent.com/79293287/230690648-8c65bd88-363a-47dd-a97a-6f3ef3855a2b.png" />
+ <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/79293287/270188100-8994a996-0e46-4c9c-9032-18b90de95ab7.png" />
 </div>
 
 ### Built With
