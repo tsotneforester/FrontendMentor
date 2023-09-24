@@ -5,7 +5,7 @@
 <h3 align="center">Frontendmentor Projects</h3>
 
   <div align="center">
-    <a href="https://gpx.ge/challenge/frontend/" target="_blank">🖥️ View Demo</a>
+    <a href="https://gpx.ge/frontend/" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/Bitcamp/issues">🛠Submit Issue</a>
     <br>
@@ -14,7 +14,6 @@
   </div>
 </div>
 
-# About The Project
 
 <h1 align="center"> About The Project </h1>
 
