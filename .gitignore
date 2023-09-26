@@ -9,6 +9,7 @@
 *.fig
 *.code-workspace
 /.prettierignore
+**/__REACT
 **/root/*.scss
 **/root/*.css
 **/dist
