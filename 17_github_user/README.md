@@ -1,17 +1,20 @@
-<h1 align="center">3 Column preview card</h1>
+<h1 align="center">Github User</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/frontend/frontend/src/18_3_column_preview_card.gif" alt="qr-code" />
+  <img src="https://gpx.ge/js/img/raw/src/1048_github_user.gif" alt="qr-code" />
 </div>
 
   <div align="center">
     Built With - <img src="https://img.shields.io/badge/-HTML-6abecd" alt="qr-code" />
-  <img src="https://img.shields.io/badge/-CSS-3e54a3" alt="qr-code" />
-  <img src="https://img.shields.io/badge/-JS-cf6390" alt="qr-code" />
+    Built With - <img src="https://img.shields.io/badge/-CSS-3e54a3" alt="qr-code" />
+    Built With - <img src="https://img.shields.io/badge/-JS-cf6390" alt="qr-code" />
+    Built With - <img src="https://img.shields.io/badge/-React-f4cf0c" alt="qr-code" />
+    Built With - <img src="https://img.shields.io/badge/-API-aad742" alt="qr-code" />
+
   <br/>
     Difficulty - <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="qr-code" />
   <br/>
-    <a href="https://tsotneforester.github.io/Bitcamp/18_3_column_preview_card/" target="_blank">🖥️ View Demo</a>
+    <a href="https://tsotneforester.github.io/FrontendMentor/17_github_user" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/FrontendMentor/issues">🛠Submit Issue</a>
     <br>
@@ -19,8 +22,9 @@
     - challenges help you improve your coding skills by building realistic projects
   </div>
 
-<h2 align="center">Notes</h2>
-This challenge is perfect if you're just getting started. The shift between the layouts will be a nice test if you're new to building responsive projects.
+<!-- <h2 align="center">Notes</h2>
+
++ Add Framer Motion  -->
 
 <!-- ![html](https://img.shields.io/badge/-HTML-6abecd "image")
 ![css](https://img.shields.io/badge/-CSS-3e54a3 "image")

@@ -1,7 +1,7 @@
 <h1 align="center">Four Cards</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/frontend/frontend/src/09_four_cards.gif" alt="qr-code" />
+  <img src="https://gpx.ge/js/img/raw/src/1031_four_cards.gif" alt="qr-code" />
 </div>
 
   <div align="center">
@@ -11,7 +11,7 @@
   <br/>
     Difficulty - <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="qr-code" />
   <br/>
-    <a href="https://tsotneforester.github.io/Bitcamp/09_four_cards/" target="_blank">🖥️ View Demo</a>
+    <a href="https://tsotneforester.github.io/FrontendMentor/09_four_cards" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/FrontendMentor/issues">🛠Submit Issue</a>
 

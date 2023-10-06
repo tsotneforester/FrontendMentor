@@ -1,7 +1,7 @@
 <h1 align="center">Age Calculator</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/frontend/frontend/src/20_age_calculator.gif" alt="qr-code" />
+  <img src="https://gpx.ge/js/img/raw/src/1045_age_calculator.gif" alt="qr-code" />
 </div>
 
   <div align="center">
@@ -11,7 +11,7 @@
   <br/>
     Difficulty - <img src="https://img.shields.io/badge/%202%20-junior-white?labelColor=aad742" alt="qr-code" />
   <br/>
-    <a href="https://tsotneforester.github.io/Bitcamp/20_age_calculator/" target="_blank">🖥️ View Demo</a>
+    <a href="https://tsotneforester.github.io/FrontendMentor/20_age_calculator" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/FrontendMentor/issues">🛠Submit Issue</a>
     <br>

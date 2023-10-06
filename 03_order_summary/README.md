@@ -1,7 +1,7 @@
 <h1 align="center">Order Summary</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/frontend/frontend/src/03_order_summary.gif" alt="qr-code" />
+  <img src="https://gpx.ge/js/img/raw/src/1024_order_summary.gif" alt="qr-code" />
 </div>
 
   <div align="center">
@@ -10,7 +10,7 @@
   <br/>
     Difficulty - <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="qr-code" />
   <br/>
-    <a href="https://tsotneforester.github.io/Bitcamp/03_order_summary/" target="_blank">🖥️ View Demo</a>
+    <a href="https://tsotneforester.github.io/FrontendMentor/03_order_summary" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/FrontendMentor/issues">🛠Submit Issue</a>
     <br>
@@ -19,8 +19,7 @@
   </div>
 
 
-<h2 align="center">Notes</h2>
-Things here are quite understandible, same flex, same semantics
+
 
 
 

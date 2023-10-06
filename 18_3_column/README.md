@@ -1,16 +1,17 @@
-<h1 align="center">NFT Preview</h1>
+<h1 align="center">3 Column</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/js/img/raw/src/1004_nft_preview.gif" alt="qr-code" />
+  <img src="https://gpx.ge/js/img/raw/src/1055_3_column.gif" alt="qr-code" />
 </div>
 
   <div align="center">
     Built With - <img src="https://img.shields.io/badge/-HTML-6abecd" alt="qr-code" />
   <img src="https://img.shields.io/badge/-CSS-3e54a3" alt="qr-code" />
+  <img src="https://img.shields.io/badge/-JS-cf6390" alt="qr-code" />
   <br/>
     Difficulty - <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="qr-code" />
   <br/>
-    <a href="https://tsotneforester.github.io/FrontendMentor/02_nft_preview" target="_blank">🖥️ View Demo</a>
+    <a href="https://tsotneforester.github.io/FrontendMentor/18_3_column" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/FrontendMentor/issues">🛠Submit Issue</a>
     <br>
@@ -18,23 +19,17 @@
     - challenges help you improve your coding skills by building realistic projects
   </div>
 
-
 <h2 align="center">Notes</h2>
-This is not "piece of cake" project at all. solid FLEX knowledge is required.
-
-
-
+This challenge is perfect if you're just getting started. The shift between the layouts will be a nice test if you're new to building responsive projects.
 
 <!-- ![html](https://img.shields.io/badge/-HTML-6abecd "image")
 ![css](https://img.shields.io/badge/-CSS-3e54a3 "image")
 ![js](https://img.shields.io/badge/-JS-cf6390 "image")
 ![react](https://img.shields.io/badge/-React-f4cf0c "image")
 ![api](https://img.shields.io/badge/-API-aad742 "image")
-- Difficulty Level  
+- Difficulty Level
 ![newbie](https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd "image")
 ![junior](https://img.shields.io/badge/%202%20-junior-white?labelColor=aad742 "image")
 ![intermediate](https://img.shields.io/badge/%203%20-intermediate-white?labelColor=f1b604 "image")
 ![advanced](https://img.shields.io/badge/%204%20-advanced-white?labelColor=bf4605 "image")
 ![guru](https://img.shields.io/badge/%205%20-guru-white?labelColor=ed2c49 "image") -->
-
-
