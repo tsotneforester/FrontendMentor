@@ -1,4 +1,4 @@
-<h1 align="center">QR code component</h1>
+<h1 align="center">QR Code</h1>
 
 <div align="center">
   <img src="https://gpx.ge/js/img/raw/1067_qr_code.gif" alt="qr-code" />
