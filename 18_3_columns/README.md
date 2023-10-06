@@ -17,8 +17,6 @@
 
   </div>
 
-<h2 align="center">Notes</h2>
-This challenge is perfect if you're just getting started. The shift between the layouts will be a nice test if you're new to building responsive projects.
 
 <!-- ![html](https://img.shields.io/badge/-HTML-6abecd "image")
 ![css](https://img.shields.io/badge/-CSS-3e54a3 "image")
