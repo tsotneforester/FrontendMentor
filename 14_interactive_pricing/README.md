@@ -1,7 +1,7 @@
 <h1 align="center">Interactive Pricing</h1>
 
 <div align="center">
-  <img src="https://https://gpx.ge/js/img/raw/1056_interactive_pricing.gif" alt="qr-code" />
+  <img src="https://gpx.ge/js/img/raw/1056_interactive_pricing.gif" alt="qr-code" />
 </div>
 
   <div align="center">

@@ -1,7 +1,7 @@
 <h1 align="center">Tic Tac Toe</h1>
 
 <div align="center">
-  <img src="https://https://gpx.ge/js/img/raw/1054_tic_tac_toe.gif" alt="qr-code" />
+  <img src="https://gpx.ge/js/img/raw/1054_tic_tac_toe.gif" alt="qr-code" />
 </div>
 
   <div align="center">
