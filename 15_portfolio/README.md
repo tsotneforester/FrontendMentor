@@ -1,7 +1,7 @@
 <h1 align="center">Portfolio</h1>
 
 <div align="center">
-  <img src="https://https://gpx.ge/js/img/raw/src/1010_portfolio.gif" alt="qr-code" />
+  <img src="https://https://gpx.ge/js/img/raw/1010_portfolio.gif" alt="qr-code" />
 </div>
 
   <div align="center">

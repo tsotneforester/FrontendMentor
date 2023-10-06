@@ -1,7 +1,7 @@
 <h1 align="center">FAQ Accordion</h1>
 
 <div align="center">
-  <img src="https://https://gpx.ge/js/img/raw/src/1001_faq_accordion.gif" alt="qr-code" />
+  <img src="https://https://gpx.ge/js/img/raw/1001_faq_accordion.gif" alt="qr-code" />
 </div>
 
   <div align="center">

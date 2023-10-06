@@ -1,7 +1,7 @@
 <h1 align="center">Fylo</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/js/img/raw/src/1023_fylo.gif" alt="qr-code" />
+  <img src="https://gpx.ge/js/img/src/1023_fylo.gif" alt="qr-code" />
 </div>
 
   <div align="center">

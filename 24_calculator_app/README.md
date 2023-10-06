@@ -1,7 +1,7 @@
 <h1 align="center">Calculator App</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/js/img/raw/src/1052_calculator_app.gif" alt="qr-code" />
+  <img src="https://gpx.ge/js/img/raw/1052_calculator_app.gif" alt="qr-code" />
 </div>
 
   <div align="center">

@@ -1,7 +1,7 @@
 <h1 align="center">Interactive Rating</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/js/img/raw/src/1006_interactive_rating.gif" alt="qr-code" />
+  <img src="https://gpx.ge/js/img/raw/1006_interactive_rating.gif" alt="qr-code" />
 </div>
 
   <div align="center">

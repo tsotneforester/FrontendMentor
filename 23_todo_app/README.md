@@ -1,7 +1,7 @@
 <h1 align="center">Todo App</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/js/img/raw/src/1003_todo_app.gif" alt="qr-code" />
+  <img src="https://gpx.ge/js/img/raw/1003_todo_app.gif" alt="qr-code" />
 </div>
 
   <div align="center">

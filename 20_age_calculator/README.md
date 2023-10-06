@@ -1,7 +1,7 @@
 <h1 align="center">Age Calculator</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/js/img/raw/src/1045_age_calculator.gif" alt="qr-code" />
+  <img src="https://gpx.ge/js/img/raw/1045_age_calculator.gif" alt="qr-code" />
 </div>
 
   <div align="center">
