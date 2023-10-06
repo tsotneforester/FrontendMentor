@@ -1,7 +1,7 @@
 <h1 align="center">QR code component</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/js/img/raw/src/1067_qr_code.gif" alt="qr-code" />
+  <img src="https://gpx.ge/js/img/raw/1067_qr_code.gif" alt="qr-code" />
 </div>
 
   <div align="center">
@@ -18,8 +18,7 @@
     - challenges help you improve your coding skills by building realistic projects
   </div>
 
-<h2 align="center">Notes</h2>
-Nothing worth noting. easiest HTML tags and most basic css in action.
+
 
 <!-- ![html](https://img.shields.io/badge/-HTML-6abecd "image")
 ![css](https://img.shields.io/badge/-CSS-3e54a3 "image")

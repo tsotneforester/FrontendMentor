@@ -1,7 +1,7 @@
 <h1 align="center">Order Summary</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/js/img/raw/src/1024_order_summary.gif" alt="qr-code" />
+  <img src="https://gpx.ge/js/img/raw/1024_order_summary.gif" alt="qr-code" />
 </div>
 
   <div align="center">
