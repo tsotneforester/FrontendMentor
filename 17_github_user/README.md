@@ -12,7 +12,7 @@
     <img src="https://img.shields.io/badge/-API-aad742" alt="qr-code" />
 
   <br/>
-    Difficulty - <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="qr-code" />
+    Difficulty - <img src="https://img.shields.io/badge/%202%20-junior-white?labelColor=aad742" alt="qr-code" />
   <br/>
     <a href="https://tsotneforester.github.io/FrontendMentor/17_github_user" target="_blank">🖥️ View Demo</a>
     ·
