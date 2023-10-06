@@ -5,9 +5,7 @@
 <h3 align="center">Frontendmentor Projects</h3>
 
   <div align="center">
-    <a href="https://gpx.ge/frontend/" target="_blank">🖥️ View Demo</a>
-    ·
-    <a href="https://github.com/tsotneforester/Bitcamp/issues">🛠Submit Issue</a>
+<a href="https://github.com/tsotneforester/Bitcamp/issues">🛠Submit Issue</a>
     <br>
     <a href="https://www.frontendmentor.io">👩🏻‍💻Frontend Mentor</a> 
     - challenges help you improve your coding skills by building realistic projects
@@ -40,10 +38,10 @@ After first steps in Web Development (HTML+CSS), it was Javascript, which really
 - Project Links
 - Summery
 
-<div align="center">
+<!-- <div align="center">
  <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/79293287/270189088-af0d9f08-c748-4f14-914e-abf8f8829a5c.png" />
  <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/79293287/270189138-8bf9d8ff-689e-455e-adac-f7a4eda3bd68.png" />
-</div>
+</div> -->
 
 ### Built With
 
