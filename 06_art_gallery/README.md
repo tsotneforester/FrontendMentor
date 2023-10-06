@@ -1,7 +1,7 @@
 <h1 align="center">Art Gallery</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/js/img/raw/src/1053_art_gallery.gif" alt="qr-code" />
+  <img src="https://gpx.ge/js/img/raw/1053_art_gallery.gif" alt="qr-code" />
 </div>
 
   <div align="center">
