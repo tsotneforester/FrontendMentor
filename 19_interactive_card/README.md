@@ -18,12 +18,6 @@
   </div>
 
 
-<h2 align="center">Notes</h2>
-This fun project will be an excellent way to practice DOM manipulation and form validation while also putting your HTML and CSS skills to the test. + a lot of <kbd>regex</kbd> validations!
-
-
-
-
 
 <!-- ![html](https://img.shields.io/badge/-HTML-6abecd "image")
 ![css](https://img.shields.io/badge/-CSS-3e54a3 "image")
