@@ -1,7 +1,7 @@
 <h1 align="center">Launch Timer</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/frontend/frontend/src/21_launch_timer.gif" alt="qr-code" />
+  <img src="https://gpx.ge/js/img/raw/src/1042_launch_timer.gif" alt="qr-code" />
 </div>
 
   <div align="center">
@@ -11,7 +11,7 @@
   <br/>
     Difficulty - <img src="https://img.shields.io/badge/%203%20-intermediate-white?labelColor=f1b604" alt="qr-code" />
   <br/>
-    <a href="https://tsotneforester.github.io/Bitcamp/21_launch_timer/" target="_blank">🖥️ View Demo</a>
+    <a href="https://tsotneforester.github.io/FrontendMentor/21_launch_timer" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/FrontendMentor/issues">🛠Submit Issue</a>
     <br>

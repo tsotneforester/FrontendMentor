@@ -1,7 +1,7 @@
 <h1 align="center">Todo App</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/frontend/frontend/src/23_todo_app.gif" alt="qr-code" />
+  <img src="https://gpx.ge/js/img/raw/src/1003_todo_app.gif" alt="qr-code" />
 </div>
 
   <div align="center">
@@ -10,7 +10,7 @@
   <br/>
     Difficulty - <img src="https://img.shields.io/badge/%203%20-intermediate-white?labelColor=f1b604" alt="qr-code" />
   <br/>
-    <a href="https://gpx.ge/frontend/pages/23_todo_app" target="_blank">🖥️ View Demo</a>
+    <a href="https://gpx.ge/js/pages/1003_todo_app" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/FrontendMentor/issues">🛠Submit Issue</a>
     <br>
