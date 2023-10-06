@@ -1,7 +1,7 @@
 <h1 align="center">Tip Calculator</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/challenge/frontend/img/11_tip_calculator.gif" alt="qr-code" />
+  <img src="https://gpx.ge/frontend/frontend/src/11_tip_calculator.gif" alt="qr-code" />
 </div>
 
   <div align="center">

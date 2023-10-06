@@ -1,7 +1,7 @@
 <h1 align="center">Four Cards</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/challenge/frontend/img/09_four_cards.gif" alt="qr-code" />
+  <img src="https://gpx.ge/frontend/frontend/src/09_four_cards.gif" alt="qr-code" />
 </div>
 
   <div align="center">

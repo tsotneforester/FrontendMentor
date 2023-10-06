@@ -1,7 +1,7 @@
 <h1 align="center">Devjobs</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/challenge/frontend/img/22_devjobs.gif" alt="qr-code" />
+  <img src="https://gpx.ge/frontend/frontend/src/22_devjobs.gif" alt="qr-code" />
 </div>
 
   <div align="center">
@@ -10,7 +10,7 @@
   <br/>
     Difficulty - <img src="https://img.shields.io/badge/%204%20-advanced-white?labelColor=bf4605" alt="qr-code" />
   <br/>
-    <a href="https://gpx.ge/challenge/frontend/pages/22_devjobs" target="_blank">🖥️ View Demo</a>
+    <a href="https://gpx.ge/frontend/pages/22_devjobs" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/FrontendMentor/issues">🛠Submit Issue</a>
     <br>

@@ -1,7 +1,7 @@
 <h1 align="center">NFT Preview</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/challenge/frontend/img/02_nft_preview.gif" alt="qr-code" />
+  <img src="https://gpx.ge/frontend/frontend/src/02_nft_preview.gif" alt="qr-code" />
 </div>
 
   <div align="center">

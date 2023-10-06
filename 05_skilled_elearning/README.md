@@ -1,3 +1,3 @@
 # **Skilled Elearning**
 
-![Main](https://gpx.ge/challenge/frontend/img/05_skilled_elearning.gif "image")
+![Main](https://gpx.ge/frontend/frontend/src/05_skilled_elearning.gif "image")

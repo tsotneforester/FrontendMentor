@@ -1,7 +1,7 @@
 <h1 align="center">Interactive Rating</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/challenge/frontend/img/16_interactive_rating.gif" alt="qr-code" />
+  <img src="https://gpx.ge/frontend/frontend/src/16_interactive_rating.gif" alt="qr-code" />
 </div>
 
   <div align="center">
@@ -10,7 +10,7 @@
   <br/>
     Difficulty - <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="qr-code" />
   <br/>
-    <a href="https://gpx.ge/challenge/frontend/pages/16_interactive_rating" target="_blank">🖥️ View Demo</a>
+    <a href="https://gpx.ge/frontend/pages/16_interactive_rating" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/FrontendMentor/issues">🛠Submit Issue</a>
     <br>

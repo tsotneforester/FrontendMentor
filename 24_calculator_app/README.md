@@ -1,16 +1,16 @@
-<h1 align="center">QR code component</h1>
+<h1 align="center">Calculator App</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/frontend/frontend/src/01_qr_code.gif" alt="qr-code" />
+  <img src="https://gpx.ge/frontend/frontend/src/24_calculator_app.gif" alt="qr-code" />
 </div>
 
   <div align="center">
-    Built With - <img src="https://img.shields.io/badge/-HTML-6abecd" alt="qr-code" />
-  <img src="https://img.shields.io/badge/-CSS-3e54a3" alt="qr-code" />
+    Built With - <img src="https://img.shields.io/badge/-React-f4cf0c" alt="qr-code" />
+
   <br/>
-    Difficulty - <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="qr-code" />
+    Difficulty - <img src="https://img.shields.io/badge/%203%20-intermediate-white?labelColor=f1b604" alt="qr-code" />
   <br/>
-    <a href="https://tsotneforester.github.io/Bitcamp/01_qr_code/" target="_blank">🖥️ View Demo</a>
+    <a href="https://gpx.ge/frontend/pages/24_calculator_app" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/FrontendMentor/issues">🛠Submit Issue</a>
     <br>
@@ -19,7 +19,9 @@
   </div>
 
 <h2 align="center">Notes</h2>
-Nothing worth noting. easiest HTML tags and most basic css in action.
+
++ detach southands in main line
++ simplify it and implement useReducer
 
 <!-- ![html](https://img.shields.io/badge/-HTML-6abecd "image")
 ![css](https://img.shields.io/badge/-CSS-3e54a3 "image")

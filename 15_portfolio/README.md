@@ -1,3 +1,3 @@
 # **Portfolio**
 
-![Main](https://gpx.ge/challenge/frontend/img/15_portfolio.gif "image")
+![Main](https://gpx.ge/frontend/frontend/src/15_portfolio.gif "image")

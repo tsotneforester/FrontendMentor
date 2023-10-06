@@ -1,7 +1,7 @@
 <h1 align="center">3 Column preview card</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/challenge/frontend/img/18_3_column_preview_card.gif" alt="qr-code" />
+  <img src="https://gpx.ge/frontend/frontend/src/18_3_column_preview_card.gif" alt="qr-code" />
 </div>
 
   <div align="center">

@@ -1,7 +1,7 @@
 <h1 align="center">Launch Timer</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/challenge/frontend/img/21_launch_timer.gif" alt="qr-code" />
+  <img src="https://gpx.ge/frontend/frontend/src/21_launch_timer.gif" alt="qr-code" />
 </div>
 
   <div align="center">

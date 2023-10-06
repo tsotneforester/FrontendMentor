@@ -1,7 +1,7 @@
 <h1 align="center">Interactive Card</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/challenge/frontend/img/19_interactive_card.gif" alt="qr-code" />
+  <img src="https://gpx.ge/frontend/frontend/src/19_interactive_card.gif" alt="qr-code" />
 </div>
 
   <div align="center">
