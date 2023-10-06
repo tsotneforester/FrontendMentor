@@ -14,9 +14,7 @@
     <a href="https://tsotneforester.github.io/FrontendMentor/21_launch_timer" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/FrontendMentor/issues">🛠Submit Issue</a>
-    <br>
-    <a href="https://www.frontendmentor.io">👩🏻‍💻Frontend Mentor</a> 
-    - challenges help you improve your coding skills by building realistic projects
+
   </div>
 
 <!-- <h2 align="center">Notes</h2>
