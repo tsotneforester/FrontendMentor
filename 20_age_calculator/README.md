@@ -17,8 +17,6 @@
 
   </div>
 
-<h2 align="center">Notes</h2>
-Moment.js in action to handle dates with a lot of <kbd>DOM</kbd>
 
 <!-- ![html](https://img.shields.io/badge/-HTML-6abecd "image")
 ![css](https://img.shields.io/badge/-CSS-3e54a3 "image")
