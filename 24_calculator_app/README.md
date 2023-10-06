@@ -15,10 +15,6 @@
     <a href="https://github.com/tsotneforester/FrontendMentor/issues">🛠Submit Issue</a>
   </div>
 
-<h2 align="center">Notes</h2>
-
-+ detach southands in main line
-+ simplify it and implement useReducer
 
 <!-- ![html](https://img.shields.io/badge/-HTML-6abecd "image")
 ![css](https://img.shields.io/badge/-CSS-3e54a3 "image")
