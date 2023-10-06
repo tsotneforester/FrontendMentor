@@ -1,7 +1,7 @@
-<h1 align="center">3 Column</h1>
+<h1 align="center">3 Columns</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/js/img/raw/1055_3_column.gif" alt="qr-code" />
+  <img src="https://gpx.ge/js/img/raw/1055_3_columns.gif" alt="qr-code" />
 </div>
 
   <div align="center">
@@ -11,7 +11,7 @@
   <br/>
     Difficulty - <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="qr-code" />
   <br/>
-    <a href="https://tsotneforester.github.io/FrontendMentor/18_3_column" target="_blank">🖥️ View Demo</a>
+    <a href="https://tsotneforester.github.io/FrontendMentor/18_3_columns" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/FrontendMentor/issues">🛠Submit Issue</a>
 
