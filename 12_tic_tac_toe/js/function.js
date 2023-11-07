@@ -86,7 +86,7 @@ function draw() {
 
 function stringify(array, ...n) {
   let text = "";
-  for (let i = 0; i < n.length; i++) {
+  for (let i = 0, j = n.length; i < j; i++) {
     text += array[n[i]];
   }
   return text;

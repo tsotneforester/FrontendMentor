@@ -1,3 +1,8 @@
+//   ,@▒▒╜  ╣▒║╖     ▄▓█████  ▐██████▄ ▐██▌  ██▓       ▄█████▌  ███████
+// ╓╣▒▒╜ @╝╣╖`╢▒▒╗   ███      ▐██▌ ███  █▓█▄███▀      ▐██▌      ███▌
+// ╢▒▒╖  ╢╗@╝  ╢▒▒╝  ███  ███ ▐███████  ▄▓█▓▓█▄       ▐██▌ ▐██▌ ██████
+//  ╙╢▒╢╖ ║╜,╢▒▒╝    ███▄▄███ ▐██▌     ▐██▌ ▐███  ███ ▐███▄███▌ ███▄▄▄▄
+//    `╢▒╜  ╣▒╜       ▀▀▀▀▀▀▀  ▀▀      ▀▀▀   ▀▀▀  ▀▀▀   ▀▀▀▀▀▀  ▀▀▀▀▀▀▀
 "use strict";
 
 function computerMove() {
@@ -5,7 +10,7 @@ function computerMove() {
     iconToggle(HUMAN.logo);
     if (whosTurn == "cpu") {
       let myarray = [];
-      for (var i = 0; i < 9; i++) {
+      for (let i = 0; i < 9; i++) {
         if (box[i].getAttribute("value") === "E") {
           myarray.push(i);
         }
@@ -25,7 +30,7 @@ function computerMove() {
   }, 5000);
 }
 
-for (var i = 0; i < 9; i++) {
+for (let i = 0; i < 9; i++) {
   box[i].addEventListener("click", function () {
     if (whosTurn == "you" && this.getAttribute("value") == "E") {
       this.style.height = "92px";
@@ -46,7 +51,7 @@ for (var i = 0; i < 9; i++) {
 
 function checkstatusHuman() {
   let progress_array = [];
-  for (var i = 0, il = 9; i < il; i++) {
+  for (let i = 0, il = 9; i < il; i++) {
     progress_array.push(box[i].getAttribute("value"));
   }
 
@@ -93,7 +98,7 @@ function checkstatusHuman() {
 
 function checkstatusCpu() {
   let progress_array = [];
-  for (var i = 0, il = 9; i < il; i++) {
+  for (let i = 0, il = 9; i < il; i++) {
     progress_array.push(box[i].getAttribute("value"));
   }
 
