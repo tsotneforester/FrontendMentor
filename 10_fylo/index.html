@@ -30,7 +30,7 @@
   </head>
   <body>
     <header>
-      <section id="logo"><img src="images/logo.svg" alt="" /></section>
+      <img src="images/logo.svg" alt="" />
       <nav>
         <span>Features</span>
         <span>Team</span>
@@ -39,74 +39,74 @@
     </header>
 
     <main>
-      <section id="main-1">
-        <div>
-          <img src="images/illustration-1.svg" alt="" />
-        </div>
-        <div>
+      <section id="files">
+        <img src="images/illustration-1.svg" alt="illustration-1" />
+
+        <article>
           <h1>All your files in one secure location, accessible anywhere.</h1>
           <p>Fylo stores your most important files in one secure location. Access them wherever you need, share and collaborate with friends, family, and co-workers.</p>
-          <div>
-            <div>
-              <input type="email" name="" id="email1" placeholder="Enter your email…" />
-              <h6 style="display: none">Please check your email</h6>
-            </div>
-            <input type="submit" id="submit1" value="Get Started" />
-          </div>
-        </div>
+          <form>
+            <fieldset>
+              <input type="email" placeholder="Enter your email…" />
+              <span class="error" style="display: none">Please check your email</span>
+            </fieldset>
+            <button type="submit">Get Started</button>
+          </form>
+        </article>
       </section>
-      <section id="main-gray"></section>
-      <section id="main-2">
-        <div>
-          <img src="images/illustration-2.svg" alt="" />
-        </div>
-        <div>
+      <section id="curve"></section>
+      <section id="location">
+        <img src="images/illustration-2.svg" alt="illustration" />
+
+        <article>
           <h1>Stay productive, wherever you are</h1>
           <p>Never let location be an issue when accessing your files. Fylo has you covered for all of your file storage needs.</p>
           <p>Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments required!</p>
-          <div id="fylo">
-            <span>See how Fylo works</span>
+          <div class="quote">
+            <p>See how Fylo works</p>
             <img src="images/icon-arrow.svg" alt="" />
           </div>
-          <div id="card">
-            <img src="images/icon-quotes.svg" alt="" />
+          <div class="card">
+            <img src="images/icon-quotes.svg" alt="quote" />
             <p>Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine.</p>
             <div>
               <img src="images/avatar-testimonial.jpg" alt="avatar" />
-              <div id="fname">
+              <div class="person">
                 <h1>Kyle Burton</h1>
                 <p>Founder &amp; CEO, Huddle</p>
               </div>
             </div>
           </div>
-        </div>
+        </article>
       </section>
-      <section id="main-email">
-        <div>
+      <section id="access">
+        <article>
           <h1>Get early access today</h1>
           <p>It only takes a minute to sign up and our free starter tier is extremely generous. If you have any questions, our support team would be happy to help you.</p>
-        </div>
-        <div>
-          <input type="email" name="" placeholder="email@example.com" /> <br />
-          <input type="submit" value="Get Started For Free" />
-        </div>
+        </article>
+        <form>
+          <fieldset>
+            <input type="email" placeholder="email@example.com" />
+            <span class="error white" style="display: none">Please check your email</span>
+          </fieldset>
+          <button type="submit">Get Started For Free</button>
+        </form>
       </section>
     </main>
 
     <footer>
-      <section id="footer-logo">
-        <img src="images/logo.svg" style="filter: brightness(0) invert(1)" alt="" />
-      </section>
-      <section id="footer-contact">
+      <img id="footer-logo" src="images/logo.svg" style="filter: brightness(0) invert(1)" alt="logo" />
+
+      <section id="footer-content">
         <div class="item" id="odd">
           <section>
             <div>
-              <img src="images/icon-phone.svg" alt="" />
-              <p>Phone: +1-543-123-4567</p>
+              <img src="images/icon-phone.svg" alt="phone" />
+              <span>Phone: +1-543-123-4567</span>
             </div>
             <div>
-              <img src="images/icon-email.svg" alt="" />
-              <p>example@fylo.com</p>
+              <img src="images/icon-email.svg" alt="img" />
+              <span>example@fylo.com</span>
             </div>
           </section>
         </div>

@@ -88,7 +88,7 @@ input {
   }
 }
 
-.input-email, main #main-email div:nth-of-type(2) input:nth-of-type(1), main #main-1 div:nth-of-type(2) div div #email1 {
+.input-email, main #access form fieldset input, main #files article form fieldset input {
   width: 100%;
   max-width: 290px;
   background: #ffffff;
@@ -98,12 +98,29 @@ input {
   letter-spacing: 0.5px;
 }
 
-.input-submit, main #main-email div:nth-of-type(2) input:nth-of-type(2), main #main-1 div:nth-of-type(2) div #submit1 {
+.input-submit, main #access form button, main #files article form button {
   background: #2f65f8;
   box-shadow: 1px 1px 3px rgba(7, 4, 59, 0.157043);
   width: 100%;
   max-width: 290px;
   letter-spacing: 0.5px;
+  border: none;
+  font-family: Raleway;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+.input-submit:hover, main #access form button:hover, main #files article form button:hover {
+  background-color: #6c9bff;
+}
+
+.error, main #access form fieldset .error {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  color: #ef4877;
+  font-weight: 400;
+  text-align: left;
+  line-height: 16px;
+  letter-spacing: 0.4px;
 }
 
 input::-moz-placeholder {
@@ -124,7 +141,6 @@ input::placeholder {
   }
 }
 
-/*-----------Footer-------------*/
 header {
   display: flex;
   flex-direction: row;
@@ -157,12 +173,12 @@ header nav {
     font-size: 14px;
   }
 }
-header #logo {
+header img {
   width: 80px;
   height: 24px;
 }
 @media only screen and (min-width: 800px) {
-  header #logo {
+  header img {
     width: 166px;
     height: 49px;
   }
@@ -173,7 +189,7 @@ header #logo {
     color: white;
   }
 }
-main #main-1 {
+main #files {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -182,7 +198,7 @@ main #main-1 {
   padding: 20px 20px;
 }
 @media only screen and (min-width: 800px) {
-  main #main-1 {
+  main #files {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -192,27 +208,27 @@ main #main-1 {
     padding: 20px 80px;
   }
 }
-main #main-1 div:nth-of-type(1) {
+main #files img {
   width: 300px;
 }
 @media only screen and (min-width: 800px) {
-  main #main-1 div:nth-of-type(1) {
+  main #files img {
     width: 50%;
   }
 }
-main #main-1 div:nth-of-type(2) {
+main #files article {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   row-gap: 20px;
 }
 @media only screen and (min-width: 800px) {
-  main #main-1 div:nth-of-type(2) {
+  main #files article {
     width: 50%;
   }
 }
-main #main-1 div:nth-of-type(2) h1 {
+main #files article h1 {
   font-family: Open Sans;
   font-size: 24px;
   color: #07043b;
@@ -221,16 +237,17 @@ main #main-1 div:nth-of-type(2) h1 {
   line-height: 36px;
 }
 @media only screen and (min-width: 800px) {
-  main #main-1 div:nth-of-type(2) h1 {
+  main #files article h1 {
     font-family: Raleway;
     font-size: 40px;
     color: #07043b;
     font-weight: 700;
     text-align: left;
+    max-width: 630px;
     line-height: 60px;
   }
 }
-main #main-1 div:nth-of-type(2) p {
+main #files article p {
   font-family: "Open Sans";
   font-size: 14px;
   color: #07043b;
@@ -240,24 +257,25 @@ main #main-1 div:nth-of-type(2) p {
   line-height: 21px;
 }
 @media only screen and (min-width: 800px) {
-  main #main-1 div:nth-of-type(2) p {
+  main #files article p {
     font-size: 17px;
     color: #07043b;
     font-weight: 400;
     text-align: left;
     line-height: 24px;
+    max-width: 570px;
   }
 }
-main #main-1 div:nth-of-type(2) div {
+main #files article form {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  row-gap: 6px;
+  row-gap: 8px;
 }
 @media only screen and (min-width: 800px) {
-  main #main-1 div:nth-of-type(2) div {
+  main #files article form {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -268,45 +286,35 @@ main #main-1 div:nth-of-type(2) div {
     align-self: flex-start;
   }
 }
-main #main-1 div:nth-of-type(2) div div {
+main #files article form fieldset {
   width: 290px;
+  border: none;
   height: 58px;
+  gap: 4px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
 @media only screen and (min-width: 800px) {
-  main #main-1 div:nth-of-type(2) div div {
+  main #files article form fieldset {
     height: 78px;
   }
 }
-main #main-1 div:nth-of-type(2) div div #email1 {
+main #files article form fieldset input {
   font-size: 12px;
   color: #07043b;
   font-weight: 400;
-  text-align: center;
+  text-align: left;
   height: 40px;
 }
 @media only screen and (min-width: 800px) {
-  main #main-1 div:nth-of-type(2) div div #email1 {
+  main #files article form fieldset input {
     font-size: 14px;
-    color: #07043b;
-    font-weight: 400;
-    text-align: center;
     height: 45px;
   }
 }
-main #main-1 div:nth-of-type(2) div div h6 {
-  font-family: "Open Sans", sans-serif;
-  font-size: 12px;
-  color: #ef4877;
-  font-weight: 400;
-  text-align: left;
-  line-height: 16px;
-  letter-spacing: 0.4px;
-}
-main #main-1 div:nth-of-type(2) div #submit1 {
+main #files article form button {
   font-size: 14px;
   color: white;
   font-weight: 700;
@@ -314,7 +322,7 @@ main #main-1 div:nth-of-type(2) div #submit1 {
   height: 40px;
 }
 @media only screen and (min-width: 800px) {
-  main #main-1 div:nth-of-type(2) div #submit1 {
+  main #files article form button {
     align-self: flex-start;
     height: 45px;
     min-width: 95px;
@@ -322,7 +330,7 @@ main #main-1 div:nth-of-type(2) div #submit1 {
     width: 40%;
   }
 }
-main #main-gray {
+main #curve {
   background-color: white;
   background-image: url("../images/bg-curve-mobile.svg");
   background-repeat: no-repeat;
@@ -330,7 +338,7 @@ main #main-gray {
   height: 60px;
 }
 @media only screen and (min-width: 800px) {
-  main #main-gray {
+  main #curve {
     background-color: white;
     background-image: url("../images/bg-curve-desktop.svg");
     background-repeat: no-repeat;
@@ -338,7 +346,7 @@ main #main-gray {
     height: 60px;
   }
 }
-main #main-2 {
+main #location {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -348,7 +356,7 @@ main #main-2 {
   padding: 30px 20px 90px 20px;
 }
 @media only screen and (min-width: 800px) {
-  main #main-2 {
+  main #location {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -360,15 +368,15 @@ main #main-2 {
          column-gap: 10px;
   }
 }
-main #main-2 div:nth-of-type(1) {
+main #location > img {
   width: 300px;
 }
 @media only screen and (min-width: 800px) {
-  main #main-2 div:nth-of-type(1) {
+  main #location > img {
     width: 50%;
   }
 }
-main #main-2 div:nth-of-type(2) {
+main #location article {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -376,12 +384,12 @@ main #main-2 div:nth-of-type(2) {
   row-gap: 20px;
 }
 @media only screen and (min-width: 800px) {
-  main #main-2 div:nth-of-type(2) {
+  main #location article {
     width: 50%;
     align-items: flex-start;
   }
 }
-main #main-2 div:nth-of-type(2) h1 {
+main #location article h1 {
   font-family: Raleway;
   font-size: 16px;
   color: #07043b;
@@ -390,7 +398,7 @@ main #main-2 div:nth-of-type(2) h1 {
   line-height: 24px;
 }
 @media only screen and (min-width: 800px) {
-  main #main-2 div:nth-of-type(2) h1 {
+  main #location article h1 {
     font-family: Raleway;
     font-size: 40px;
     color: #07043b;
@@ -399,7 +407,7 @@ main #main-2 div:nth-of-type(2) h1 {
     line-height: 47px;
   }
 }
-main #main-2 div:nth-of-type(2) p {
+main #location article p {
   font-family: Open Sans;
   font-size: 14px;
   color: #615f7e;
@@ -408,16 +416,17 @@ main #main-2 div:nth-of-type(2) p {
   line-height: 21px;
 }
 @media only screen and (min-width: 800px) {
-  main #main-2 div:nth-of-type(2) p {
+  main #location article p {
     font-family: Open Sans;
     font-size: 16px;
     color: #615f7e;
     font-weight: 400;
     text-align: left;
     line-height: 24px;
+    max-width: 545px;
   }
 }
-main #main-2 div:nth-of-type(2) p:nth-of-type(3) {
+main #location article p:nth-of-type(3) {
   font-family: Open Sans;
   font-size: 12px;
   color: #3da08f;
@@ -426,7 +435,7 @@ main #main-2 div:nth-of-type(2) p:nth-of-type(3) {
   line-height: 16px;
 }
 @media only screen and (min-width: 800px) {
-  main #main-2 div:nth-of-type(2) p:nth-of-type(3) {
+  main #location article p:nth-of-type(3) {
     font-family: Open Sans;
     font-size: 12px;
     color: #3da08f;
@@ -435,7 +444,7 @@ main #main-2 div:nth-of-type(2) p:nth-of-type(3) {
     line-height: 16px;
   }
 }
-main #main-2 div:nth-of-type(2) #fylo {
+main #location article .quote {
   border-bottom: #3da08f 2px solid;
   display: flex;
   flex-direction: row;
@@ -447,7 +456,7 @@ main #main-2 div:nth-of-type(2) #fylo {
   padding-bottom: 5px;
 }
 @media only screen and (min-width: 800px) {
-  main #main-2 div:nth-of-type(2) #fylo {
+  main #location article .quote {
     border-bottom: #3da08f 2px solid;
     display: flex;
     flex-direction: row;
@@ -459,7 +468,7 @@ main #main-2 div:nth-of-type(2) #fylo {
     padding-bottom: 5px;
   }
 }
-main #main-2 div:nth-of-type(2) #fylo span {
+main #location article .quote p {
   font-family: "Open Sans";
   font-size: 12px;
   color: #3da08f;
@@ -468,7 +477,7 @@ main #main-2 div:nth-of-type(2) #fylo span {
   line-height: 16px;
 }
 @media only screen and (min-width: 800px) {
-  main #main-2 div:nth-of-type(2) #fylo span {
+  main #location article .quote p {
     font-family: "Open Sans";
     font-size: 12px;
     color: #3da08f;
@@ -477,7 +486,7 @@ main #main-2 div:nth-of-type(2) #fylo span {
     line-height: 16px;
   }
 }
-main #main-2 div:nth-of-type(2) #card {
+main #location article .card {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -491,7 +500,7 @@ main #main-2 div:nth-of-type(2) #card {
   box-shadow: 0px 0px 8px 4px rgba(56, 56, 56, 0.0458843);
 }
 @media only screen and (min-width: 800px) {
-  main #main-2 div:nth-of-type(2) #card {
+  main #location article .card {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -505,7 +514,7 @@ main #main-2 div:nth-of-type(2) #card {
     box-shadow: 0px 0px 8px 4px rgba(56, 56, 56, 0.0458843);
   }
 }
-main #main-2 div:nth-of-type(2) #card p {
+main #location article .card p {
   font-family: "Open Sans";
   font-size: 10px;
   color: #07043b;
@@ -515,7 +524,7 @@ main #main-2 div:nth-of-type(2) #card p {
   margin: 0;
 }
 @media only screen and (min-width: 800px) {
-  main #main-2 div:nth-of-type(2) #card p {
+  main #location article .card p {
     font-family: "Open Sans";
     font-size: 10px;
     color: #07043b;
@@ -525,16 +534,16 @@ main #main-2 div:nth-of-type(2) #card p {
     margin: 0;
   }
 }
-main #main-2 div:nth-of-type(2) #card img {
+main #location article .card img {
   width: 12px;
   height: auto;
 }
-main #main-2 div:nth-of-type(2) #card img:nth-of-type(2) {
+main #location article .card img:nth-of-type(2) {
   width: 24px;
   height: auto;
   border-radius: 50px;
 }
-main #main-2 div:nth-of-type(2) #card div {
+main #location article .card div {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -543,23 +552,23 @@ main #main-2 div:nth-of-type(2) #card div {
   -moz-column-gap: 8px;
        column-gap: 8px;
 }
-main #main-2 div:nth-of-type(2) #card img[alt=avatar] {
+main #location article .card img[alt=avatar] {
   width: 24px;
   height: auto;
   border-radius: 50px;
 }
-main #main-2 div:nth-of-type(2) #card #fname {
+main #location article .card .person {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
 }
-main #main-2 div:nth-of-type(2) #card #fname img {
+main #location article .card .person img {
   width: 24px;
   height: auto;
   border-radius: 50px;
 }
-main #main-2 div:nth-of-type(2) #card #fname h1 {
+main #location article .card .person h1 {
   font-family: "Open Sans";
   font-size: 9px;
   color: #07043b;
@@ -567,7 +576,7 @@ main #main-2 div:nth-of-type(2) #card #fname h1 {
   text-align: left;
   line-height: 12px;
 }
-main #main-2 div:nth-of-type(2) #card #fname p {
+main #location article .card .person p {
   font-family: "Open Sans";
   font-size: 6px;
   color: #07043b;
@@ -576,7 +585,7 @@ main #main-2 div:nth-of-type(2) #card #fname p {
   letter-spacing: 0.3px;
   margin: 0;
 }
-main #main-email {
+main #access {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -587,7 +596,7 @@ main #main-email {
   text-align: center;
 }
 @media only screen and (min-width: 800px) {
-  main #main-email {
+  main #access {
     padding: 100px 40px 80px 80px;
     display: flex;
     flex-direction: row;
@@ -601,15 +610,27 @@ main #main-email {
     text-align: center;
   }
 }
-main #main-email h1 {
+main #access article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  row-gap: 20px;
+}
+@media only screen and (min-width: 800px) {
+  main #access article {
+    width: 50%;
+  }
+}
+main #access article h1 {
   font-family: Raleway;
   font-size: 18px;
   color: white;
   font-weight: 700;
-  text-align: left;
+  text-align: center;
 }
 @media only screen and (min-width: 800px) {
-  main #main-email h1 {
+  main #access article h1 {
     font-family: Raleway;
     font-size: 32px;
     color: white;
@@ -617,18 +638,19 @@ main #main-email h1 {
     text-align: left;
   }
 }
-main #main-email p {
+main #access article p {
   width: 278px;
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
-  color: white;
+  color: #fff;
   font-weight: 400;
-  text-align: left;
+  text-align: center;
   margin-top: 16px;
   line-height: 21px;
 }
 @media only screen and (min-width: 800px) {
-  main #main-email p {
+  main #access article p {
+    width: 100%;
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
     color: white;
@@ -636,19 +658,18 @@ main #main-email p {
     text-align: left;
     margin-top: 16px;
     line-height: 24px;
+    max-width: 435px;
   }
 }
-main #main-email div:nth-of-type(2) {
+main #access form {
   width: 240px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  -moz-column-gap: 8px;
-       column-gap: 8px;
 }
 @media only screen and (min-width: 800px) {
-  main #main-email div:nth-of-type(2) {
+  main #access form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -657,7 +678,16 @@ main #main-email div:nth-of-type(2) {
     text-align: left;
   }
 }
-main #main-email div:nth-of-type(2) input:nth-of-type(1) {
+main #access form fieldset {
+  width: 100%;
+  padding-bottom: 12px;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+main #access form fieldset input {
   font-size: 10px;
   color: #c0c0c0;
   font-weight: 400;
@@ -667,7 +697,7 @@ main #main-email div:nth-of-type(2) input:nth-of-type(1) {
   outline: none;
 }
 @media only screen and (min-width: 800px) {
-  main #main-email div:nth-of-type(2) input:nth-of-type(1) {
+  main #access form fieldset input {
     font-size: 12px;
     color: #07043b;
     font-weight: 400;
@@ -677,19 +707,27 @@ main #main-email div:nth-of-type(2) input:nth-of-type(1) {
     max-width: none;
   }
 }
-main #main-email div:nth-of-type(2) input:nth-of-type(2) {
+main #access form fieldset .error {
+  font-size: 12px;
+  color: #fff;
+  font-weight: 400;
+  text-align: left;
+  margin-top: 6px;
+}
+main #access form button {
   font-size: 10px;
   color: white;
   font-weight: 700;
-  text-align: left;
+  text-align: center;
   height: 32px;
 }
 @media only screen and (min-width: 800px) {
-  main #main-email div:nth-of-type(2) input:nth-of-type(2) {
+  main #access form button {
     height: 48px;
     min-width: 100px;
     max-width: 200px;
     width: 40%;
+    font-size: 14px;
   }
 }
 
@@ -710,10 +748,10 @@ footer {
     padding: 65px 80px;
   }
 }
-footer #footer-logo {
+footer img#footer-logo {
   align-self: flex-start;
 }
-footer #footer-contact {
+footer section#footer-content {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -721,7 +759,7 @@ footer #footer-contact {
   align-items: center;
 }
 @media only screen and (min-width: 800px) {
-  footer #footer-contact {
+  footer section#footer-content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -729,25 +767,26 @@ footer #footer-contact {
     padding-right: 20px;
   }
 }
-footer #footer-contact .item {
+footer section#footer-content .item {
   align-self: flex-start;
 }
-footer #footer-contact .item:nth-of-type(4) {
+footer section#footer-content .item:nth-of-type(4) {
   margin-top: 10px;
   align-self: center;
 }
 @media only screen and (min-width: 800px) {
-  footer #footer-contact .item:nth-of-type(4) {
+  footer section#footer-content .item:nth-of-type(4) {
     align-self: start;
   }
 }
-footer #footer-contact .item:nth-of-type(4) img {
+footer section#footer-content .item:nth-of-type(4) img {
   margin: 10px;
   padding: 4px;
   border-radius: 50%;
   border: white 1px solid;
+  display: inline-block;
 }
-footer #footer-contact section {
+footer section#footer-content section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -760,7 +799,7 @@ footer #footer-contact section {
   text-align: left;
   margin: 16px 0;
 }
-footer #footer-contact section div {
+footer section#footer-content section div {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -768,11 +807,11 @@ footer #footer-contact section div {
   -moz-column-gap: 12px;
        column-gap: 12px;
 }
-footer #footer-contact section div:hover {
+footer section#footer-content section div:hover {
   filter: invert(53%) sepia(74%) saturate(1662%) hue-rotate(199deg) brightness(103%) contrast(101%);
   cursor: pointer;
 }
-footer #footer-contact .item p:not(#odd p) {
+footer section#footer-content .item p {
   font-family: "Open Sans";
   font-size: 16px;
   color: white;
@@ -780,11 +819,11 @@ footer #footer-contact .item p:not(#odd p) {
   text-align: left;
   margin: 16px 0;
 }
-footer #footer-contact p:not(#odd p):hover {
+footer section#footer-content .item p:hover {
   color: #6c9bff;
   cursor: pointer;
 }
-footer #footer-contact img:not(#odd img):hover {
+footer section#footer-content img:hover {
   filter: invert(53%) sepia(74%) saturate(1662%) hue-rotate(199deg) brightness(103%) contrast(101%);
   cursor: pointer;
 }
