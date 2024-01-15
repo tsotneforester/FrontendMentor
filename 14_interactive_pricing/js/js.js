@@ -4,14 +4,13 @@
 //  ╙╢▒╢╖ ║╜,╢▒▒╝    ███▄▄███ ▐██▌     ▐██▌ ▐███  ███ ▐███▄███▌ ███▄▄▄▄
 //    `╢▒╜  ╣▒╜       ▀▀▀▀▀▀▀  ▀▀      ▀▀▀   ▀▀▀  ▀▀▀   ▀▀▀▀▀▀  ▀▀▀▀▀▀▀
 "use strict";
-"use strict";
 
 const slider = document.querySelector("#slider");
 const circle = document.querySelector("#circle");
-const color = document.querySelector("#color-line");
-const priceAmount = document.querySelector("#price-amount");
-const viewAmount = document.querySelector("#view-amount");
-const switcherBall = document.querySelector("#switcher-ball");
+const color_line = document.querySelector("#color-line");
+const price_amount = document.querySelector("#price-amount");
+const view_amount = document.querySelector("#view-amount");
+const switcher_ball = document.querySelector("#switcher-ball");
 const switcher = document.querySelector("#switcher");
 const input = document.querySelector("input");
 
@@ -27,20 +26,20 @@ const loan = {
 
 function numberChange() {
   if (yearlyStatus) {
-    priceAmount.innerHTML = "$" + (loan[slider.value][1] * 0.75).toFixed(2);
-    viewAmount.innerHTML = loan[slider.value][0];
+    price_amount.innerHTML = "$" + (loan[slider.value][1] * 0.75).toFixed(2);
+    view_amount.innerHTML = loan[slider.value][0];
   } else {
-    priceAmount.innerHTML = "$" + loan[slider.value][1].toFixed(2);
-    viewAmount.innerHTML = loan[slider.value][0];
+    price_amount.innerHTML = "$" + loan[slider.value][1].toFixed(2);
+    view_amount.innerHTML = loan[slider.value][0];
   }
 }
 
 switcher.addEventListener("click", () => {
   if (!yearlyStatus) {
-    switcherBall.style.transform = "translate(24px, 4px)";
+    switcher_ball.style.transform = "translate(24px, 4px)";
     switcher.style.backgroundColor = "#7aeadf";
   } else {
-    switcherBall.style.transform = "translate(5px, 4px)";
+    switcher_ball.style.transform = "translate(5px, 4px)";
     switcher.style.backgroundColor = "#cfd8ef";
   }
   yearlyStatus = !yearlyStatus;
@@ -51,10 +50,10 @@ slider.addEventListener("input", () => {
   let sliderValue = slider.value / 100;
   if (window.innerWidth > 678) {
     circle.style.transform = "translate(" + 404 * sliderValue + "px)";
-    color.style.width = 444 * sliderValue + "px";
+    color_line.style.width = 444 * sliderValue + "px";
   } else {
     circle.style.transform = "translate(" + 236 * sliderValue + "px)";
-    color.style.width = 276 * sliderValue + "px";
+    color_line.style.width = 276 * sliderValue + "px";
   }
   numberChange();
 });
@@ -63,10 +62,10 @@ window.addEventListener("resize", () => {
   let sliderValue = slider.value / 100;
   if (window.innerWidth > 678) {
     circle.style.transform = "translate(" + 404 * sliderValue + "px)";
-    color.style.width = 444 * sliderValue + "px";
+    color_line.style.width = 444 * sliderValue + "px";
   } else {
     circle.style.transform = "translate(" + 236 * sliderValue + "px)";
-    color.style.width = 276 * sliderValue + "px";
+    color_line.style.width = 276 * sliderValue + "px";
   }
   numberChange();
 });
