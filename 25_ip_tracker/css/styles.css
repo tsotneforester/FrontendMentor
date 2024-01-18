@@ -1,0 +1,225 @@
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:link,
+a:visited,
+a:focus,
+a:hover,
+a:active {
+  text-decoration: none;
+  outline: none;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: inherit;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+pre {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100svh;
+  font-family: "Rubik", sans-serif;
+}
+
+:root {
+  --input: 18px;
+  --very-dark-gray: #2b2b2b;
+  --dark-gray: hsl(0, 0%, 59%);
+  --white: rgb(255, 255, 255);
+  --radius: 12px;
+  --padding: 20px;
+}
+
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+}
+
+.wallpaper {
+  height: 220px;
+  background-image: url("../images/pattern-bg-mobile.png");
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+  background-attachment: scroll;
+  background-size: cover;
+}
+@media only screen and (min-width: 480px) {
+  .wallpaper {
+    background-image: url("../images/pattern-bg-desktop.png");
+  }
+}
+
+header {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  padding: var(--padding);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+header > h1 {
+  font-size: 26px;
+  color: var(--white);
+  font-weight: 500;
+  word-spacing: 9px;
+  text-align: center;
+}
+header form {
+  width: 100%;
+  max-width: 400px;
+  background-image: url(pattern-bg-mobile);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: stretch;
+}
+header form input {
+  padding: 14px 8px;
+  border-top-left-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
+  border: none;
+  flex-grow: 1;
+  min-width: 0;
+}
+header form button {
+  padding: 14px 8px;
+  border: none;
+  width: 50px;
+  flex-shrink: 0;
+  background-color: black;
+  border-top-right-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  transition: background-color 0.3s;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+header form button:hover {
+  background-color: var(--dark-gray);
+}
+header .ip-info {
+  width: 100%;
+  padding: 20px;
+  margin: 12px auto 0 auto;
+  max-width: 450px;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 16px;
+}
+@media only screen and (min-width: 1100px) {
+  header .ip-info {
+    flex-flow: row nowrap;
+    align-items: stretch;
+    justify-content: space-between;
+    max-width: 950px;
+    padding: 40px;
+  }
+}
+header .ip-info h2 {
+  color: var(--dark-gray);
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+header .ip-info h1 {
+  color: var(--very-dark-gray);
+  font-size: 24px;
+}
+header .ip-info h2,
+header .ip-info h1 {
+  text-align: center;
+  font-weight: 700;
+}
+header .ip-info hr {
+  display: none;
+}
+@media only screen and (min-width: 1100px) {
+  header .ip-info hr {
+    display: inline-block;
+    border: none;
+    width: 1px;
+    background-color: gray;
+  }
+}
+header .ip-info .cell {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+@media only screen and (min-width: 1100px) {
+  header .ip-info .cell {
+    gap: 20px;
+    align-items: flex-start;
+  }
+}
+
+#mapid {
+  z-index: 1;
+  flex-grow: 1;
+}

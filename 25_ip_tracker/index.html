@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>GPX Hiking</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./favicon/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href="./favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="./favicon/site.webmanifest" />
+
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="wallpaper"></div>
+      <header>
+        <h1>IP Address Tracker</h1>
+        <form action="">
+          <input type="text" name="lat" placeholder="Search for any IP address or domain" />
+          <button><img src="images/icon-arrow.svg" alt="" /></button>
+        </form>
+        <div class="ip-info">
+          <section class="cell" id="ip-data">
+            <h2>ap address</h2>
+            <h1>--</h1>
+          </section>
+          <hr />
+          <section class="cell" id="location-data">
+            <h2>LOCATION</h2>
+            <h1>--</h1>
+          </section>
+          <hr />
+          <section class="cell" id="time-data">
+            <h2>TIMEZONE</h2>
+            <h1>--</h1>
+          </section>
+          <hr />
+          <section class="cell" id="provider-data">
+            <h2>ISP</h2>
+            <h1>--</h1>
+          </section>
+        </div>
+      </header>
+
+      <div id="mapid"></div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
