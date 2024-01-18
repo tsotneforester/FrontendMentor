@@ -1,4 +1,4 @@
-<h1 align="center">Calculator App</h1>
+<h1 align="center">IP Tracker</h1>
 
 <div align="center">
   <img src="https://gpx.ge/js/img/raw/1052_calculator_app.gif" alt="qr-code" />
@@ -10,7 +10,7 @@
   <br/>
     Difficulty - <img src="https://img.shields.io/badge/%203%20-intermediate-white?labelColor=f1b604" alt="qr-code" />
   <br/>
-    <a href="https://gpx.ge/js/pages/1052_calculator_app" target="_blank">🖥️ View Demo</a>
+    <a href="https://tsotneforester.github.io/FrontendMentor/25_ip_tracker" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/FrontendMentor/issues">🛠Submit Issue</a>
   </div>
