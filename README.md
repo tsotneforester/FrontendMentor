@@ -107,7 +107,8 @@ For Vite Projects
 | 22 | ✅ | ❌ | ✅ | ✅ | ✅ | ❌ |
 | 23 | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ |
 | 24 | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ |
-<!-- | nam |pixp| res| 4k  |reac |.fgm|on frontend
+| 24 | ✅ | ❌ | ✅ | ❌ | ❌ | ✅ |
+<!-- | nam |pixp| res| 4k  |reac |on frontend
 
 
 ## About Me
