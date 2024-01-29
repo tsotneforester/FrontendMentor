@@ -12,7 +12,7 @@
   <br/>
     Difficulty - <img src="https://img.shields.io/badge/%202%20-junior-white?labelColor=aad742" alt="qr-code" />
   <br/>
-    <a href="https://tsotneforester.github.io/FrontendMentor/11_tip_calculator" target="_blank">🖥️ View Demo</a>
+    <a href="https://65b747151cb913f159e8c2e7--deft-cranachan-73b09d.netlify.app/" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/FrontendMentor/issues">🛠Submit Issue</a>
 

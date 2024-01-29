@@ -10,7 +10,7 @@
   <br/>
     Difficulty - <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="qr-code" />
   <br/>
-    <a href="https://tsotneforester.github.io/FrontendMentor/01_qr_code" target="_blank">🖥️ View Demo</a>
+    <a href="https://65b749c42ddcf9f6b6abc7e2--deft-cranachan-73b09d.netlify.app/" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/FrontendMentor/issues">🛠Submit Issue</a>
 
