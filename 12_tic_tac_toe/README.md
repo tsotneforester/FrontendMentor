@@ -12,7 +12,7 @@
   <br/>
     Difficulty - <img src="https://img.shields.io/badge/%203%20-intermediate-white?labelColor=f1b604" alt="qr-code" />
   <br/>
-    <a href="https://tsotneforester.github.io/FrontendMentor/12_tic_tac_toe" target="_blank">🖥️ View Demo</a>
+    <a href="https://gpx.ge/js/pages/1054_tic_tac_toe" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/FrontendMentor/issues">🛠Submit Issue</a>
 
