@@ -13,7 +13,7 @@
   <br/>
     Difficulty - <img src="https://img.shields.io/badge/%203%20-intermediate-white?labelColor=f1b604" alt="qr-code" />
   <br/>
-    <a href="https://tsotneforester.github.io/FrontendMentor/25_ip_tracker" target="_blank">🖥️ View Demo</a>
+    <a href="https://65b743a451be0cf38bcbb713--rad-valkyrie-732bdd.netlify.app/" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/FrontendMentor/issues">🛠Submit Issue</a>
   </div>
