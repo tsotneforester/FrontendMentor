@@ -1,3 +1,4 @@
+<!-- surge -->
 <h1 align="center">QR Code</h1>
 
 <div align="center">
@@ -10,13 +11,11 @@
   <br/>
     Difficulty - <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="qr-code" />
   <br/>
-    <a href="https://65b749c42ddcf9f6b6abc7e2--deft-cranachan-73b09d.netlify.app/" target="_blank">🖥️ View Demo</a>
+    <a href="https://qr_code-tsotneforester.surge.sh/" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/FrontendMentor/issues">🛠Submit Issue</a>
 
   </div>
-
-
 
 <!-- ![html](https://img.shields.io/badge/-HTML-6abecd "image")
 ![css](https://img.shields.io/badge/-CSS-3e54a3 "image")

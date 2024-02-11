@@ -67,10 +67,6 @@ pre {
   margin: 0;
 }
 
-* {
-  font-family: "Outfit", sans-serif;
-}
-
 body {
   min-height: 100vh;
   background-color: #d6e2f0;
@@ -78,6 +74,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: "Outfit", sans-serif;
 }
 
 main {
