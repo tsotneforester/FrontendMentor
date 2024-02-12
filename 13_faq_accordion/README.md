@@ -1,3 +1,4 @@
+<!-- surge -->
 <h1 align="center">FAQ Accordion</h1>
 
 <div align="center">
@@ -12,7 +13,7 @@
   <br/>
     Difficulty - <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="qr-code" />
   <br/>
-    <a href="https://gpx.ge/js/pages/1001_faq_accordion" target="_blank">🖥️ View Demo</a>
+    <a href="https://faq_accordion-tsotneforester.surge.sh/" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/FrontendMentor/issues">🛠Submit Issue</a>
 

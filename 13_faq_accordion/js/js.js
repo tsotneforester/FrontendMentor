@@ -5,21 +5,22 @@
 //    `╢▒╜  ╣▒╜       ▀▀▀▀▀▀▀  ▀▀      ▀▀▀   ▀▀▀  ▀▀▀   ▀▀▀▀▀▀  ▀▀▀▀▀▀▀
 "use strict";
 
-let arrow = document.querySelectorAll(".arrow");
-let arrowLength = document.querySelectorAll(".arrow").length;
-let questions = document.querySelectorAll(".questions");
-let question = document.querySelectorAll(".normal");
+let arrows = document.querySelectorAll(".question img");
+let articles = document.querySelectorAll("article");
+let questions = document.querySelectorAll(".question span");
 
-for (let i = 0; i < arrowLength; i++) {
-  arrow[i].addEventListener("click", () => {
-    for (let ii = 0; ii < arrowLength; ii++) {
-      questions[ii].classList.remove("fix");
-      arrow[ii].classList.remove("fix1");
-      question[ii].classList.remove("bold");
+//|||||||||||| article listener looped |||||||||||||\
+
+for (let i = 0, count = articles.length; i < count; i++) {
+  articles[i].addEventListener("click", () => {
+    for (let ii = 0, count = articles.length; ii < count; ii++) {
+      articles[ii].classList.remove("active");
+      arrows[ii].classList.remove("rotated");
+      questions[ii].classList.remove("bold");
     }
 
-    questions[i].classList.toggle("fix");
-    arrow[i].classList.toggle("fix1");
-    question[i].classList.toggle("bold");
+    articles[i].classList.toggle("active");
+    arrows[i].classList.toggle("rotated");
+    questions[i].classList.toggle("bold");
   });
 }

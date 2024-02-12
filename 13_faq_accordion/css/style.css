@@ -94,7 +94,7 @@ h1 {
   }
 }
 
-#container {
+main {
   position: relative;
   width: 327px;
   height: 500px;
@@ -104,7 +104,7 @@ h1 {
   padding: 25px;
 }
 @media only screen and (min-width: 1000px) {
-  #container {
+  main {
     height: 509px;
     width: 920px;
     display: flex;
@@ -113,7 +113,15 @@ h1 {
   }
 }
 
-#zorg1 {
+@media only screen and (min-width: 1000px) {
+  #vector-box {
+    flex-basis: 450px;
+    background-image: url("../images/illustration-woman-online-desktop.svg");
+    background-repeat: no-repeat;
+    background-position: -86px 75px;
+  }
+}
+#vector-box :nth-child(1) {
   position: absolute;
   top: -106px;
   left: 45px;
@@ -121,27 +129,25 @@ h1 {
   z-index: 2;
 }
 @media only screen and (min-width: 1000px) {
-  #zorg1 {
+  #vector-box :nth-child(1) {
     display: none;
   }
 }
-
-#zorg2 {
+#vector-box :nth-child(2) {
   position: absolute;
   top: -7px;
   left: 45px;
 }
 @media only screen and (min-width: 1000px) {
-  #zorg2 {
+  #vector-box :nth-child(2) {
     display: none;
   }
 }
-
-#zorg3 {
+#vector-box :nth-child(3) {
   display: none;
 }
 @media only screen and (min-width: 1000px) {
-  #zorg3 {
+  #vector-box :nth-child(3) {
     display: block;
     position: absolute;
     top: 207px;
@@ -149,28 +155,26 @@ h1 {
   }
 }
 
-#questionbox {
+#faq-box {
   margin-top: 36px;
 }
 @media only screen and (min-width: 1000px) {
-  #questionbox {
+  #faq-box {
     margin-top: 65px;
     flex-basis: 450px;
   }
 }
 
-.questions {
+article {
   display: flex;
   flex-direction: column;
   height: 45px;
   overflow: hidden;
   transition: height 200ms linear;
   border-bottom: solid #e8e8ea 1px;
-  /* border: dashed red 1px; */
   margin: 10px 0;
 }
-
-.question {
+article .question {
   font-family: "Kumbh Sans";
   font-style: normal;
   font-size: 13px;
@@ -181,23 +185,23 @@ h1 {
   margin: 10px 0;
 }
 @media only screen and (min-width: 1000px) {
-  .question {
+  article .question {
     font-size: 14px;
   }
 }
-
-.normal {
+article .question img {
+  align-self: center;
+  transition: transform 0.2s linear;
+}
+article .question span {
   color: #4b4c5f;
-  font-weight: 400;
   /* transition: all 1.3s linear; */
 }
-
-.normal:hover {
+article .question span:hover {
   color: #f47b56;
   cursor: pointer;
 }
-
-.answer {
+article .answer {
   font-family: "Kumbh Sans";
   font-style: normal;
   font-weight: 400;
@@ -207,28 +211,14 @@ h1 {
   margin: 10px 0;
 }
 
-.arrow {
-  align-self: center;
-  transition: transform 0.2s linear;
-}
-
-.fix {
+.active {
   height: 110px;
 }
 
-.fix1 {
+.rotated {
   transform: rotate(180deg);
 }
 
 .bold {
   font-weight: 700;
-}
-
-@media only screen and (min-width: 1000px) {
-  #imagebox {
-    flex-basis: 450px;
-    background-image: url("../images/illustration-woman-online-desktop.svg");
-    background-repeat: no-repeat;
-    background-position: -86px 75px;
-  }
 }
