@@ -1,3 +1,4 @@
+<!-- surged -->
 <h1 align="center">Interactive Rating</h1>
 
 <div align="center">
@@ -10,7 +11,7 @@
   <br/>
     Difficulty - <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="qr-code" />
   <br/>
-    <a href="https://gpx.ge/js/pages/1006_interactive_rating" target="_blank">🖥️ View Demo</a>
+    <a href="https://interactive_pricing-tsotneforester.surge.sh/" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/FrontendMentor/issues">🛠Submit Issue</a>
   </div>
