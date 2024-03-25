@@ -1,8 +1,8 @@
 <!-- surge -->
-<h1 align="center">Quiz</h1>
+<h1 align="center">Quiz App</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/js/img/raw/1009_quiz.gif" alt="qr-code" />
+  <img src="https://gpx.ge/js/img/raw/1009_quiz_app.gif" alt="qr-code" />
 </div>
 
   <div align="center">
