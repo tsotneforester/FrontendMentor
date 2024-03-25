@@ -1,3 +1,16 @@
+body {
+  min-height: 100svh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: "Nunito", sans-serif;
+}
+
 main {
   width: 327px;
   height: 360px;

@@ -4,8 +4,6 @@ import "./style.css";
 
 let storedTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 
-console.log(storedTheme);
-
 function Index() {
   const [user, setUser] = useState("tsotneforester");
   const [iserror, setIsError] = useState(false);
