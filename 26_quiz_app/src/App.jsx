@@ -1,207 +1,150 @@
-import { useState, useEffect } from "react";
-import rawData from "./data.json";
+import { useEffect, useReducer } from "react";
+import axios from "axios";
 
-const ALPH = ["a", "b", "c", "d"];
+import { ThemeToggler, Choises, Welcome, Titles, SubmitButton, SelectError, ReloadButton, ResultBoard, Progress, Loading, QuizCompleted, TitleWithIcon, CounterLine } from "./components/index";
 
-let storedTheme = localStorage.getItem("appTheme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+//npm json-server db.json
+let URL = "http://localhost:3000/quizzes";
 
-function App() {
-  const [data, setData] = useState();
-  const [activeQuestion, setActiveQuestion] = useState(0);
-  const [selectedChoise, setSelectedChoise] = useState(null);
-  const [window, setWindow] = useState("first");
-  const [title, setTitle] = useState(null);
-  const [showNext, setShowNext] = useState(false);
-  const [score, setScore] = useState(0);
-  const [showError, setShowError] = useState(false);
-  const [didScore, setDidScore] = useState(false);
-  const [didNotScore, setDidNotScore] = useState(null);
-  const [theme, setTheme] = useState(storedTheme);
+const initialState = {
+  status: "loading",
+  data: null,
+  titleIndex: null,
+  questionIndex: 0,
+  choise: null,
+  showSelectionError: false,
+  submitted: false,
+  score: 0,
+  didNotScore: false,
+  didScore: false,
+};
 
-  function themeHandler() {
-    let currentTheme = localStorage.getItem("appTheme");
-
-    if (currentTheme == "dark") {
-      setTheme("light");
-    } else {
-      setTheme("dark");
-    }
+function reducer(state, action) {
+  //state = initialState
+  if (action.type == "dataReceived") {
+    return {
+      ...state,
+      status: "ready",
+      data: action.payload,
+    };
+  }
+  if (action.type == "titleSet") {
+    return {
+      ...state,
+      status: "active",
+      titleIndex: action.payload,
+    };
+  }
+  if (action.type == "quizzStart") {
+    return {
+      ...state,
+      status: "active",
+      questions: action.payload,
+    };
+  }
+  if (action.type == "choiseSelected") {
+    return {
+      ...state,
+      choise: action.payload,
+      showSelectionError: false,
+    };
+  }
+  if (action.type == "showSelectionError") {
+    return {
+      ...state,
+      showSelectionError: true,
+    };
+  }
+  if (action.type == "submit") {
+    return {
+      ...state,
+      submitted: true,
+    };
+  }
+  if (action.type == "scored") {
+    return {
+      ...state,
+      score: state.score + 1,
+      didScore: true,
+    };
   }
 
-  useEffect(() => {
-    if (title) {
-      let tempData = rawData.quizzes.find((e) => e.title == title);
-      setData(tempData);
-      setWindow("second");
-    }
-  }, [title]);
+  if (action.type == "missed") {
+    return {
+      ...state,
+      didNotScore: true,
+    };
+  }
+  if (action.type == "nextQuestion") {
+    return {
+      ...state,
+      didScore: false,
+      didNotScore: null,
+      choise: null,
+      submitted: false,
+      questionIndex: state.questionIndex + 1,
+    };
+  }
+
+  if (action.type == "finished") {
+    return {
+      ...state,
+      status: "finished",
+      didScore: false,
+      didNotScore: null,
+      choise: null,
+      submitted: false,
+      questionIndex: 0,
+    };
+  }
+}
+
+function App() {
+  const [{ status, data, titleIndex, questionIndex, choise, showSelectionError, submitted, didNotScore, score, didScore }, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("appTheme", theme);
-  }, [theme]);
+    axios(URL).then((e) => {
+      dispatch({ type: "dataReceived", payload: e.data });
+    });
+  }, []);
 
   return (
     <>
       <header>
-        {window == "second" || window == "third" ? (
-          <div className="title-with-icon">
-            <div style={{ backgroundColor: data.color }} className="icon-frame">
-              <div className="icon">
-                <img src={data.icon} alt="icon" />
-              </div>
-            </div>
-
-            <h1>{data.title}</h1>
-          </div>
-        ) : (
-          <div></div>
-        )}
-
-        <div className="theme-toggler">
-          <img src={`./assets/images/icon-sun-${theme == "light" ? "dark" : "light"}.svg `} alt="" />
-          <div className="color" onClick={themeHandler}>
-            <div className={`circle ${theme == "light" ? "toggled" : ""}`}></div>
-          </div>
-          <img src={`./assets/images/icon-moon-${theme == "light" ? "dark" : "light"}.svg `} alt="" />
-        </div>
+        {status == "active" && <TitleWithIcon data={data[titleIndex]} />}
+        {(status == "finished" || status == "ready") && <div></div>}
+        <ThemeToggler />
       </header>
       <aside>
-        {window == "first" && (
+        {/* |||||||||||||||||| ASIDE |||||||||||||||||||| */}
+        {status == "loading" && <Loading />}
+        {status == "ready" && <Welcome />}
+        {status == "active" && (
           <>
-            <h1>Welcome to the</h1>
-            <h1 className="bold">Frontend Quiz!</h1>
-            <span style={{ margin: "40px 0" }}>Pick a subject to get started.</span>
+            <CounterLine questionIndex={questionIndex} data={data[titleIndex]} />
+            <Progress questionIndex={questionIndex} data={data[titleIndex]} />
           </>
         )}
-        {window == "second" && (
-          <>
-            <div>
-              <span>
-                Question {activeQuestion + 1} of {data.questions.length}
-              </span>
-              <h2 className="question">{data.questions[activeQuestion].question}</h2>
-            </div>
-            <progress value={(100 / data.questions.length) * (activeQuestion + 1)} max="100">
-              32%
-            </progress>
-          </>
-        )}
-        {window == "third" && (
-          <>
-            <h1>Quiz Completed</h1>
-            <h1 className="bold">You scored...</h1>
-          </>
-        )}
+        {status == "finished" && <QuizCompleted />}
       </aside>
 
       <main>
-        {window == "first" && (
-          <>
-            {rawData.quizzes.map((e) => {
-              return (
-                <button
-                  className="title-choise"
-                  onClick={() => {
-                    setTitle(e.title);
-                  }}>
-                  <div className="title-with-icon">
-                    <div style={{ backgroundColor: e.color }} className="icon-frame">
-                      <div className="icon">
-                        <img src={e.icon} alt="icon" />
-                      </div>
-                    </div>
+        {/* ||||||||||||||||||  MAIN |||||||||||||||||||| */}
+        {status == "ready" && <Titles data={data} dispatch={dispatch} />}
 
-                    <h1>{e.title}</h1>
-                  </div>
-                </button>
-              );
-            })}
+        {status == "active" && (
+          <>
+            <Choises data={data[titleIndex]} didScore={didScore} didNotScore={didNotScore} choise={choise} dispatch={dispatch} questionIndex={questionIndex} submitted={submitted} />
+            <SubmitButton data={data[titleIndex]} choise={choise} dispatch={dispatch} submitted={submitted} questionIndex={questionIndex} />
+
+            <SelectError showSelectionError={showSelectionError} />
           </>
         )}
 
-        {window == "second" && (
+        {status == "finished" && (
           <>
-            {data.questions[activeQuestion].options.map((e, i) => {
-              return (
-                <button
-                  onClick={() => {
-                    if (!showNext) {
-                      setSelectedChoise(e);
-                      setShowError(false);
-                    }
-                  }}
-                  className={`answer-choise ${didScore && e == data.questions[activeQuestion].answer ? "correct" : ""} ${selectedChoise == e ? "version" : ""} ${didNotScore && selectedChoise == e ? "wrong" : ""}`}>
-                  <div className={`letter-box ${didScore && e == data.questions[activeQuestion].answer ? "correct" : ""} ${selectedChoise == e ? "version" : ""} ${didNotScore && selectedChoise == e ? "wrong" : ""}`}>{ALPH[i]}</div>
-                  <p>{e}</p>
-                  <div className="correct-wrong">
-                    {didScore && e == data.questions[activeQuestion].answer ? <img src="assets/images/icon-correct.svg" alt="" /> : ""} {didNotScore && selectedChoise == e ? <img src="assets/images/icon-error.svg" alt="" /> : ""}
-                    {didNotScore && e == data.questions[activeQuestion].answer ? <img src="assets/images/icon-correct.svg" alt="" /> : ""}
-                  </div>
-                </button>
-              );
-            })}
-            <div
-              className="purple-button"
-              onClick={() => {
-                if (!selectedChoise) {
-                  setShowError(true);
-                } else if (selectedChoise && !showNext) {
-                  setShowNext(!showNext);
-
-                  if (selectedChoise == data.questions[activeQuestion].answer) {
-                    setScore((pre) => pre + 1);
-                    setDidScore(true);
-                  } else {
-                    setDidNotScore(true);
-                  }
-                } else if (selectedChoise && showNext) {
-                  setDidScore(false);
-                  setDidNotScore(null);
-                  setActiveQuestion((prev) => {
-                    setSelectedChoise(null);
-                    setShowNext(!showNext);
-                    if (prev == data.questions.length - 1) {
-                      setWindow("third");
-                      setSelectedChoise(null);
-                      return 0;
-                    }
-                    return prev + 1;
-                  });
-                }
-              }}>
-              {showNext ? <p>Next</p> : <p>Submit</p>}
-            </div>
-
-            <div className={`select-error ${showError ? "active" : ""}`}>
-              <img src="assets/images/icon-error.svg" alt="" />
-              <p>Please select an answer</p>
-            </div>
-          </>
-        )}
-
-        {window == "third" && (
-          <>
-            <div className="result-board">
-              <div className="title-with-icon">
-                <div style={{ backgroundColor: data.color }} className="icon-frame">
-                  <div className="icon">
-                    <img src={data.icon} alt="icon" />
-                  </div>
-                </div>
-
-                <h1>{data.title}</h1>
-              </div>
-              <h1>{score}</h1>
-              <span>Out of {data.questions.length}</span>
-            </div>
-            <div
-              className="purple-button"
-              onClick={() => {
-                location.reload();
-              }}>
-              <p>play again</p>
-            </div>
+            <ResultBoard data={data[titleIndex]} score={score} />
+            <ReloadButton />
           </>
         )}
       </main>

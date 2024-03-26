@@ -386,6 +386,9 @@ progress::-moz-progress-bar {
   cursor: pointer;
   gap: 20px;
   transition: background-color 0.6s;
+  -webkit-user-select: none; /* Safari */ /* IE 10 and IE 11 */
+  -moz-user-select: none;
+       user-select: none; /* Standard syntax */
 }
 @media only screen and (min-width: 480px) {
   .purple-button {
