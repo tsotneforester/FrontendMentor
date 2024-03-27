@@ -11,7 +11,7 @@
   <br/>
     Difficulty - <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="qr-code" />
   <br/>
-    <a href="https://65b745132ddcf9f3fbabc8bb--rad-valkyrie-732bdd.netlify.app/" target="_blank">🖥️ View Demo</a>
+    <a href="https://gpx.ge/js/pages/1023_fylo/" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/FrontendMentor/issues">🛠Submit Issue</a>
 
