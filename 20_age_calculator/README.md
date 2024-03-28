@@ -11,12 +11,11 @@
   <br/>
     Difficulty - <img src="https://img.shields.io/badge/%202%20-junior-white?labelColor=aad742" alt="qr-code" />
   <br/>
-    <a href="https://65b7489f391a75f80694e879--deft-cranachan-73b09d.netlify.app/" target="_blank">🖥️ View Demo</a>
+    <a href="https://gpx.ge/js/pages/1045_age_calculator" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/FrontendMentor/issues">🛠Submit Issue</a>
 
   </div>
-
 
 <!-- ![html](https://img.shields.io/badge/-HTML-6abecd "image")
 ![css](https://img.shields.io/badge/-CSS-3e54a3 "image")

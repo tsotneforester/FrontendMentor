@@ -54,7 +54,7 @@ function App() {
   return (
     <>
       <header>
-        {status == "active" || status == "finished" ? (
+        {status == "active" ? (
           <div className="title-with-icon">
             <div style={{ backgroundColor: data.color }} className="icon-frame">
               <div className="icon">
@@ -114,9 +114,10 @@ function App() {
         {status == "ready" && (
           <>
             {data
-              ? data.map((e) => {
+              ? data.map((e, i) => {
                   return (
                     <button
+                      key={i}
                       className="title-choise"
                       onClick={() => {
                         setTitle(e.title);
@@ -142,6 +143,7 @@ function App() {
             {data.questions[activeQuestion].options.map((e, i) => {
               return (
                 <button
+                  key={i}
                   onClick={() => {
                     if (!showNext) {
                       setSelectedChoise(e);
