@@ -5,9 +5,7 @@
 </div>
 
   <div align="center">
-    Built With - <img src="https://img.shields.io/badge/-HTML-6abecd" alt="qr-code" />
-  <img src="https://img.shields.io/badge/-CSS-3e54a3" alt="qr-code" />
-  <img src="https://img.shields.io/badge/-React-f4cf0c" alt="qr-code" />
+    Built With -  <img src="https://img.shields.io/badge/-React-f4cf0c" alt="qr-code" />
   <br/>
     Difficulty - <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="qr-code" />
   <br/>
