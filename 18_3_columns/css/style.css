@@ -75,7 +75,7 @@ pre {
 body {
   min-height: 100vh;
   padding: 25px;
-  background: radial-gradient(100% 100% at 50% 0%, #7a3491 0%, #56136c 100%);
+  background-color: hsl(0, 0%, 95%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -116,9 +116,7 @@ body {
 }
 
 #box1 {
-  background: url("../images/sedan.jpg"), linear-gradient(180deg, #dc30b1 0%, #a13cce 100%);
-  background-position: -20% 0%;
-  background-repeat: no-repeat;
+  background-color: hsl(31, 77%, 52%);
   border-radius: 8px 8px 0 0;
 }
 @media only screen and (min-width: 680px) {
@@ -128,15 +126,11 @@ body {
 }
 
 #box2 {
-  background: url("../images/suv.jpg"), linear-gradient(180deg, #252b52 0%, #1a2356 100%);
-  background-position: -20% 0%;
-  background-repeat: no-repeat;
+  background-color: hsl(184, 100%, 22%);
 }
 
 #box3 {
-  background: url("../images/luxury.jpg"), linear-gradient(180deg, #f53794 0%, #fe6a51 100%);
-  background-position: -20% 0%;
-  background-repeat: no-repeat;
+  background-color: hsl(179, 100%, 13%);
   border-radius: 0 0 8px 8px;
 }
 @media only screen and (min-width: 680px) {

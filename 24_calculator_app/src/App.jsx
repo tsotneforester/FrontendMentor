@@ -7,7 +7,7 @@ import Header from "./components/Header";
 import { AppContext } from "./Context";
 
 function calculate(string) {
-  let num = eval(string.replace(/×/i, "*"));
+  let num = eval(string.replace(/×/i, "*")); //remove it
   let numberString = num.toString();
   if (numberString.length - numberString.indexOf(".") > 5) {
     return parseFloat(num.toFixed(5));

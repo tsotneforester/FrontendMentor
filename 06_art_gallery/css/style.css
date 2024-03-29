@@ -68,7 +68,7 @@ pre {
 }
 
 #wrapper {
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
@@ -295,6 +295,10 @@ header div #button a button:nth-of-type(2) {
   height: 72px;
   border-radius: 0;
   background-color: #151515;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
   background-color: #d5966c;
   transition: 0.7s;
 }

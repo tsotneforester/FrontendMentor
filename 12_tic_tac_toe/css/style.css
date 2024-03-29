@@ -74,6 +74,7 @@ pre {
 
 body {
   background-color: #1a2a33;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -94,7 +95,7 @@ body {
 
 #screen1 {
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   row-gap: 50px;
@@ -319,6 +320,10 @@ body {
   border-radius: 5px;
   background-color: #a8bfc9;
   box-shadow: inset 0px -4px 0px #6b8997;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }
 #screen2 main {
   display: flex;
