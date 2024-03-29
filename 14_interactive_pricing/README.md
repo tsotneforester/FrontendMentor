@@ -12,7 +12,7 @@
   <br/>
     Difficulty - <img src="https://img.shields.io/badge/%202%20-junior-white?labelColor=aad742" alt="qr-code" />
   <br/>
-    <a href="https://65a50b64cede742c32cbf82f--lovely-strudel-c92bcf.netlify.app/" target="_blank">🖥️ View Demo</a>
+    <a href="https://gpx.ge/js/pages/1056_interactive_pricing" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/FrontendMentor/issues">🛠Submit Issue</a>
 
