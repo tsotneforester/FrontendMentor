@@ -68,17 +68,6 @@ pre {
   margin: 0;
 }
 
-#wrapper {
-  min-height: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  border: none;
-}
-
 ::-webkit-outer-spin-button,
 ::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -88,8 +77,8 @@ pre {
 body {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
   align-items: center;
   background-color: rgb(255, 255, 255);
   background-image: url(../images/bg-main-mobile.png);
@@ -101,8 +90,8 @@ body {
 @media only screen and (min-width: 900px) {
   body {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
     align-items: center;
     gap: 50px;
     padding: 30px 30px 30px calc(30% - 240px);
@@ -127,7 +116,7 @@ body {
     background-color: transparent;
     max-width: 534px;
     display: flex;
-    flex-direction: column;
+    flex-flow: column nowrap;
     justify-content: space-between;
     align-items: flex-start;
   }
@@ -242,9 +231,9 @@ body {
 
 main {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-star;
-  align-items: flex-star;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
   width: 90%;
   margin: 0 auto;
   max-width: 534px;
@@ -266,7 +255,7 @@ main .card-number,
 main .expiry-date,
 main .cvc-code {
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 8px;
