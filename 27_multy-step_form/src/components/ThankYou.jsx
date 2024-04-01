@@ -40,7 +40,6 @@ S.Container = styled.div`
     align-items: center;
     img {
       margin-bottom: 20px;
-      margin: 0 auto;
     }
   }
 `;
