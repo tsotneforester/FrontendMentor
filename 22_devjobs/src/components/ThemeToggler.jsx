@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import { root } from "../theme";
 import Moon from "../assets/moon.svg";
 import Sun from "../assets/sun.svg";
 
+import { ModalContext } from "../Context";
+
 function ThemeToggler({ theme, handler }) {
+  const { isDarkTheme, setIsDarkTheme } = useContext(ModalContext);
   return (
     <>
       <S.Toggler>
         <img src={Sun} alt="" />
-        <S.Slider onClick={handler}>
-          <S.Spot possition={theme ? "26px" : "0"} />
+        <S.Slider onClick={() => setIsDarkTheme(!isDarkTheme)}>
+          <S.Spot possition={isDarkTheme ? "26px" : "0"} />
         </S.Slider>
         <img src={Moon} alt="" />
       </S.Toggler>

@@ -7,12 +7,12 @@ import headerTablet from "../assets/header-tablet.svg";
 import { Outlet } from "react-router";
 import ThemeToggler from "../components/ThemeToggler";
 
-function SharedLayout({ theme, handler }) {
+function SharedLayout() {
   return (
     <>
       <S.Header>
         <S.Logo src={logo} alt="" />
-        <ThemeToggler theme={theme} handler={handler} />
+        <ThemeToggler />
       </S.Header>
 
       <Outlet />

@@ -1,34 +1,21 @@
 import { useState, useRef, useEffect, useContext } from "react";
-import { lightTheme, darkTheme, GlobalStyles, root, device } from "./theme";
-import styled, { ThemeProvider, css } from "styled-components";
+import styled, { css } from "styled-components";
+import { root, device } from "./theme";
 
 import Card from "./components/Card";
 import Details from "./pages/Details";
-import { HashRouter as Router, Routes, Route, NavLink } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import SharedLayout from "./pages/SharedLayout";
 
 //HashRouter
 import Form from "./components/Form";
 import { ModalContext } from "./Context";
 
-//imrse
-//rafce
-//imrr
-
 function App() {
   const { showModal, setShowModal, filter, setFilter, fields, setFields, data } = useContext(ModalContext);
 
   const refContainer = useRef(null);
-
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
   const [filteredData, setFilteredData] = useState(data);
-
-  // const [filter, setFilter] = useState({
-  //   position: "",
-  //   company: "",
-  //   location: "",
-  //   contract: "",
-  // });
 
   function handler(e) {
     e.preventDefault();
@@ -50,37 +37,26 @@ function App() {
   }, [filter]);
 
   return (
-    <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
-      <GlobalStyles />
+    <Router>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route
+            index
+            element={
+              <Content>
+                <S.Overlay show={showModal} />
+                <Form handler={handler} refContainer={refContainer} />
 
-      <Router>
-        <Routes>
-          <Route path="/" element={<SharedLayout handler={() => setIsDarkTheme(!isDarkTheme)} theme={isDarkTheme} />}>
-            <Route
-              index
-              element={
-                <Content>
-                  <S.Overlay show={showModal} />
-                  <Form handler={handler} refContainer={refContainer} />
-
-                  <S.Grid>
-                    <Card data={filteredData} />
-                  </S.Grid>
-                </Content>
-              }
-            />
-            <Route path="/:id" element={<Details />} />
-          </Route>
-        </Routes>
-      </Router>
-      {/* 
-      <form action="" onSubmit={handler}>
-        <input type="text" />
-        <button>Serch</button>
-      </form>
-
-      <Card data={filteredData} /> */}
-    </ThemeProvider>
+                <S.Grid>
+                  <Card data={filteredData} />
+                </S.Grid>
+              </Content>
+            }
+          />
+          <Route path="/:id" element={<Details />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 
