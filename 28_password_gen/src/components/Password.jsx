@@ -4,6 +4,7 @@ import { root } from "../styled";
 import { FaRegCopy } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 import { useState, useRef } from "react";
+import copy from "copy-to-clipboard";
 
 export default function Password() {
   const [showCopy, setShowCopy] = useState(false);
@@ -11,7 +12,7 @@ export default function Password() {
   const password = useSelector((state) => state.password);
 
   function handler() {
-    window.navigator.clipboard.writeText(refContainer.current.value);
+    copy(refContainer.current.value);
     setShowCopy((prev) => !prev);
     setTimeout(() => setShowCopy((prev) => !prev), 1000);
   }
