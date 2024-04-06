@@ -1,13 +1,9 @@
-import React, { useReducer, useEffect } from "react";
-
-import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
+import React from "react";
 import App from "./App";
 import { reducer } from "./Reducer";
-import { initialState } from "./Reducer";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-let URL = "http://localhost:3000/quizzes";
+import { composeWithDevTools } from "@redux-devtools/extension/lib/types/logOnly";
 
 let store = createStore(reducer);
 

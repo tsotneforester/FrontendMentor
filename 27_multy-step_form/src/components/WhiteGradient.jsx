@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { root } from "../Styled";
+import { root } from "../styled";
 
 export default function WhiteGradient() {
   return <S.Container></S.Container>;

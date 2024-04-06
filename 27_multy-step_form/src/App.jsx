@@ -1,15 +1,18 @@
 import { useSelector } from "react-redux";
 import styled from "styled-components";
+import AddOnForm from "./features/addon/AddOnForm";
+import PersonalForm from "./features/form/PersonalForm";
+import PlanForm from "./features/plan/PlanForm";
 
-import { StepProgress, PersonalForm, ThankYou, PlanForm, Summery, AddOnForm, WhiteGradient } from "./components";
-import { root } from "./Styled";
+import { StepProgress, ThankYou, Summery, WhiteGradient } from "./components";
+import { root } from "./styled";
 
 function App() {
   let step = useSelector((state) => state.app.step);
   let status = useSelector((state) => state.app.status);
   return (
     <>
-      <S.Main>
+      <S.Container>
         <StepProgress />
         <div className="option">
           {status == "active" && (
@@ -23,7 +26,7 @@ function App() {
           {status == "active" && <WhiteGradient />}
           {status == "finished" && <ThankYou />}
         </div>
-      </S.Main>
+      </S.Container>
     </>
   );
 }
@@ -32,7 +35,7 @@ export default App;
 
 const S = {};
 
-S.Main = styled.main`
+S.Container = styled.div`
   width: 100%;
   min-height: 100svh;
   display: flex;

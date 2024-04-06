@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { root } from "../Styled";
+import { root } from "../styled";
 
 export default function OptionTitle({ align = "left", children }) {
   return <S.H1 align={align}>{children}</S.H1>;

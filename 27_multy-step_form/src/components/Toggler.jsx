@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-import { root } from "../Styled";
+import { root } from "../styled";
 
 export default function Toggler({ monthHandler, yearHandler }) {
   const plan = useSelector((state) => state.plan.period);

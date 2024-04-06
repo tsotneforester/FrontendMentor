@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import dataObject from "../data";
 import { Controls, OptionTitle, OptionDesc } from "./";
-import { formContainer, optionContainer, root } from "../Styled";
+import { formContainer, optionContainer, root } from "../styled";
 
 const { addons: data } = dataObject;
 

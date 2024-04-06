@@ -1,17 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import dataObject from "../data";
-import { Controls, OptionTitle, OptionDesc } from "./";
-import { formContainer, optionContainer, baseBox, baseActiveBox, root } from "../Styled";
+import dataObject from "../../data";
+import { Controls, OptionTitle, OptionDesc } from "../../components";
+import { formContainer, optionContainer, baseBox, baseActiveBox, root } from "../../styled";
 
 let { addons: data } = dataObject;
 
 export default function AddOnForm() {
   const period = useSelector((state) => state.plan.period);
   const active = useSelector((state) => state.addon.active);
-
   const dispatch = useDispatch();
+
   return (
     <S.Container>
       <div className="form">

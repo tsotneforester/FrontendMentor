@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import dataObject from "../data";
-import { Controls, OptionTitle, OptionDesc, Toggler } from "./";
-import { formContainer, optionContainer, baseBox, baseActiveBox, root } from "../Styled";
+import dataObject from "../../data";
+import { Controls, OptionTitle, OptionDesc, Toggler } from "../../components";
+import { formContainer, optionContainer, baseBox, baseActiveBox, root } from "../../styled";
 
 let { plan: data } = dataObject;
 

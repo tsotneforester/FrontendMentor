@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 
-import { formContainer, optionContainer } from "../Styled";
+import { formContainer, optionContainer } from "../styled";
 import { OptionTitle, OptionDesc } from "./";
 
 export default function ThankYou() {

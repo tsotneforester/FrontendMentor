@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { root } from "../Styled";
+import { root } from "../styled";
 
 export default function OptionDesc({ align = "left", maxwidth = "100%", children }) {
   return (

@@ -1,9 +1,13 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
 import styled from "styled-components";
+import PulseLoader from "react-spinners/PulseLoader";
 
-import { Controls, OptionTitle, OptionDesc } from "./";
-import { formContainer, root, optionContainer } from "../Styled";
+import { phoneValidator } from "./formSlice";
+
+import { Controls, OptionTitle, OptionDesc } from "../../components";
+import { formContainer, root, optionContainer } from "../../styled";
 
 export default function PersonalForm() {
   const fname = useSelector((state) => state.form.fname);
@@ -12,6 +16,9 @@ export default function PersonalForm() {
   const emailWarning = useSelector((state) => state.form.emailWarning);
   const phone = useSelector((state) => state.form.phone);
   const phoneWarning = useSelector((state) => state.form.phoneWarning);
+  const country = useSelector((state) => state.form.country);
+  const isLoading = useSelector((state) => state.form.isLoading);
+
   const dispatch = useDispatch();
 
   return (
@@ -67,7 +74,12 @@ export default function PersonalForm() {
 
         <fieldset>
           <div className="text-line">
-            <label htmlFor="">phone number</label>
+            <label htmlFor="">
+              <p>phone number </p>
+              <p>{isLoading ? <PulseLoader size={4} color="hsl(213, 96%, 18%)" /> : ""}</p>
+
+              {country ? <img src={country} /> : ""}
+            </label>
             {phoneWarning ? <p className="warning"> {phoneWarning}</p> : <p> </p>}
           </div>
           <input
@@ -77,15 +89,10 @@ export default function PersonalForm() {
               dispatch({ type: "PHONE_INPUT", payload: e.target.value });
             }}
             onBlur={(e) => {
-              if (!isValidPhone(phone)) {
-                dispatch({ type: "PHONE_WARNING", payload: "number is invalid" });
-              }
-              if (!phone) {
-                dispatch({ type: "PHONE_WARNING", payload: "This field is required" });
-              }
+              dispatch(phoneValidator(e.target.value));
             }}
             name="phone"
-            placeholder="e.g. 572 51 44 46"
+            placeholder="e.g. +995 572 51 44 46"
           />
         </fieldset>
       </div>
@@ -138,6 +145,16 @@ S.Container = styled.div`
           color: ${root.color.marine_blue};
           font-size: 14px;
           text-transform: capitalize;
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 6px;
+          img {
+            width: 24px;
+            height: auto;
+            border-radius: 2px;
+          }
         }
       }
 
