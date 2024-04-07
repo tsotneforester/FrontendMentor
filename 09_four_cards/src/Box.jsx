@@ -8,7 +8,7 @@ export function Box({ data }) {
       <S.Box color={color} grid={grid} self={self}>
         <h1>{header}</h1>
         <p>{desc}</p>
-        <img src={`./src/assets/${icon}`} alt="icon" />
+        <img src={`./assets/${icon}`} alt="icon" />
       </S.Box>
     );
   });
