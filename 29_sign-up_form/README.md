@@ -1,16 +1,16 @@
-<h1 align="center">Devjobs</h1>
+<h1 align="center">Sign-up Form</h1>
 
 <div align="center">
-  <img src="https://gpx.ge/js/img/raw/1046_devjobs.gif" alt="qr-code" />
+  <img src="https://gpx.ge/js/img/raw/1002_sign-up_form.gif" alt="qr-code" />
 </div>
 
   <div align="center">
     Built With - <img src="https://img.shields.io/badge/-React-f4cf0c" alt="qr-code" />
 
   <br/>
-    Difficulty - <img src="https://img.shields.io/badge/%204%20-advanced-white?labelColor=bf4605" alt="qr-code" />
+    Difficulty - <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="qr-code" />
   <br/>
-    <a href="https://gpx.ge/js/pages/1046_devjobs" target="_blank">🖥️ View Demo</a>
+    <a href="https://gpx.ge/js/pages/1002_sign-up_form" target="_blank">🖥️ View Demo</a>
     ·
     <a href="https://github.com/tsotneforester/FrontendMentor/issues">🛠Submit Issue</a>
 

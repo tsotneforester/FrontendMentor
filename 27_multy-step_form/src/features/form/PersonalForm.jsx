@@ -83,7 +83,7 @@ export default function PersonalForm() {
             {phoneWarning ? <p className="warning"> {phoneWarning}</p> : <p> </p>}
           </div>
           <input
-            type="number"
+            type="text"
             value={phone}
             onChange={(e) => {
               dispatch({ type: "PHONE_INPUT", payload: e.target.value });
@@ -168,11 +168,6 @@ S.Container = styled.div`
         font-weight: 600;
         &::placeholder {
           font-weight: 400;
-        }
-        &[type="number"]::-webkit-outer-spin-button,
-        &[type="number"]::-webkit-inner-spin-button {
-          -webkit-appearance: none;
-          margin: 0;
         }
       }
     }

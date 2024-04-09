@@ -72,59 +72,43 @@ body {
   font-family: "Red Hat Display", sans-serif;
   background-color: #e0e8ff;
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   background-image: url("../images/pattern-background-mobile.svg");
   background-repeat: no-repeat;
   background-size: 100% auto;
+  padding: 15px;
 }
-@media only screen and (min-width: 375px) {
+@media only screen and (min-width: 480px) {
   body {
     background-image: url("../images/pattern-background-desktop.svg");
   }
 }
 
 main {
-  width: 327px;
-  height: 567px;
+  width: 100%;
+  max-width: 327px;
   border-radius: 20px;
   background-color: white;
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
   box-shadow: 0px 40px 40px -20px rgba(13, 48, 189, 0.151826);
+  background-image: url("../images/illustration-hero.svg");
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+  background-attachment: scroll;
+  background-size: 100% 160px;
+  padding: 170px 24px 24px 24px;
 }
-@media only screen and (min-width: 375px) {
+@media only screen and (min-width: 480px) {
   main {
-    width: 450px;
-    height: 697px;
-    border-radius: 20px;
-    background-color: white;
+    max-width: 450px;
+    background-size: 100% 220px;
+    padding: 170px 36px 36px 36px;
   }
-}
-main #image {
-  width: 100%;
-  height: 160px;
-  border-radius: 20px;
-  background-color: white;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-@media only screen and (min-width: 375px) {
-  main #image {
-    width: 100%;
-    height: 220px;
-    border-radius: 20px;
-    background-color: white;
-  }
-}
-main #image img {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  width: 100%;
-  height: 100%;
 }
 main h1 {
   font-size: 22px;
@@ -133,17 +117,15 @@ main h1 {
   text-align: center;
   margin: 32px 0 16px 0;
 }
-@media only screen and (min-width: 375px) {
+@media only screen and (min-width: 480px) {
   main h1 {
     font-size: 28px;
-    color: #1f2e55;
-    font-weight: 900;
-    text-align: center;
-    margin: 45px 0 17px 0;
+    margin: 85px 0 17px 0;
   }
 }
 main p {
-  width: 263px;
+  max-width: 100%;
+  max-width: 263px;
   height: 75px;
   font-size: 15px;
   color: #717fa6;
@@ -151,131 +133,108 @@ main p {
   text-align: center;
   line-height: 25px;
 }
-@media only screen and (min-width: 375px) {
+@media only screen and (min-width: 480px) {
   main p {
-    width: 354px;
-    height: 78px;
+    max-width: 354px;
     font-size: 16px;
-    color: #717fa6;
-    font-weight: 500;
-    text-align: center;
   }
 }
-main section {
-  width: 279px;
-  height: 81px;
+main .plan {
+  width: 100%;
+  height: auto;
   border-radius: 11px;
   background-color: #f7f9ff;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   padding: 17px 16px 16px 16px;
   margin: 24px 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
-@media only screen and (min-width: 375px) {
-  main section {
-    width: 354px;
-    height: 98px;
+@media only screen and (min-width: 480px) {
+  main .plan {
     border-radius: 11px;
     background-color: #f7f9ff;
     margin: 20px 0 32px 0;
     padding: 25px 24px;
   }
 }
-main section div {
+main .plan div {
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
   -moz-column-gap: 20px;
        column-gap: 20px;
 }
-main section div img {
+main .plan div img {
   width: 48px;
 }
-main section div div {
+main .plan div div {
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   row-gap: 3px;
   text-align: left;
   align-self: center;
 }
-@media only screen and (min-width: 375px) {
-  main section div div {
+@media only screen and (min-width: 480px) {
+  main .plan div div {
     row-gap: 6px;
   }
 }
-main section div div span:nth-of-type(1) {
+main .plan div div span:nth-of-type(1) {
   font-size: 14px;
   color: #1f2e55;
   font-weight: 900;
   text-align: center;
   margin-left: 0;
 }
-@media only screen and (min-width: 375px) {
-  main section div div span:nth-of-type(1) {
+@media only screen and (min-width: 480px) {
+  main .plan div div span:nth-of-type(1) {
     font-size: 16px;
-    color: #1f2e55;
-    font-weight: 900;
-    text-align: center;
   }
 }
-main section div div span:nth-of-type(2) {
+main .plan div div span:nth-of-type(2) {
   font-size: 14px;
   color: #717fa6;
   font-weight: 500;
   text-align: center;
   margin-left: 0;
 }
-@media only screen and (min-width: 375px) {
-  main section div div span:nth-of-type(2) {
+@media only screen and (min-width: 480px) {
+  main .plan div div span:nth-of-type(2) {
     font-size: 16px;
-    color: #717fa6;
-    font-weight: 500;
-    text-align: center;
   }
 }
-main section span {
+main .plan span {
   font-size: 13px;
   color: #382ae1;
   font-weight: 700;
   text-align: left;
 }
-@media only screen and (min-width: 375px) {
-  main section span {
+@media only screen and (min-width: 480px) {
+  main .plan span {
     font-size: 14px;
-    color: #382ae1;
-    font-weight: 700;
-    text-align: left;
   }
 }
-main section span a {
+main .plan span a {
   text-decoration: underline;
 }
-main section span a:hover {
+main .plan span a:hover {
   color: #766cf1;
 }
 main button {
-  width: 279px;
-  height: 50px;
+  width: 100%;
   border-radius: 11px;
   background-color: #382ae1;
+  padding: 12px;
   font-size: 15px;
   color: white;
   font-weight: 900;
   text-align: center;
   box-shadow: 0 20px 20px rgba(57, 42, 225, 0.2274509804);
-}
-@media only screen and (min-width: 375px) {
-  main button {
-    width: 354px;
-    height: 50px;
-    border-radius: 11px;
-    background-color: #382ae1;
-  }
 }
 main button:hover {
   background-color: #766cf1;
@@ -287,7 +246,7 @@ main h2 {
   text-align: center;
   margin-top: 24px;
 }
-@media only screen and (min-width: 375px) {
+@media only screen and (min-width: 480px) {
   main h2 {
     margin-top: 35px;
   }

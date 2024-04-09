@@ -20,3 +20,4 @@ design/
 *.ini
 *.code-workspace
 *.eslintrc
+*.sketch

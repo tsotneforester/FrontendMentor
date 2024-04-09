@@ -70,6 +70,14 @@ pre {
 #wrapper {
   background: linear-gradient(180deg, #ffffff 0%, #f0f1ff 100%);
   font-family: "Plus Jakarta Sans", sans-serif;
+  min-height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
 }
 @media only screen and (min-width: 768px) {
   #wrapper {
@@ -90,11 +98,9 @@ pre {
 
 header {
   width: 343px;
-  height: auto;
-  border-radius: 0;
   background-color: transparent;
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
   margin: 16px 0 38px 0;
@@ -102,18 +108,12 @@ header {
 @media only screen and (min-width: 768px) {
   header {
     width: 688px;
-    height: auto;
-    border-radius: 0;
-    background-color: transparent;
     margin: 24px 0 102px 0;
   }
 }
 @media only screen and (min-width: 1440px) {
   header {
     width: 1110px;
-    height: auto;
-    border-radius: 0;
-    background-color: transparent;
     margin: 24px 0 164px 0;
   }
 }
@@ -160,7 +160,7 @@ header button:hover {
 main {
   width: 375px;
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   justify-content: space-between;
   align-items: center;
   row-gap: 46px;
@@ -170,7 +170,7 @@ main {
   main {
     width: 768px;
     display: flex;
-    flex-direction: row;
+    flex-flow: row nowrap;
     justify-content: space-between;
     align-items: flex-start;
     padding: 0 40px 210px 40px;
@@ -184,7 +184,7 @@ main {
 }
 main article {
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: flex-start;
 }
@@ -192,16 +192,12 @@ main article {
   main article {
     width: 398px;
     height: 284px;
-    border-radius: 0;
-    background-color: transparent;
   }
 }
 @media only screen and (min-width: 1440px) {
   main article {
     width: 457px;
     height: 359px;
-    border-radius: 0;
-    background-color: transparent;
   }
 }
 main article h1 {
@@ -251,7 +247,7 @@ main article button {
   width: 167px;
   height: 56px;
   border-radius: 31.5px;
-  background-color: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
+  background: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
   font-size: 16px;
   color: white;
   font-weight: 700;
@@ -263,7 +259,7 @@ main article button {
     width: 167px;
     height: 63px;
     border-radius: 31.5px;
-    background-color: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
+    background: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
     font-size: 18px;
     color: white;
     font-weight: 700;
@@ -289,13 +285,14 @@ main section {
     display: none;
   }
 }
+
 summary {
   width: 100%;
   height: auto;
   border-radius: 0;
   background-color: transparent;
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
   background: linear-gradient(180deg, #ffffff 0%, #f0f1ff 100%);
@@ -313,17 +310,16 @@ summary {
 }
 summary #full-width {
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  flex-wrap: nowrap;
   row-gap: 40px;
 }
 @media only screen and (min-width: 768px) {
   summary #full-width {
     width: 768px;
     display: flex;
-    flex-direction: row;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
     -moz-column-gap: 11px;
@@ -345,7 +341,8 @@ summary #firstbox {
   width: 343px;
   height: 120px;
   border-radius: 10px;
-  background-color: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
+  background-color: transparent;
+  background: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
   padding: 24px 28px;
 }
 @media only screen and (min-width: 768px) {
@@ -353,7 +350,8 @@ summary #firstbox {
     width: 339px;
     height: 259px;
     border-radius: 10px;
-    background-color: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
+    background-color: transparent;
+    background: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
     padding: 56px 32px;
   }
 }
@@ -362,7 +360,8 @@ summary #firstbox {
     width: 350px;
     height: 322px;
     border-radius: 15px;
-    background-color: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
+    background-color: transparent;
+    background: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
     padding: 64px 32px;
   }
 }
@@ -480,7 +479,7 @@ footer {
   border-radius: 0;
   background-color: transparent;
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
   background-color: #13183f;
@@ -488,7 +487,7 @@ footer {
 footer div {
   width: 343px;
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
 }

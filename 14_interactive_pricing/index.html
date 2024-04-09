@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="./favicon/favicon.ico" sizes="32x32" />
-    <link rel="apple-touch-icon" href="./favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="./favicon/site.webmanifest" />
+    <link rel="icon" href="favicon/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
     <title>Interactive Pricing</title>
 
     <!-- Facebook Meta Tags -->
@@ -27,51 +27,48 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet" />
+    <script defer src="js/script.js"></script>
   </head>
   <body>
     <header>
       <h1>Simple, traffic-based pricing</h1>
       <p>Sign-up for our 30-day trial. No credit card required.</p>
     </header>
-    <div id="container">
-      <section id="view-box"><span id="view-amount">100K</span> PAGEVIEWS</section>
-      <section id="input-box">
-        <div id="slider-box">
-          <input type="range" min="0" max="100" step="25" name="" id="slider" value="50" />
-          <div id="circle">
-            <img src="images/icon-slider.svg" alt="" />
-          </div>
-          <div id="gray-line"></div>
-          <div id="color-line"></div>
-        </div>
-      </section>
-      <section id="price-box">
+    <main>
+      <div id="views"><span id="view-amount">100K</span> PAGEVIEWS</div>
+
+      <input type="range" min="0" max="100" step="25" name="" id="slider" value="50" />
+
+      <div id="price">
         <span id="price-amount">$16.00</span>
         <span id="price-period">/ month</span>
-      </section>
-      <section id="config-box">
-        <span>Monthly Billing</span>
-        <div id="switcher"><div id="switcher-ball"></div></div>
-        <span>Yearly Billing</span> <span id="discount-text">25%<span>discount</span></span>
-      </section>
-      <section id="trail-box">
-        <div id="trail-text">
-          <div class="trail-line">
-            <img src="images/icon-check.svg" alt="" />
-            <span>Unlimited websites</span>
-          </div>
-          <div class="trail-line">
-            <img src="images/icon-check.svg" alt="" />
-            <span>100% data ownership </span>
-          </div>
-          <div class="trail-line">
-            <img src="images/icon-check.svg" alt="" />
-            <span>Email reports</span>
-          </div>
+      </div>
+      <div id="billing">
+        <p>Monthly Billing</p>
+        <div class="switcher">
+          <div class="switcher-ball"></div>
         </div>
-        <button>Start My trail</button>
+        <p>Yearly Billing</p>
+        <div id="discount-text">
+          <p>25%</p>
+          <span>discount</span>
+        </div>
+      </div>
+      <section id="features">
+        <div class="feature">
+          <img src="images/icon-check.svg" alt="" />
+          <span>Unlimited websites</span>
+        </div>
+        <div class="feature">
+          <img src="images/icon-check.svg" alt="" />
+          <span>100% data ownership </span>
+        </div>
+        <div class="feature">
+          <img src="images/icon-check.svg" alt="" />
+          <span>Email reports</span>
+        </div>
       </section>
-    </div>
+      <button>Start My trail</button>
+    </main>
   </body>
-  <script src="js/js.js"></script>
 </html>

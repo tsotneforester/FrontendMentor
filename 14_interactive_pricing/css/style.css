@@ -67,102 +67,168 @@ pre {
   margin: 0;
 }
 
+:root {
+  --main-padding: 20px;
+}
+
+@media only screen and (min-width: 678px) {
+  :root {
+    --main-padding: 32px;
+  }
+}
 body {
-  background: url("../images/bg-pattern.svg") white left top no-repeat;
-  background-size: 100% 320px;
   font-family: "Manrope", sans-serif;
+  min-height: 100svh;
+  padding: 12px;
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #f9faff;
+  background-image: url("../images/bg-pattern.svg");
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+  background-attachment: scroll;
+  background-size: auto;
+  background-size: auto 360px;
+}
+@media only screen and (min-width: 678px) {
+  body {
+    background-size: 100% 360px;
+  }
+}
+
+header {
+  height: 200px;
+  display: flex;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  row-gap: 10px;
+  background: url("../images/pattern-circles.svg") no-repeat center center;
 }
-
-p {
-  font-family: Manrope;
-  font-size: 12px;
+header h1 {
+  font-size: 20px;
+  color: #293356;
   font-weight: 800;
-  line-height: 16px;
   text-align: center;
+}
+@media only screen and (min-width: 678px) {
+  header h1 {
+    font-size: 28px;
+  }
+}
+header p {
+  font-size: 13px;
   color: #848ead;
+  font-weight: 600;
+  text-align: center;
+}
+@media only screen and (min-width: 678px) {
+  header p {
+    font-size: 15px;
+  }
 }
 
-#container {
+main {
   position: relative;
-  width: 327px;
+  width: 100%;
+  max-width: 327px;
   border-radius: 8px;
   background-color: white;
-  padding: 30px;
+  padding: var(--main-padding) 0;
   text-align: center;
   box-shadow: 0px 20px 30px -5px rgba(127, 137, 185, 0.152073);
-  display: grid;
-  row-gap: 24px;
+  display: flex;
+  gap: 24px;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
 }
-
-img {
-  display: block;
+@media only screen and (min-width: 678px) {
+  main {
+    width: 100%;
+    max-width: 540px;
+    display: grid;
+    row-gap: 67px;
+    display: grid;
+    row-gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "views price " "input input" "billing billing" "features button";
+  }
 }
-
-#view-box {
+main #views {
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 2px;
   color: #848ead;
   height: 30px;
-}
-
-#input-box #slider-box {
-  width: 276px;
-  height: 40px;
-  position: relative;
-  display: inline-block;
-}
-#input-box #circle {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  background-color: #10d8c4;
-  transform-origin: left 50%;
+  padding: 0 var(--main-padding);
+  grid-area: views;
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 15px 30px rgba(0, 255, 231, 0.6);
-  transform: translate(118px);
+  gap: 8px;
+  align-self: center;
 }
-#input-box #gray-line {
-  position: absolute;
-  top: 15px;
-  left: 0;
-  z-index: 1;
+@media only screen and (min-width: 678px) {
+  main #views {
+    justify-content: flex-start;
+    font-size: 14px;
+  }
+}
+main input[type=range] {
+  -webkit-appearance: none;
+  width: calc(100% - 2 * var(--main-padding));
   height: 10px;
-  width: 276px;
-  border-radius: 8px;
-  background-color: #ecf0fb;
+  border-radius: 5px;
+  outline: none;
+  background: linear-gradient(to right, #a4f3eb 0%, #a4f3eb 50%, #ecf0fb 50%, #ecf0fb 100%);
+  cursor: pointer;
+  grid-area: input;
 }
-#input-box #color-line {
-  position: absolute;
-  top: 15px;
-  left: 0;
-  z-index: 1;
-  height: 10px;
-  width: 138px;
-  border-radius: 8px;
-  background-color: #a4f3eb;
+@media only screen and (min-width: 678px) {
+  main input[type=range] {
+    margin: 0 auto;
+  }
 }
-
-#price-box {
+main input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #10d8c4;
+  cursor: pointer;
+  background-image: url("../images//icon-slider.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
+  background-size: auto;
+  box-shadow: 0px 15px 30px 0px rgba(0, 255, 231, 0.6);
+}
+main input[type=range]::-webkit-slider-thumb:hover {
+  background-color: #24aea1;
+}
+main #price {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
   -moz-column-gap: 10px;
        column-gap: 10px;
+  grid-area: price;
+  margin-top: 10px;
+  padding: 0 var(--main-padding) 0 0;
 }
-#price-box #price-amount {
+@media only screen and (min-width: 678px) {
+  main #price {
+    margin: 0;
+    justify-content: flex-end;
+  }
+}
+main #price #price-amount {
   font-family: Manrope;
   font-size: 32px;
   font-weight: 800;
@@ -170,48 +236,126 @@ img {
   text-align: right;
   color: #293356;
 }
-#price-box #price-period {
+@media only screen and (min-width: 678px) {
+  main #price #price-amount {
+    font-size: 40px;
+  }
+}
+main #price #price-period {
   font-weight: 600;
   font-size: 14px;
   line-height: 19px;
   text-align: center;
   color: #848ead;
 }
-
-#trail-box {
+@media only screen and (min-width: 678px) {
+  main #price #price-period {
+    font-size: 16px;
+  }
+}
+main #billing {
+  display: flex;
+  height: 56px;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  grid-area: billing;
+  padding: 0 var(--main-padding);
+  align-content: space-between;
+}
+@media only screen and (min-width: 678px) {
+  main #billing {
+    border-bottom: #ecf0fb solid 1px;
+    height: auto;
+    padding: var(--main-padding) 70px var(--main-padding) var(--main-padding);
+    justify-content: flex-end;
+  }
+}
+main #billing p {
+  font-size: 12px;
+  color: #848ead;
+  font-weight: 600;
+  text-align: center;
+}
+@media only screen and (min-width: 678px) {
+  main #billing p {
+    font-size: 16px;
+  }
+}
+main #billing #discount-text {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background: #feede8;
+  border-radius: 9.5px;
+  padding: 3px 8px;
+  gap: 6px;
+}
+main #billing #discount-text p,
+main #billing #discount-text span {
+  font-size: 10px;
+  color: #ff8d68;
+  font-weight: 800;
+  text-align: center;
+}
+main #billing #discount-text span {
+  display: none;
+}
+@media only screen and (min-width: 678px) {
+  main #billing #discount-text span {
+    display: block;
+  }
+}
+main #billing .switcher {
+  height: 22px;
+  width: 43px;
+  border-radius: 15px;
+  background: #cfd8ef;
+}
+main #billing .switcher.active {
+  background-color: #7aeadf;
+}
+main #billing .switcher.active .switcher-ball {
+  transform: translate(24px, 4px);
+  transition: transform 0.2s linear;
+}
+main #billing #switcher:hover {
+  background: #7aeadf;
+  cursor: pointer;
+}
+main #billing .switcher-ball {
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background-color: white;
+  transform: translate(5px, 4px);
+  transition: transform 0.2s linear;
+}
+main #features {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   row-gap: 10px;
   padding: 20px 0 0 0;
+  grid-area: features;
+  border-top: #ecf0fb solid 1px;
+  padding: var(--main-padding);
 }
-#trail-box #trail-text {
+@media only screen and (min-width: 678px) {
+  main #features {
+    border: none;
+    align-self: flex-end;
+    padding: 10px var(--main-padding) 0 var(--main-padding);
+  }
+}
+main #features .feature {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  row-gap: 10px;
-}
-#trail-box button {
-  width: 170px;
-  height: 41px;
-  border-radius: 20.5px;
-  background-color: #293356;
-  font-size: 12px;
-  color: #becdff;
-  font-weight: 400;
-  text-align: 800;
-  font-family: Manrope;
-  margin-top: 10px;
-}
-#trail-box button:hover {
-  color: #ffffff;
-}
-#trail-box .trail-line {
-  display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -223,176 +367,35 @@ img {
   line-height: 16px;
   color: #848ead;
 }
-
-header {
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  row-gap: 10px;
-  background: url("../images/pattern-circles.svg") no-repeat center center;
-}
-header h1 {
-  font-size: 20px;
-  color: #293356;
-  font-weight: 400;
-  text-align: 800;
-}
-header p {
-  font-size: 13px;
-  color: #848ead;
-  font-weight: 400;
-  text-align: 600;
-  width: 326px;
-}
-
-#config-box {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
-}
-#config-box span {
-  font-size: 12px;
-  color: #848ead;
-  font-weight: 400;
-  text-align: 600;
-}
-#config-box #discount-text,
-#config-box #discount-text span {
-  font-size: 10px;
-  color: #ff8d68;
-  font-weight: 400;
-  text-align: 800;
-  background: #feede8;
-  border-radius: 9.5px;
-  padding: 3px 8px;
-}
-#config-box #discount-text span {
-  display: none;
-}
-#config-box #switcher {
-  height: 22px;
-  width: 43px;
-  border-radius: 15px;
-  background: #cfd8ef;
-}
-#config-box #switcher:hover {
-  background: #7aeadf;
-  cursor: pointer;
-}
-#config-box #switcher-ball {
-  height: 14px;
-  width: 14px;
-  border-radius: 50%;
-  background: white;
-  transform: translate(5px, 4px);
-  transition: transform 0.2s linear;
-}
-
-/* --------------------------------------------- */
-input {
-  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
-  width: 276px; /* Specific width is required for Firefox. */
-  background: transparent; /* Otherwise white in Chrome */
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 13;
-}
-
-input:focus {
-  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
-}
-
-/* ----------------------------------------------------- */
-input::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  outline: none;
-  border: none;
-  opacity: 0;
-}
-
-input:hover {
-  cursor: help;
-  cursor: pointer;
-}
-
-input:hover #circle {
-  background-color: #ff8d68;
-}
-
-input::-webkit-slider-thumb:hover #circle {
-  background-color: #293356;
-}
-
 @media only screen and (min-width: 678px) {
-  input {
-    width: 444px;
-  }
-  body {
-    background-size: 100% 420px;
-  }
-  #container {
-    width: 540px;
-    display: grid;
-    row-gap: 67px;
-  }
-  #view-box {
-    grid-area: 1/1/span 1/span 1;
-    height: auto;
-    align-self: center;
-    font-size: 14px;
-    text-align: left;
-  }
-  #price-box {
-    grid-area: 1/2/span 1/span 1;
-    justify-content: end;
-  }
-  #price-box #price-amount {
-    font-size: 40px;
-  }
-  #price-box #price-period {
-    font-size: 16px;
-  }
-  #input-box {
-    grid-area: 2/1/span 1/span 2;
-  }
-  #input-box #slider-box {
-    width: 444px;
-  }
-  #input-box #circle {
-    transform: translate(202px);
-  }
-  #input-box #gray-line {
-    width: 444px;
-  }
-  #input-box #color-line {
-    width: 222px;
-  }
-  #config-box {
-    grid-area: 3/1/span 1/span 2;
-    -moz-column-gap: 30px;
-         column-gap: 30px;
-  }
-  #config-box #discount-text span {
-    display: inline;
-  }
-  #trail-box {
-    grid-area: 4/1/span 1/span 2;
+  main #features .feature {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0;
-  }
-  #trail-box .trail-line {
+    flex-flow: row nowrap;
     justify-content: flex-start;
+    align-items: center;
   }
+}
+main button {
+  width: auto;
+  height: auto;
+  border-radius: 20.5px;
+  background-color: #293356;
+  font-size: 12px;
+  color: #becdff;
+  font-weight: 800;
+  text-align: center;
+  font-family: Manrope;
+  padding: 8px 34px;
+  grid-area: button;
+}
+@media only screen and (min-width: 678px) {
+  main button {
+    justify-self: flex-end;
+    align-self: flex-end;
+    margin-right: var(--main-padding);
+    padding: 12px 40px;
+  }
+}
+main button:hover {
+  color: #ffffff;
 }
