@@ -83,6 +83,8 @@ S.Container = styled.div`
 
     @media only screen and (min-width: ${root.media}) {
       flex-flow: row nowrap;
+      align-items: stretch;
+      justify-content: center;
     }
 
     .plan-box {

@@ -2,9 +2,11 @@ import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { root } from "../styled";
+import PulseLoader from "react-spinners/PulseLoader";
 
 export default function Controls({ handleback, handleNext, handleConfirm }) {
   let step = useSelector((state) => state.app.step);
+  const isLoading = useSelector((state) => state.form.isLoading);
 
   return (
     <S.Container>
@@ -19,7 +21,7 @@ export default function Controls({ handleback, handleNext, handleConfirm }) {
 
         {step < 4 ? (
           <button className="next" onClick={handleNext}>
-            Next Step
+            {isLoading ? <PulseLoader size={4} color="white" /> : "Next Step"}
           </button>
         ) : (
           <button className="confirm" onClick={handleConfirm}>

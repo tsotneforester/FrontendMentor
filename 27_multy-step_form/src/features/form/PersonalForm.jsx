@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import styled from "styled-components";
 import PulseLoader from "react-spinners/PulseLoader";
+import { setFname, setEmail, setPhone, bulkValidate } from "./formSlice";
 
 import { phoneValidator } from "./formSlice";
 
@@ -16,8 +17,7 @@ export default function PersonalForm() {
   const emailWarning = useSelector((state) => state.form.emailWarning);
   const phone = useSelector((state) => state.form.phone);
   const phoneWarning = useSelector((state) => state.form.phoneWarning);
-  const country = useSelector((state) => state.form.country);
-  const isLoading = useSelector((state) => state.form.isLoading);
+  const flag = useSelector((state) => state.form.flag);
 
   const dispatch = useDispatch();
 
@@ -36,12 +36,7 @@ export default function PersonalForm() {
             type="text"
             value={fname}
             onChange={(e) => {
-              dispatch({ type: "FNAME_INPUT", payload: e.target.value });
-            }}
-            onBlur={(e) => {
-              if (!fname) {
-                dispatch({ type: "FNAME_WARNING" });
-              }
+              dispatch(setFname(e.target.value));
             }}
             name="fname"
             placeholder="e.g. Tsotne Meladze"
@@ -57,15 +52,7 @@ export default function PersonalForm() {
             type="text"
             value={email}
             onChange={(e) => {
-              dispatch({ type: "EMAIL_INPUT", payload: e.target.value });
-            }}
-            onBlur={(e) => {
-              if (!isValidEmail(email)) {
-                dispatch({ type: "EMAIL_WARNING", payload: "Email is invalid" });
-              }
-              if (!email) {
-                dispatch({ type: "EMAIL_WARNING", payload: "This field is required" });
-              }
+              dispatch(setEmail(e.target.value));
             }}
             name="email"
             placeholder="e.g. tsotne.meladze@gpx.ge"
@@ -76,9 +63,7 @@ export default function PersonalForm() {
           <div className="text-line">
             <label htmlFor="">
               <p>phone number </p>
-              <p>{isLoading ? <PulseLoader size={4} color="hsl(213, 96%, 18%)" /> : ""}</p>
-
-              {country ? <img src={country} /> : ""}
+              {flag ? <img src={flag} /> : ""}
             </label>
             {phoneWarning ? <p className="warning"> {phoneWarning}</p> : <p> </p>}
           </div>
@@ -86,10 +71,7 @@ export default function PersonalForm() {
             type="text"
             value={phone}
             onChange={(e) => {
-              dispatch({ type: "PHONE_INPUT", payload: e.target.value });
-            }}
-            onBlur={(e) => {
-              dispatch(phoneValidator(e.target.value));
+              dispatch(setPhone(e.target.value));
             }}
             name="phone"
             placeholder="e.g. +995 572 51 44 46"
@@ -99,7 +81,9 @@ export default function PersonalForm() {
       <Controls
         handleNext={() => {
           if (!fnameWarning && !emailWarning && !phoneWarning && email && phone && fname) {
-            dispatch({ type: "NEXT_STEP" });
+            dispatch(phoneValidator(phone));
+          } else {
+            dispatch(bulkValidate(fname, email, phone));
           }
         }}
       />
@@ -173,13 +157,3 @@ S.Container = styled.div`
     }
   }
 `;
-
-function isValidEmail(email) {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
-}
-
-function isValidPhone(phone) {
-  const phoneRegex = /^5\d{8}$/;
-  return phoneRegex.test(phone);
-}

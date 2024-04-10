@@ -1,4 +1,3 @@
-<!-- surge -->
 <h1 align="center">Quiz App</h1>
 
 <div align="center">
@@ -7,13 +6,13 @@
 
   <div align="center">
     Built With - <img src="https://img.shields.io/badge/-React-f4cf0c" alt="qr-code" />
-
+    <img src="https://img.shields.io/badge/-API-aad742" alt="qr-code" />
   <br/>
     Difficulty - <img src="https://img.shields.io/badge/%203%20-intermediate-white?labelColor=f1b604 "image"" alt="qr-code" />
   <br/>
-    <a href="https://quiz_app-tsotneforester.surge.sh/" target="_blank">🖥️ View Demo</a>
+    <a href="https://gpx.ge/js/pages/1009_quiz_app" target="_blank">🖥️ View Demo</a>
     ·
-    <a href="https://github.com/tsotneforester/Javascript/issues">🛠Submit Issue</a>
+    <a href="https://github.com/tsotneforester/FrontendMentor/issues">🛠Submit Issue</a>
 
   </div>
 
