@@ -16,9 +16,13 @@
     <img src="https://img.shields.io/badge/-Styled-A79277" alt="HTML" />
   
   <br/>
-    Difficulty - <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="qr-code" />
+    Difficulty -
+    <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="qr-code" />
+    <img src="https://img.shields.io/badge/%202%20-junior-white?labelColor=aad742" alt="qr-code" />
+    <img src="https://img.shields.io/badge/%203%20-intermediate-white?labelColor=f1b604" alt="qr-code" />
+    <img src="https://img.shields.io/badge/%204%20-advanced-white?labelColor=bf4605" alt="qr-code" />
   <br/>
-    <!-- <a href="https://carousel-tsotneforester.surge.sh/" target="_blank">🖥️ View Demo</a> -->
+    <!-- <a href="https://gpx.ge/js/pages/" target="_blank">🖥️ View Demo</a> -->
 
 
   </div>
