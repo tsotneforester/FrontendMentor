@@ -8,13 +8,13 @@
   <div align="center">
     Built With -
     <img src="https://img.shields.io/badge/-HTML-6abecd" alt="HTML" />
-    <img src="https://img.shields.io/badge/-CSS-3e54a3" alt="HTML" />
-    <img src="https://img.shields.io/badge/-JS-cf6390" alt="HTML" />
-    <img src="https://img.shields.io/badge/-API-aad742" alt="HTML" />
+    <img src="https://img.shields.io/badge/-CSS-3e54a3" alt="CSS" />
+    <img src="https://img.shields.io/badge/-JS-cf6390" alt="JS" />
+    <img src="https://img.shields.io/badge/-API-aad742" alt="API" />
   
   <br/>
     Difficulty -
-    <img src="https://img.shields.io/badge/%203%20-intermediate-white?labelColor=f1b604" alt="qr-code" />
+    <img src="https://img.shields.io/badge/%203%20-intermediate-white?labelColor=f1b604" alt="intermediate" />
   <br/>
     <!-- <a href="https://gpx.ge/js/pages/" target="_blank">🖥️ View Demo</a> -->
 

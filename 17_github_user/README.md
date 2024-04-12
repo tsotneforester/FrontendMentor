@@ -7,13 +7,13 @@
 
   <div align="center">
     Built With -
-    <img src="https://img.shields.io/badge/-React-f4cf0c" alt="HTML" />
-    <img src="https://img.shields.io/badge/-API-aad742" alt="HTML" />
+    <img src="https://img.shields.io/badge/-React-f4cf0c" alt="React" />
+    <img src="https://img.shields.io/badge/-API-aad742" alt="API" />
 
   
   <br/>
     Difficulty -
-    <img src="https://img.shields.io/badge/%202%20-junior-white?labelColor=aad742" alt="qr-code" />
+    <img src="https://img.shields.io/badge/%202%20-junior-white?labelColor=aad742" alt="junior" />
   <br/>
     <!-- <a href="https://gpx.ge/js/pages/" target="_blank">🖥️ View Demo</a> -->
 
