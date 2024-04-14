@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="newbie" />
 
   <br/>
-    <a href="https://deft-cranachan-73b09d.netlify.app/" target="_blank">🖥️ View Demo</a>
+    <a href="https://lucky-babka-6b6eab.netlify.app/" target="_blank">🖥️ View Demo</a>
 
 
   </div>
