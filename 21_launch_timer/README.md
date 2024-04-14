@@ -16,7 +16,7 @@
     <img src="https://img.shields.io/badge/%203%20-intermediate-white?labelColor=f1b604" alt="intermediate" />
 
   <br/>
-    <a href="https://deft-cranachan-73b09d.netlify.app/" target="_blank">🖥️ View Demo</a>
+    <a href="https://vermillion-boba-460e34.netlify.app/" target="_blank">🖥️ View Demo</a>
 
 
   </div>
