@@ -14,7 +14,7 @@
     Difficulty -
     <img src="https://img.shields.io/badge/%202%20-junior-white?labelColor=aad742" alt="junior" />
   <br/>
-    <!-- <a href="https://gpx.ge/js/pages/" target="_blank">🖥️ View Demo</a> -->
+    <a href="https://deft-cranachan-73b09d.netlify.app/" target="_blank">🖥️ View Demo</a>
 
 
   </div>

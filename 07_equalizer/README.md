@@ -14,7 +14,7 @@
     Difficulty -
     <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="newbie" />
   <br/>
-    <!-- <a href="https://gpx.ge/js/pages/" target="_blank">🖥️ View Demo</a> -->
+    <a href="https://cheery-choux-47437a.netlify.app/" target="_blank">🖥️ View Demo</a>
 
 
   </div>

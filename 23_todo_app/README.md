@@ -14,7 +14,7 @@
     Difficulty -
     <img src="https://img.shields.io/badge/%203%20-intermediate-white?labelColor=f1b604" alt="intermediate" />
   <br/>
-    <!-- <a href="https://gpx.ge/js/pages/" target="_blank">🖥️ View Demo</a> -->
+    <a href="https://sunny-paprenjak-8750ef.netlify.app/" target="_blank">🖥️ View Demo</a>
 
 
   </div>

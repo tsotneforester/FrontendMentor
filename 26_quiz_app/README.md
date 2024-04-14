@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/%203%20-intermediate-white?labelColor=f1b604" alt="intermediate" />
 
   <br/>
-    <!-- <a href="https://gpx.ge/js/pages/" target="_blank">🖥️ View Demo</a> -->
+    <a href="https://hilarious-kleicha-f00354.netlify.app/" target="_blank">🖥️ View Demo</a>
 
 
   </div>
