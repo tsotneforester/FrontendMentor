@@ -14,7 +14,7 @@
     <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="newbie" />
     
   <br/>
-    <!-- <a href="https://gpx.ge/js/pages/" target="_blank">🖥️ View Demo</a> -->
+    <a href="https://661bab498aae17f866a619b9--sunny-mousse-ef5be2.netlify.app/" target="_blank">🖥️ View Demo</a>
 
 
   </div>
