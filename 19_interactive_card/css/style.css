@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
 *,
 ::before,
 ::after {
@@ -68,256 +67,358 @@ pre {
   margin: 0;
 }
 
+:root {
+  --red: hsl(0, 100%, 66%);
+  --gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+  --white: rgb(255, 255, 255);
+  --light-violet: rgb(222, 221, 223);
+  --dark-violet: rgb(142, 133, 147);
+  --very-dark-violet: rgb(33, 9, 47);
+  --ar: 1.82;
+  --card-max-width: 447px;
+}
+
 ::-webkit-outer-spin-button,
 ::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-body {
-  min-height: 100vh;
+main {
+  min-height: 100svh;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  background-color: rgb(255, 255, 255);
-  background-image: url(../images/bg-main-mobile.png);
+  background-color: var(--white);
+  background-image: url("../images/bg-main-mobile.png");
   background-repeat: no-repeat;
-  background-size: 100% 310px;
+  background-size: 100% 240px;
   font-family: "Space Grotesk", sans-serif;
   padding: 30px 10px;
 }
 @media only screen and (min-width: 900px) {
-  body {
+  main {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     gap: 50px;
-    padding: 30px 30px 30px calc(30% - 240px);
-    background-image: url(../images/bg-main-desktop.png);
-    background-size: 30% 100%;
+    padding: 30px calc(30% - 140px) 30px calc(30% - 240px);
+    background-image: url("../images/bg-main-mobile.png");
+    background-size: 40% 100%;
   }
 }
 
 .credit-card {
   width: 100%;
-  height: 420px;
+  max-width: 520px;
+  height: clamp(268px, 70.8vw, 386px);
+  margin-bottom: 48px;
   border-radius: 0;
-  background-color: transparent;
-  max-width: 534px;
   position: relative;
+  display: flex;
+  flex-flow: column nowrap;
 }
 @media only screen and (min-width: 900px) {
   .credit-card {
-    width: 100%;
-    height: 448px;
-    border-radius: 0;
-    background-color: transparent;
-    max-width: 534px;
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column-reverse nowrap;
     justify-content: space-between;
     align-items: flex-start;
+    height: auto;
+    gap: 37px;
   }
 }
-.credit-card .card-side {
-  position: absolute;
-  width: 100%;
-  height: 248px;
+.credit-card > div {
+  width: 88%;
+  min-width: 310px;
+  aspect-ratio: var(--ar);
   border-radius: 12px;
   background-color: transparent;
-  max-width: 452px;
+  max-width: var(--card-max-width);
   padding: 32px;
 }
 @media only screen and (min-width: 900px) {
-  .credit-card .card-side {
+  .credit-card > div {
     position: relative;
-    width: 354px;
-    height: 208px;
-    border-radius: 12px;
     background-color: transparent;
-    max-width: unset;
   }
 }
 .credit-card #front {
-  background-image: url(../images/bg-card-front.png);
+  position: absolute;
+  left: 0;
+  background-image: url("../images/bg-card-front.png");
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+  background-attachment: scroll;
+  background-size: auto;
   background-size: cover;
   z-index: 11;
-  top: 140px;
+  top: clamp(98px, 26vw, 140px);
+  display: grid;
+  row-gap: 20px;
+  grid-template-rows: 1fr auto;
+  grid-template-columns: 1fr max-content max-content max-content;
+  letter-spacing: 1.3px;
+  resize: horizontal;
+  grid-template-areas: "num num num num" "name month dash year";
 }
 @media only screen and (min-width: 900px) {
   .credit-card #front {
+    position: relative;
     top: 0;
   }
 }
 .credit-card #front #engraved-number {
-  position: absolute;
-  top: 140px;
+  grid-area: num;
   letter-spacing: 4px;
-  width: 90%;
-  font-size: 22px;
-  color: white;
-  font-weight: 400;
-  text-align: left;
+  align-self: flex-end;
+  color: var(--white);
+  font-size: 18px;
+  font-size: clamp(18px, 4.9cqw, 28px);
+  font-weight: 500;
+  letter-spacing: 2.2px;
 }
 @media only screen and (min-width: 900px) {
   .credit-card #front #engraved-number {
-    top: 112px;
-    font-size: 18px;
-    color: white;
-    font-weight: 400;
-    text-align: left;
+    font-size: clamp(18px, 2cqw, 28px);
   }
 }
 .credit-card #front #engraved-name {
-  position: absolute;
-  bottom: 30px;
-  width: auto;
-  font-size: 14px;
-  color: white;
-  font-weight: 400;
   text-align: left;
+  grid-area: name;
+  color: var(--white);
+  font-size: 9px;
+  font-size: clamp(9px, 2.9cqw, 14px);
+  font-weight: 500;
   text-transform: uppercase;
 }
-.credit-card #front #engraved-date {
-  position: absolute;
-  bottom: 30px;
-  right: 34px;
-  width: auto;
-  font-size: 14px;
-  color: white;
-  font-weight: 400;
-  text-align: left;
+.credit-card #front #engraved-month {
+  grid-area: month;
+  color: var(--white);
+  font-size: 9px;
+  font-size: clamp(9px, 2.9cqw, 14px);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.credit-card #front #engraved-dash {
+  grid-area: dash;
+  color: var(--white);
+  font-size: 9px;
+  font-size: clamp(9px, 2.9cqw, 14px);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.credit-card #front #engraved-year {
+  grid-area: year;
+  color: var(--white);
+  font-size: 9px;
+  font-size: clamp(9px, 2.9cqw, 14px);
+  font-weight: 500;
   text-transform: uppercase;
 }
 .credit-card #back {
-  background-image: url(../images/bg-card-back.png);
+  background-image: url("../images/bg-card-back.png");
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+  background-attachment: scroll;
+  background-size: auto;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   top: 0px;
   right: 0;
   z-index: 9;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  align-self: flex-end;
+  padding: 54px;
 }
 @media only screen and (min-width: 900px) {
   .credit-card #back {
-    width: 100%;
-    height: 208px;
-    border-radius: 0;
-    background-color: transparent;
-    background-size: 354px 100%;
-    background-position: 100% 0%;
+    align-self: flex-end;
   }
 }
 .credit-card #back #engraved-cvc {
-  position: absolute;
-  top: 104px;
-  right: 52px;
-  font-size: 28px;
-  color: white;
-  font-weight: 400;
+  color: var(--white);
+  font-size: 9px;
+  font-size: clamp(9px, 2.9cqw, 14px);
+  font-weight: 500;
+  text-transform: uppercase;
   text-align: right;
 }
 @media only screen and (min-width: 900px) {
   .credit-card #back #engraved-cvc {
     top: 90px;
     right: 48px;
-    font-size: 18px;
-    color: white;
-    font-weight: 400;
-    text-align: left;
   }
 }
 
-main {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: flex-start;
+.form {
   width: 90%;
-  margin: 0 auto;
+  display: grid;
   max-width: 534px;
-  gap: 14px;
+  grid-template-rows: repeat(4, max-content);
+  grid-template-columns: 1fr 1fr;
+  resize: horizontal;
+  grid-template-areas: "name name" "number number" "date cvc" "button button";
+  gap: 11px;
 }
 @media only screen and (min-width: 900px) {
-  main {
+  .form {
     max-width: 400px;
   }
 }
-main input {
+.form fieldset {
+  width: 100%;
+  border: none;
+}
+.form input {
   padding: 13px;
-  border: 1px solid rgb(33, 9, 47);
+  border: 1px solid var(--light-violet);
   border-radius: 7px;
   width: 100%;
+  outline: none;
+  font-size: 16px;
 }
-main .full-name,
-main .card-number,
-main .expiry-date,
-main .cvc-code {
+.form input::-moz-placeholder {
+  opacity: 0.35;
+}
+.form input::placeholder {
+  opacity: 0.35;
+}
+.form label {
+  letter-spacing: 2px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.form .name {
+  grid-area: name;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 8px;
 }
-main .expiry-cvc {
+.form .number {
+  grid-area: number;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+}
+.form .date {
+  grid-area: date;
   display: grid;
-  grid-template-areas: "lyear lyear lcvc lcvc" "month year cvc cvc" "mr yr cr cr";
-  gap: 10px;
-  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  grid-template-rows: max-content max-content auto;
+  grid-template-areas: "lable lable" "month year" "error1 error2";
 }
-main .expiry-cvc #lable-year {
-  grid-area: lyear;
+.form .date :nth-child(1) {
+  grid-area: lable;
 }
-main .expiry-cvc #lable-cvc {
-  grid-area: lcvc;
-}
-main .expiry-cvc #year {
-  grid-area: year;
-}
-main .expiry-cvc #month {
+.form .date :nth-child(2) {
   grid-area: month;
 }
-main .expiry-cvc #cvc {
-  grid-area: cvc;
+.form .date :nth-child(3) {
+  grid-area: year;
 }
-main .expiry-cvc #month-error {
-  grid-area: mr;
+.form .date :nth-child(4) {
+  grid-area: error1;
 }
-main .expiry-cvc #year-error {
-  grid-area: yr;
+.form .date :nth-child(5) {
+  grid-area: error2;
 }
-main .expiry-cvc #cvc-error {
-  grid-area: cr;
-  text-align: right;
+.form .cvc {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
 }
-main button {
-  background: rgb(33, 9, 47);
+.form button {
+  width: 100%;
+  grid-area: button;
+  background: var(--very-dark-violet);
   border: none;
   padding: 15px 20px;
-  color: rgb(255, 255, 255);
+  color: var(--white);
   cursor: pointer;
   border-radius: 6px;
   font-size: 18px;
+}
+
+.success {
+  width: 90%;
+  max-width: 534px;
+  grid-template-rows: repeat(4, max-content);
+  grid-template-columns: 1fr 1fr;
+  resize: horizontal;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  display: none;
+}
+@media only screen and (min-width: 900px) {
+  .success {
+    max-width: 400px;
+  }
+}
+.success h1 {
+  margin-top: 35px;
+  color: var(--very-dark-violet);
+  font-size: 28px;
+  height: 36px;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 3.4;
+  text-transform: uppercase;
+}
+.success p {
+  margin-top: 16px;
+  height: 23px;
+  color: var(--dark-violet);
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+}
+.success button {
+  width: 100%;
+  grid-area: button;
+  background: var(--very-dark-violet);
+  border: none;
+  padding: 15px 20px;
+  color: var(--white);
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 18px;
+  margin-top: 48px;
 }
 
 .error {
   transition: height 0.3s ease-in-out;
   font-size: 13px;
   overflow: hidden;
-  color: hsl(0, 100%, 66%);
+  color: var(--red);
   height: 0;
   transition: all 0.4s;
 }
 
 .active {
   animation: shake 0.2s;
-  background-color: hsl(0, 100%, 66%);
+  background-color: var(--red);
   color: white;
 }
 
 .errored {
-  border-color: hsl(0, 100%, 66%);
+  border-color: var(--red) !important;
 }
 
 @keyframes shake {

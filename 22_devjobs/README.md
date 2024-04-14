@@ -14,7 +14,7 @@
     Difficulty -
     <img src="https://img.shields.io/badge/%204%20-advanced-white?labelColor=bf4605" alt="advanced" />
   <br/>
-    <!-- <a href="https://gpx.ge/js/pages/" target="_blank">🖥️ View Demo</a> -->
+    <a href="https://silly-macaron-fedc04.netlify.app/" target="_blank">🖥️ View Demo</a>
 
 
   </div>
