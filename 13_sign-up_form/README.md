@@ -1,7 +1,7 @@
 <h1 align="center">Sign-up Form</h1>
 
 <div align="center">
-  <img src="./design/desktop-preview.jpg" alt="qr-code" />
+  <img src="./design/preview.jpg" alt="qr-code" />
 </div>
 
   <div align="center">
