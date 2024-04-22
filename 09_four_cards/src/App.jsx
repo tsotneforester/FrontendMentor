@@ -1,6 +1,7 @@
-import { Box } from "./Box";
+import { Card } from "./Card";
 import { Header } from "./Header";
 import styled from "styled-components";
+import { root } from "./styled";
 import { data } from "./data";
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
     <>
       <Header />
       <S.Main>
-        <Box data={data} />
+        <Card data={data} />
       </S.Main>
     </>
   );
@@ -23,11 +24,11 @@ S.Main = styled.main`
   flex-direction: column;
   row-gap: 20px;
 
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: ${root.media.desktop}) {
     display: grid;
     grid-template-areas:
       "left top right"
-      "left bottom right";
+      "left down right";
     -moz-column-gap: 30px;
     column-gap: 30px;
     row-gap: 30px;

@@ -30,6 +30,10 @@ input::-ms-clear {
   display: none;
 }
 
+input {
+  min-width: 0;
+}
+
 button {
   cursor: pointer;
   border: none;
@@ -43,6 +47,7 @@ button::-moz-focus-inner {
 img {
   max-width: 100%;
   display: block;
+  min-width: 0;
 }
 
 ul li {
@@ -56,6 +61,7 @@ h4,
 h5,
 h6,
 p {
+  font-size: inherit;
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -66,25 +72,10 @@ pre {
   margin: 0;
 }
 
-body {
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-#root {
-  min-height: 100vh;
-  background-color: white;
-  font-family: "Poppins", sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 85px 0;
-  row-gap: 76px;
-}
-@media only screen and (min-width: 1200px) {
-  #root {
-    padding: 80px 0;
-    row-gap: 64px;
-  }
 }

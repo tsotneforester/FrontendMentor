@@ -1,26 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import { root } from "./styled";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-export function Box({ data }) {
-  return data.map((box) => {
-    let { header, desc, icon, color, grid, self } = box;
+export function Card({ data }) {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
+  return data.map((card, i) => {
+    let { header, desc, icon, color, grid, animation, self } = card;
     return (
-      <S.Box color={color} grid={grid} self={self}>
+      <S.Card key={i} data-aos={`fade-${animation}`} color={color} grid={grid} self={self}>
         <h1>{header}</h1>
         <p>{desc}</p>
         <img src={`./assets/${icon}`} alt="icon" />
-      </S.Box>
+      </S.Card>
     );
   });
 }
 
 const S = {};
 
-S.Box = styled.div`
+S.Card = styled.div`
   width: 311px;
   height: 222px;
   border-radius: 8px;
-  background-color: white;
+  background-color: ${root.color.white};
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -32,21 +39,22 @@ S.Box = styled.div`
   grid-area: ${(props) => props.grid};
   align-self: ${(props) => props.self};
 
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: ${root.media.desktop}) {
     width: 350px;
     height: 250px;
     border-radius: 8px;
-    background-color: white;
+    background-color: ${root.color.white};
   }
+
   & h1 {
     font-size: 20px;
-    color: #4d4f62;
+    color: ${root.color.dark_gray};
     font-weight: 600;
     text-align: center;
   }
   & p {
     font-size: 13px;
-    color: #4d4f62;
+    color: ${root.color.dark_gray};
     font-weight: 400;
     text-align: center;
     opacity: 0.5;
@@ -55,7 +63,7 @@ S.Box = styled.div`
     align-self: end;
     margin-top: 30px;
   }
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: ${root.media.desktop}) {
     & img {
       margin-top: 60px;
     }

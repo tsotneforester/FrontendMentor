@@ -30,7 +30,7 @@ export default function Form() {
         <Features />
 
         <fieldset>
-          <label htmlFor="">Email Address</label>
+          <label htmlFor="">Email address</label>
           <span>{errors.email?.message}</span>
 
           <input
@@ -118,7 +118,7 @@ S.Container = styled.div`
     @media only screen and (min-width: ${root.media}) {
       grid-area: form;
       padding: 0;
-      max-width: 400px;
+      max-width: 376px;
       justify-self: center;
     }
 

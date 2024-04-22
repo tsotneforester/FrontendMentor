@@ -43,6 +43,7 @@ export const h1 = css`
   @media only screen and (min-width: ${root.media}) {
     font-size: 56px;
     line-height: 56px;
+    margin-top: 0;
   }
 `;
 
