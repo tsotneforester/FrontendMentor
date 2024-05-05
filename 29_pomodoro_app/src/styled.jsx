@@ -2,6 +2,7 @@ import { css } from "styled-components";
 import { createGlobalStyle } from "styled-components";
 
 export const root = {
+  ms: 0.4,
   theme_color: {
     red: "#F87070",
     cyan: "#70F3F8",
@@ -17,7 +18,6 @@ export const root = {
   media: {
     mobile: 480,
     tablet: 768,
-    desktop: 1280,
   },
   font: {
     kumbh: `"Kumbh Sans", sans-serif`,
@@ -28,28 +28,22 @@ export const root = {
 
 export const GlobalStyles = createGlobalStyle`
 body {
-
   background-color: ${root.color.dark_blue};
-
-
-
 }
 
 #root {
+  min-height: 100vh;
   min-height: 100svh;
   padding: 32px 24px  48px 24px;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   
  @media only screen and (min-width: ${root.media.tablet}px) {
  padding: 80px 24px 103px 24px;
  }
 
-  @media only screen and (min-width: ${root.media.desktop}px) {
- padding: 56px 24px;
- }
 }
 
 
@@ -60,7 +54,7 @@ export const circleHover = css`
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  transition: all 0.2s;
+  transition: all ${root.ms}s;
   cursor: pointer;
   outline: 2px ${root.color.gray} solid;
   display: flex;
@@ -76,7 +70,7 @@ export const circleHover = css`
 export const styledSVG = css`
   cursor: pointer;
   path {
-    transition: stroke-opacity 0.5s;
+    transition: stroke-opacity ${root.ms}s;
   }
 
   &:hover {
@@ -93,4 +87,7 @@ export const styledSettingTitle = css`
   text-align: center;
   letter-spacing: 4.3px;
   grid-area: title;
+  @media only screen and (min-width: ${root.media.tablet}px) {
+    font-size: 13px;
+  }
 `;

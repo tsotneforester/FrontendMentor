@@ -1,22 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-import { root, circleHover, styledSettingTitle } from "../styled";
+import { root, circleHover, styledSettingTitle } from "../../../styled";
 import { useDispatch, useSelector } from "react-redux";
-import { setFont } from "../store";
+import { setFont } from "./tempOptionsSlice";
 
 let arr = Object.values(root.font);
 
 export default function FontOptions() {
-  const font = useSelector((state) => state.font);
+  const font = useSelector((state) => state.timer.font);
+  const tempFont = useSelector((state) => state.tempOptions.font);
   const dispatcher = useDispatch();
 
   return (
     <S.Container>
       <S.Title font={font}>FONT</S.Title>
       <div className="circles">
-        {arr.map((e) => {
+        {arr.map((e, i) => {
           return (
-            <S.Circle font={e} status={font == e ? "active" : undefined} onClick={() => dispatcher(setFont(e))}>
+            <S.Circle key={i} font={e} status={tempFont == e ? "active" : undefined} onClick={() => dispatcher(setFont(e))}>
               <span>Aa</span>
             </S.Circle>
           );
@@ -35,7 +36,7 @@ S.Title = styled.h1`
 
 S.Container = styled.div`
   width: 100%;
-  padding: 24px 0 10px 0;
+  padding: 24px 0;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -46,6 +47,10 @@ S.Container = styled.div`
   justify-content: flex-start;
   align-items: center;
   border-top: 1px solid #e3e1e1;
+  @media only screen and (min-width: ${root.media.tablet}px) {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
 
   .circles {
     display: flex;

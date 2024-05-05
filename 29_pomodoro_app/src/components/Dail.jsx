@@ -1,61 +1,63 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import styled, { css } from "styled-components";
 import { root } from "../styled";
-import { setSecondsLeft, setIsRunning } from "../store";
+import { setSecondsLeft, setIsRunning } from "../TimerSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 
 export default function Dail() {
-  const timer = useSelector((state) => state.timer);
-  const theme = useSelector((state) => state.theme);
-  const minutes = useSelector((state) => state.minutes);
-  let secondsLeft = useSelector((state) => state.secondsLeft);
-  const isRunning = useSelector((state) => state.isRunning);
-  const font = useSelector((state) => state.font);
+  const activeTimer = useSelector((state) => state.timer.activeTimer);
+  const theme = useSelector((state) => state.timer.theme);
+  const durations = useSelector((state) => state.timer.durations);
+  const isRunning = useSelector((state) => state.timer.isRunning);
+  const font = useSelector((state) => state.timer.font);
+  let secondsLeft = useSelector((state) => state.timer.secondsLeft);
   const dispatcher = useDispatch();
 
-  let timerInseconds = secondsLeft || Object.values(minutes)[timer] * 60;
-
-  function secondsToMinutesAndSeconds(totalSeconds) {
-    var minutes = Math.floor(totalSeconds / 60);
-    var seconds = totalSeconds % 60;
-    return { minutes: minutes, seconds: seconds };
-  }
-
-  let result = secondsToMinutesAndSeconds(timerInseconds);
+  const timerInSeconds = Object.values(durations)[activeTimer] * 60;
+  let displayTime = secondsLeft ?? timerInSeconds;
+  const { minutes, seconds } = secondsToMinutesAndSeconds(displayTime);
 
   function handler() {
     if (isRunning) {
       dispatcher(setIsRunning(false));
     } else {
+      if (secondsLeft == 0) {
+        dispatcher(setSecondsLeft(timerInSeconds));
+      }
       dispatcher(setIsRunning(true));
     }
   }
 
   useEffect(() => {
+    if (secondsLeft == 0) {
+      dispatcher(setIsRunning(false));
+      dispatcher(setSecondsLeft(0));
+    }
+
     let intervalId;
     if (isRunning) {
       intervalId = setInterval(() => {
-        dispatcher(setSecondsLeft((timerInseconds -= 1)));
+        dispatcher(setSecondsLeft((displayTime -= 1)));
       }, 1000);
     }
+
     return () => clearInterval(intervalId);
-  }, [isRunning]);
+  }, [isRunning, secondsLeft]);
 
   return (
-    <S.Container>
+    <S.Container role="container">
       <S.Outer>
         <CircularProgressbarWithChildren
           counterClockwise={true}
           strokeWidth="2.9"
-          value={timerInseconds}
-          maxValue={Object.values(minutes)[timer] * 60}
+          value={displayTime || timerInSeconds}
+          maxValue={timerInSeconds}
           styles={{
             path: {
               strokeLinecap: "round",
-              transition: "stroke-dashoffset 0.5s ease 0s",
+              transition: "stroke-dashoffset 1s linear 0s",
               stroke: theme,
             },
             trail: {
@@ -63,11 +65,12 @@ export default function Dail() {
             },
           }}>
           <S.Timestamp>
-            <S.Minutes font={font}>{result.minutes < 10 ? `0${result.minutes}` : result.minutes}</S.Minutes>
+            <S.Minutes font={font}>{minutes < 10 ? `0${minutes}` : minutes}</S.Minutes>
             <S.Delimighter font={font}>:</S.Delimighter>
-            <S.Seconds font={font}>{result.seconds < 10 ? `0${result.seconds}` : result.seconds}</S.Seconds>
-            <S.Button font={font} onClick={handler}>
-              {isRunning ? "PAUSE" : "START"}
+            <S.Seconds font={font}>{seconds < 10 ? `0${seconds}` : seconds}</S.Seconds>
+
+            <S.Button font={font} onClick={handler} color={theme}>
+              {!isRunning && secondsLeft == 0 ? "RESTART" : isRunning ? "PAUSE" : "START"}
             </S.Button>
           </S.Timestamp>
         </CircularProgressbarWithChildren>
@@ -81,10 +84,15 @@ const S = {};
 const styledTime = css`
   color: ${root.color.light_blue};
   font-family: ${(props) => props.font};
+
+  user-select: none;
   font-size: 80px;
   font-weight: ${(props) => (props.font == `"Space Mono", monospace` ? 400 : 700)};
   text-align: center;
   letter-spacing: ${(props) => (props.font == `"Space Mono", monospace` ? "-10px" : "0")};
+  @media only screen and (min-width: ${root.media.tablet}px) {
+    font-size: 100px;
+  }
 `;
 
 S.Container = styled.div`
@@ -130,6 +138,8 @@ S.Timestamp = styled.div`
 `;
 
 S.Button = styled.span`
+
+  user-select: none;
   color: ${root.color.light_blue};
   font-family: ${(props) => props.font};
   font-size: 14px;
@@ -142,17 +152,29 @@ S.Button = styled.span`
   top: 176px;
   left: 50%;
   transform: translateX(-50%);
+  transition: color ${root.ms}s;
   @media only screen and (min-width: ${root.media.tablet}px) {
     font-size: 16px;
+    top: 242px;
+  }
+
+  &:hover {
+    color: ${(prop) => prop.color};
   }
 `;
 
-S.Minutes = styled.div`
+S.Minutes = styled.p`
   ${styledTime}
 `;
-S.Delimighter = styled.div`
+S.Delimighter = styled.p`
   ${styledTime}
 `;
-S.Seconds = styled.div`
+S.Seconds = styled.p`
   ${styledTime}
 `;
+
+function secondsToMinutesAndSeconds(totalSeconds) {
+  var minutes = Math.floor(totalSeconds / 60);
+  var seconds = totalSeconds % 60;
+  return { minutes: minutes, seconds: seconds };
+}

@@ -4,6 +4,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 :focus,
@@ -74,7 +75,7 @@ pre {
   --light-violet: rgb(222, 221, 223);
   --dark-violet: rgb(142, 133, 147);
   --very-dark-violet: rgb(33, 9, 47);
-  --ar: 1.82;
+  --aspect-ratio: 1.82;
   --card-max-width: 447px;
 }
 
@@ -85,6 +86,7 @@ pre {
 }
 
 main {
+  min-height: 100vh;
   min-height: 100svh;
   width: 100%;
   margin: 0 auto;
@@ -135,7 +137,7 @@ main {
 .credit-card > div {
   width: 88%;
   min-width: 310px;
-  aspect-ratio: var(--ar);
+  aspect-ratio: var(--aspect-ratio);
   border-radius: 12px;
   background-color: transparent;
   max-width: var(--card-max-width);
@@ -170,6 +172,39 @@ main {
   .credit-card #front {
     position: relative;
     top: 0;
+  }
+}
+.credit-card #front .circles {
+  position: absolute;
+  left: 20px;
+  top: 18px;
+  width: 30px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--white);
+}
+@media only screen and (min-width: 900px) {
+  .credit-card #front .circles {
+    left: 32px;
+    top: 28px;
+    width: clamp(28px, 3vw, 47px);
+  }
+}
+.credit-card #front .circles:after {
+  position: absolute;
+  left: 42px;
+  top: 8px;
+  width: 14px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid var(--white);
+  content: "";
+}
+@media only screen and (min-width: 900px) {
+  .credit-card #front .circles:after {
+    left: clamp(42px, 3.8vw, 60px);
+    top: clamp(4px, 0.85vw, 13px);
+    width: clamp(14px, 1.45vw, 22px);
   }
 }
 .credit-card #front #engraved-number {

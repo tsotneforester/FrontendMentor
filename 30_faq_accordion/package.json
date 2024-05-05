@@ -1,22 +1,18 @@
 {
-  "name": "pomodoro_app",
+  "name": "accordion",
   "private": true,
-  "version": "1.0.4",
+  "version": "1.5.3",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm version patch && vite build",
+    "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^2.2.3",
     "react": "^18.2.0",
-    "react-circular-progressbar": "^2.1.0",
     "react-dom": "^18.2.0",
-    "react-redux": "^9.1.1",
-    "styled-components": "^5.3.11",
-    "vite-plugin-svgr": "^4.2.0"
+    "styled-components": "^6.1.9"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

@@ -1,32 +1,18 @@
 import React from "react";
-import { root } from "./styled";
-import styled from "styled-components";
-import { useContext, useState } from "react";
 import Title from "./components/Title";
-import Timers from "./components/Timers";
-import Settings from "./components/Settings";
+import TimerSwitch from "./components/TimerSwitch";
+import SettingsIcon from "./components/SettingsIcon";
 import Modal from "./components/Modal";
 import Dail from "./components/Dail";
-// import { root } from "./styled";
-
-//imrse
-//rafce
-
-//rfc
-//imrr
 
 function App() {
   return (
     <>
-      <Title />
-      <Timers />
+      <Title /> {/* ✅ */}
+      <TimerSwitch /> {/* ✅ */}
       <Dail />
-      <Settings />
+      <SettingsIcon /> {/* ✅ */}
       <Modal />
-      {/* 
-      <Times />
-      <Timer />
-      <Settings /> */}
     </>
   );
 }

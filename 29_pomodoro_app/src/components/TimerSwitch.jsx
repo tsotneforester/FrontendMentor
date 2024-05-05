@@ -2,15 +2,15 @@ import React, { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
 import { root } from "../styled";
 import { useDispatch, useSelector } from "react-redux";
-import { setTimer, setSecondsLeft } from "../store";
+import { setActiveTimer, setSecondsLeft } from "../TimerSlice";
 
-let timerNames = ["pomodoro", "short break", "long break"];
+const timerNames = ["pomodoro", "short break", "long break"];
 
-export default function Timres() {
-  const timer = useSelector((state) => state.timer);
-  const theme = useSelector((state) => state.theme);
-  const isRunning = useSelector((state) => state.isRunning);
-  const font = useSelector((state) => state.font);
+export default function TimerSwitch() {
+  const activeTimer = useSelector((state) => state.timer.activeTimer);
+  const theme = useSelector((state) => state.timer.theme);
+  const isRunning = useSelector((state) => state.timer.isRunning);
+  const font = useSelector((state) => state.timer.font);
 
   const dispatcher = useDispatch();
   const refContainer = useRef(null);
@@ -18,10 +18,8 @@ export default function Timres() {
   const [sliderWidth, SetSliderWidth] = useState(null);
 
   function handler(i) {
-    if (isRunning) {
-      console.log("no, it is running");
-    } else {
-      dispatcher(setTimer(i));
+    if (!isRunning) {
+      dispatcher(setActiveTimer(i));
       dispatcher(setSecondsLeft(null));
     }
   }
@@ -29,18 +27,18 @@ export default function Timres() {
   useEffect(() => {
     SetSliderWidth(refContainer.current.getBoundingClientRect().width);
 
-    window.matchMedia("(min-width: 768px)").addEventListener("change", (event) => {
+    window.matchMedia(`(min-width: ${root.media.tablet}px)`).addEventListener("change", () => {
       SetSliderWidth(refContainer.current.getBoundingClientRect().width);
     });
   }, [sliderWidth]);
 
   return (
-    <S.Container role="Times">
-      <S.Slider ww={sliderWidth} tk={timer * sliderWidth} color={theme}></S.Slider>
-      {timerNames.map((e, i) => {
+    <S.Container role="timer-switch">
+      <S.Slider width={sliderWidth} translate={activeTimer * sliderWidth} color={theme}></S.Slider>
+      {timerNames.map((name, i) => {
         return (
-          <S.H1 font={font} ref={refContainer} className={timer == i ? "active" : undefined} key={i} onClick={() => handler(i)}>
-            {e}
+          <S.H1 font={font} ref={refContainer} className={activeTimer == i ? "active" : undefined} key={i} onClick={() => handler(i)}>
+            {name}
           </S.H1>
         );
       })}
@@ -60,12 +58,14 @@ S.Container = styled.div`
   grid-template-rows: auto;
   align-items: stretch;
   padding: 8px;
+  margin: 40px 0 48px 0;
   position: relative;
 
   @media only screen and (min-width: ${root.media.tablet}px) {
     width: 373px;
     height: 63px;
     border-radius: 31.5px;
+    margin: 47px 0 109px 0;
   }
 `;
 
@@ -75,15 +75,14 @@ S.H1 = styled.h1`
   font-size: 12px;
   font-weight: 700;
   text-align: center;
-  /* user-select: none; */
-  -webkit-tap-highlight-color: transparent;
+
   user-select: none;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: all 0.5s;
+  transition: all ${root.ms}s;
   @media only screen and (min-width: ${root.media.tablet}px) {
     font-size: 14px;
   }
@@ -106,11 +105,11 @@ S.Slider = styled.div`
   position: absolute;
   left: 8px;
   top: 8px;
-  width: ${(prop) => prop.ww}px;
+  width: ${(prop) => prop.width}px;
   height: 48px;
   border-radius: 26.5px;
   background-color: ${(prop) => prop.color};
-  transition: transform 0.5s;
-  transform: translateX(${(prop) => prop.tk}px);
+  transition: transform ${root.ms}s;
+  transform: translateX(${(prop) => prop.translate}px);
   /* transform: translateX(210px); */
 `;

@@ -1,35 +1,49 @@
 import styled from "styled-components";
 import React from "react";
-import { setModalOpened } from "../store";
-import { root, styledSVG } from "../styled";
+import { setModalOpened, mergeTemp } from "../TimerSlice";
+import { root } from "../styled";
 import { useDispatch, useSelector } from "react-redux";
-import ThemeOptions from "./ThemeOptions";
-import FontOptions from "./FontOptions";
-import MinuteOptions from "./MinuteOptions";
+import ThemeOptions from "./features/options/ThemeOptions";
+import FontOptions from "./features/options/FontOptions";
+import DurationOptions from "./features/options/DurationOptions";
 import CloseSVG from "../assets/icon-close.svg?react";
 
-import { useState } from "react";
-
 function Modal() {
-  const modalOpened = useSelector((state) => state.modalOpened);
-  const theme = useSelector((state) => state.theme);
-  const font = useSelector((state) => state.font);
+  const modalOpened = useSelector((state) => state.timer.modalOpened);
+  const theme = useSelector((state) => state.timer.theme);
+  const tempTheme = useSelector((state) => state.tempOptions.theme);
+  const font = useSelector((state) => state.timer.font);
+  const tempFont = useSelector((state) => state.tempOptions.font);
+  const durations = useSelector((state) => state.timer.durations);
+  const tempDurations = useSelector((state) => state.tempOptions.durations);
+  const activeTimer = useSelector((state) => state.timer.activeTimer);
+  const secondsLeft = useSelector((state) => state.timer.secondsLeft);
   const dispatcher = useDispatch();
-  console.log(font);
+
+  let timerInSeconds = Object.values(durations)[activeTimer];
+  let tempTimerInSeconds = Object.values(tempDurations)[activeTimer];
 
   return (
     <>
-      <S.Container role="modal" zorg={`${modalOpened ? "kaia" : "cudia"}`}>
-        <S.Card font={font}>
+      <S.Container role="modal" visible={`${modalOpened ? "true" : undefined}`}>
+        <S.Card role="card" font={font}>
           <S.Title font={font}>
             <h1>Settings</h1>
             <CloseIcon onClick={() => dispatcher(setModalOpened())} />
           </S.Title>
           <S.HR />
-          <MinuteOptions />
+          <DurationOptions />
           <FontOptions />
           <ThemeOptions />
-          <S.Apply theme={theme} font={font}>
+          <S.Apply
+            color={theme}
+            font={font}
+            onClick={() => {
+              let hasActiceDurationChanged = timerInSeconds == tempTimerInSeconds;
+
+              dispatcher(setModalOpened());
+              dispatcher(mergeTemp({ theme: tempTheme, font: tempFont, durations: tempDurations, seconds: hasActiceDurationChanged ? secondsLeft : tempTimerInSeconds * 60 }));
+            }}>
             Apply
           </S.Apply>
         </S.Card>
@@ -48,16 +62,17 @@ S.Container = styled.div`
   z-index: 10;
   width: 100%;
   padding: 44px 24px 74px 24px;
+  height: 100vh;
   height: 100svh;
   border-radius: 0;
   display: flex;
-  bottom: ${(prop) => (prop.zorg == "kaia" ? "0" : "-100%")};
+  bottom: ${(prop) => (prop.visible == "true" ? "0" : "-100%")};
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   background-color: transparent;
-  transition: bottom 0.5s ease;
-  animation: ${(prop) => (prop.zorg == "kaia" ? "slideIn 0.8s ease forwards;" : "none")};
+  transition: bottom ${root.ms}s ease;
+  animation: ${(prop) => (prop.visible == "true" ? "slideIn 0.8s ease forwards;" : "none")};
 
   @keyframes slideIn {
     0% {
@@ -73,17 +88,18 @@ S.Container = styled.div`
 S.Card = styled.div`
   position: relative;
   width: 100%;
-  height: calc(100% - 21px);
+  height: auto;
   max-width: 327px;
   border-radius: 20px;
   background-color: ${root.color.white};
-  padding: 28px 24px;
+  padding: 28px 24px 0 24px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
   align-items: center;
-  h6 {
-    color: black;
+  @media only screen and (min-width: ${root.media.tablet}px) {
+    max-width: 575px;
+    padding: 34px 40px 0 40px;
   }
 `;
 
@@ -94,6 +110,10 @@ S.Title = styled.div`
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: flex-start;
+  @media only screen and (min-width: ${root.media.tablet}px) {
+    height: 52px;
+  }
+
   h1 {
     font-family: ${(prop) => prop.font};
     color: ${root.color.darker_blue};
@@ -104,19 +124,19 @@ S.Title = styled.div`
 
 S.Backdrop = styled.div`
   background-color: #0a0c1c7b;
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   pointer-events: none;
   top: 0;
   left: 0;
   opacity: ${(prop) => prop.opacity};
-  transition: opacity ease 0.5s;
+  transition: opacity ease ${root.ms}s;
 `;
 
 S.Apply = styled.button`
-  background-color: ${(prop) => prop.theme};
-  transition: all ease 0.5s;
+  background-color: ${(prop) => prop.color};
+  transition: all ease ${root.ms}s;
   position: absolute;
   bottom: -28px; //dynamic
   padding: 17px 46.5px;
@@ -136,7 +156,7 @@ S.Apply = styled.button`
 const CloseIcon = styled(CloseSVG)`
   cursor: pointer;
   path {
-    transition: all 0.5s;
+    transition: all ${root.ms}s;
   }
 
   &:hover {
@@ -151,6 +171,8 @@ S.HR = styled.hr`
   top: 78px;
   left: 0;
   width: 100%;
-
   border-top: 1px solid #e3e1e1;
+  @media only screen and (min-width: ${root.media.tablet}px) {
+    top: 84px;
+  }
 `;

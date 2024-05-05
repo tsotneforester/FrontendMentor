@@ -1,46 +1,44 @@
 import React from "react";
-import styled, { css, ThemeProvider } from "styled-components";
-import { root, circleHover, styledSVG, styledSettingTitle } from "../styled";
+import styled from "styled-components";
+import { root, styledSVG, styledSettingTitle } from "../../../styled";
 import { useDispatch, useSelector } from "react-redux";
-import { setMinutes } from "../store";
-import ArrowUPSVG from "../assets/icon-arrow-up.svg?react";
-import ArrowDOWNSVG from "../assets/icon-arrow-down.svg?react";
+import { setDurations } from "./tempOptionsSlice";
+import ArrowUPSVG from "../../../assets/icon-arrow-up.svg?react";
+import ArrowDOWNSVG from "../../../assets/icon-arrow-down.svg?react";
 
-let arr = [1, 2, 3];
-
-export default function MinuteOptions() {
-  const minutes = useSelector((state) => state.minutes);
-  const timer = useSelector((state) => state.timer);
-  const font = useSelector((state) => state.font);
-  const isRunning = useSelector((state) => state.isRunning);
-  let arr = Object.entries(minutes);
-
-  const { pomodoro, short, long } = minutes;
+export default function DurationOptions() {
+  const durations = useSelector((state) => state.tempOptions.durations);
+  const activeTimer = useSelector((state) => state.timer.activeTimer);
+  const font = useSelector((state) => state.timer.font);
+  const isRunning = useSelector((state) => state.timer.isRunning);
+  let arr = Object.entries(durations);
 
   const dispatcher = useDispatch();
 
   function handlerIncrease(name, number, index) {
-    if (!isRunning || (isRunning && index != timer)) {
-      dispatcher(setMinutes({ ...minutes, [name]: (number += 1) }));
+    if (!isRunning || (isRunning && index != activeTimer)) {
+      dispatcher(setDurations({ ...durations, [name]: (number += 1) }));
     }
   }
 
   function handlerDecrease(name, number, index) {
-    if (!isRunning || (isRunning && index != timer)) {
-      dispatcher(setMinutes({ ...minutes, [name]: (number -= 1) }));
+    if (!isRunning || (isRunning && index != activeTimer)) {
+      if (number > 1) {
+        dispatcher(setDurations({ ...durations, [name]: (number -= 1) }));
+      }
     }
   }
 
   return (
     <S.Container role="Minutes">
       <S.Title font={font}>TIME (MINUTES)</S.Title>
-      <S.Options>
+      <S.Options role="options">
         {arr.map((e, i) => {
           const [title, number] = e;
           return (
-            <S.Option font={font}>
+            <S.Option key={i} role="option" font={font}>
               <label>{title}</label>
-              <S.Input role="Input" font={font} status={timer == i && isRunning ? "active" : undefined}>
+              <S.Input role="Input" font={font} status={activeTimer == i && isRunning ? "active" : undefined}>
                 <h1>{number}</h1>
                 <S.Controls>
                   <UpIcon onClick={() => handlerIncrease(title, number, i)} />
@@ -59,7 +57,7 @@ const S = {};
 
 S.Container = styled.div`
   width: 100%;
-  padding: 16px 0;
+  padding: 24px 0;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -69,6 +67,9 @@ S.Container = styled.div`
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
+  @media only screen and (min-width: ${root.media.tablet}px) {
+    gap: 23px;
+  }
 `;
 
 S.Options = styled.div`
@@ -78,21 +79,36 @@ S.Options = styled.div`
   justify-content: flex-start;
   align-items: center;
   gap: 8px;
+  @media only screen and (min-width: ${root.media.tablet}px) {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
 `;
 
 S.Title = styled.h1`
   ${styledSettingTitle}
   font-family: ${(props) => props.font};
+
+  @media only screen and (min-width: ${root.media.tablet}px) {
+    text-align: left;
+    width: 100%;
+  }
 `;
 
 S.Option = styled.div`
   width: 100%;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
   display: grid;
   grid-template-columns: 45% 55%;
+  align-items: center;
+  @media only screen and (min-width: ${root.media.tablet}px) {
+    display: flex;
+    flex-flow: column nowrap;
+    /* justify-content: center; */
+    align-items: stretch;
+    gap: 7px;
+  }
 
   label {
     opacity: 0.4;
