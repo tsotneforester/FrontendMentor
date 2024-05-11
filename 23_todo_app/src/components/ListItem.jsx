@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { device, root } from "../theme";
-import { ReactComponent as RemoveIcon } from "../assets/icon-cross.svg";
-import { ReactComponent as CheckIcon } from "../assets/icon-check.svg";
-import { ReactComponent as Emptyicon } from "../assets/empty.svg";
+import { root } from "../theme";
+import RemoveIcon from "../assets/icon-cross.svg?react";
+import CheckIcon from "../assets/icon-check.svg?react";
+import Emptyicon from "../assets/empty.svg?react";
 
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 

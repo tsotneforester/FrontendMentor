@@ -1,11 +1,11 @@
 {
-  "name": "my-vue-app",
+  "name": "todo_app",
   "private": true,
-  "version": "1.0.0",
+  "version": "2.0.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm version patch && vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -22,7 +22,7 @@
     "react-router-dom": "^6.14.2",
     "react-spring": "^9.7.2",
     "uuid": "^9.0.0",
-    "vite-plugin-svgr": "^3.2.0"
+    "vite-plugin-svgr": "^4.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",

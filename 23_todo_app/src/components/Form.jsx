@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { nanoid } from "nanoid";
 import styled from "styled-components";
-import { device, root } from "../theme";
+import { root } from "../theme";
 
 function Form({ data, dataSetter }) {
   let [input, setInput] = useState("");

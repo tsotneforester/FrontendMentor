@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { GlobalStyles, light, dark } from "./theme";
 const AppContext = React.createContext();
-import styled, { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 
 function Context({ children }) {
   const [isDarkMode, setIsDarkMode] = useState(false);

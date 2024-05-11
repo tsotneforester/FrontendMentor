@@ -1,13 +1,12 @@
-import { useContext, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import styled from "styled-components";
-import { root, device } from "./theme";
-import ThemeToggler from "./components/ThemeToggler";
+import { root} from "./theme";
 import Banner from "./components/Banner";
 import Header from "./components/Header";
 import Form from "./components/Form";
 import Filter from "./components/Filter";
 import ListItem from "./components/ListItem";
-import { useSpring, animated } from "@react-spring/web";
+
 
 //imrse
 //rafce

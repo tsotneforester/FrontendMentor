@@ -1,5 +1,3 @@
-import React from "react";
-
 import styled from "styled-components";
 import { device } from "../theme";
 
@@ -15,7 +13,6 @@ S.Banner = styled.div`
   z-index: -1;
   width: 100%;
   height: 225px;
-  //border: 2px dotted red;
   background-color: ${(prop) => prop.theme.body};
   background-image: url(${(prop) => prop.theme.image});
   background-repeat: no-repeat;

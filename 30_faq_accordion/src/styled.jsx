@@ -23,6 +23,7 @@ body {
 
 #root {
   min-height: 100vh;
+  min-height: 100svh;
   width: 100%;
   display: flex;
   flex-flow: column nowrap;
