@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { root } from "../styled";
 
 export default function Background() {
   return <S.Container role="background"></S.Container>;
@@ -17,7 +18,8 @@ S.Container = styled.div`
   background-image: url("assets/background-pattern-mobile.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  @media only screen and (min-width: $tablet) {
+  @media only screen and (min-width: ${root.media.tablet}) {
     background-image: url("assets/background-pattern-desktop.svg");
+    height: 320px;
   }
 `;

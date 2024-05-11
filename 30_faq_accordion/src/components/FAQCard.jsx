@@ -5,7 +5,7 @@ import { root } from "../styled";
 import Article from "./Article";
 
 export default function FAQCard() {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   function handler(i) {
     if (activeIndex == i) {
@@ -40,10 +40,22 @@ S.Container = styled.div`
   background: ${root.colors.white};
   box-shadow: 0px 32px 56px rgba(80, 0, 118, 0.1);
   border-radius: 8px;
+  animation: introFaqCard 0.4s ease-in-out;
   @media only screen and (min-width: ${root.media.tablet}) {
     max-width: 600px;
     padding: 40px 40px 0 40px;
     border-radius: 16px;
+  }
+
+  @keyframes introFaqCard {
+    0% {
+      opacity: 0;
+      transform: translateY(-15%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
   }
 `;
 S.Heading = styled.div`

@@ -18,9 +18,7 @@ export const GlobalStyles = createGlobalStyle`
 
 body {
   background-color: ${root.colors.pink};
-  @media only screen and (min-width: ${root.media.tablet}) {
 
-  }
 }
 
 #root {
@@ -31,6 +29,9 @@ body {
   padding: 142.5px 24px 24px 24px;
   justify-content: flex-start;
   align-items: center;
+  @media only screen and (min-width: ${root.media.tablet}) {
+  padding: 167.5px 24px 24px 24px;
+  }
 }
 
 `;
