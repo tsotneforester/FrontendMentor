@@ -1,10 +1,10 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { theme1, theme2, theme3 } from "../theme";
 import { AppContext } from "../Context";
 
 function Wrapper({ children }) {
-  const { themeMode, setThemeMode } = useContext(AppContext);
+  const { themeMode } = useContext(AppContext);
 
   return <S.Container color={themeMode}>{children}</S.Container>;
 }
@@ -18,5 +18,6 @@ S.Container = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  min-height: 100svh;
   width: 100%;
 `;

@@ -2,13 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { root } from "./styled";
 
-import Heading from "./components/Heading";
-import Password from "./components/Password";
-import Strength from "./components/Strength";
-import Generate from "./components/Generate";
-import CheckBoxes from "./components/CheckBoxes";
-import Slider from "./components/Slider";
-import Length from "./components/Length";
+import { Heading, Password, Strength, Generate, CheckBoxes, Slider, Length } from "./components";
 
 function App() {
   return (

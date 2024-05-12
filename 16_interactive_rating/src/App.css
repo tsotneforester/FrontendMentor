@@ -1,14 +1,14 @@
 body {
-  min-height: 100svh;
+  background-color: #131519;
 }
 
 #root {
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-family: "Nunito", sans-serif;
 }
 
 main {

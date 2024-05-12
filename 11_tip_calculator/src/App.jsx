@@ -1,7 +1,7 @@
 import "./App.css";
 import Logo from "./components/Logo";
 import styled from "styled-components";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import TipContainer from "./components/TipContainer";
 import Reset from "./components/Reset";
 import BillContainer from "./components/BillContainer";
@@ -97,7 +97,7 @@ let S = {};
 S.Main = styled.main`
   width: 375px;
   margin: 30px auto 0 auto;
-  border-radius: 25px 25px 0px 0px;
+  border-radius: 25px;
   background-color: #ffffff;
   padding: 32px;
   display: flex;

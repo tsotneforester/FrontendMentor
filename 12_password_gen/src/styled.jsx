@@ -22,18 +22,19 @@ export const root = {
 
 export const GlobalStyles = createGlobalStyle`
 body {
-  min-height: 100svh;
+
   background-color: ${root.color.black};
 
 }
 
 #root {
+  min-height: 100vh;
   min-height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 0 20px;
   gap: 24px;
 }
 `;

@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,100;1,400;1,800&display=swap");
 *,
 ::before,
 ::after {
@@ -68,21 +67,11 @@ pre {
   margin: 0;
 }
 
-#wrapper {
-  min-height: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  border: none;
-}
-
 body {
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
   background-color: #f0f0f0;
@@ -96,7 +85,7 @@ main {
   background-color: #ffffff;
   border-bottom-right-radius: 128px;
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   justify-content: space-between;
   align-items: center;
   padding: 42px 22px 46px;
@@ -113,9 +102,8 @@ main {
 }
 main .input {
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
   justify-content: flex-start;
-  align-items: stretch;
   width: 100%;
   height: auto;
   border-radius: 0;
@@ -131,7 +119,7 @@ main .input {
 }
 main .input > div {
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: flex-start;
   width: auto;
@@ -143,7 +131,7 @@ main .input > div {
 main .input label {
   font-size: 14px;
   color: #716f6f;
-  font-weight: 400;
+  font-weight: 700;
   text-align: left;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -151,9 +139,6 @@ main .input label {
 @media only screen and (min-width: 768px) {
   main .input label {
     font-size: 16px;
-    color: #716f6f;
-    font-weight: 400;
-    text-align: left;
   }
 }
 main .input input {
@@ -163,7 +148,7 @@ main .input input {
   background-color: transparent;
   font-size: 22px;
   color: #141414;
-  font-weight: 400;
+  font-weight: 700;
   text-align: left;
   border: none;
   padding: 10px 8px;
@@ -175,7 +160,6 @@ main .input input {
     width: 130px;
     height: auto;
     border-radius: 8px;
-    background-color: transparent;
   }
 }
 main .input input::-webkit-outer-spin-button,
@@ -200,7 +184,7 @@ main .submit {
   border-radius: 0;
   background-color: transparent;
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
   z-index: 1;
@@ -208,7 +192,7 @@ main .submit {
 @media only screen and (min-width: 768px) {
   main .submit {
     display: flex;
-    flex-direction: row;
+    flex-flow: row nowrap;
     justify-content: flex-end;
     align-items: center;
   }
@@ -219,7 +203,7 @@ main .submit .circle {
   border-radius: 50%;
   background-color: #854dff;
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
   cursor: pointer;

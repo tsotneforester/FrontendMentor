@@ -1,9 +1,10 @@
 #root {
   min-height: 100vh;
-  padding-top: 40px;
+  min-height: 100svh;
+  padding: 40px 0;
   background-color: #bbe5e8;
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   justify-content: space-between;
   align-items: center;
   -moz-column-gap: 40px;
@@ -12,7 +13,7 @@
 @media only screen and (min-width: 980px) {
   #root {
     display: flex;
-    flex-direction: column;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
   }
@@ -23,10 +24,6 @@
   --dis-green: #0d686d;
   --bright-green-1: #9fe8df;
   --bright-green-2: #26c2ae;
-}
-
-* {
-  font-family: "Space Mono", monospace;
 }
 
 p {

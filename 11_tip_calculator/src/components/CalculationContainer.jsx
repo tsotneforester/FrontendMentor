@@ -9,14 +9,14 @@ export default function CalculationContainer({ children, tipPP, totalPP }) {
           <h2>Tip Amount</h2>
           <h3>/ person</h3>
         </section>
-        <h4>{tipPP}</h4>
+        <h4>${tipPP}</h4>
       </S.AmountLine>
       <S.AmountLine>
         <section>
           <h2>Total</h2>
           <h3>/ person</h3>
         </section>
-        <h4>{totalPP}</h4>
+        <h4>${totalPP}</h4>
       </S.AmountLine>
       {children}
     </S.CalculationContainer>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const AppContext = React.createContext();
-import styled, { ThemeProvider } from "styled-components";
+
 
 function Context({ children }) {
   const [themeMode, setThemeMode] = useState("theme1");

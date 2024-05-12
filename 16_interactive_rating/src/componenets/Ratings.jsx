@@ -1,4 +1,4 @@
-import React from "react";
+
 
 function Ratings({ max, setter, rating }) {
   let temp = Array.from({ length: max }, (_, i) => {
