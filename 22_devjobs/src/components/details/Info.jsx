@@ -28,15 +28,15 @@ function Info({ id }) {
         <h2>Requirements</h2>
         <p>{requirements.content}</p>
         <ul>
-          {requirements.items.map((item) => {
-            return <li>{item}</li>;
+          {requirements.items.map((item, i) => {
+            return <li key={i}>{item}</li>;
           })}
         </ul>
         <h2>What You Will Do</h2>
         <p>{role.content}</p>
         <ol>
-          {role.items.map((item) => {
-            return <li>{item}</li>;
+          {role.items.map((item, i) => {
+            return <li key={i}>{item}</li>;
           })}
         </ol>
       </div>

@@ -3,7 +3,7 @@ import { root } from "../styled";
 
 function Button() {
   return (
-    <S.Container role="button">
+    <S.Container>
       <img src="/assets/icon-cart.svg" alt="" />
       <p>Add to Cart</p>
     </S.Container>

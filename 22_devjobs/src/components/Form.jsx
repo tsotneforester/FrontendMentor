@@ -3,8 +3,8 @@ import styled, { css } from "styled-components";
 import { ModalContext } from "../Context";
 import { device, root } from "../theme";
 import pinIcon from "../assets/pin.svg";
-import { ReactComponent as SearchIcon } from "../assets/search.svg";
-import { ReactComponent as FaFilter } from "../assets/filter.svg";
+import SearchIcon from "../assets/search.svg?react";
+import FaFilter from "../assets/filter.svg?react";
 
 function Form({ handler, refContainer, modalHandler }) {
   const { showModal, setShowModal, filter, setFilter, fields, setFields } = useContext(ModalContext);

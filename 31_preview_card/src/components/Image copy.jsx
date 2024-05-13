@@ -17,11 +17,18 @@ S.Container = styled.div`
   width: 100%;
   overflow: hidden;
 
+  @media only screen and (min-width: ${root.media.tablet}px) {
+    height: 100%;
+    width: 100%;
+    background-image: url("/assets/image-product-desktop.jpg");
+    background-size: 300px 100%;
+  }
+
   img {
-    content: url("/assets/image-product-mobile.jpg");
     @media only screen and (min-width: ${root.media.tablet}px) {
-      content: url("/assets/image-product-desktop.jpg");
       height: 100%;
+      width: auto;
+      display: none;
     }
   }
 `;

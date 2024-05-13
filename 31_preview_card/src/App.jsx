@@ -4,7 +4,7 @@ import { Button, Price, Image } from "./components";
 
 function App() {
   return (
-    <S.Card role="card">
+    <S.Card>
       <Image />
       <S.Container>
         <S.Category>Perfume</S.Category>

@@ -3,7 +3,7 @@ import { root } from "../styled";
 
 function Price() {
   return (
-    <S.Container role="price">
+    <S.Container>
       <h1>$149.99</h1>
       <h2>$169.99</h2>
     </S.Container>

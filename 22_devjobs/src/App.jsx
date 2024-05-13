@@ -70,7 +70,7 @@ let Content = styled.main`
   max-width: 1400px;
   width: 100%;
   z-index: 1;
-  padding: 0 clamp(20px, 10%, 50px) 100px;
+  padding: 0 clamp(24px, 8%, 50px) 100px;
 `;
 
 S.Form = styled.form`

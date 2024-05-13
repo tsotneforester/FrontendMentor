@@ -1,33 +1,29 @@
 {
-  "name": "my-vue-app",
+  "name": "dev_jobs",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.2",
   "type": "module",
   "scripts": {
-    "dev": "vite --host",
+    "dev": "vite",
     "build": "vite build",
-    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
-    "axios": "^1.4.0",
-    "babel-plugin-styled-components": "^2.1.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.9.0",
-    "react-router": "^6.12.0",
-    "react-router-dom": "^6.14.2",
-    "vite-plugin-svgr": "^3.2.0"
+    "react-router-dom": "^6.23.1",
+    "styled-components": "^5.3.11",
+    "vite-plugin-svgr": "^4.2.0"
   },
   "devDependencies": {
-    "@types/react": "^18.0.37",
-    "@types/react-dom": "^18.0.11",
-    "@types/styled-components": "^5.1.26",
-    "@vitejs/plugin-react": "^4.0.0",
-    "eslint": "^8.38.0",
-    "eslint-plugin-react": "^7.32.2",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.3.4",
-    "vite": "^4.3.9"
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "vite": "^5.2.0"
   }
 }
