@@ -44,25 +44,8 @@ _**"The root of learning is bitter, but the crown is sweet"**_.... - Ancient Geo
   </a>
 </p>
 
-### Prerequisites
-
-npm (for React Projects)
-
-```sh
-npm install npm@latest -g
-```
 
 ### Installation & Usage
-
-For React Projects
-  1. In REACT folder install NPM package
-  ```sh
-  npm install
-  ```
-  2. Run React App
-  ```sh
-  npm start
-  ```
 
 For Vite Projects
   1. In VITE folder install NPM package
@@ -73,7 +56,7 @@ For Vite Projects
   ```sh
   npm run dev
   ```
-
+<!-- 
 | Project # | Naming | Pixel Perfect | Responsive  | 4K | React |  deployed on Frontend |
 | :-------: | :----: | :-----------: | :--------: | :-: |  :--: | :---------: |
 | 01 | ✅ | ✅ | ✅ | ✅ | ❎ | ✅ |
@@ -101,9 +84,7 @@ For Vite Projects
 | 23 | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ |
 | 24 | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ |
 | 24 | ✅ | ❌ | ✅ | ❌ | ❌ | ✅ |
-<!-- | nam |pixp| res| 4k  |reac |on frontend
+| nam |pixp| res| 4k  |reac |on frontend
 
 
-## About Me
 
-[![Top Langs](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=tsotneforester&theme=github_dark)](https://github.com/anuraghazra/github-readme-stats)
