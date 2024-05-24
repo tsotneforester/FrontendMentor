@@ -31,7 +31,7 @@ S.Card = styled.main`
   flex-flow: column nowrap;
   justify-content: flex-end;
   align-items: center;
-  animation: introFaqCard 0.4s ease-in-out;
+  /* animation: introFaqCard 0.4s ease-in-out; */
   @media only screen and (min-width: ${root.media.tablet}px) {
     max-width: 600px;
     display: grid;

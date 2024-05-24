@@ -1,6 +1,4 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useContext } from "react";
+import { useSelector } from "react-redux";
 
 export default function CounterLine() {
   const data = useSelector((state) => state.data);
