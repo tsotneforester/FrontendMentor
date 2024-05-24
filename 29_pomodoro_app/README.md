@@ -12,7 +12,7 @@
     Difficulty -
     <img src="https://img.shields.io/badge/%204%20-advanced-white?labelColor=bf4605" alt="advanced" />
   <br/>
-    <a href="https://dazzling-lollipop-0c5aba.netlify.app" target="_blank">🖥️ View Demo</a>
+    <a href="https://pomodoro-app-gpxcript.netlify.app" target="_blank">🖥️ View Demo</a>
 
   </div>
 

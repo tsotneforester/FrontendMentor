@@ -14,7 +14,7 @@
     <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="newbie" />
     
   <br/>
-    <a href="https://sunny-mousse-ef5be2.netlify.app/" target="_blank">🖥️ View Demo</a>
+    <a href="https://profile-card-gpxcript.netlify.app" target="_blank">🖥️ View Demo</a>
 
 
   </div>

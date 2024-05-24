@@ -12,7 +12,7 @@
     Difficulty -
     <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="newbie" />
   <br/>
-    <a href="https://gregarious-gelato-2af624.netlify.app/" target="_blank">🖥️ View Demo</a>
+    <a href="https://base-apparel-gpxcript.netlify.app" target="_blank">🖥️ View Demo</a>
 
   </div>
 

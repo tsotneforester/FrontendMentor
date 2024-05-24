@@ -16,7 +16,7 @@
     <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="newbie" />
 
   <br/>
-    <a href="https://calm-zuccutto-c3a627.netlify.app/" target="_blank">🖥️ View Demo</a>
+    <a href="https://nft-preview-gpxcript.netlify.app" target="_blank">🖥️ View Demo</a>
 
 
   </div>
