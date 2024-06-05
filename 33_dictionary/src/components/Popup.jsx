@@ -24,6 +24,7 @@ export default function Header() {
   const { openedModal, setOpenedModal, fontTheme, setFontTheme } = useContext(AppContext);
 
   function handler(e) {
+    console.log(e);
     setFontTheme(e);
     setOpenedModal(false);
   }
@@ -31,7 +32,7 @@ export default function Header() {
   useEffect(() => {
     if (fontTheme) {
       localStorage.setItem("appFont", fontTheme);
-      document.body.style.fontFamily = fontData[fontTheme]?.font;
+      document.body.style.fontFamily = fontData[fontTheme - 1]?.font;
     }
   }, [fontTheme]);
 
@@ -57,7 +58,7 @@ export default function Header() {
       <ul>
         {fontData.map((e, i) => {
           return (
-            <li key={i} className={fontTheme == i ? styles.selected : null} onClick={() => handler(i)}>
+            <li key={i} className={fontTheme == i ? styles.selected : null} onClick={() => handler(i + 1)}>
               {e.name}
             </li>
           );

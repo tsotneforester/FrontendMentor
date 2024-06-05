@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect, useRef } from "react";
 import styles from "./SearchBar.module.scss";
 import { AppContext } from "../Context";
 import axios from "axios";
@@ -12,7 +12,7 @@ export default function SearchBar() {
   const [inputField, setInputField] = useState("");
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
-
+  const inputRef = useRef(null);
   let { query } = useParams();
 
   async function fetchAPI(word) {
@@ -89,6 +89,7 @@ export default function SearchBar() {
   };
 
   useEffect(() => {
+    inputRef.current.focus();
     if (query) {
       fetchAPI(query);
     }
@@ -96,7 +97,7 @@ export default function SearchBar() {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      <input className={error && submitting && styles.empty} type="text" value={inputField} onChange={handleChange} placeholder="Search for any word…" />
+      <input className={error && submitting && styles.empty} type="text" value={inputField} onChange={handleChange} ref={inputRef} placeholder="Search for any word…" />
       <input type="image" alt="Submit" src="./assets/icon-search.svg" />
       {error && submitting && <p className={styles.validation}>Whoops, can’t be empty…</p>}
     </form>

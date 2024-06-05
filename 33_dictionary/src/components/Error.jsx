@@ -1,7 +1,7 @@
-import React from "react";
+import { memo } from "react";
 import styles from "./Error.module.scss";
 
-export default function Header({ text }) {
+export default memo(function Header({ text }) {
   const { title, message, resolution } = text;
   return (
     <div className={styles.error}>
@@ -13,4 +13,4 @@ export default function Header({ text }) {
       </p>
     </div>
   );
-}
+});

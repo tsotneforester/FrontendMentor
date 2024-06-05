@@ -17,7 +17,7 @@ export default function Definition() {
 
   return (
     <div className={styles.definition}>
-      {isLoading && <h1>Loading...</h1>}
+      {isLoading && <h1 className={styles.loading}>Loading...</h1>}
       {Object.keys(data).length > 0 && !apiError && (
         <>
           <div className={styles.word}>
