@@ -81,19 +81,3 @@ pre {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-:root {
-  --bg-body: #eadfb4;
-  --bg-box: #9bb0c1;
-  --bg-change: #ed7d31;
-  --bg-reset: #51829b;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-body: #2d3250;
-    --bg-box: #424769;
-    --bg-change: #f6b17a;
-    --bg-reset: #7077a1;
-  }
-}

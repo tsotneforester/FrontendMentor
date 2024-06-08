@@ -1,5 +1,5 @@
 import styles from "./Main.module.scss";
-import { useContext, useState, useEffect } from "react";
+import { useContext } from "react";
 import { AppContext } from "../Context";
 import Quote from "./Quote";
 import Greeting from "./Greeting";
@@ -9,7 +9,7 @@ import Toggler from "./Toggler";
 import ScaleLoader from "react-spinners/ScaleLoader";
 
 export default function Main() {
-  const { isLoading, timeObject, showMore, setShowMore } = useContext(AppContext);
+  const { isLoading, showMore, error } = useContext(AppContext);
 
   return (
     <div className={showMore ? styles.mainTransformed : styles.main}>
@@ -18,12 +18,14 @@ export default function Main() {
         {isLoading ? (
           <ScaleLoader color="white" height={35} loading margin={2} radius={1} speedMultiplier={2} width={5} />
         ) : (
-          <>
-            <Greeting />
-            <Time />
-            <Location />
-            <Toggler />
-          </>
+          error || (
+            <>
+              <Greeting />
+              <Time />
+              <Location />
+              <Toggler />
+            </>
+          )
         )}
       </article>
     </div>

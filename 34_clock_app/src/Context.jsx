@@ -3,10 +3,10 @@ import axios from "axios";
 const AppContext = React.createContext();
 
 function Context({ children }) {
-  const [isDaytime, setIsDaytime] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [timeObject, setTimeObject] = useState(null);
   const [showMore, setShowMore] = useState(false);
+  const [error, setError] = useState(null);
 
   async function fetchTime() {
     try {
@@ -18,28 +18,29 @@ function Context({ children }) {
       const response2 = await axios(`https://worldtimeapi.org/api/ip/${data1.ip}`);
       const data2 = response2.data;
 
-      let obj = { ...data2, country: data1.country, city: data1.city };
-      console.log(obj);
+      let obj = { ...data2, country: data1.country, city: data1.city, lightTheme: setTheme(data2.datetime) };
+      // console.log(obj);
       setTimeObject(obj);
-
       // Do something with the data from the second response
     } catch (error) {
       // Handle any errors that occur during the fetch operations
       console.error("There was a problem with the fetch operation:", error);
+      setError(error.message);
     } finally {
       setIsLoading((e) => !e);
     }
   }
 
+  function setTheme(dateStr) {
+    let hour = new Date(dateStr).getHours();
+    return hour >= 5 && hour < 18;
+  }
+
   useEffect(() => {
-    setIsDaytime(() => {
-      let hour = new Date().getHours();
-      return hour >= 5 && hour < 18;
-    });
     fetchTime();
   }, []);
 
-  return <AppContext.Provider value={{ isDaytime, setIsDaytime, isLoading, timeObject, showMore, setShowMore }}>{children}</AppContext.Provider>;
+  return <AppContext.Provider value={{ isLoading, error, timeObject, showMore, setShowMore }}>{children}</AppContext.Provider>;
 }
 
 export { Context, AppContext };

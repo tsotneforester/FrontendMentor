@@ -1,5 +1,5 @@
 import styles from "./Time.module.scss";
-import { useContext, useState, useEffect } from "react";
+import { useContext } from "react";
 import { AppContext } from "../Context";
 
 export default function Time() {

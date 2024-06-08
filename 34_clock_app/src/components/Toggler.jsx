@@ -1,10 +1,9 @@
 import styles from "./Toggler.module.scss";
-import { useContext, useState, useEffect } from "react";
+import { useContext } from "react";
 import { AppContext } from "../Context";
 
 export default function Toggler() {
-  const [currentTime, setCurrentTime] = useState(null);
-  const { isLoading, timeObject, showMore, setShowMore } = useContext(AppContext);
+  const { showMore, setShowMore } = useContext(AppContext);
 
   return (
     <div className={styles.button} onClick={() => setShowMore((e) => !e)}>

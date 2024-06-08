@@ -3,13 +3,13 @@ import { useContext, useState, useEffect } from "react";
 import { AppContext } from "../Context";
 
 export default function Greeting() {
-  const { isDaytime } = useContext(AppContext);
+  const { timeObject } = useContext(AppContext);
   const [greetingText, setGreetingText] = useState(null);
 
   useEffect(() => {
     setGreetingText(() => {
       let text = "";
-      let hour = new Date().getHours();
+      let hour = new Date(timeObject?.datetime).getHours();
       if (hour >= 5 && hour < 12) {
         text = "Good morning";
       } else if (hour >= 12 && hour < 18) {
@@ -23,7 +23,7 @@ export default function Greeting() {
 
   return (
     <div className={styles.greeting}>
-      <img src={`./assets/icon-${isDaytime ? "sun" : "moon"}.svg`} />
+      <img src={`./assets/icon-${timeObject?.lightTheme ? "sun" : "moon"}.svg`} />
       <h1>
         {greetingText} <span>, IT’S CURRENTLY</span>
       </h1>

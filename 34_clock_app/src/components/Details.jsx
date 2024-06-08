@@ -1,11 +1,11 @@
 import styles from "./Details.module.scss";
-import { useContext, useState, useEffect } from "react";
+import { useContext } from "react";
 import { AppContext } from "../Context";
 
 export default function Time() {
-  const { isLoading, timeObject, showMore, isDaytime } = useContext(AppContext);
+  const { isLoading, timeObject, showMore } = useContext(AppContext);
 
-  const classNames = [showMore ? styles.active : styles.hidden, isDaytime ? styles.light : styles.dark].join(" ");
+  const classNames = [showMore ? styles.active : styles.hidden, timeObject?.lightTheme ? styles.light : styles.dark].join(" ");
 
   return (
     <div className={classNames}>
