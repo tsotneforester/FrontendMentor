@@ -23,7 +23,7 @@ export default function Greeting() {
 
   return (
     <div className={styles.greeting}>
-      <img src={`./assets/icon-${timeObject?.lightTheme ? "sun" : "moon"}.svg`} />
+      <img src={`./assets/icon-${timeObject?.lightTheme ? "sun" : "moon"}.svg`} alt="sun/moon" />
       <h1>
         {greetingText} <span>, IT’S CURRENTLY</span>
       </h1>

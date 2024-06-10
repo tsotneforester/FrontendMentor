@@ -44,8 +44,10 @@ export default function Quote() {
         src="./assets/icon-refresh.svg"
         onClick={() => {
           setIsLoading(true);
+          setData(null);
           fetchQuote();
         }}
+        alt="refresh"
       />
     </div>
   );
