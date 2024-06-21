@@ -1,0 +1,91 @@
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #141414;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+@media only screen and (min-width: 768px) {
+  body {
+    padding: 40px;
+  }
+}
+
+main {
+  background-color: #1f1f1f;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  gap: 24px;
+  max-width: 340px;
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  main {
+    max-width: 384px;
+    padding: 40px;
+  }
+}
+main img {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  align-self: center;
+}
+main .person {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  gap: 4px;
+}
+main .person h1 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 150%;
+  text-align: center;
+  color: #ffffff;
+}
+main .person p {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 150%;
+  text-align: center;
+  color: #c5f82a;
+}
+main .description {
+  font-size: 14px;
+  line-height: 150%;
+  text-align: center;
+  color: #ffffff;
+}
+main .links {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  gap: 16px;
+}
+main .links a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  gap: 8px;
+  background: #333333;
+  border-radius: 8px;
+  transition: all 0.6s;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 150%;
+  color: #ffffff;
+}
+main .links a:hover {
+  background: #c5f82a;
+  color: #333333;
+}
