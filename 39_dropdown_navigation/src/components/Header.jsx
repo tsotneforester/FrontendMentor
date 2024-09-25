@@ -1,7 +1,9 @@
 import styles from "./Header.module.scss";
 import { useState, useContext, useEffect, useCallback, useMemo, useRef } from "react";
 
-let path = ["feactures", "company", "careers", "about"];
+import DropDown from "./DropDown";
+
+import { menuItemsData } from "../menuItemsData";
 
 export default function Header() {
   const [showMenuModal, setShowMenuModal] = useState(false);
@@ -17,15 +19,17 @@ export default function Header() {
     <div className={styles.header}>
       <img src="/images/logo.svg" alt="" />
       <nav className={showMenuModal ? styles.navbar : styles.navbarHidden}>
-        <div className={styles.routes}>
-          {path.map((e) => {
+        <ul className={styles.menus}>
+          {menuItemsData.map((e) => {
             return (
-              <p onMouseEnter={handler} ref={refContainer}>
-                {e}
-              </p>
+              <li>
+                <p>{e.title}</p>
+                {e.submenu && <img src="/images/icon-arrow-down.svg" alt="" />}
+                {e.submenu && <DropDown items={e.submenu} />}
+              </li>
             );
           })}
-        </div>
+        </ul>
         <div className={styles.user}>
           <p>login</p>
           <p>signup</p>

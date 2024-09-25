@@ -89,11 +89,12 @@ body {
 main {
   width: 100%;
   max-width: 327px;
+  height: 567px;
   border-radius: 20px;
   background-color: white;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
   box-shadow: 0px 40px 40px -20px rgba(13, 48, 189, 0.151826);
   background-image: url("../images/illustration-hero.svg");
@@ -101,13 +102,14 @@ main {
   background-position: 0% 0%;
   background-attachment: scroll;
   background-size: 100% 160px;
-  padding: 170px 24px 24px 24px;
+  padding: 24px 24px 32px 24px;
 }
 @media only screen and (min-width: 480px) {
   main {
     max-width: 450px;
+    height: 697px;
     background-size: 100% 220px;
-    padding: 170px 36px 36px 36px;
+    padding: 48px;
   }
 }
 main h1 {
@@ -120,7 +122,7 @@ main h1 {
 @media only screen and (min-width: 480px) {
   main h1 {
     font-size: 28px;
-    margin: 85px 0 17px 0;
+    margin: 45px 0 17px 0;
   }
 }
 main p {
@@ -137,6 +139,7 @@ main p {
   main p {
     max-width: 354px;
     font-size: 16px;
+    line-height: 26px;
   }
 }
 main .plan {
@@ -208,28 +211,26 @@ main .plan div div span:nth-of-type(2) {
     font-size: 16px;
   }
 }
-main .plan span {
+main .plan a {
   font-size: 13px;
   color: #382ae1;
   font-weight: 700;
   text-align: left;
+  text-decoration: underline;
 }
 @media only screen and (min-width: 480px) {
-  main .plan span {
+  main .plan a {
     font-size: 14px;
   }
 }
-main .plan span a {
-  text-decoration: underline;
-}
-main .plan span a:hover {
+main .plan a a:hover {
   color: #766cf1;
 }
 main button {
   width: 100%;
   border-radius: 11px;
   background-color: #382ae1;
-  padding: 12px;
+  padding: 15px;
   font-size: 15px;
   color: white;
   font-weight: 900;
