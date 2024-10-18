@@ -1,0 +1,120 @@
+:global(#root) {
+  font-family: "DM Sans", sans-serif;
+  background-color: #f8e9dd;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  width: 100%;
+}
+
+.chart {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 12px;
+  margin: 52px 0 24px 0;
+  height: 177px;
+}
+@media only screen and (min-width: 1024px) {
+  .chart {
+    gap: 18px;
+  }
+}
+
+.column {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 11px;
+  width: 33px;
+}
+@media only screen and (min-width: 1024px) {
+  .column {
+    gap: 8px;
+    width: 50px;
+  }
+}
+.column p {
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  color: #93867b;
+}
+@media only screen and (min-width: 1024px) {
+  .column p {
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
+
+.bar {
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  position: relative;
+}
+.bar:hover .tooltip {
+  display: block;
+}
+
+.fill {
+  border-radius: 3px;
+  transition: background-color 0.6s;
+  position: relative;
+  cursor: pointer;
+  background-color: #ec775f;
+}
+@media only screen and (min-width: 1024px) {
+  .fill {
+    border-radius: 5px;
+  }
+}
+.fill:hover {
+  background-color: #ff9680;
+}
+
+.highestFill {
+  border-radius: 3px;
+  transition: background-color 0.6s;
+  position: relative;
+  cursor: pointer;
+  background-color: #76b5bc;
+}
+@media only screen and (min-width: 1024px) {
+  .highestFill {
+    border-radius: 5px;
+  }
+}
+.highestFill:hover {
+  background-color: #a5e1e6;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  top: -30px;
+  z-index: 101;
+  background: #382314;
+  border-radius: 5px;
+  font-weight: 700;
+  padding: 4px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #fffaf5;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media only screen and (min-width: 1024px) {
+  .tooltip {
+    top: -44px;
+    padding: 8px;
+    font-size: 18px;
+    line-height: 23px;
+  }
+}

@@ -14,7 +14,7 @@
     Difficulty -
     <img src="https://img.shields.io/badge/%204%20-advanced-white?labelColor=bf4605" alt="advanced" />
   <br/>
-    <a href="https://devjobs-gpxcript.netlify.app" target="_blank">🖥️ View Demo</a>
+    <a href="https://devjobs-geojsone.netlify.app" target="_blank">🖥️ View Demo</a>
 
 
   </div>

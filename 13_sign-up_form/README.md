@@ -12,7 +12,7 @@
     Difficulty -
     <img src="https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd" alt="newbie" />
   <br/>
-    <a href="https://sign-up-form-gpxcript.netlify.app" target="_blank">🖥️ View Demo</a>
+    <a href="https://sign-up-form-geojsone.netlify.app" target="_blank">🖥️ View Demo</a>
 
 
   </div>
