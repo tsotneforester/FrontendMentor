@@ -1,19 +1,19 @@
-import styles from "./Quote.module.scss";
-import { useState, useEffect } from "react";
+import styles from './Quote.module.scss';
+import { useState, useEffect } from 'react';
 
-import axios from "axios";
-import BeatLoader from "react-spinners/BeatLoader";
+import axios from 'axios';
+import BeatLoader from 'react-spinners/BeatLoader';
 
 export default function Quote() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [data, setData] = useState(null);
+  const [data, setData] = useState('sfsdf');
 
   async function fetchQuote() {
     try {
-      let resp = await axios("https://api.quotable.io/quotes/random");
-      const data = resp;
-      setData(data.data[0]);
+      let { data } = await axios('https://programming-quotesapi.vercel.app/api/random');
+
+      setData(data);
     } catch (error) {
       console.log(error);
       if (error.response) {
@@ -38,7 +38,7 @@ export default function Quote() {
     </div>
   ) : (
     <div className={styles.quote}>
-      <p>“{data?.content || error}”</p>
+      <p>“{data?.quote || error}”</p>
       <h1>{data?.author}</h1>
       <img
         src="./assets/icon-refresh.svg"

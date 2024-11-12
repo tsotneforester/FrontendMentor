@@ -1,6 +1,6 @@
-import styles from "./Wrapper.module.scss";
-import { useContext } from "react";
-import { AppContext } from "../Context";
+import styles from './Wrapper.module.scss';
+import { useContext } from 'react';
+import { AppContext } from '../Context';
 
 export default function Wrapper({ children }) {
   const { timeObject } = useContext(AppContext);

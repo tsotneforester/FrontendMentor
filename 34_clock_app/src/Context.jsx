@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 const AppContext = React.createContext();
 
 function Context({ children }) {
@@ -11,21 +11,24 @@ function Context({ children }) {
   async function fetchTime() {
     try {
       // First API request
-      const response1 = await axios("https://ipinfo.io/?token=8f8e89d5007bc0");
-      const data1 = response1.data;
+      const response1 = await axios('https://ipinfo.io/?token=8f8e89d5007bc0');
+      const { country, city, ip } = response1.data;
 
       // Second API request using data from the first request
-      const response2 = await axios(`https://worldtimeapi.org/api/ip/${data1.ip}`);
-      const data2 = response2.data;
+      const response2 = await axios(`https://worldtimeapi.org/api/ip/${ip}`);
+      const data2 = response2.data || Date.now();
 
-      let obj = { ...data2, country: data1.country, city: data1.city, lightTheme: setTheme(data2.datetime) };
-      // console.log(obj);
+      let obj = { ...data2, country, city, lightTheme: setTheme(data2.datetime) };
+
       setTimeObject(obj);
       // Do something with the data from the second response
     } catch (error) {
       // Handle any errors that occur during the fetch operations
-      console.error("There was a problem with the fetch operation:", error);
+      console.log('There was a problem with the fetch operation:', error);
       setError(error.message);
+      let obj = { lightTheme: setTheme(Date.now()) };
+
+      setTimeObject(obj);
     } finally {
       setIsLoading((e) => !e);
     }
