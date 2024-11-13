@@ -1,27 +1,34 @@
+//  ▄▓█████  ▓▓▓▓▓▓▓▓   ▄▓▓██▄     ▓▓▓▓▓▓   ▄▓█▓█▓▄
+// ███       ▓▓▓      ▐▓▓▓  ▓▓▓     ▀▀▓▓▓  ▓▓▓   ▓▓▓
+// ███  ███  ▓▓▓▓▓▓▓  ▓▓▓   ▐▓▓▌      ▓▓▓   ▓▓▓█▓▓▄
+// ███▄▄███  ▓▓▓      ▐▓▓▄  ▐▓▓▌ ▓▓   ▓▓▓  ▄▄▄   ▓▓▓
+//  ▓▓▓▓▓▓   ▓▓▓▓▓▓▓▓  ▀▓▓██▓▓▀  ▓▓▓▓▓▓█   ▀▓▓█▓▓▓▓▀
+'use strict';
+
 console.log(`192.168.0.100 - to catch error`);
 console.log(`210.138.184.59 - IP from japan `);
 
 let form = document.forms[0];
 let zoomIndex = 10;
-let ip_data = document.querySelector("#ip-data h1");
-let location_data = document.querySelector("#location-data h1");
-let time_data = document.querySelector("#time-data h1");
-let provider_data = document.querySelector("#provider-data h1");
+let ip_data = document.querySelector('#ip-data h1');
+let location_data = document.querySelector('#location-data h1');
+let time_data = document.querySelector('#time-data h1');
+let provider_data = document.querySelector('#provider-data h1');
 
-let osm_street = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  attribution: "&copy; Tsotneforester",
+let osm_street = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; Tsotneforester',
   minZoom: 1,
   maxZoom: 19,
 });
 
 var customIcon = L.icon({
-  iconUrl: "images/icon-location.svg",
+  iconUrl: 'images/icon-location.svg',
   iconSize: [32, 38],
   iconAnchor: [16, 19],
   popupAnchor: [-0, -18],
 });
 
-let map = L.map("mapid", {
+let map = L.map('mapid', {
   renderer: L.canvas(),
   zoomControl: false,
   fullscreenControl: true,
@@ -34,7 +41,7 @@ let map = L.map("mapid", {
 async function ipify(ip) {
   let myIP;
   if (!ip) {
-    const response1 = await fetch("https://ipinfo.io/?token=8f8e89d5007bc0");
+    const response1 = await fetch('https://ipinfo.io/?token=8f8e89d5007bc0');
     const data1 = await response1.json();
 
     myIP = data1.ip;
@@ -57,13 +64,13 @@ async function ipify(ip) {
     time_data.innerHTML = `UTC ${utc_offset.slice(0, 3)}:${utc_offset.slice(3, 7)}`;
     provider_data.innerHTML = org;
   } catch (e) {
-    alert("result not found");
+    alert('result not found');
   }
 }
 
 ipify();
 
-form.addEventListener("submit", function (e) {
+form.addEventListener('submit', function (e) {
   e.preventDefault();
   let userInput = form[0].value;
   const ipAddressRegex = /^(\d{1,3}\.){3}\d{1,3}$/;
@@ -71,6 +78,6 @@ form.addEventListener("submit", function (e) {
   if (ipAddressRegex.test(userInput)) {
     ipify(userInput);
   } else {
-    alert("not valid IP");
+    alert('not valid IP');
   }
 });
