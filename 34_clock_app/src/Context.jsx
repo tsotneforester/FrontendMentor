@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 const AppContext = React.createContext();
+import moment from 'moment';
 
 function Context({ children }) {
   const [isLoading, setIsLoading] = useState(true);
@@ -12,25 +13,35 @@ function Context({ children }) {
     try {
       // First API request
       const response1 = await axios('https://ipinfo.io/?token=8f8e89d5007bc0');
-      const { country, city, ip } = response1.data;
+      const { country, city, ip, timezone } = response1.data;
 
-      // Second API request using data from the first request
-      const response2 = await axios(`https://worldtimeapi.org/api/ip/${ip}`);
-      const data2 = response2.data || Date.now();
+      // Second API request using IP address from the first request
+      const response2 = await axios(`https://api.ipapi.is/?q=${ip}`);
+      const data2 = response2.data;
 
-      let obj = { ...data2, country, city, lightTheme: setTheme(data2.datetime) };
+      let timeString = data2.location.local_time;
+      const dayOfWeek = moment().day();
+      const dayOfYear = moment().dayOfYear();
+      const weekNumber = moment().week();
 
+      let obj = { country, city, timezone, dayOfWeek, dayOfYear, weekNumber, lightTheme: setTheme(timeString), timeString };
       setTimeObject(obj);
       // Do something with the data from the second response
     } catch (error) {
       // Handle any errors that occur during the fetch operations
-      console.log('There was a problem with the fetch operation:', error);
+
       setError(error.message);
-      let obj = { lightTheme: setTheme(Date.now()) };
+
+      let timeString = new Date().toString();
+      const dayOfWeek = moment().day();
+      const dayOfYear = moment().dayOfYear();
+      const weekNumber = moment().week();
+
+      let obj = { lightTheme: setTheme(timeString), timeString, dayOfWeek, dayOfYear, weekNumber };
 
       setTimeObject(obj);
     } finally {
-      setIsLoading((e) => !e);
+      setIsLoading(e => !e);
     }
   }
 

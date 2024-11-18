@@ -1,6 +1,5 @@
 <h1 align="center">QR Code</h1>
 
-
 <div align="center">
   <img src="./design/preview.jpg" alt="qr-code" />
 </div>
@@ -17,7 +16,6 @@
   <br/>
     <a href="https://qr-code-geojsone.netlify.app" target="_blank">🖥️ View Demo</a>
 
-
   </div>
 
 <!-- https://img.shields.io/badge/-HTML-6abecd -->
@@ -28,13 +26,8 @@
 <!-- https://img.shields.io/badge/-Redux-DD5746 -->
 <!-- https://img.shields.io/badge/-Styled-A79277 -->
 
-
-
-
-
 <!-- %201%20-newbie-white?labelColor=6abecd -->
 <!-- %202%20-junior-white?labelColor=aad742 -->
 <!-- %203%20-intermediate-white?labelColor=f1b604 -->
 <!-- %204%20-advanced-white?labelColor=bf4605 -->
 <!-- %205%20-guru-white?labelColor=ed2c49 -->
-

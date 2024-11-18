@@ -1,12 +1,12 @@
-import styles from "./Main.module.scss";
-import { useContext } from "react";
-import { AppContext } from "../Context";
-import Quote from "./Quote";
-import Greeting from "./Greeting";
-import Time from "./Time";
-import Location from "./Location";
-import Toggler from "./Toggler";
-import ScaleLoader from "react-spinners/ScaleLoader";
+import styles from './Main.module.scss';
+import { useContext } from 'react';
+import { AppContext } from '../Context';
+import Quote from './Quote';
+import Greeting from './Greeting';
+import Time from './Time';
+import Location from './Location';
+import Toggler from './Toggler';
+import ScaleLoader from 'react-spinners/ScaleLoader';
 
 export default function Main() {
   const { isLoading, showMore, error } = useContext(AppContext);
@@ -18,14 +18,12 @@ export default function Main() {
         {isLoading ? (
           <ScaleLoader color="white" height={35} loading margin={2} radius={1} speedMultiplier={2} width={5} />
         ) : (
-          error || (
-            <>
-              <Greeting />
-              <Time />
-              <Location />
-              <Toggler />
-            </>
-          )
+          <>
+            <Greeting />
+            <Time />
+            <Location />
+            <Toggler />
+          </>
         )}
       </article>
     </div>

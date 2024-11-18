@@ -1,6 +1,6 @@
-import styles from "./Greeting.module.scss";
-import { useContext, useState, useEffect } from "react";
-import { AppContext } from "../Context";
+import styles from './Greeting.module.scss';
+import { useContext, useState, useEffect } from 'react';
+import { AppContext } from '../Context';
 
 export default function Greeting() {
   const { timeObject } = useContext(AppContext);
@@ -8,14 +8,15 @@ export default function Greeting() {
 
   useEffect(() => {
     setGreetingText(() => {
-      let text = "";
-      let hour = new Date(timeObject?.datetime).getHours();
+      let text = '';
+      let hour = new Date(timeObject?.timeString).getHours();
+      console.log(hour);
       if (hour >= 5 && hour < 12) {
-        text = "Good morning";
+        text = 'Good morning';
       } else if (hour >= 12 && hour < 18) {
-        text = "Good afternoon";
+        text = 'Good afternoon';
       } else {
-        text = "Good evening";
+        text = 'Good evening';
       }
       return text;
     });
@@ -23,7 +24,7 @@ export default function Greeting() {
 
   return (
     <div className={styles.greeting}>
-      <img src={`./assets/icon-${timeObject?.lightTheme ? "sun" : "moon"}.svg`} alt="sun/moon" />
+      <img src={`./assets/icon-${timeObject?.lightTheme ? 'sun' : 'moon'}.svg`} alt="sun/moon" />
       <h1>
         {greetingText} <span>, IT’S CURRENTLY</span>
       </h1>
