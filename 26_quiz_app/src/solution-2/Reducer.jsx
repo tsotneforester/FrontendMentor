@@ -1,5 +1,5 @@
 export const initialState = {
-  status: "loading",
+  status: 'loading',
   data: null,
   titleIndex: null,
   questionIndex: 0,
@@ -12,47 +12,47 @@ export const initialState = {
 };
 
 export function reducer(state = initialState, action) {
-  if (action.type == "dataReceived") {
+  if (action.type == 'dataReceived') {
     return {
       ...state,
-      status: "ready",
+      status: 'ready',
       data: action.payload,
     };
   }
-  if (action.type == "titleSet") {
+  if (action.type == 'titleSet') {
     return {
       ...state,
-      status: "active",
+      status: 'active',
       titleIndex: action.payload,
     };
   }
-  if (action.type == "quizzStart") {
+  if (action.type == 'quizzStart') {
     return {
       ...state,
-      status: "active",
+      status: 'active',
       questions: action.payload,
     };
   }
-  if (action.type == "choiseSelected") {
+  if (action.type == 'choiseSelected') {
     return {
       ...state,
       choise: action.payload,
       showSelectionError: false,
     };
   }
-  if (action.type == "showSelectionError") {
+  if (action.type == 'showSelectionError') {
     return {
       ...state,
       showSelectionError: true,
     };
   }
-  if (action.type == "submit") {
+  if (action.type == 'submit') {
     return {
       ...state,
       submitted: true,
     };
   }
-  if (action.type == "scored") {
+  if (action.type == 'scored') {
     return {
       ...state,
       score: state.score + 1,
@@ -60,13 +60,13 @@ export function reducer(state = initialState, action) {
     };
   }
 
-  if (action.type == "missed") {
+  if (action.type == 'missed') {
     return {
       ...state,
       didNotScore: true,
     };
   }
-  if (action.type == "nextQuestion") {
+  if (action.type == 'nextQuestion') {
     return {
       ...state,
       didScore: false,
@@ -77,10 +77,10 @@ export function reducer(state = initialState, action) {
     };
   }
 
-  if (action.type == "finished") {
+  if (action.type == 'finished') {
     return {
       ...state,
-      status: "finished",
+      status: 'finished',
       didScore: false,
       didNotScore: null,
       choise: null,
