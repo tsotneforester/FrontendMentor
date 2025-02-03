@@ -54,6 +54,10 @@ S.Container = styled.div`
 S.Image = styled.div`
   margin-top: 8px;
 
+  img {
+    width: 100%;
+  }
+
   & img:first-child {
     max-width: 480px;
     @media (min-width: ${({ theme }) => theme.breakpoints.mobile}) {

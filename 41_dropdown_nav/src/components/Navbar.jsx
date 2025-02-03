@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import ArrowDownSVG from '../assets/icon-arrow-down.svg?react';
 import logo from '../assets/logo.svg';
 import MenuSVG from '../assets/icon-menu.svg?react';
@@ -74,6 +74,17 @@ const Navbar = ({ menu }) => {
 
 export default Navbar;
 
+const emerge = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
 // 🔰 Styled Components
 const S = {};
 const NavbarContainer = styled.nav`
@@ -146,13 +157,12 @@ const LinkItem = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.mobile}) {
     position: relative;
     overflow: unset;
-
     text-decoration: none;
     padding: 14px 18px;
     font-size: 1rem;
 
     &:hover ${() => Submenu} {
-      display: block;
+      animation: ${emerge} 0.3s ease-out forwards;
     }
     &:hover ${() => ArrowDownIcon} {
       transform: rotate(180deg);
@@ -185,10 +195,9 @@ const Submenu = styled.div`
     margin-top: 130px;
     left: 0;
     text-decoration: none;
-    display: none;
+    opacity: 0;
     font-size: 1rem;
     margin: 0;
-
     background: ${({ theme }) => theme.colors.white1};
     box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.149126);
     border-radius: 10px;
