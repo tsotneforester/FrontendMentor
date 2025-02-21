@@ -1,12 +1,38 @@
 import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import Error from './Error';
 import Tilt from 'react-parallax-tilt';
+import Paginator from './Paginator';
+import { formatPopulation } from '../functions';
 
-export default function CountryList({ data, loading, error }) {
+export default function CountryList({
+  data,
+  activePage,
+  loading,
+  handler,
+  error,
+}) {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const currentRegion = searchParams.get('region');
+
+  let itemsPerPage = 12;
+
+  function getPaginatedData(dataArray, currentPage, itemsPerPage) {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    return dataArray.slice(startIndex, endIndex);
+  }
+
+  const generateCountryLink = (countryName) => {
+    const baseUrl = `/${countryName}`;
+    if (currentRegion) {
+      return `${baseUrl}?region=${currentRegion}`;
+    }
+    return baseUrl;
+  };
 
   if (error) {
     return <Error data={error} />;
@@ -16,75 +42,115 @@ export default function CountryList({ data, loading, error }) {
     return <Error data={{ name: 'empty', message: 'no such country' }} />;
   }
 
-  return (
-    <S.Container>
-      {data.map((country, i) => {
-        const { name, region, population, flags, capital = '' } = country;
-
-        return (
-          <Tilt key={i}>
-            <S.Card
-              onClick={() => {
-                navigate(`/${name.official}`);
-              }}
-            >
+  if (loading) {
+    return (
+      <S.Container>
+        {Array.from({ length: 12 }, (_, i) => {
+          return (
+            <S.Card key={i}>
               <S.Flag>
-                {loading ? (
-                  <Skeleton
-                    style={{ display: 'block' }}
-                    width={'100%'}
-                    height={'100%'}
-                  />
-                ) : (
-                  <img src={flags.png} alt="flag" />
-                )}
+                <Skeleton
+                  style={{ display: 'block' }}
+                  width={'100%'}
+                  height={'100%'}
+                />
               </S.Flag>
               <S.Info>
-                <h1>
-                  {loading ? <Skeleton width={170} height={22} /> : name.common}
-                </h1>
+                <Skeleton width={170} height={22} />
                 <S.Details>
-                  {loading ? (
-                    <Skeleton width={140} height={16} />
-                  ) : (
-                    <p>
-                      <span>Population: </span>
-                      {population}
-                    </p>
-                  )}
-                  {loading ? (
-                    <Skeleton width={90} height={16} />
-                  ) : (
-                    <p>
-                      <span>Region: </span>
-                      {region}
-                    </p>
-                  )}
-                  {loading ? (
-                    <Skeleton width={100} height={16} />
-                  ) : (
-                    <p>
-                      <span>Capital: </span>
-                      {capital[0]}
-                    </p>
-                  )}
+                  <Skeleton width={140} height={16} />
+                  <Skeleton width={90} height={16} />
+                  <Skeleton width={100} height={16} />
                 </S.Details>
               </S.Info>
             </S.Card>
-          </Tilt>
-        );
-      })}
-    </S.Container>
+          );
+        })}
+      </S.Container>
+    );
+  }
+
+  return (
+    <>
+      <S.Container>
+        {getPaginatedData(data, activePage, itemsPerPage).map((country, i) => {
+          const { name, region, population, flags, capital = '' } = country;
+
+          return (
+            <Tilt key={i}>
+              <S.Card
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    navigate(`${generateCountryLink(name.official)}`);
+                  }
+                }}
+                onClick={() => {
+                  navigate(`${generateCountryLink(name.official)}`);
+                }}
+              >
+                <S.Flag>
+                  {loading ? (
+                    <Skeleton
+                      style={{ display: 'block' }}
+                      width={'100%'}
+                      height={'100%'}
+                    />
+                  ) : (
+                    <img src={flags.png} alt={name.common} />
+                  )}
+                </S.Flag>
+                <S.Info>
+                  {loading ? (
+                    <Skeleton width={170} height={22} />
+                  ) : (
+                    <h2>{name.common}</h2>
+                  )}
+
+                  <S.Details>
+                    {loading ? (
+                      <Skeleton width={140} height={16} />
+                    ) : (
+                      <p>
+                        <span>Population: </span>
+                        {formatPopulation(population)}
+                      </p>
+                    )}
+                    {loading ? (
+                      <Skeleton width={90} height={16} />
+                    ) : (
+                      <p>
+                        <span>Region: </span>
+                        {region}
+                      </p>
+                    )}
+                    {loading ? (
+                      <Skeleton width={100} height={16} />
+                    ) : (
+                      <p>
+                        <span>Capital: </span>
+                        {capital[0]}
+                      </p>
+                    )}
+                  </S.Details>
+                </S.Info>
+              </S.Card>
+            </Tilt>
+          );
+        })}
+      </S.Container>
+      <Paginator
+        limit={itemsPerPage} //12
+        data={data} //[...]
+        activePage={activePage} // const [activePage, setActivePage] = useState(1);
+        handler={handler}
+      />
+    </>
   );
 }
 
 const S = {};
-S.Nodata = styled.div`
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-`;
+
 S.Container = styled.div`
   display: flex;
   flex-flow: column nowrap;
@@ -104,19 +170,29 @@ S.Container = styled.div`
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 74px;
   }
+
+  h2 {
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 26px;
+  }
 `;
 S.Card = styled.div`
   width: 264px;
   background-color: ${({ theme }) => theme.navBg};
-
+  transition: ${({ theme }) => theme.trans};
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
   cursor: pointer;
-
   box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.0294384);
-  border-radius: 5px 5px 0px 0px;
+  border-radius: 5px;
+  overflow: hidden;
+
+  &:focus {
+    box-shadow: 0px 0px 7px 2px ${({ theme }) => theme.focus.card};
+  }
 `;
 S.Flag = styled.div`
   width: 100%;

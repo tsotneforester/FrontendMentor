@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import useNeighbours from '../hooks/useNeighbours';
@@ -7,6 +7,17 @@ import useNeighbours from '../hooks/useNeighbours';
 export default function NeighbourList({ countryName }) {
   const navigate = useNavigate();
   const { neighbours, loading } = useNeighbours(countryName);
+
+  const [searchParams] = useSearchParams();
+  const currentRegion = searchParams.get('region');
+
+  const generateCountryLink = (countryName) => {
+    const baseUrl = `/${countryName}`;
+    if (currentRegion) {
+      return `${baseUrl}?region=${currentRegion}`;
+    }
+    return baseUrl;
+  };
 
   return (
     <S.Container>
@@ -22,10 +33,16 @@ export default function NeighbourList({ countryName }) {
               const { name } = e;
               return (
                 <S.Button
-                  onClick={() => {
-                    navigate(`/${name.official}`);
-                  }}
                   key={i}
+                  tabIndex={0}
+                  onClick={() => {
+                    navigate(`${generateCountryLink(name.official)}`);
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      navigate(`${generateCountryLink(name.official)}`);
+                    }
+                  }}
                 >
                   {name.common}
                 </S.Button>
@@ -43,6 +60,7 @@ S.Container = styled.div`
   align-items: flex-start;
   gap: 16px;
   margin-top: 32px;
+  user-select: none;
   @media (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
     grid-area: neighbours;
     margin-top: 48px;
@@ -64,7 +82,7 @@ S.Button = styled.div`
   box-shadow: 0px 0px 4px 1px rgba(17, 21, 23, 0.252406);
   border-radius: 2px;
   background-color: ${({ theme }) => theme.navBg};
-
+  transition: ${({ theme }) => theme.trans};
   border-radius: 5px;
   display: flex;
   flex-flow: row nowrap;
@@ -75,7 +93,13 @@ S.Button = styled.div`
   font-weight: 300;
   font-size: 12px;
   line-height: 16px;
-
+  cursor: pointer;
+  &:focus {
+    box-shadow: 0px 0px 7px 2px ${({ theme }) => theme.focus.card};
+  }
   @media (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
+    font-size: 14px;
+    line-height: 19px;
+    padding: 6px 20px;
   }
 `;

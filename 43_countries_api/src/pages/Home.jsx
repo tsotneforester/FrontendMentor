@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import SearchBar from '../components/SearchBar';
 import CountryList from '../components/CountryList';
@@ -7,11 +7,12 @@ import RegionList from '../components/RegionList';
 import useCountries from '../hooks/useCountries'; // Import custom hook
 
 import 'react-loading-skeleton/dist/skeleton.css';
+import Paginator from '../components/Paginator';
 
 export default function Home() {
   const { countries, loading, error } = useCountries();
   const [searchParams] = useSearchParams();
-
+  const [activePage, setActivePage] = useState(1);
   const selectedCountry = searchParams.get('country')?.toLowerCase() || '';
   const selectedRegion = searchParams.get('region') || '';
 
@@ -29,7 +30,13 @@ export default function Home() {
         <SearchBar />
         <RegionList data={countries} />
       </S.Filters>
-      <CountryList data={filteredCountries} loading={loading} error={error} />
+      <CountryList
+        data={filteredCountries} //[...]
+        activePage={activePage} // const [activePage, setActivePage] = useState(1);
+        loading={loading}
+        error={error}
+        handler={setActivePage}
+      />
     </S.Container>
   );
 }

@@ -1,10 +1,11 @@
 import styled from 'styled-components';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import ThemeToggler from './ThemeToggler';
 import { SkeletonTheme } from 'react-loading-skeleton';
 import { useTheme } from 'styled-components';
 
 export default function SharedLayout() {
+  const navigate = useNavigate();
   const theme = useTheme();
   return (
     <SkeletonTheme
@@ -13,10 +14,16 @@ export default function SharedLayout() {
     >
       <S.Container>
         <S.Navbar>
-          <nav>
-            <h1>Where in the world?</h1>
+          <div>
+            <h1
+              onClick={() => {
+                navigate('/');
+              }}
+            >
+              Where in the world?
+            </h1>
             <ThemeToggler />
-          </nav>
+          </div>
         </S.Navbar>
         <main>
           <Outlet />
@@ -54,17 +61,17 @@ S.Container = styled.div`
   }
 `;
 
-S.Navbar = styled.div`
+S.Navbar = styled.header`
   width: 100%;
   background-color: ${({ theme }) => theme.navBg};
-
+  transition: ${({ theme }) => theme.trans};
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
 
-  nav {
+  & > div {
     max-width: ${maxWidth.mobile};
 
     width: 100%;
@@ -86,7 +93,7 @@ S.Navbar = styled.div`
       font-weight: 800;
       font-size: 14px;
       line-height: 20px;
-
+      cursor: pointer;
       @media (min-width: ${({ theme }) => theme.breakpoints.mobile}) {
         font-size: 24px;
         line-height: 33px;

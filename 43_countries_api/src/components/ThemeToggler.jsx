@@ -28,7 +28,8 @@ export default function ThemeToggler() {
 
 const S = {};
 
-S.Contianer = styled.div`
+S.Contianer = styled.button`
+  background-color: transparent;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -36,7 +37,8 @@ S.Contianer = styled.div`
   gap: 8px;
   cursor: pointer;
 
-  p {
+  & p {
+    color: ${({ theme }) => theme.text};
     font-weight: 600;
     font-size: 12px;
     line-height: 16px;
@@ -56,6 +58,7 @@ const MoonIcon = styled(MoonSVG)`
 `;
 
 const SunIcon = styled(SunSVG)`
+  color: ${({ theme }) => theme.text};
   width: 16px;
   @media (min-width: ${({ theme }) => theme.breakpoints.mobile}) {
     width: 20px;

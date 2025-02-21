@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export default function useCountry(country) {
   const [countryData, setCountryData] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [hasNeighbours, setHasNeighbours] = useState(false);
 
@@ -14,7 +14,7 @@ export default function useCountry(country) {
         `https://restcountries.com/v3.1/name/${cnt}?fullText=true`
       );
       let { data } = response;
-      setCountryData(data);
+      setCountryData(data[0]);
       if (data[0].borders) {
         setHasNeighbours(true);
       }
@@ -27,9 +27,7 @@ export default function useCountry(country) {
         setError({ name: 'server', message: error.request.data?.message });
       }
     } finally {
-      setTimeout(() => {
-        setLoading((e) => !e);
-      }, 700);
+      setLoading(false);
     }
   }
 

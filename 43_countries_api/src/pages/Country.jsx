@@ -1,21 +1,61 @@
 import styled, { css } from 'styled-components';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import BackSVG from '../assets/back.svg?react';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import Error from '../components/Error';
 import NeighbourList from '../components/NeighbourList';
 import useCountry from '../hooks/useCountry';
+import { useEffect } from 'react';
+import { formatPopulation } from '../functions';
 
 export default function Country() {
   let { country } = useParams();
   const { countryData, loading, error, hasNeighbours } = useCountry(country);
+  const [searchParams] = useSearchParams();
+  const selectedRegion = searchParams.get('region') || '';
   const navigate = useNavigate();
+
+  const {
+    name,
+    region,
+    population,
+    flags,
+    subregion = '',
+    languages = '',
+    tld = '',
+    capital = '',
+    currencies,
+  } = countryData;
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Backspace') {
+        navigate({
+          pathname: '/',
+          search: selectedRegion ? `?region=${selectedRegion}` : '',
+        });
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [navigate]);
 
   if (error) {
     return (
       <S.Container>
-        <S.Link onClick={() => navigate('/')}>
+        <S.Link
+          onClick={() => {
+            navigate({
+              pathname: '/',
+              search: selectedRegion ? `?region=${selectedRegion}` : '',
+            });
+          }}
+        >
           <BackIcon />
           <h1>Back</h1>
         </S.Link>
@@ -26,113 +66,113 @@ export default function Country() {
 
   return (
     <S.Container>
-      <S.Link onClick={() => navigate('/')}>
+      <S.Link
+        onClick={() => {
+          navigate({
+            pathname: '/',
+            search: selectedRegion ? `?region=${selectedRegion}` : '',
+          });
+        }}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            navigate({
+              pathname: '/',
+              search: selectedRegion ? `?region=${selectedRegion}` : '',
+            });
+          }
+        }}
+      >
         <BackIcon />
         <h1>Back</h1>
       </S.Link>
-      {countryData.map((e, i) => {
-        const {
-          name,
-          region,
-          population,
-          flags,
-          subregion = '',
-          languages = '',
-          tld = '',
-          capital = '',
-          currencies,
-        } = e;
-        return (
-          <S.Card key={i}>
-            <S.Flag>
-              {loading ? (
-                <Skeleton width={'100%'} height={'100%'} />
-              ) : (
-                <img src={flags.png} alt="flag" />
-              )}
-            </S.Flag>
+      <S.Card>
+        <S.Flag>
+          {loading ? (
+            <Skeleton width={'100%'} height={'100%'} />
+          ) : (
+            <img src={flags.png} alt="flag" />
+          )}
+        </S.Flag>
 
-            <S.CountryName>
-              {loading ? <Skeleton width={170} height={30} /> : name.common}
-            </S.CountryName>
+        <S.CountryName>
+          {loading ? <Skeleton width={170} height={30} /> : name.common}
+        </S.CountryName>
 
-            <S.Info1>
-              {loading ? (
-                <Skeleton width={130} height={20} />
-              ) : (
-                <p>
-                  <span>Native Name: </span>
-                  {name.nativeName && Object.values(name.nativeName)[0]?.common}
-                </p>
-              )}
+        <S.Info1>
+          {loading ? (
+            <Skeleton width={130} height={20} />
+          ) : (
+            <p>
+              <span>Native Name: </span>
+              {name.nativeName && Object.values(name.nativeName)[0]?.common}
+            </p>
+          )}
 
-              {loading ? (
-                <Skeleton width={150} height={20} />
-              ) : (
-                <p>
-                  <span>Population: </span>
-                  {population}
-                </p>
-              )}
+          {loading ? (
+            <Skeleton width={150} height={20} />
+          ) : (
+            <p>
+              <span>Population: </span>
+              {formatPopulation(population)}
+            </p>
+          )}
 
-              {loading ? (
-                <Skeleton width={90} height={20} />
-              ) : (
-                <p>
-                  <span>Region: </span>
-                  {region}
-                </p>
-              )}
-              {loading ? (
-                <Skeleton width={150} height={20} />
-              ) : (
-                <p>
-                  <span>Sub Region: </span>
-                  {subregion}
-                </p>
-              )}
+          {loading ? (
+            <Skeleton width={90} height={20} />
+          ) : (
+            <p>
+              <span>Region: </span>
+              {region}
+            </p>
+          )}
+          {loading ? (
+            <Skeleton width={150} height={20} />
+          ) : (
+            <p>
+              <span>Sub Region: </span>
+              {subregion}
+            </p>
+          )}
 
-              {loading ? (
-                <Skeleton width={70} height={20} />
-              ) : (
-                <p>
-                  <span>Capital: </span>
-                  {capital[0]}
-                </p>
-              )}
-            </S.Info1>
-            <S.Info2>
-              {loading ? (
-                <Skeleton width={130} height={20} />
-              ) : (
-                <p>
-                  <span>Top Level Domain: </span>
-                  {tld[0]}
-                </p>
-              )}
+          {loading ? (
+            <Skeleton width={70} height={20} />
+          ) : (
+            <p>
+              <span>Capital: </span>
+              {capital[0]}
+            </p>
+          )}
+        </S.Info1>
+        <S.Info2>
+          {loading ? (
+            <Skeleton width={130} height={20} />
+          ) : (
+            <p>
+              <span>Top Level Domain: </span>
+              {tld[0]}
+            </p>
+          )}
 
-              {loading ? (
-                <Skeleton width={90} height={20} />
-              ) : (
-                <p>
-                  <span>Currencies: </span>
-                  {currencies && Object.keys(currencies).join(', ')}
-                </p>
-              )}
+          {loading ? (
+            <Skeleton width={90} height={20} />
+          ) : (
+            <p>
+              <span>Currencies: </span>
+              {currencies && Object.keys(currencies).join(', ')}
+            </p>
+          )}
 
-              {loading ? (
-                <Skeleton width={100} height={20} />
-              ) : (
-                <p>
-                  <span>Languages: </span>
-                  {languages && Object.values(languages).join(', ')}
-                </p>
-              )}
-            </S.Info2>
-            {hasNeighbours && <NeighbourList countryName={countryData[0]} />}
-          </S.Card>
-        );
-      })}
+          {loading ? (
+            <Skeleton width={100} height={20} />
+          ) : (
+            <p>
+              <span>Languages: </span>
+              {languages && Object.values(languages).join(', ')}
+            </p>
+          )}
+        </S.Info2>
+        {hasNeighbours && <NeighbourList countryName={countryData} />}
+      </S.Card>
     </S.Container>
   );
 }
@@ -182,7 +222,7 @@ S.Container = styled.div`
 S.Flag = styled.div`
   width: 100%;
   height: 194px;
-
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
   @media (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
     grid-area: flag;
   }
@@ -244,6 +284,7 @@ S.Neighbours = styled.div``;
 S.Link = styled.div`
   align-self: flex-start;
   background-color: ${({ theme }) => theme.navBg};
+  transition: ${({ theme }) => theme.trans};
   box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
   border-radius: 5px;
   display: flex;
@@ -254,6 +295,11 @@ S.Link = styled.div`
   width: fit-content;
   gap: 8px;
   cursor: pointer;
+
+  &:focus {
+    box-shadow: 0px 0px 7px 2px ${({ theme }) => theme.focus.card};
+  }
+
   @media (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
     padding: 10px 39px;
   }

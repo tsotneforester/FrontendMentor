@@ -10,6 +10,7 @@ const colors = {
 };
 
 const baseTheme = {
+  trans: '0.3s cubic-bezier(0.4, 0, 0.2, 1)',
   maxWidth: '400px',
   breakpoints: {
     mobile: '628px',
@@ -26,6 +27,7 @@ export const lightTheme = {
   navBg: colors.white,
   search: { icon: colors.gray3, text: colors.gray3 },
   skeleton: { base: '#ebebeb', highlight: '#f5f5f5' },
+  focus: { card: '#5d575782' },
 };
 
 // Dark theme
@@ -36,4 +38,5 @@ export const darkTheme = {
   navBg: colors.blue1,
   search: { icon: colors.gray3, text: colors.gray3 },
   skeleton: { base: '#495a66  ', highlight: '#3a4953' },
+  focus: { card: '#dad6d682' },
 };

@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export default function useNeighbours(country) {
   const [neighbours, setNeighbours] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
   async function fetchNeighbours(cnt) {
@@ -24,9 +24,7 @@ export default function useNeighbours(country) {
         setError({ name: 'server', message: error.request.data?.message });
       }
     } finally {
-      setTimeout(() => {
-        setLoading(false);
-      }, 700);
+      setLoading(false);
     }
   }
   useEffect(() => {

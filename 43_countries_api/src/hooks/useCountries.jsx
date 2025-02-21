@@ -3,13 +3,18 @@ import axios from 'axios';
 
 export default function useCountries() {
   const [countries, setCountries] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
   async function fetchCountries() {
     setLoading(true);
     try {
       const { data } = await axios.get('https://restcountries.com/v3.1/all');
+
+      data.sort((a, b) => {
+        return b.population - a.population;
+      });
+
       setCountries(data);
     } catch (error) {
       if (error.response) {
@@ -20,9 +25,7 @@ export default function useCountries() {
         setError({ name: 'server', message: error.request.data?.message });
       }
     } finally {
-      setTimeout(() => {
-        setLoading(false);
-      }, 1000);
+      setLoading(false);
     }
   }
 

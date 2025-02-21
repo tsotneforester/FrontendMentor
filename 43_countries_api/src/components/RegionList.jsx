@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { useSearchParams } from 'react-router-dom';
 import ArrowSVG from '../assets/arrow.svg?react';
 import { useState } from 'react';
@@ -13,16 +13,26 @@ export default function RegionList({ data }) {
   return (
     <S.Container>
       <S.Toggler
+        tabIndex={0}
         onClick={() => {
           setModalVisible((pre) => !pre);
         }}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            setModalVisible((pre) => !pre);
+          }
+        }}
+        // onBlur={() => {
+        //   setModalVisible(false);
+        // }}
       >
-        <h1> {selectedRegion || 'Filter By Region'}</h1>
+        <h3> {selectedRegion || 'Filter By Region'}</h3>
         <ArrowIcon />
       </S.Toggler>
 
       {modalVisible && (
         <S.Modal
+          $isVisible={modalVisible}
           onClick={() => {
             setModalVisible(false);
           }}
@@ -30,6 +40,7 @@ export default function RegionList({ data }) {
           {regions.map((region) => (
             <S.RegionItem
               key={region}
+              tabIndex={0}
               $active={selectedRegion == region}
               onClick={() => {
                 if (region == selectedRegion) {
@@ -43,6 +54,21 @@ export default function RegionList({ data }) {
                   });
                 }
               }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  if (region == selectedRegion) {
+                    let tempObject = { ...Object.fromEntries(searchParams) };
+                    delete tempObject.region;
+                    setSearchParams(tempObject);
+                  } else {
+                    setSearchParams({
+                      ...Object.fromEntries(searchParams),
+                      region,
+                    });
+                  }
+                  setModalVisible(false);
+                }
+              }}
             >
               {region}
             </S.RegionItem>
@@ -54,8 +80,18 @@ export default function RegionList({ data }) {
 }
 const S = {};
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
 S.Toggler = styled.div`
   background-color: ${({ theme }) => theme.navBg};
+  transition: ${({ theme }) => theme.trans};
   box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
   border-radius: 5px;
   display: flex;
@@ -65,10 +101,13 @@ S.Toggler = styled.div`
   padding: 14px 24px;
   width: fit-content;
   gap: 72px;
+  &:focus {
+    box-shadow: 0px 0px 7px 2px ${({ theme }) => theme.focus.card};
+  }
   @media (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
     padding: 18px 24px;
   }
-  h1 {
+  h3 {
     font-weight: 400;
     font-size: 12px;
     line-height: 20px;
@@ -84,13 +123,18 @@ S.Container = styled.div`
 `;
 
 S.Modal = styled.div`
+  user-select: none;
+  z-index: 1000;
   position: absolute;
   top: 54px;
   left: 0px;
   width: 100%;
   padding: 14px 24px;
   background-color: ${({ theme }) => theme.navBg};
+  transition: ${({ theme }) => theme.trans};
   box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+
+  animation: ${fadeIn} 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 5px;
   display: flex;
   flex-flow: column nowrap;
@@ -108,6 +152,9 @@ S.RegionItem = styled.p`
   line-height: 20px;
   text-align: left;
   cursor: pointer;
+  &:focus {
+    box-shadow: 0px 0px 7px 2px ${({ theme }) => theme.focus.card};
+  }
   @media (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
     font-size: ${({ $active }) => ($active ? 16 : 14)}px;
   }

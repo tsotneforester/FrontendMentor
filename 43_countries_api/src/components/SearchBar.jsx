@@ -11,6 +11,7 @@ export default function SearchBar() {
     <S.Container>
       <SearchIcon />
       <input
+        autoFocus
         type="text"
         value={selectedCountry}
         onChange={(e) => {
@@ -35,6 +36,7 @@ export default function SearchBar() {
 const S = {};
 S.Container = styled.div`
   background-color: ${({ theme }) => theme.navBg};
+  transition: ${({ theme }) => theme.trans};
   box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
   border-radius: 5px;
   display: flex;
