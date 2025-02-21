@@ -6,12 +6,12 @@ import { defaultBox } from '../styles/styles';
 
 export default function StatBoxes() {
   const { state } = useContext(AppContext);
-  const { sentences, words, chars } = state;
+  const { sentences, words, chars, excludeSpaces } = state;
   return (
     <S.Container>
       <S.Chars>
         <h1>{formatSeconds(chars)}</h1>
-        <p>Total Characters</p>
+        <p>Total Characters {excludeSpaces && '(no space)'}</p>
       </S.Chars>
       <S.Words>
         <h1>{formatSeconds(words)}</h1>

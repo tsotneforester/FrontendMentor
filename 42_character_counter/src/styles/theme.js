@@ -5,9 +5,7 @@ const baseTheme = {
   orangeBox: '#FF9F00;',
   brownBox: '#FE8159;',
   breakpoints: {
-    mobile: '480px',
-    tablet: '768px',
-    laptop: '1024px',
+    tablet: '668px',
     desktop: '1280px',
   },
   textareaFocusBorder: '#c27cf8',

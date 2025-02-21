@@ -7,6 +7,14 @@ export const defaultBox = css`
   background-repeat: no-repeat;
   background-position: right -50px top -10px;
 
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    background-position: right -65px top 1px;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    background-position: right -31px top 1px;
+  }
+
   h1 {
     font-weight: 700;
     font-size: 40px;

@@ -82,7 +82,10 @@ export default function Settings() {
         </S.Group2>
       </S.Checkboxes>
 
-      <p>Approx. reading time: {readingTime} minute</p>
+      <p>
+        Approx. reading time: &lt;
+        {readingTime} minute
+      </p>
     </S.Container>
   );
 }
