@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useState } from 'react';
+
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import Error from './Error';
@@ -7,16 +9,14 @@ import Tilt from 'react-parallax-tilt';
 import Paginator from './Paginator';
 import { formatPopulation } from '../functions';
 
-export default function CountryList({
-  data,
-  activePage,
-  loading,
-  handler,
-  error,
-}) {
+export default function CountryList({ loading, data, error }) {
+  const [activePage, setActivePage] = useState(1);
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const currentRegion = searchParams.get('region');
+
+  const selectedCountry = searchParams.get('country')?.toLowerCase() || '';
+  const selectedRegion = searchParams.get('region') || '';
 
   let itemsPerPage = 12;
 
@@ -70,80 +70,95 @@ export default function CountryList({
     );
   }
 
+  const filteredCountries = data.filter(
+    (country) =>
+      country.name.common.toLowerCase().includes(selectedCountry) &&
+      country.region.includes(selectedRegion)
+  );
+
   return (
     <>
       <S.Container>
-        {getPaginatedData(data, activePage, itemsPerPage).map((country, i) => {
-          const { name, region, population, flags, capital = '' } = country;
+        {getPaginatedData(filteredCountries, activePage, itemsPerPage).map(
+          (country, i) => {
+            const {
+              name,
+              cca3,
+              region,
+              population,
+              flags,
+              capital = '',
+            } = country;
 
-          return (
-            <Tilt key={i}>
-              <S.Card
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    navigate(`${generateCountryLink(name.official)}`);
-                  }
-                }}
-                onClick={() => {
-                  navigate(`${generateCountryLink(name.official)}`);
-                }}
-              >
-                <S.Flag>
-                  {loading ? (
-                    <Skeleton
-                      style={{ display: 'block' }}
-                      width={'100%'}
-                      height={'100%'}
-                    />
-                  ) : (
-                    <img src={flags.png} alt={name.common} />
-                  )}
-                </S.Flag>
-                <S.Info>
-                  {loading ? (
-                    <Skeleton width={170} height={22} />
-                  ) : (
-                    <h2>{name.common}</h2>
-                  )}
+            return (
+              <Tilt key={i}>
+                <S.Card
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      navigate(`${generateCountryLink(cca3)}`);
+                    }
+                  }}
+                  onClick={() => {
+                    navigate(`${generateCountryLink(cca3)}`);
+                  }}
+                >
+                  <S.Flag>
+                    {loading ? (
+                      <Skeleton
+                        style={{ display: 'block' }}
+                        width={'100%'}
+                        height={'100%'}
+                      />
+                    ) : (
+                      <img src={flags.png} alt={name.common} />
+                    )}
+                  </S.Flag>
+                  <S.Info>
+                    {loading ? (
+                      <Skeleton width={170} height={22} />
+                    ) : (
+                      <h2>{name.common}</h2>
+                    )}
 
-                  <S.Details>
-                    {loading ? (
-                      <Skeleton width={140} height={16} />
-                    ) : (
-                      <p>
-                        <span>Population: </span>
-                        {formatPopulation(population)}
-                      </p>
-                    )}
-                    {loading ? (
-                      <Skeleton width={90} height={16} />
-                    ) : (
-                      <p>
-                        <span>Region: </span>
-                        {region}
-                      </p>
-                    )}
-                    {loading ? (
-                      <Skeleton width={100} height={16} />
-                    ) : (
-                      <p>
-                        <span>Capital: </span>
-                        {capital[0]}
-                      </p>
-                    )}
-                  </S.Details>
-                </S.Info>
-              </S.Card>
-            </Tilt>
-          );
-        })}
+                    <S.Details>
+                      {loading ? (
+                        <Skeleton width={140} height={16} />
+                      ) : (
+                        <p>
+                          <span>Population: </span>
+                          {formatPopulation(population)}
+                        </p>
+                      )}
+                      {loading ? (
+                        <Skeleton width={90} height={16} />
+                      ) : (
+                        <p>
+                          <span>Region: </span>
+                          {region}
+                        </p>
+                      )}
+                      {loading ? (
+                        <Skeleton width={100} height={16} />
+                      ) : (
+                        <p>
+                          <span>Capital: </span>
+                          {capital[0]}
+                        </p>
+                      )}
+                    </S.Details>
+                  </S.Info>
+                </S.Card>
+              </Tilt>
+            );
+          }
+        )}
       </S.Container>
       <Paginator
         limit={itemsPerPage} //12
-        data={data} //[...]
+        data={filteredCountries} //[...]
         activePage={activePage} // const [activePage, setActivePage] = useState(1);
-        handler={handler}
+        handler={setActivePage}
       />
     </>
   );

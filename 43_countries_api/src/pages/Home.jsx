@@ -1,28 +1,28 @@
 import styled from 'styled-components';
-import { useMemo, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
 import SearchBar from '../components/SearchBar';
 import CountryList from '../components/CountryList';
 import RegionList from '../components/RegionList';
-import useCountries from '../hooks/useCountries'; // Import custom hook
-
-import 'react-loading-skeleton/dist/skeleton.css';
-import Paginator from '../components/Paginator';
+import axios from 'axios';
+import { useQuery } from '@tanstack/react-query';
 
 export default function Home() {
-  const { countries, loading, error } = useCountries();
-  const [searchParams] = useSearchParams();
-  const [activePage, setActivePage] = useState(1);
-  const selectedCountry = searchParams.get('country')?.toLowerCase() || '';
-  const selectedRegion = searchParams.get('region') || '';
+  const fetchCountries = async () => {
+    const { data } = await axios.get('https://restcountries.com/v3.1/all');
 
-  const filteredCountries = useMemo(() => {
-    return countries.filter(
-      (country) =>
-        country.name.common.toLowerCase().includes(selectedCountry) &&
-        country.region.includes(selectedRegion)
-    );
-  }, [countries, selectedCountry, selectedRegion]);
+    data.sort((a, b) => {
+      return b.population - a.population;
+    });
+    return data;
+  };
+
+  const {
+    data: countries,
+    error,
+    isLoading,
+  } = useQuery({
+    queryKey: ['countries'],
+    queryFn: fetchCountries,
+  });
 
   return (
     <S.Container>
@@ -30,13 +30,7 @@ export default function Home() {
         <SearchBar />
         <RegionList data={countries} />
       </S.Filters>
-      <CountryList
-        data={filteredCountries} //[...]
-        activePage={activePage} // const [activePage, setActivePage] = useState(1);
-        loading={loading}
-        error={error}
-        handler={setActivePage}
-      />
+      <CountryList data={countries} loading={isLoading} error={error} />
     </S.Container>
   );
 }

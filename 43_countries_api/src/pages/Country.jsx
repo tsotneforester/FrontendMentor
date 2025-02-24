@@ -4,29 +4,36 @@ import BackSVG from '../assets/back.svg?react';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import Error from '../components/Error';
-import NeighbourList from '../components/NeighbourList';
-import useCountry from '../hooks/useCountry';
-import { useEffect } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import { formatPopulation } from '../functions';
+import axios from 'axios';
+
+import NeighbourList from '../components/NeighbourList';
+import { useEffect } from 'react';
 
 export default function Country() {
-  let { country } = useParams();
-  const { countryData, loading, error, hasNeighbours } = useCountry(country);
+  let { country: code } = useParams();
+
+  const fetchCountryDetails = async (countryCode) => {
+    const response = await axios.get(
+      `https://restcountries.com/v3.1/alpha/${countryCode}`
+    );
+
+    return response.data[0];
+  };
+
+  const {
+    data: country,
+    error,
+    isLoading,
+  } = useQuery({
+    queryKey: ['country', code],
+    queryFn: () => fetchCountryDetails(code),
+  });
+
   const [searchParams] = useSearchParams();
   const selectedRegion = searchParams.get('region') || '';
   const navigate = useNavigate();
-
-  const {
-    name,
-    region,
-    population,
-    flags,
-    subregion = '',
-    languages = '',
-    tld = '',
-    capital = '',
-    currencies,
-  } = countryData;
 
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -64,6 +71,67 @@ export default function Country() {
     );
   }
 
+  if (isLoading) {
+    return (
+      <S.Container>
+        <S.Link
+          onClick={() => {
+            navigate({
+              pathname: '/',
+              search: selectedRegion ? `?region=${selectedRegion}` : '',
+            });
+          }}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              navigate({
+                pathname: '/',
+                search: selectedRegion ? `?region=${selectedRegion}` : '',
+              });
+            }
+          }}
+        >
+          <BackIcon />
+          <h1>Back</h1>
+        </S.Link>
+        <S.Card>
+          <S.Flag>
+            <Skeleton width={'100%'} height={'100%'} />
+          </S.Flag>
+
+          <S.CountryName>
+            <Skeleton width={170} height={30} />
+          </S.CountryName>
+
+          <S.Info1>
+            <Skeleton width={130} height={20} />
+            <Skeleton width={150} height={20} />
+            <Skeleton width={90} height={20} />
+            <Skeleton width={150} height={20} />
+            <Skeleton width={70} height={20} />
+          </S.Info1>
+          <S.Info2>
+            <Skeleton width={130} height={20} />
+            <Skeleton width={90} height={20} />
+            <Skeleton width={100} height={20} />
+          </S.Info2>
+          {<NeighbourList loading={isLoading} />}
+        </S.Card>
+      </S.Container>
+    );
+  }
+
+  const {
+    name,
+    region,
+    population,
+    flags,
+    subregion = '',
+    languages = '',
+    tld = '',
+    capital = '',
+    currencies,
+  } = country;
+
   return (
     <S.Container>
       <S.Link
@@ -87,91 +155,55 @@ export default function Country() {
       </S.Link>
       <S.Card>
         <S.Flag>
-          {loading ? (
-            <Skeleton width={'100%'} height={'100%'} />
-          ) : (
-            <img src={flags.png} alt="flag" />
-          )}
+          <img src={flags.png} alt="flag" />
         </S.Flag>
 
-        <S.CountryName>
-          {loading ? <Skeleton width={170} height={30} /> : name.common}
-        </S.CountryName>
+        <S.CountryName>{name.common}</S.CountryName>
 
         <S.Info1>
-          {loading ? (
-            <Skeleton width={130} height={20} />
-          ) : (
-            <p>
-              <span>Native Name: </span>
-              {name.nativeName && Object.values(name.nativeName)[0]?.common}
-            </p>
-          )}
+          <p>
+            <span>Native Name: </span>
+            {name.nativeName && Object.values(name.nativeName)[0]?.common}
+          </p>
 
-          {loading ? (
-            <Skeleton width={150} height={20} />
-          ) : (
-            <p>
-              <span>Population: </span>
-              {formatPopulation(population)}
-            </p>
-          )}
+          <p>
+            <span>Population: </span>
+            {formatPopulation(population)}
+          </p>
 
-          {loading ? (
-            <Skeleton width={90} height={20} />
-          ) : (
-            <p>
-              <span>Region: </span>
-              {region}
-            </p>
-          )}
-          {loading ? (
-            <Skeleton width={150} height={20} />
-          ) : (
-            <p>
-              <span>Sub Region: </span>
-              {subregion}
-            </p>
-          )}
+          <p>
+            <span>Region: </span>
+            {region}
+          </p>
 
-          {loading ? (
-            <Skeleton width={70} height={20} />
-          ) : (
-            <p>
-              <span>Capital: </span>
-              {capital[0]}
-            </p>
-          )}
+          <p>
+            <span>Sub Region: </span>
+            {subregion}
+          </p>
+
+          <p>
+            <span>Capital: </span>
+            {capital[0]}
+          </p>
         </S.Info1>
         <S.Info2>
-          {loading ? (
-            <Skeleton width={130} height={20} />
-          ) : (
-            <p>
-              <span>Top Level Domain: </span>
-              {tld[0]}
-            </p>
-          )}
+          <p>
+            <span>Top Level Domain: </span>
+            {tld[0]}
+          </p>
 
-          {loading ? (
-            <Skeleton width={90} height={20} />
-          ) : (
-            <p>
-              <span>Currencies: </span>
-              {currencies && Object.keys(currencies).join(', ')}
-            </p>
-          )}
+          <p>
+            <span>Currencies: </span>
+            {currencies && Object.keys(currencies).join(', ')}
+          </p>
 
-          {loading ? (
-            <Skeleton width={100} height={20} />
-          ) : (
-            <p>
-              <span>Languages: </span>
-              {languages && Object.values(languages).join(', ')}
-            </p>
-          )}
+          <p>
+            <span>Languages: </span>
+            {languages && Object.values(languages).join(', ')}
+          </p>
         </S.Info2>
-        {hasNeighbours && <NeighbourList countryName={countryData} />}
+
+        <NeighbourList countryName={country} loading={isLoading} />
       </S.Card>
     </S.Container>
   );

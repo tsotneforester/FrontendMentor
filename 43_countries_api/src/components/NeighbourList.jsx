@@ -2,14 +2,22 @@ import styled from 'styled-components';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
-import useNeighbours from '../hooks/useNeighbours';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
 
-export default function NeighbourList({ countryName }) {
+export default function NeighbourList({ countryName = '', loading }) {
   const navigate = useNavigate();
-  const { neighbours, loading } = useNeighbours(countryName);
 
   const [searchParams] = useSearchParams();
   const currentRegion = searchParams.get('region');
+
+  async function fetchNeighbours(cnt) {
+    const response = await axios.get(
+      `https://restcountries.com/v3.1/alpha?codes=${cnt.borders.join(',')}`
+    );
+
+    return response.data;
+  }
 
   const generateCountryLink = (countryName) => {
     const baseUrl = `/${countryName}`;
@@ -19,28 +27,45 @@ export default function NeighbourList({ countryName }) {
     return baseUrl;
   };
 
+  const { data: neighbours, isLoading } = useQuery({
+    queryKey: ['neighbours', countryName],
+    queryFn: () => fetchNeighbours(countryName),
+  });
+  if (loading) {
+    return (
+      <S.Container>
+        <S.Heading>
+          <Skeleton width={80} height={30} />
+        </S.Heading>
+        <S.Buttons>
+          {Array.from({ length: 3 }).map((_, i) => {
+            return <Skeleton key={i} width={80} height={30} />;
+          })}
+        </S.Buttons>
+      </S.Container>
+    );
+  }
+
   return (
     <S.Container>
-      <S.Heading>
-        {loading ? <Skeleton width={150} height={20} /> : 'Border Countries:'}
-      </S.Heading>
+      <S.Heading>Border Countries:</S.Heading>
       <S.Buttons>
-        {loading
+        {isLoading
           ? Array.from({ length: 3 }).map((_, i) => {
               return <Skeleton key={i} width={80} height={30} />;
             })
           : neighbours.map((e, i) => {
-              const { name } = e;
+              const { name, cca3 } = e;
               return (
                 <S.Button
                   key={i}
                   tabIndex={0}
                   onClick={() => {
-                    navigate(`${generateCountryLink(name.official)}`);
+                    navigate(`${generateCountryLink(cca3)}`);
                   }}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
-                      navigate(`${generateCountryLink(name.official)}`);
+                      navigate(`${generateCountryLink(cca3)}`);
                     }
                   }}
                 >

@@ -1,9 +1,9 @@
 import styled, { keyframes } from 'styled-components';
 import { useSearchParams } from 'react-router-dom';
 import ArrowSVG from '../assets/arrow.svg?react';
-import { useState } from 'react';
+import { useState, memo } from 'react';
 
-export default function RegionList({ data }) {
+export default memo(function RegionList({ data = [] }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const [modalVisible, setModalVisible] = useState(false);
   const selectedRegion = searchParams.get('region') || '';
@@ -77,7 +77,7 @@ export default function RegionList({ data }) {
       )}
     </S.Container>
   );
-}
+});
 const S = {};
 
 const fadeIn = keyframes`
@@ -129,7 +129,6 @@ S.Modal = styled.div`
   top: 54px;
   left: 0px;
   width: 100%;
-  padding: 14px 24px;
   background-color: ${({ theme }) => theme.navBg};
   transition: ${({ theme }) => theme.trans};
   box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
@@ -139,8 +138,8 @@ S.Modal = styled.div`
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
+  padding: 14px 24px;
   gap: 8px;
-
   @media (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
     top: 64px;
   }
@@ -153,10 +152,13 @@ S.RegionItem = styled.p`
   text-align: left;
   cursor: pointer;
   &:focus {
-    box-shadow: 0px 0px 7px 2px ${({ theme }) => theme.focus.card};
+    font-size: 14px;
   }
   @media (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
     font-size: ${({ $active }) => ($active ? 16 : 14)}px;
+    &:focus {
+      font-size: 16px;
+    }
   }
 `;
 
