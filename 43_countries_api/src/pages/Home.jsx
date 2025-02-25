@@ -2,27 +2,10 @@ import styled from 'styled-components';
 import SearchBar from '../components/SearchBar';
 import CountryList from '../components/CountryList';
 import RegionList from '../components/RegionList';
-import axios from 'axios';
-import { useQuery } from '@tanstack/react-query';
+import useCustomQuery from '../useCustomQuery';
 
 export default function Home() {
-  const fetchCountries = async () => {
-    const { data } = await axios.get('https://restcountries.com/v3.1/all');
-
-    data.sort((a, b) => {
-      return b.population - a.population;
-    });
-    return data;
-  };
-
-  const {
-    data: countries,
-    error,
-    isLoading,
-  } = useQuery({
-    queryKey: ['countries'],
-    queryFn: fetchCountries,
-  });
+  const { data: countries, error, isLoading } = useCustomQuery();
 
   return (
     <S.Container>

@@ -33,6 +33,24 @@ export default function Settings() {
                 },
               });
             }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault(); //🔰 Prevent scrolling when space is
+                const newValue = !excludeSpaces;
+                const limitExceded = setLimitExceded(string, newValue, limit);
+                const chars = countChars(string, newValue);
+                const topChars = getMostFrequentCharacters(string, newValue);
+                dispatch({
+                  type: 'TOGGLE_SPACE',
+                  payload: {
+                    excludeSpaces: newValue,
+                    limitExceded,
+                    chars,
+                    topChars,
+                  },
+                });
+              }
+            }}
           >
             <S.Checkbox1 tabIndex="0" $fill={excludeSpaces}>
               {excludeSpaces && <CheckSVG />}
@@ -53,6 +71,20 @@ export default function Settings() {
                 type: 'TOGGLE_LIMIT',
                 payload: { limitActivated: newValue, limitExceded },
               });
+            }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                const newValue = !limitActivated;
+                const limitExceded = setLimitExceded(
+                  string,
+                  excludeSpaces,
+                  limit
+                );
+                dispatch({
+                  type: 'TOGGLE_LIMIT',
+                  payload: { limitActivated: newValue, limitExceded },
+                });
+              }
             }}
           >
             <S.Checkbox2 tabIndex="0" $fill={limitActivated}>

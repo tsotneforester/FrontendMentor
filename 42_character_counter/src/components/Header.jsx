@@ -6,11 +6,22 @@ import LogoDark from '../assets/logo-dark-theme.svg?react';
 import LogoLight from '../assets/logo-light-theme.svg?react';
 
 export default function Header() {
-  const { isDarkTheme } = useContext(AppContext);
+  const { isDarkTheme, dispatch } = useContext(AppContext);
+
+  function resetHandler() {
+    dispatch({
+      type: 'RESET',
+    });
+  }
+
   return (
     <S.Container>
       <nav>
-        {isDarkTheme ? <LogoDark /> : <LogoLight />}
+        {isDarkTheme ? (
+          <LogoDark style={{ cursor: 'pointer' }} onClick={resetHandler} />
+        ) : (
+          <LogoLight style={{ cursor: 'pointer' }} onClick={resetHandler} />
+        )}
         <ThemeToggler />
       </nav>
       <h1>Analyze your text in real-time</h1>

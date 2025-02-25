@@ -55,5 +55,22 @@ export function reducer(state = initialState, action) {
     };
   }
 
+  if (action.type == 'RESET') {
+    return {
+      ...state,
+      topChars: [],
+      string: '',
+      readingTime: 0,
+      seeMore: false,
+      excludeSpaces: false,
+      limitActivated: false,
+      limit: '200',
+      limitExceded: false,
+      sentences: 0,
+      words: 0,
+      chars: 0,
+    };
+  }
+
   return state;
 }

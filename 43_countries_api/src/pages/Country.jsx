@@ -4,31 +4,22 @@ import BackSVG from '../assets/back.svg?react';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import Error from '../components/Error';
-import { useQuery } from '@tanstack/react-query';
 import { formatPopulation } from '../functions';
-import axios from 'axios';
+
 
 import NeighbourList from '../components/NeighbourList';
 import { useEffect } from 'react';
+import useCustomQuery from '../useCustomQuery';
 
 export default function Country() {
   let { country: code } = useParams();
-
-  const fetchCountryDetails = async (countryCode) => {
-    const response = await axios.get(
-      `https://restcountries.com/v3.1/alpha/${countryCode}`
-    );
-
-    return response.data[0];
-  };
 
   const {
     data: country,
     error,
     isLoading,
-  } = useQuery({
-    queryKey: ['country', code],
-    queryFn: () => fetchCountryDetails(code),
+  } = useCustomQuery((data) => {
+    return data.find((cnt) => cnt.cca3 == code);
   });
 
   const [searchParams] = useSearchParams();
@@ -130,6 +121,7 @@ export default function Country() {
     tld = '',
     capital = '',
     currencies,
+    borders = [],
   } = country;
 
   return (
@@ -203,7 +195,7 @@ export default function Country() {
           </p>
         </S.Info2>
 
-        <NeighbourList countryName={country} loading={isLoading} />
+        <NeighbourList borders={borders} />
       </S.Card>
     </S.Container>
   );
