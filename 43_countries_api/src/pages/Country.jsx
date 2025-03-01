@@ -6,7 +6,6 @@ import 'react-loading-skeleton/dist/skeleton.css';
 import Error from '../components/Error';
 import { formatPopulation } from '../functions';
 
-
 import NeighbourList from '../components/NeighbourList';
 import { useEffect } from 'react';
 import useCustomQuery from '../useCustomQuery';
