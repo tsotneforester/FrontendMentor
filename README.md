@@ -22,11 +22,8 @@ _**"The root of learning is bitter, but the crown is sweet"**_.... - Ancient Geo
 ## Getting Started
 
 - Main build language  
-  ![html](https://img.shields.io/badge/-HTML-6abecd "image")
-  ![css](https://img.shields.io/badge/-SCSS-3e54a3 "image")
-  ![js](https://img.shields.io/badge/-JS-cf6390 "image")
   ![react](https://img.shields.io/badge/-React-f4cf0c "image")
-  ![api](https://img.shields.io/badge/-API-aad742 "image")
+  ![api](https://img.shields.io/badge/-Vanilla-cf6390 "image")
 
 - Difficulty Level  
   ![newbie](https://img.shields.io/badge/%201%20-newbie-white?labelColor=6abecd "image")
@@ -49,11 +46,11 @@ _**"The root of learning is bitter, but the crown is sweet"**_.... - Ancient Geo
 ### Installation & Usage
 
 For Vite Projects
-  1. In VITE folder install NPM package
+  1. In React folder install NPM packages
   ```sh
   npm install
   ```
-  2. Run Vite App
+  2. Run React App
   ```sh
   npm run dev
   ```

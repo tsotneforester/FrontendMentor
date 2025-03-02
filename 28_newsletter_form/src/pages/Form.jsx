@@ -1,18 +1,21 @@
-import React, { useContext } from "react";
-import styled from "styled-components";
-import { useForm } from "react-hook-form";
-import { DataContext } from "../Context";
-import { root, p, h1, button } from "../styled";
-import Features from "./Features";
+import styled from 'styled-components';
+import { useForm } from 'react-hook-form';
+import { p, h1, button } from '../styles/styles';
+import Features from '../components/Features';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 export default function Form() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
-  const { setFormSubmitted, setEmail } = useContext(DataContext);
+  const [isInputFocused, setIsInputFocused] = useState(false);
+
+  const navigate = useNavigate();
 
   return (
     <S.Container>
@@ -22,9 +25,16 @@ export default function Form() {
 
       <form
         onSubmit={handleSubmit((data) => {
-          setFormSubmitted(true);
-          setEmail(data.email);
-        })}>
+          reset();
+          navigate(
+            {
+              pathname: '/submitted',
+              search: `?email=${data.email}`,
+            },
+            { state: { email: data.email } }
+          );
+        })}
+      >
         <h1>Stay updated!</h1>
         <p>Join 60,000+ product managers receiving monthly updates on:</p>
         <Features />
@@ -34,19 +44,23 @@ export default function Form() {
           <span>{errors.email?.message}</span>
 
           <input
-            {...register("email", {
-              required: "Email Address is required",
+            {...register('email', {
+              required: 'Email Address is required',
               pattern: {
                 value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                message: "Valid email required",
+                message: 'Valid email required',
               },
             })}
-            className={errors.email?.type ? "alert" : ""}
+            onFocus={() => setIsInputFocused(true)}
+            onBlur={() => setIsInputFocused(false)}
+            className={errors.email?.type ? 'alert' : ''}
             placeholder="email@company.com"
             type="text"
           />
         </fieldset>
-        <button>Subscribe to monthly newsletter</button>
+        <button className={isInputFocused ? 'input-focused' : ''}>
+          Subscribe to monthly newsletter
+        </button>
       </form>
     </S.Container>
   );
@@ -61,44 +75,63 @@ S.Container = styled.div`
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    min-height: auto;
+    max-width: 608px;
+    background-color: ${({ theme }) => theme.colors.white};
+    border-radius: 36px;
+    padding: 40px;
+    gap: 24px;
+  }
 
-  @media only screen and (min-width: ${root.media}) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     width: 100%;
     min-height: auto;
     max-width: 928px;
-    background-color: ${root.color.white};
+    background-color: ${({ theme }) => theme.colors.white};
     border-radius: 36px;
     padding: 24px;
     display: grid;
     grid-template-columns: 1fr auto;
-    grid-template-areas: "form wall";
+    grid-template-areas: 'form wall';
     gap: 24px;
   }
 
   .wallpaper {
     width: 100%;
-    @media only screen and (min-width: ${root.media}) {
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      height: 360px;
+      width: 100%;
+      border-radius: 16px;
+      background-image: url('assets/illustration-sign-up-mobile.svg');
+      background-repeat: no-repeat; //repeat-y/repeat-x/repeat/space/round
+      background-position: 0% 0%; // center/bottom/left/right/(%, px)
+      background-attachment: scroll; //fixed / local
+      background-size: cover; //length/cover/contain
+    }
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       grid-area: wall;
       height: 593px;
       width: 40vw;
       max-width: 400px;
       min-width: 100px;
       border-radius: 16px;
-      background-image: url("assets/illustration-sign-up-desktop.svg");
+      background-image: url('assets/illustration-sign-up-desktop.svg');
       background-repeat: no-repeat; //repeat-y/repeat-x/repeat/space/round
       background-position: 0% 0%; // center/bottom/left/right/(%, px)
       background-attachment: scroll; //fixed / local
       background-size: cover; //length/cover/contain
       justify-self: flex-end;
     }
+
     img {
       width: 100%;
       max-height: 284px;
       object-fit: cover;
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
-
-      @media only screen and (min-width: ${root.media}) {
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         width: 100%;
         height: 100%;
         border: 2px solid green;
@@ -110,12 +143,17 @@ S.Container = styled.div`
 
   form {
     width: 100%;
-    max-width: ${root.max_width};
+    max-width: ${({ theme }) => theme.max_width};
     padding: 0 24px 40px 24px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
-    @media only screen and (min-width: ${root.media}) {
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      width: 100%;
+      padding: 0;
+      max-width: none;
+    }
+    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       grid-area: form;
       padding: 0;
       max-width: 376px;
@@ -136,14 +174,14 @@ S.Container = styled.div`
       gap: 8px;
       display: grid;
       grid-template-areas:
-        "label error"
-        "input input";
+        'label error'
+        'input input';
       label {
         grid-area: label;
         font-weight: 700;
         font-size: 12px;
         line-height: 18px;
-        color: ${root.color.dark_slate_grey};
+        color: ${({ theme }) => theme.colors.dark_slate_grey};
       }
 
       input {
@@ -153,10 +191,10 @@ S.Container = styled.div`
         border-radius: 8px;
         font-size: 16px;
         line-height: 24px;
-        color: ${root.color.dark_slate_grey};
+        color: ${({ theme }) => theme.colors.dark_slate_grey};
         &:active,
         &:focus {
-          border-color: ${root.color.dark_slate_grey};
+          border-color: ${({ theme }) => theme.colors.dark_slate_grey};
         }
 
         &::placeholder {
@@ -164,8 +202,8 @@ S.Container = styled.div`
         }
 
         &.alert {
-          background-color: ${root.color.tomato_pale};
-          border: 1px solid ${root.color.tomato};
+          background-color: ${({ theme }) => theme.colors.tomato_pale};
+          border: 1px solid ${({ theme }) => theme.colors.tomato};
         }
       }
 
@@ -173,7 +211,7 @@ S.Container = styled.div`
         font-weight: 700;
         font-size: 12px;
         line-height: 18px;
-        color: ${root.color.tomato};
+        color: ${({ theme }) => theme.colors.tomato};
         grid-area: error;
         justify-self: flex-end;
       }
@@ -181,6 +219,11 @@ S.Container = styled.div`
 
     button {
       ${button}
+      &.input-focused {
+        @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+          background-color: ${({ theme }) => theme.colors.tomato};
+        }
+      }
     }
   }
 `;

@@ -1,11 +1,13 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import "./index.css";
-import { Context } from "./Context.jsx";
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import Router from './Router.jsx';
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyles } from './styles/GlobalStyles';
+import { theme } from './styles/theme';
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <Context>
-    <App />
-  </Context>
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <ThemeProvider theme={theme}>
+    <GlobalStyles />
+    <Router />
+  </ThemeProvider>
 );

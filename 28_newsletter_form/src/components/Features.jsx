@@ -1,8 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-import { p } from "../styled";
+import styled from 'styled-components';
+import { p } from '../styles/styles';
 
-let data = ["Product discovery and building what matters", "Measuring to ensure updates are a success", "And much more!"];
+let data = [
+  'Product discovery and building what matters',
+  'Measuring to ensure updates are a success',
+  'And much more!',
+];
 
 export default function Features() {
   return (

@@ -7,7 +7,6 @@ import LogoLight from '../assets/logo-light-theme.svg?react';
 
 export default function Header() {
   const { isDarkTheme, dispatch } = useContext(AppContext);
-
   function resetHandler() {
     dispatch({
       type: 'RESET',
