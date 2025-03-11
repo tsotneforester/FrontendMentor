@@ -5,7 +5,7 @@
 </div>
   <div align="center">
     Built With -
-    <img src="https://img.shields.io/badge/-Vanilla-cf6390" alt="Vanilla" />
+    <img src="https://img.shields.io/badge/-React-f4cf0c" alt="React" />
   
   <br/>
     Difficulty -

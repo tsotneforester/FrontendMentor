@@ -3,11 +3,8 @@
 ::after {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
-  font-family: "DM Sans", sans-serif;
-  font-optical-sizing: auto;
 }
 
 :focus,
@@ -34,10 +31,6 @@ input::-ms-clear {
   display: none;
 }
 
-input {
-  min-width: 0;
-}
-
 button {
   cursor: pointer;
   border: none;
@@ -51,7 +44,6 @@ button::-moz-focus-inner {
 img {
   max-width: 100%;
   display: block;
-  min-width: 0;
 }
 
 ul li {
@@ -65,14 +57,17 @@ h4,
 h5,
 h6,
 p {
-  font-size: inherit;
   font-weight: 400;
   margin: 0;
   padding: 0;
 }
 
 pre {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

@@ -1,6 +1,7 @@
 {
-  "name": "GPXcript",
-  "short_name": "GPXcript",
+  "name": "Expo",
+  "short_name": "Expo",
+  "display": "standalone",
   "icons": [
     {
       "src": "./192.png",
@@ -12,8 +13,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  ]
 }
