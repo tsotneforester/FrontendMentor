@@ -1,11 +1,11 @@
 {
-  "name": "expo",
+  "name": "bento_grid",
   "private": true,
-  "version": "10.3.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm version minor && vite build",
+    "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
