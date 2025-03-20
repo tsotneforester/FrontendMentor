@@ -7,9 +7,9 @@ import Source from '../components/Source';
 import PlanetPoster from '../components/PlanetPoster';
 
 let categories = {
-  overview: 'planet',
-  structure: 'internal',
-  geology: 'planet',
+  overview: { img: 'planet', fullName: 'overview' },
+  structure: { img: 'internal', fullName: 'internal structure' },
+  geology: { img: 'planet', fullName: 'surface geology' },
 };
 
 export default function Planet() {
@@ -37,7 +37,7 @@ export default function Planet() {
               $active={category == e}
             >
               <span>0{i + 1}</span>
-              <p>{e}</p>
+              <S.P $shortName={e} $fullName={categories[e].fullName}></S.P>
             </S.Button>
           );
         })}
@@ -194,7 +194,7 @@ S.Button = styled.button`
     background-color: ${({ $color, $active }) =>
       $active ? $color : 'transparent'};
 
-    font-size: 10px;
+    font-size: 9px;
     line-height: 25px;
     letter-spacing: 1.93px;
     opacity: 1;
@@ -203,6 +203,7 @@ S.Button = styled.button`
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     font-size: 12px;
     line-height: 25px;
+    letter-spacing: 2.57px;
   }
 
   &:hover {
@@ -216,19 +217,19 @@ S.Button = styled.button`
     display: none;
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       display: block;
-      font-family: ${({ theme }) => theme.fonts.spartan};
-      font-weight: 700;
-      font-size: 10px;
-      line-height: 25px;
-      letter-spacing: 1.93px;
-      text-transform: uppercase;
-      color: ${({ theme }) => theme.colors.white};
-      mix-blend-mode: normal;
       opacity: 0.5;
     }
     @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       font-size: 12px;
       line-height: 25px;
+    }
+  }
+`;
+S.P = styled.p`
+  &::after {
+    content: '${({ $shortName }) => $shortName}';
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      content: '${({ $fullName }) => $fullName}';
     }
   }
 `;

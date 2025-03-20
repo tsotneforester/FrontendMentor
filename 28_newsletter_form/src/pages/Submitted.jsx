@@ -2,11 +2,14 @@ import styled from 'styled-components';
 import { p, h1, button } from '../styles/styles';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import useSound from 'use-sound';
+import PageSound from '../assets/page.mp3';
 
 export default function Submitted() {
   const { state } = useLocation();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
+  const [turningPage] = useSound(PageSound);
 
   useEffect(() => {
     if (!state?.email) {
@@ -33,6 +36,7 @@ export default function Submitted() {
         tabIndex={0}
         onClick={() => {
           navigate(-1);
+          turningPage();
         }}
       >
         Dismiss message

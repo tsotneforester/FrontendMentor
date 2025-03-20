@@ -4,8 +4,16 @@ import { p, h1, button } from '../styles/styles';
 import Features from '../components/Features';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+//🔰 https://freesound.org/
+
+import useSound from 'use-sound';
+import clickSound from '../assets/click.mp3';
+import PageSound from '../assets/page.mp3';
 
 export default function Form() {
+  const [typing] = useSound(clickSound);
+  const [turningPage] = useSound(PageSound);
+
   const {
     register,
     handleSubmit,
@@ -26,6 +34,7 @@ export default function Form() {
       <form
         onSubmit={handleSubmit((data) => {
           reset();
+          turningPage();
           navigate(
             {
               pathname: '/submitted',
@@ -50,6 +59,7 @@ export default function Form() {
                 value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                 message: 'Valid email required',
               },
+              onChange: typing,
             })}
             onFocus={() => setIsInputFocused(true)}
             onBlur={() => setIsInputFocused(false)}

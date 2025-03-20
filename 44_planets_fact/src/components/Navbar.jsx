@@ -3,13 +3,15 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import planetsData from '../data.json';
 import HamburgerSVG from '../assets/icon-hamburger.svg?react';
 import ArrowSVG from '../assets/icon-chevron.svg?react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 export default function Navbar() {
   const [navExpended, setNavExpended] = useState(false);
   const navigate = useNavigate();
   let location = useLocation();
   const planetName = location.pathname.split('/')[1];
+
+  const firstNavLinkRef = useRef(null);
 
   useEffect(() => {
     if (navExpended) {
@@ -18,14 +20,20 @@ export default function Navbar() {
       document.body.style.overflow = 'unset';
     }
 
+    if (firstNavLinkRef.current) {
+      firstNavLinkRef.current.focus();
+    }
+
     return () => {
       document.body.style.overflow = 'unset';
     };
-  }, [navExpended]);
+  }, [navExpended, location]);
 
   return (
     <S.Container $expanded={navExpended}>
-      <h1>THE PLANETS</h1>
+      <h1 tabIndex={1} ref={firstNavLinkRef}>
+        THE PLANETS
+      </h1>
       <S.Navlinks>
         {planetsData.map((planet, i) => {
           return (
@@ -219,7 +227,6 @@ S.Link = styled.div`
     letter-spacing: 1.36364px;
     text-transform: uppercase;
     color: ${({ theme }) => theme.colors.white};
-
     border-top: 4px solid transparent;
     transition: color ${({ theme }) => theme.transition};
 
