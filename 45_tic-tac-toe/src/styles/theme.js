@@ -14,6 +14,7 @@ export const baseTheme = {
     gray: '#DBE8ED',
     grayDark: '#A8BFC9',
     grayShadow: '#608A98',
+    blackShadow: '#A8BFC90D',
   },
   breakpoints: {
     tablet: '568px',

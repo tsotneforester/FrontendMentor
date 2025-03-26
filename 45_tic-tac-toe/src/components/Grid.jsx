@@ -7,6 +7,7 @@ import OSVG from '../assets/icon-o.svg?react';
 import XSVG from '../assets/icon-x.svg?react';
 import XOutlineSVG from '../assets/icon-x-outline.svg?react';
 import OOutlineSVG from '../assets/icon-o-outline.svg?react';
+import { motion } from 'motion/react';
 
 export default function Grid() {
   const { state, dispatch } = useContext(AppContext);
@@ -19,6 +20,7 @@ export default function Grid() {
     progressMap,
     winningCombo,
     hoveredIndex,
+    gridRefresher,
   } = state;
 
   const updateScoreSheet = (status) => {
@@ -99,7 +101,16 @@ export default function Grid() {
         <S.Box
           $highlighted={winningCombo?.includes(i)}
           $winner={gameStatus}
-          key={i}
+          key={i + gridRefresher}
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{
+            type: 'spring', // Use spring transition
+            stiffness: 300, // Stiffness of the spring
+            damping: 20,
+            delay: i * 0.1,
+            duration: 0.3,
+          }}
           onClick={() => handleBoxClick(i)}
           onMouseEnter={() => {
             if (!progressMap[i] && !isCPUTurn) {
@@ -147,18 +158,18 @@ S.Container = styled.div`
 
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(3, ${({ theme }) => theme.gridS});
-  grid-template-rows: repeat(3, ${({ theme }) => theme.gridS});
+  grid-template-columns: repeat(3, calc(${({ theme }) => theme.gridS}));
+  grid-template-rows: repeat(3, calc(${({ theme }) => theme.gridS} - 8px));
 
   gap: 28px;
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    margin: 19px 0 19px 0;
+    margin: 19px 0 27px 0;
     grid-template-columns: repeat(3, ${({ theme }) => theme.gridL});
-    grid-template-rows: repeat(3, ${({ theme }) => theme.gridL});
+    grid-template-rows: repeat(3, calc(${({ theme }) => theme.gridL} - 8px));
   }
 `;
 
-S.Box = styled.div`
+S.Box = styled(motion.div)`
   width: 100%;
   height: 100%;
   background: ${({ theme, $highlighted, $winner }) => {

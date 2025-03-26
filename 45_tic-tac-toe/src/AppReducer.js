@@ -12,6 +12,7 @@ export const initialState = {
   progressMap: [null, null, null, null, null, null, null, null, null],
   winningCombo: null,
   hoveredIndex: null,
+  gridRefresher: null,
 };
 
 export function reducer(state = initialState, action) {
@@ -92,7 +93,9 @@ export function reducer(state = initialState, action) {
       gameStatus: 'running',
       turnIsForX: true,
       winningCombo: null,
+      gridRefresher: Date(),
     };
   }
+
   return state;
 }

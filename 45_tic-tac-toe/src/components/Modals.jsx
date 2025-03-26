@@ -58,8 +58,6 @@ const Modals = () => {
           <div>
             <button
               onClick={() => {
-                // restartGame();
-
                 navigate('/');
               }}
             >

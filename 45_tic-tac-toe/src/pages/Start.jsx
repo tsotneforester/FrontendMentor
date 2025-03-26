@@ -1,36 +1,46 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import LogoSVG from '../assets/logo.svg?react';
 import OSVG from '../assets/icon-o.svg?react';
 import XSVG from '../assets/icon-x.svg?react';
 import { defaultStartButton } from '../styles/styles';
 import { AppContext } from '../Context';
+import MarkerMP3 from '../assets/marker.mp3';
+import RivalMP3 from '../assets/rival.mp3';
 
 export default function Start() {
   const navigate = useNavigate();
   const { state, dispatch } = useContext(AppContext);
   const { player1PlaysWithX } = state;
+  const clickMarker = new Audio(MarkerMP3);
+  const clickRival = new Audio(RivalMP3);
 
   return (
     <S.Container>
       <S.LogoIcon />
       <S.Markers>
         <h1>PICK PLAYER 1’S MARK</h1>
-        <S.Toggler $position={player1PlaysWithX}>
+        <S.Toggler>
           <S.MarkerOptions>
-            <S.XIcon
-              $position={player1PlaysWithX}
+            <S.IconContainer
+              $active={player1PlaysWithX}
               onClick={() => {
                 dispatch({ type: 'SET_PLAYER1_MARK', payload: true });
+                clickMarker.play();
               }}
-            />
-            <S.OIcon
-              $position={player1PlaysWithX}
+            >
+              <S.XIcon $active={player1PlaysWithX} />
+            </S.IconContainer>
+            <S.IconContainer
+              $active={!player1PlaysWithX}
               onClick={() => {
                 dispatch({ type: 'SET_PLAYER1_MARK', payload: false });
+                clickMarker.play();
               }}
-            />
+            >
+              <S.OIcon $active={player1PlaysWithX} />
+            </S.IconContainer>
           </S.MarkerOptions>
         </S.Toggler>
 
@@ -46,7 +56,7 @@ export default function Start() {
             });
             dispatch({ type: 'RESET_SCORE_SHEET' });
             dispatch({ type: 'RESTART_GAME' });
-
+            clickRival.play();
             navigate('/game?rival=cpu');
           }}
         >
@@ -58,7 +68,7 @@ export default function Start() {
             dispatch({ type: 'RESET_SCORE_SHEET' });
             dispatch({ type: 'RESET_PROGRESS_MAP' });
             dispatch({ type: 'RESTART_GAME' });
-
+            clickRival.play();
             navigate('/game?rival=human');
           }}
         >
@@ -69,6 +79,23 @@ export default function Start() {
   );
 }
 const S = {};
+
+const bounce = keyframes`
+   from,
+   to {
+      transform: scale(1, 1);
+   }
+   25% {
+      transform: scale(0.9, 1.1);
+   }
+   50% {
+      transform: scale(1.1, 0.9);
+   }
+   75% {
+      transform: scale(0.95, 1.05);
+   }
+`;
+
 S.Container = styled.div`
   display: flex;
   flex-flow: column nowrap;
@@ -123,19 +150,6 @@ S.Toggler = styled.div`
   align-items: flex-start;
   position: relative;
   height: 70px;
-
-  &:after {
-    content: '';
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 50%;
-    background-color: ${({ theme }) => theme.colors.grayDark};
-    border-radius: 10px;
-    height: 100%;
-    transition: all ${({ theme }) => theme.transitionSlow};
-    transform: translateX(${({ $position }) => ($position ? 0 : '100%')});
-  }
 `;
 
 S.MarkerOptions = styled.div`
@@ -149,6 +163,10 @@ S.MarkerOptions = styled.div`
   flex-flow: row nowrap;
   justify-content: space-around;
   align-items: center;
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
 `;
 
 S.Rival = styled.div`
@@ -195,12 +213,33 @@ const defaultMarker = css`
 
 S.OIcon = styled(OSVG)`
   ${defaultMarker}
-  color: ${({ $position, theme }) =>
-    $position ? theme.colors.grayDark : theme.colors.blueDark};
+  color: ${({ $active, theme }) =>
+    $active ? theme.colors.grayDark : theme.colors.blueDark};
 `;
 
 S.XIcon = styled(XSVG)`
   ${defaultMarker}
-  color: ${({ $position, theme }) =>
-    $position ? theme.colors.blueDark : theme.colors.grayDark};
+  color: ${({ $active, theme }) =>
+    $active ? theme.colors.blueDark : theme.colors.grayDark};
+`;
+
+
+
+S.IconContainer = styled.div`
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color ${({ theme: n }) => n.transitionSlow};
+  background-color: ${({ theme, $active }) =>
+    $active ? theme.colors.grayDark : 'transparent'};
+  animation: ${({ $active }) => ($active ? bounce : null)} 0.2s ease;
+  &:hover {
+    background-color: ${({ theme, $active }) =>
+      $active ? 'none' : theme.colors.blackShadow};
+  }
 `;
