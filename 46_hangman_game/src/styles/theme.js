@@ -5,7 +5,7 @@ export const baseTheme = {
   colors: {
     white: '#fff',
     blue: '#2463FF',
-    navy: ' ${({ theme }) => theme.colors.navy}',
+    navy: '#261676',
   },
   breakpoints: {
     tablet: '768px',

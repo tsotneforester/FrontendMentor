@@ -91,7 +91,7 @@ S.Pregress = styled.div`
   height: 16px;
 
   background: ${({ theme }) => theme.colors.white};
-  ${({ theme }) => theme.colors.white}
+
   border-radius: 96px;
   position: relative;
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
