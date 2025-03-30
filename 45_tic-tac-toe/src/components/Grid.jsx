@@ -105,8 +105,8 @@ export default function Grid() {
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{
-            type: 'spring', // Use spring transition
-            stiffness: 300, // Stiffness of the spring
+            type: 'spring',
+            stiffness: 300,
             damping: 20,
             delay: i * 0.1,
             duration: 0.3,
