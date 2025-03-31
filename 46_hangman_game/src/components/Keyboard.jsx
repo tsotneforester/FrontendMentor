@@ -144,13 +144,9 @@ S.Char = styled.span`
     width: 109px;
   }
 
-  ${({ $active }) =>
-    $active &&
-    `
-    &:hover {
-      background: ${({ theme }) => theme.colors.blue};
-      color: ${({ theme }) => theme.colors.white};
-      cursor: pointer;
-    }
-  `}
+  &:hover {
+    background: ${({ $active, theme }) => ($active ? theme.colors.blue : null)};
+    color: ${({ $active, theme }) => ($active ? theme.colors.white : null)};
+    cursor: pointer;
+  }
 `;

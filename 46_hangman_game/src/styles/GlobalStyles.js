@@ -1,10 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
-  body {
-
-  }
-
 
 
   #root {
@@ -16,12 +12,16 @@ export const GlobalStyles = createGlobalStyle`
     background-position: center center; // center/bottom/left/right/(%, px)
     background-attachment: scroll; //fixed / local
     background-size: cover; //length/cover/contain
-     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       background-image: url('/images/background-tablet.svg');
-   
+
+    }
+    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      background-image: url('/images/background-desktop.svg');
+    }
+
   }
-   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-     background-image: url('/images/background-desktop.svg');
-  }
-  }
+
 `;

@@ -110,18 +110,24 @@ S.Pregress = styled.div`
     height: 8px;
     width: ${({ $step }) => $step * 6}px;
     transition: width ${({ theme }) => theme.transitionDefault};
-    background: ${({ theme }) => theme.colors.navy};
+    background: ${({ theme, $step }) => {
+      if ($step > 3) {
+        return theme.colors.navy;
+      } else if ($step > 1) {
+        return 'orange';
+      } else {
+        return 'red';
+      }
+    }};
+
     border-radius: 96px;
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-      top: 8.5px;
+      top: 9px;
       left: 10px;
       height: 13px;
       width: ${({ $step }) => $step * 18}px;
     }
     @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-      top: 9px;
-      left: 10px;
-      height: 13px;
       width: ${({ $step }) => $step * 27.5}px;
     }
   }
