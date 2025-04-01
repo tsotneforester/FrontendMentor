@@ -14,7 +14,9 @@ import PauseMP3 from '../assets/smb_pause.mp3';
 export default function Modal() {
   const navigate = useNavigate();
   const { state, dispatch } = useContext(AppContext);
-  const { data, phrase, category, gameStatus } = state;
+  let { data, phrase, category, gameStatus } = state;
+
+  if (gameStatus == 'running') return null;
 
   const clickFireball = new Audio(FireballMP3);
   const clickPause = new Audio(PauseMP3);
