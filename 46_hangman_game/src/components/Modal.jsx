@@ -145,7 +145,6 @@ S.OuterCard = styled.div`
 `;
 S.InnerCard = styled.main`
   ${modalCard}
-  ${modalCard}
   padding: 104px 12px 87px 12px;
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     padding: 120px 12px 71px 12px;
